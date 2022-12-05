@@ -3,6 +3,6 @@ window.Vue = require('vue');
 
 import App from './View/App';
 const app = new Vue({
-    el: '#app',
+    el: '#root',
     render: (h) => h(App),
 });
