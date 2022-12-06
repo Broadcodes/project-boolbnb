@@ -14,6 +14,17 @@
    <script type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
 </head>
 <body>
+    <nav class="navbar navbar-expand-md flex-md-nowrap px-4 py-2 border border-dark">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{ route('homePage') }}"><h1>@yield('title')</h1></a>
+        <ul class="navbar-nav px-3 ml-auto">
+            <li class="nav-item">
+                <a class="btn btn-lg" href="{{ route('login') }}">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-lg" href="{{ route('register') }}">Register</a>
+            </li>
+        </ul>
+    </nav>
     @yield('content')
 </body>
 </html>
