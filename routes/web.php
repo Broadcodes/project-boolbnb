@@ -13,7 +13,7 @@ Auth::routes();
 
 Route::middleware('auth')
     ->namespace('Ura')
-    ->name('ura')
+    ->name('ura.')
     ->prefix('ura')
     ->group(function () {
         Route::get('/', 'DashboardController@index')->name('home');
