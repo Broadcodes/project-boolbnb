@@ -8,6 +8,7 @@ Route::get('/', function () {
 })->name('homePage');
 
 Auth::routes();
+Route::get('/homeUra', 'HomeController@index')->name('homeUra');
 
 Route::get('{any?}', function () {
     return redirect()->route('homePage');
