@@ -16,4 +16,8 @@ class Apartment extends Model
     public function services(){
         return $this->belongsToMany('App\Service');
     }
+
+    public function sponsots(){
+        return $this->belongsToMany('App\Sponsor');
+    }
 }
