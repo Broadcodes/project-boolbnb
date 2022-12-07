@@ -18,7 +18,7 @@ class CreateApartmentSponsorTable extends Migration
             $table->foreign('apartment_id')->references('id')->on('apartments');
 
             $table->unsignedBigInteger('sponsor_id');
-            $table->foreign('sponsor_id')->references('id')->on('sponsor');
+            $table->foreign('sponsor_id')->references('id')->on('sponsors');
 
             $table->primary(['apartment_id', 'sponsor_id']);
         });
