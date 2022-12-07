@@ -4,11 +4,17 @@ namespace App\Http\Controllers\Ura;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\User;
+
 
 class DashboardController extends Controller
 {
     public function index() {
 
-        return view('ura.dashboard');
+        $id = Auth::id();
+        $user = Auth::user(); // restituisce un array contentente le info dell'utente loggato
+
+        return view('ura.dashboard', compact('id', 'user'));
     }
 }
