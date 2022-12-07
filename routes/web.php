@@ -8,7 +8,16 @@ Route::get('/', function () {
 })->name('homePage');
 
 Auth::routes();
-Route::get('/homeUra', 'HomeController@index')->name('homeUra');
+
+// Route::get('/homeUra', 'HomeController@index')->name('homeUra');
+
+Route::middleware('auth')
+    ->namespace('Ura')
+    ->name('ura')
+    ->prefix('ura')
+    ->group(function () {
+        Route::get('/', 'DashboardController@index')->name('home');
+    });
 
 Route::get('{any?}', function () {
     return redirect()->route('homePage');
