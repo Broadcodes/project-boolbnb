@@ -10,9 +10,9 @@
 
 <body>
     <ul>
-        @foreach ($apartments as $item)
+        @foreach ($apartments as $apartment)
             <li>
-                <a href="">{{ $item->apartment_title }}</a>
+                <a href="{{ route('ura.apartments.show', $apartment->id) }}">{{ $apartment->apartment_title }}</a>
             </li>
         @endforeach
     </ul>
