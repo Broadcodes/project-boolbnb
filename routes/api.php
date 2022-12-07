@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::resource('uraHome','apiUra\apiUraController',['only'=>['index','show']])->middleware('auth');
+//Route::resource('uraHome','apiUra\apiUraController',['only'=>['index','show']])->middleware('auth.basic');
+
+Route::middleware('auth')->resource('uraHome','apiUra\apiUraController',['only'=>['index', 'show']]);
+Route::resource('guestHome', 'apiGuest\apiGuestController', ['only'=>['index', 'show']]);
