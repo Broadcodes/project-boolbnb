@@ -17,6 +17,7 @@ Route::middleware('auth')
     ->prefix('ura')
     ->group(function () {
         Route::get('/', 'DashboardController@index')->name('home');
+        Route::resource('apartments', "ApartmentController" );
     });
 
 Route::get('{any?}', function () {
