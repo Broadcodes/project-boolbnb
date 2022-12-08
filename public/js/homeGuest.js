@@ -1982,7 +1982,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("img", {
     attrs: {
-      src: __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module '../../../public/img/airbnb_logo.png'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())),
+      src: __webpack_require__(/*! ../../../public/img/airbnb_logo.png */ "./public/img/airbnb_logo.png"),
       alt: "logo AirBnB"
     }
   })])])]);
@@ -50254,6 +50254,17 @@ module.exports = function(module) {
 	return module;
 };
 
+
+/***/ }),
+
+/***/ "./public/img/airbnb_logo.png":
+/*!************************************!*\
+  !*** ./public/img/airbnb_logo.png ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/airbnb_logo.png?d7793351c12a9e8ab7a6deb18efd8a8e";
 
 /***/ }),
 
