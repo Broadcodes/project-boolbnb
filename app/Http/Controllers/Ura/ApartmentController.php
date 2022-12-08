@@ -18,8 +18,9 @@ class ApartmentController extends Controller
     {
         $loggedUser = Auth::id();
         $apartments = Apartment::where('user_id', $loggedUser)->get();
+        $apartmentNumber = count($apartments);
 
-       return view('ura.apartments.index', compact('apartments'));
+       return view('ura.apartments.index', compact('apartments', 'apartmentNumber'));
     }
 
     /**
