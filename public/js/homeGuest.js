@@ -49699,8 +49699,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\boolBnB_project\resources\js\homeGuest.js */"./resources/js/homeGuest.js");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\boolBnB_project\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Nicola\Desktop\BOOLEAN\Esercizi_backend\project-boolbnb\resources\js\homeGuest.js */"./resources/js/homeGuest.js");
+module.exports = __webpack_require__(/*! C:\Users\Nicola\Desktop\BOOLEAN\Esercizi_backend\project-boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

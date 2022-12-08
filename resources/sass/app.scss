@@ -4,8 +4,32 @@
 // Variables
 @import 'variables';
 
-// Commons
-@import 'commons';
+// Reset
+@import 'reset';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+/*****************
+    Team Imports
+*****************/
+
+// Andrea Anzellotti
+@import 'aa-app';
+
+// Alessandro Ramoni
+@import 'ar-app';
+
+// Francesco Miceli
+@import 'fmi-app';
+
+// Francesco Motta
+@import 'fmo-app';
+
+// Gianluca Fabrizio
+@import 'gb-app';
+
+// Nicola Caddeo
+@import 'nc-app';
+
+/**********************************/
