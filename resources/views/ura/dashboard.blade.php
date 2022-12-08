@@ -4,6 +4,7 @@
 -->
 
 @extends('layouts.app')
+
 @section('content')
     <h1>Sei loggato nella dashboard</h1>
     <h3>Utente con id: {{ $id }}</h3>
