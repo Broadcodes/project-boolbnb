@@ -10988,6 +10988,11 @@ a.text-dark:focus {
   font-size: 2.5rem;
 }
 
+.generalInfo {
+  -moz-column-gap: 0.8rem;
+       column-gap: 0.8rem;
+}
+
 .cardsContainer {
   row-gap: 0.7rem;
 }
