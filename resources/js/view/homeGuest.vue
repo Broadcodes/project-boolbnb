@@ -1,12 +1,15 @@
 <template>
     <div>
         <HeaderComponent />
+        <HomeComponent />
     </div>
 </template>
 
 <script>
 
 import HeaderComponent from '../components/HeaderComponent.vue';
+import HomeComponent from '../components/HomeComponent.vue';
+
 export default {
     name: "homeGuest",
     mounted() {
@@ -17,7 +20,8 @@ export default {
         });
     },
     components: {
-        HeaderComponent
+        HeaderComponent,
+        HomeComponent
     }
 }
 </script>
