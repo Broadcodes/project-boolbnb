@@ -15,6 +15,8 @@ class DashboardController extends Controller
         $id = Auth::id();
         $user = Auth::user(); // restituisce un array contentente le info dell'utente loggato
 
-        return view('ura.dashboard', compact('id', 'user'));
+        $onBoolBnb = $user->created_at->toDateString();
+
+        return view('ura.dashboard', compact('id', 'user', 'onBoolBnb'));
     }
 }
