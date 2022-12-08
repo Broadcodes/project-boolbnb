@@ -26,6 +26,9 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-
+<style lang="scss">
+      .contenitore-home {
+        height: 100vh;
+        background-color: #ff385c;
+    }
 </style>
