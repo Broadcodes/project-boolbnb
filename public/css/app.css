@@ -10,6 +10,10 @@ body {
   font-family: sans-serif;
 }
 
+img {
+  width: 100%;
+}
+
 /*!
  * Bootstrap v4.6.2 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
@@ -10951,14 +10955,26 @@ a.text-dark:focus {
        column-gap: 1rem;
 }
 
-.nc-card {
+.nc-accountInfo .nc-card {
   height: 40vh;
   width: 30%;
   border: 1px solid gray;
   border-radius: 10px;
+  row-gap: 1rem;
 }
 
-.nc-userAction {
+.nc-accountInfo .nc-card img {
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+}
+
+.nc-accountInfo .nc-card .personalInfo {
+  line-height: 0.5rem;
+  font-size: 1rem;
+}
+
+.nc-accountInfo .nc-userAction {
   border: 1px dashed red;
   flex-grow: 1;
 }
