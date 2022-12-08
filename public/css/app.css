@@ -10946,5 +10946,22 @@ a.text-dark:focus {
     Team Imports
 *****************/
 
+.nc-accountInfo {
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+
+.nc-card {
+  height: 40vh;
+  width: 30%;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+
+.nc-userAction {
+  border: 1px dashed red;
+  flex-grow: 1;
+}
+
 /**********************************/
 

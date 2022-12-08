@@ -1,13 +1,26 @@
 <!--
     dashboard utente registrato,
     landing page dopo il log-in
+    <a class="btn btn-success" href="{{ route('ura.apartments.index') }}">My Apartments</a>
 -->
 
 @extends('layouts.app')
 
 @section('content')
-    <h1>Sei loggato nella dashboard</h1>
-    <h3>Utente con id: {{ $id }}</h3>
+    <div id="dashboard">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="nc-accountInfo d-flex">
+                        <div class="nc-card">
 
-    <a class="btn btn-success" href="{{ route('ura.apartments.index') }}">My Apartments</a>
+                        </div>
+                        <div class="nc-userAction">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
