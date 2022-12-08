@@ -1,0 +1,32 @@
+.nc-accountInfo {
+    column-gap: 2rem;
+    position: relative;
+    top: 40%;
+
+    .nc-card {
+        height: 40vh;
+        width: 30%;
+        border: 1px solid gray;
+        border-radius: 10px;
+        row-gap: 1rem;
+
+        img {
+            width: 50%;
+            height: 50%;
+            border-radius: 50%;
+        }
+
+        .personalInfo {
+            line-height: .5rem;
+            font-size: 1rem;
+        }
+    }
+
+    .nc-userAction {
+        flex-grow: 1;
+
+        p {
+            font-size: 2.5rem;
+        }
+    }
+}

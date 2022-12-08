@@ -10,6 +10,10 @@ body {
   font-family: sans-serif;
 }
 
+img {
+  width: 100%;
+}
+
 /*!
  * Bootstrap v4.6.2 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
@@ -10945,6 +10949,40 @@ a.text-dark:focus {
 /*****************
     Team Imports
 *****************/
+
+.nc-accountInfo {
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  position: relative;
+  top: 40%;
+}
+
+.nc-accountInfo .nc-card {
+  height: 40vh;
+  width: 30%;
+  border: 1px solid gray;
+  border-radius: 10px;
+  row-gap: 1rem;
+}
+
+.nc-accountInfo .nc-card img {
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+}
+
+.nc-accountInfo .nc-card .personalInfo {
+  line-height: 0.5rem;
+  font-size: 1rem;
+}
+
+.nc-accountInfo .nc-userAction {
+  flex-grow: 1;
+}
+
+.nc-accountInfo .nc-userAction p {
+  font-size: 2.5rem;
+}
 
 /**********************************/
 
