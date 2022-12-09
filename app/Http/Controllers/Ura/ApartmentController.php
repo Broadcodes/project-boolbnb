@@ -51,7 +51,7 @@ class ApartmentController extends Controller
             'sqm' => 'max:999.99|numeric',
             'category' => 'max:255|string',
             'price' => 'max:999999.99|numeric',
-            'visible' => 'required|boolean',
+            'visible' => 'boolean',
             'apartment_images' => 'file|max:1080',
             'address' => 'max:255|string',
             'civic_number' => 'numeric',
