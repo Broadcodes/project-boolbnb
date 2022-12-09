@@ -7,7 +7,7 @@
                 <h3>I tuoi appartamenti</h3>
                 <div class="d-flex generalInfo">
                     <p>Appartamenti totali: <strong>{{ $apartmentNumber }}</strong></p>
-                    <a href="">Aggiungi appartamento</a> <!-- CRUD create -->
+                    <a href="{{ route('ura.apartments.create') }}">Aggiungi appartamento</a> <!-- CRUD create -->
                 </div>
             </div>
         </div>
@@ -24,14 +24,11 @@
                                 </div>
                                 <div class="userActions w-50">
                                     <a class="btn btn-primary" href="">Modifica</a> <!-- CRUD edit -->
-
-
-
-                                    <form action="{{ route('ura.apartments.destroy', $apartment->apartment_slug)}}" method="POST"></form>
-
-
-
-                                    <a class="btn btn-danger" href="">Elimina</a> <!-- CRUD delete -->
+                                    <form action="{{ route('ura.apartments.destroy', $apartment->apartment_slug)}}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input class="btn btn-danger" type="submit" value="Elimina"> <!-- CRUD delete -->
+                                    </form>
                                     <a class="btn btn-dark" href="">Messaggi</a> <!-- messages.index ? -->
                                     <a class="btn btn-success" href="">Sponsorizza</a> <!-- sponsors.index ? -->
                                 </div>
@@ -45,7 +42,7 @@
                 <!-- se non si hanno appartamenti registrati -->
                 <div class="col d-flex flex-column p-4 align-items-center py-5">
                     <h3>Non possiedi un appartamento. Inseriscine subito uno nuovo!</h3>
-                    <a class="btn btn-primary my-3" href="">Aggiungi Appartamento</a> <!-- CRUD create -->
+                    <a class="btn btn-primary my-3" href="{{ route('ura.apartments.create') }}">Aggiungi Appartamento</a> <!-- CRUD create -->
                 </div>
             </div>
         @endif
