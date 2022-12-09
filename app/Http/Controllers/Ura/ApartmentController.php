@@ -140,6 +140,7 @@ class ApartmentController extends Controller
 
         $apartment->latitude = $obj['results'][0]['position']['lat'];
         $apartment->longitude = $obj['results'][0]['position']['lon'];
+        $apartment->user_id = Auth::id();
         $apartment->save();
 
         return redirect()->route('ura.apartments.show', $apartment->apartment_slug);
