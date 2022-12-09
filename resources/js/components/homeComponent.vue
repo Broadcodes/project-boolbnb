@@ -19,5 +19,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+    // .contenitore-home {
+    //     height: 85%;
+    // }
 </style>

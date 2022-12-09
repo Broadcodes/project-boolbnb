@@ -27,8 +27,11 @@ export default {
 </script>
 
 <style lang="scss">
+
+// @import '../../../public/css/generics.scss';
+
       .contenitore-home {
-        height: 100vh;
+        height: 1000px;
         background-color: #ff385c;
     }
 </style>
