@@ -24,6 +24,13 @@
                                 </div>
                                 <div class="userActions w-50">
                                     <a class="btn btn-primary" href="">Modifica</a> <!-- CRUD edit -->
+
+
+
+                                    <form action="{{ route('ura.apartments.destroy', $apartment->apartment_slug)}}" method="POST"></form>
+
+
+
                                     <a class="btn btn-danger" href="">Elimina</a> <!-- CRUD delete -->
                                     <a class="btn btn-dark" href="">Messaggi</a> <!-- messages.index ? -->
                                     <a class="btn btn-success" href="">Sponsorizza</a> <!-- sponsors.index ? -->
