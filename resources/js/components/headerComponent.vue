@@ -134,6 +134,7 @@ export default {
     margin-top: 100px;
     position: fixed;
     top: 80px;
+    border-top: 2px solid #717171;
 }
 .navbar ul {
     padding: 0;
