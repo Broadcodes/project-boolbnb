@@ -57,10 +57,11 @@ class ApartmentController extends Controller
             'civic_number' => 'numeric',
             'city' => 'max:255|string',
             'countrySubdivision' => 'max:255|string',
-            'postalCode' => 'max:5|numeric'
+            'postalCode' => 'max:5|string'
         ], [
             'required' => 'Il campo è obbligatorio',
-            'max' => 'Puoi inserire fino ad un massimo di :max caratteri',
+            'min' => 'Inserire un valore che abbia :min carattere',
+            'max' => 'Inserire fino ad un massimo di :max caratteri',
             'string' => 'Il campo deve essere un testo',
             'numeric' => 'Il campo deve essere un numero',
             'boolean' => 'Il campo può avere solo un valore: selezionato o deselezionato',
