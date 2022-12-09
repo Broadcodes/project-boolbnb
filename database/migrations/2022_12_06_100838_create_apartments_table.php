@@ -24,7 +24,7 @@ class CreateApartmentsTable extends Migration
             $table->decimal('sqm',5,2)->nullable()->default(0);
             $table->string('category', 255)->nullable()->default();
             $table->decimal('price', 8,2)->nullable()->default(0);
-            $table->boolean('confirmed')->nullable()->default(false);
+            $table->boolean('visible')->nullable()->default(true);
             $table->string('apartment_images',255)->nullable();
             $table->string('address',255)->nullable();
             $table->tinyInteger('civic_number')->nullable();
