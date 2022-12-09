@@ -10950,6 +10950,13 @@ a.text-dark:focus {
     Team Imports
 *****************/
 
+#navbar-login {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+}
+
 .nc-accountInfo {
   -moz-column-gap: 2rem;
        column-gap: 2rem;

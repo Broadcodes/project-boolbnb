@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md flex-md-nowrap px-4 py-2 border border-dark">
+    <nav id="navbar-login" class="navbar navbar-expand-md flex-md-nowrap px-4 py-2 border border-dark">
         <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{ route('homePage') }}">
             <h1>@yield('title')</h1>
         </a>

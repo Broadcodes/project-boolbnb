@@ -21,46 +21,46 @@
         </div>
         <div class="navbar">
             <ul>
-                <li><a href="">Parchi nazionali</a></li>
-                <li><a href="">Baite</a></li>
-                <li><a href="">Viste mozzafiato</a></li>
-                <li><a href="">Spazi accessibili</a></li>
-                <li><a href="">Novità</a></li>
-                <li><a href="">Sulle piste</a></li>
-                <li><a href="">Case sull'albero</a></li>
-                <li><a href="">Design</a></li>
-                <li><a href="">Wow!</a></li>
-                <li><a href="">Minicase</a></li>
-                <li><a href="">Fronte lago</a></li>
-                <li><a href="">Castelli</a></li>
-                <li><a href="">Piscine incredibili</a></li>
-                <li><a href="">Campagna</a></li>
-                <li><a href="">Luxe</a></li>
-                <li><a href="">Dimore storiche</a></li>
-                <li><a href="">Luoghi remoti</a></li>
-                <li><a href="">Ville</a></li>
-                <li><a href="">Stanze private</a></li>
-                <li><a href="">In cima al mondo</a></li>
-                <li><a href="">BnB</a></li>
-                <li><a href="">Agriturismi</a></li>
-                <li><a href="">Tropicali</a></li>
-                <li><a href="">Spiaggia</a></li>
-                <li><a href="">Grotte</a></li>
-                <li><a href="">Di tendenza</a></li>
-                <li><a href="">Città popolari</a></li>
-                <li><a href="">Polo nord</a></li>
-                <li><a href="">Spazi per giocare</a></li>
-                <li><a href="">Isole</a></li>
-                <li><a href="">Sull'acqua</a></li>
-                <li><a href="">Spazi creativi</a></li>
-                <li><a href="">Case galleggianti</a></li>
-                <li><a href="">Vigneti</a></li>
-                <li><a href="">Iurte</a></li>
-                <li><a href="">Case organiche</a></li>
-                <li><a href="">Torri</a></li>
-                <li><a href="">Cupole</a></li>
-                <li><a href="">Fienili</a></li>
-                <li><a href="">Ryokan</a></li>
+                <li class="mx-2"><a href="">Parchi nazionali</a></li>
+                <li class="mx-2"><a href="">Baite</a></li>
+                <li class="mx-2"><a href="">Viste mozzafiato</a></li>
+                <li class="mx-2"><a href="">Spazi accessibili</a></li>
+                <li class="mx-2"><a href="">Novità</a></li>
+                <li class="mx-2"><a href="">Sulle piste</a></li>
+                <li class="mx-2"><a href="">Case sull'albero</a></li>
+                <li class="mx-2"><a href="">Design</a></li>
+                <li class="mx-2"><a href="">Wow!</a></li>
+                <li class="mx-2"><a href="">Minicase</a></li>
+                <li class="mx-2"><a href="">Fronte lago</a></li>
+                <li class="mx-2"><a href="">Castelli</a></li>
+                <li class="mx-2"><a href="">Piscine incredibili</a></li>
+                <li class="mx-2"><a href="">Campagna</a></li>
+                <li class="mx-2"><a href="">Luxe</a></li>
+                <li class="mx-2"><a href="">Dimore storiche</a></li>
+                <li class="mx-2"><a href="">Luoghi remoti</a></li>
+                <li class="mx-2"><a href="">Ville</a></li>
+                <li class="mx-2"><a href="">Stanze private</a></li>
+                <li class="mx-2"><a href="">In cima al mondo</a></li>
+                <li class="mx-2"><a href="">BnB</a></li>
+                <li class="mx-2"><a href="">Agriturismi</a></li>
+                <li class="mx-2"><a href="">Tropicali</a></li>
+                <li class="mx-2"><a href="">Spiaggia</a></li>
+                <li class="mx-2"><a href="">Grotte</a></li>
+                <li class="mx-2"><a href="">Di tendenza</a></li>
+                <li class="mx-2"><a href="">Città popolari</a></li>
+                <li class="mx-2"><a href="">Polo nord</a></li>
+                <li class="mx-2"><a href="">Spazi per giocare</a></li>
+                <li class="mx-2"><a href="">Isole</a></li>
+                <li class="mx-2"><a href="">Sull'acqua</a></li>
+                <li class="mx-2"><a href="">Spazi creativi</a></li>
+                <li class="mx-2"><a href="">Case galleggianti</a></li>
+                <li class="mx-2"><a href="">Vigneti</a></li>
+                <li class="mx-2"><a href="">Iurte</a></li>
+                <li class="mx-2"><a href="">Case organiche</a></li>
+                <li class="mx-2"><a href="">Torri</a></li>
+                <li class="mx-2"><a href="">Cupole</a></li>
+                <li class="mx-2"><a href="">Fienili</a></li>
+                <li class="mx-2"><a href="">Ryokan</a></li>
             </ul>
         </div>
 </div>
@@ -83,6 +83,7 @@ export default {
         width: 100%;
         position: fixed;
         top: 80px;
+        padding: 0 10px;
     }
 
     .contenitore-logo {
@@ -131,19 +132,33 @@ export default {
 
 .navbar {
     background-color: #ffffff;
-    margin-top: 100px;
+    margin-top: 98px;
     position: fixed;
     top: 80px;
     border-top: 2px solid #717171;
+    height: 80px;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
+// ::-webkit-scrollbar {
+//   height: 0.5em !important;
+// }
 .navbar ul {
     padding: 0;
     margin: 0;
     list-style: none;
     display: flex;
-    flex-wrap: wrap;
     gap: 10px;
+
+    li {
+        height: 100%;
+        width: 130px;
+        text-align: center;
+    }
 }
+
+
 
 .navbar ul li a {
     text-decoration: none;
@@ -154,5 +169,6 @@ export default {
 .navbar ul li:hover {
     border-bottom: 2px solid #DDDDDD;
     cursor: pointer;
+    margin-bottom: -2px;
 }
 </style>

@@ -2009,163 +2009,243 @@ var staticRenderFns = [function () {
     staticClass: "hamburger"
   })])]), _vm._v(" "), _c("div", {
     staticClass: "navbar"
-  }, [_c("ul", [_c("li", [_c("a", {
+  }, [_c("ul", [_c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Parchi nazionali")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Parchi nazionali")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Baite")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Baite")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Viste mozzafiato")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Viste mozzafiato")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Spazi accessibili")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Spazi accessibili")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Novità")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Novità")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Sulle piste")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Sulle piste")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Case sull'albero")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Case sull'albero")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Design")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Design")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Wow!")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Wow!")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Minicase")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Minicase")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Fronte lago")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Fronte lago")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Castelli")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Castelli")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Piscine incredibili")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Piscine incredibili")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Campagna")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Campagna")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Luxe")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Luxe")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Dimore storiche")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Dimore storiche")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Luoghi remoti")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Luoghi remoti")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Ville")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Ville")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Stanze private")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Stanze private")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("In cima al mondo")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("In cima al mondo")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("BnB")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("BnB")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Agriturismi")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Agriturismi")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Tropicali")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Tropicali")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Spiaggia")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Spiaggia")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Grotte")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Grotte")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Di tendenza")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Di tendenza")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Città popolari")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Città popolari")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Polo nord")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Polo nord")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Spazi per giocare")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Spazi per giocare")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Isole")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Isole")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Sull'acqua")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Sull'acqua")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Spazi creativi")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Spazi creativi")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Case galleggianti")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Case galleggianti")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Vigneti")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Vigneti")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Iurte")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Iurte")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Case organiche")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Case organiche")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Torri")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Torri")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Cupole")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Cupole")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
-  }, [_vm._v("Fienili")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Fienili")])]), _vm._v(" "), _c("li", {
+    staticClass: "mx-2"
+  }, [_c("a", {
     attrs: {
       href: ""
     }
@@ -2203,73 +2283,73 @@ var staticRenderFns = [function () {
     staticClass: "singola-copertina"
   }, [_c("div", {
     staticClass: "immagini"
-  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")]), _vm._v(" "), _c("p", [_c("span", [_vm._v("€€€")]), _vm._v(" prezzo")])])]), _vm._v(" "), _c("div", {
     staticClass: "singola-copertina"
   }, [_c("div", {
     staticClass: "immagini"
-  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")]), _vm._v(" "), _c("p", [_c("span", [_vm._v("€€€")]), _vm._v(" prezzo")])])]), _vm._v(" "), _c("div", {
     staticClass: "singola-copertina"
   }, [_c("div", {
     staticClass: "immagini"
-  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")]), _vm._v(" "), _c("p", [_c("span", [_vm._v("€€€")]), _vm._v(" prezzo")])])]), _vm._v(" "), _c("div", {
     staticClass: "singola-copertina"
   }, [_c("div", {
     staticClass: "immagini"
-  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])])]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")]), _vm._v(" "), _c("p", [_c("span", [_vm._v("€€€")]), _vm._v(" prezzo")])])])]), _vm._v(" "), _c("div", {
     staticClass: "contenitore-copertine"
   }, [_c("div", {
     staticClass: "singola-copertina"
   }, [_c("div", {
     staticClass: "immagini"
-  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")]), _vm._v(" "), _c("p", [_c("span", [_vm._v("€€€")]), _vm._v(" prezzo")])])]), _vm._v(" "), _c("div", {
     staticClass: "singola-copertina"
   }, [_c("div", {
     staticClass: "immagini"
-  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")]), _vm._v(" "), _c("p", [_c("span", [_vm._v("€€€")]), _vm._v(" prezzo")])])]), _vm._v(" "), _c("div", {
     staticClass: "singola-copertina"
   }, [_c("div", {
     staticClass: "immagini"
-  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")]), _vm._v(" "), _c("p", [_c("span", [_vm._v("€€€")]), _vm._v(" prezzo")])])]), _vm._v(" "), _c("div", {
     staticClass: "singola-copertina"
   }, [_c("div", {
     staticClass: "immagini"
-  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])])]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")]), _vm._v(" "), _c("p", [_c("span", [_vm._v("€€€")]), _vm._v(" prezzo")])])])]), _vm._v(" "), _c("div", {
     staticClass: "contenitore-copertine"
   }, [_c("div", {
     staticClass: "singola-copertina"
   }, [_c("div", {
     staticClass: "immagini"
-  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")]), _vm._v(" "), _c("p", [_c("span", [_vm._v("€€€")]), _vm._v(" prezzo")])])]), _vm._v(" "), _c("div", {
     staticClass: "singola-copertina"
   }, [_c("div", {
     staticClass: "immagini"
-  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")]), _vm._v(" "), _c("p", [_c("span", [_vm._v("€€€")]), _vm._v(" prezzo")])])]), _vm._v(" "), _c("div", {
     staticClass: "singola-copertina"
   }, [_c("div", {
     staticClass: "immagini"
-  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")]), _vm._v(" "), _c("p", [_c("span", [_vm._v("€€€")]), _vm._v(" prezzo")])])]), _vm._v(" "), _c("div", {
     staticClass: "singola-copertina"
   }, [_c("div", {
     staticClass: "immagini"
-  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])])]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")]), _vm._v(" "), _c("p", [_c("span", [_vm._v("€€€")]), _vm._v(" prezzo")])])])]), _vm._v(" "), _c("div", {
     staticClass: "contenitore-copertine"
   }, [_c("div", {
     staticClass: "singola-copertina"
   }, [_c("div", {
     staticClass: "immagini"
-  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")]), _vm._v(" "), _c("p", [_c("span", [_vm._v("€€€")]), _vm._v(" prezzo")])])]), _vm._v(" "), _c("div", {
     staticClass: "singola-copertina"
   }, [_c("div", {
     staticClass: "immagini"
-  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")]), _vm._v(" "), _c("p", [_c("span", [_vm._v("€€€")]), _vm._v(" prezzo")])])]), _vm._v(" "), _c("div", {
     staticClass: "singola-copertina"
   }, [_c("div", {
     staticClass: "immagini"
-  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")]), _vm._v(" "), _c("p", [_c("span", [_vm._v("€€€")]), _vm._v(" prezzo")])])]), _vm._v(" "), _c("div", {
     staticClass: "singola-copertina"
   }, [_c("div", {
     staticClass: "immagini"
-  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])])])]);
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")]), _vm._v(" "), _c("p", [_c("span", [_vm._v("€€€")]), _vm._v(" prezzo")])])])])]);
 }];
 render._withStripped = true;
 
@@ -6676,7 +6756,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".contenitore-header[data-v-153bfd55] {\n  color: rgb(255, 255, 255);\n  background-color: #ffffff;\n  height: 100px;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  position: fixed;\n  top: 80px;\n}\n.contenitore-logo[data-v-153bfd55] {\n  width: 200px;\n}\n.contenitore-logo img[data-v-153bfd55] {\n  width: 150px;\n}\n.ricerca[data-v-153bfd55] {\n  background-color: #ffffff;\n  padding: 5px;\n  border-radius: 20px;\n  font-size: 1.2em;\n  border: 2px solid #DDDDDD;\n}\n.ricerca button[data-v-153bfd55] {\n  border: 0px #ffffff;\n  background-color: #ffffff;\n  color: #222222;\n  padding: 5px;\n  border-right: 2px solid #717171;\n}\n.ricerca #ospiti[data-v-153bfd55] {\n  color: #717171;\n  border-right: 0px;\n}\n.contenitore-affitta button[data-v-153bfd55] {\n  border: 0px;\n  padding: 10px;\n  background-color: #ffffff;\n}\n.contenitore-affitta button[data-v-153bfd55]:hover {\n  border-radius: 20px;\n  background-color: #f1efef;\n}\n.menu-hamburger .hamburger[data-v-153bfd55] {\n  width: 35px;\n  height: 5px;\n  background-color: black;\n  margin: 6px 0;\n}\n.navbar[data-v-153bfd55] {\n  background-color: #ffffff;\n  margin-top: 100px;\n  position: fixed;\n  top: 80px;\n  border-top: 2px solid #717171;\n}\n.navbar ul[data-v-153bfd55] {\n  padding: 0;\n  margin: 0;\n  list-style: none;\n  display: flex;\n  flex-wrap: wrap;\n  gap: 10px;\n}\n.navbar ul li a[data-v-153bfd55] {\n  text-decoration: none;\n  padding: 0;\n  color: #717171;\n}\n.navbar ul li[data-v-153bfd55]:hover {\n  border-bottom: 2px solid #DDDDDD;\n  cursor: pointer;\n}", ""]);
+exports.push([module.i, ".contenitore-header[data-v-153bfd55] {\n  color: rgb(255, 255, 255);\n  background-color: #ffffff;\n  height: 100px;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  position: fixed;\n  top: 80px;\n  padding: 0 10px;\n}\n.contenitore-logo[data-v-153bfd55] {\n  width: 200px;\n}\n.contenitore-logo img[data-v-153bfd55] {\n  width: 150px;\n}\n.ricerca[data-v-153bfd55] {\n  background-color: #ffffff;\n  padding: 5px;\n  border-radius: 20px;\n  font-size: 1.2em;\n  border: 2px solid #DDDDDD;\n}\n.ricerca button[data-v-153bfd55] {\n  border: 0px #ffffff;\n  background-color: #ffffff;\n  color: #222222;\n  padding: 5px;\n  border-right: 2px solid #717171;\n}\n.ricerca #ospiti[data-v-153bfd55] {\n  color: #717171;\n  border-right: 0px;\n}\n.contenitore-affitta button[data-v-153bfd55] {\n  border: 0px;\n  padding: 10px;\n  background-color: #ffffff;\n}\n.contenitore-affitta button[data-v-153bfd55]:hover {\n  border-radius: 20px;\n  background-color: #f1efef;\n}\n.menu-hamburger .hamburger[data-v-153bfd55] {\n  width: 35px;\n  height: 5px;\n  background-color: black;\n  margin: 6px 0;\n}\n.navbar[data-v-153bfd55] {\n  background-color: #ffffff;\n  margin-top: 98px;\n  position: fixed;\n  top: 80px;\n  border-top: 2px solid #717171;\n  height: 80px;\n  width: 100%;\n  overflow-x: scroll;\n  overflow-y: hidden;\n}\n.navbar ul[data-v-153bfd55] {\n  padding: 0;\n  margin: 0;\n  list-style: none;\n  display: flex;\n  gap: 10px;\n}\n.navbar ul li[data-v-153bfd55] {\n  height: 100%;\n  width: 130px;\n  text-align: center;\n}\n.navbar ul li a[data-v-153bfd55] {\n  text-decoration: none;\n  padding: 0;\n  color: #717171;\n}\n.navbar ul li[data-v-153bfd55]:hover {\n  border-bottom: 2px solid #DDDDDD;\n  cursor: pointer;\n  margin-bottom: -2px;\n}", ""]);
 
 // exports
 
@@ -6695,7 +6775,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".contenitore-home[data-v-782dcf83] {\n  padding-top: 350px;\n}\n.contenitore-home .contenitore-copertine[data-v-782dcf83] {\n  display: flex;\n  justify-content: space-around;\n  padding-top: 50px;\n}\n.contenitore-home .contenitore-copertine .immagini[data-v-782dcf83] {\n  border: 2px solid black;\n  height: 300px;\n  width: 300px;\n  border-radius: 20px;\n}", ""]);
+exports.push([module.i, ".contenitore-home[data-v-782dcf83] {\n  padding-top: 250px;\n}\n.contenitore-home .contenitore-copertine[data-v-782dcf83] {\n  display: flex;\n  justify-content: space-around;\n  padding-top: 50px;\n}\n.contenitore-home .contenitore-copertine .immagini[data-v-782dcf83] {\n  border: 2px solid black;\n  height: 300px;\n  width: 300px;\n  border-radius: 20px;\n}", ""]);
 
 // exports
 

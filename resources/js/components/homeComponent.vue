@@ -6,6 +6,7 @@
                     <div>
                         <h3>Roma, Italia</h3>
                         <p>Un po' di testo</p>
+                        <p><span>€€€</span> prezzo</p>
                     </div>
                 </div>
                 <div class="singola-copertina">
@@ -13,6 +14,7 @@
                     <div>
                         <h3>Roma, Italia</h3>
                         <p>Un po' di testo</p>
+                        <p><span>€€€</span> prezzo</p>
                     </div>
                 </div>
                 <div class="singola-copertina">
@@ -20,6 +22,7 @@
                     <div>
                         <h3>Roma, Italia</h3>
                         <p>Un po' di testo</p>
+                        <p><span>€€€</span> prezzo</p>
                     </div>
                 </div>
                 <div class="singola-copertina">
@@ -27,6 +30,7 @@
                     <div>
                         <h3>Roma, Italia</h3>
                         <p>Un po' di testo</p>
+                        <p><span>€€€</span> prezzo</p>
                     </div>
                 </div>
         </div>
@@ -36,6 +40,7 @@
                     <div>
                         <h3>Roma, Italia</h3>
                         <p>Un po' di testo</p>
+                        <p><span>€€€</span> prezzo</p>
                     </div>
                 </div>
                 <div class="singola-copertina">
@@ -43,6 +48,7 @@
                     <div>
                         <h3>Roma, Italia</h3>
                         <p>Un po' di testo</p>
+                        <p><span>€€€</span> prezzo</p>
                     </div>
                 </div>
                 <div class="singola-copertina">
@@ -50,6 +56,7 @@
                     <div>
                         <h3>Roma, Italia</h3>
                         <p>Un po' di testo</p>
+                        <p><span>€€€</span> prezzo</p>
                     </div>
                 </div>
                 <div class="singola-copertina">
@@ -57,6 +64,7 @@
                     <div>
                         <h3>Roma, Italia</h3>
                         <p>Un po' di testo</p>
+                        <p><span>€€€</span> prezzo</p>
                     </div>
                 </div>
         </div>
@@ -66,6 +74,7 @@
                     <div>
                         <h3>Roma, Italia</h3>
                         <p>Un po' di testo</p>
+                        <p><span>€€€</span> prezzo</p>
                     </div>
                 </div>
                 <div class="singola-copertina">
@@ -73,6 +82,7 @@
                     <div>
                         <h3>Roma, Italia</h3>
                         <p>Un po' di testo</p>
+                        <p><span>€€€</span> prezzo</p>
                     </div>
                 </div>
                 <div class="singola-copertina">
@@ -80,6 +90,7 @@
                     <div>
                         <h3>Roma, Italia</h3>
                         <p>Un po' di testo</p>
+                        <p><span>€€€</span> prezzo</p>
                     </div>
                 </div>
                 <div class="singola-copertina">
@@ -87,6 +98,7 @@
                     <div>
                         <h3>Roma, Italia</h3>
                         <p>Un po' di testo</p>
+                        <p><span>€€€</span> prezzo</p>
                     </div>
                 </div>
         </div>
@@ -96,6 +108,7 @@
                     <div>
                         <h3>Roma, Italia</h3>
                         <p>Un po' di testo</p>
+                        <p><span>€€€</span> prezzo</p>
                     </div>
                 </div>
                 <div class="singola-copertina">
@@ -103,6 +116,7 @@
                     <div>
                         <h3>Roma, Italia</h3>
                         <p>Un po' di testo</p>
+                        <p><span>€€€</span> prezzo</p>
                     </div>
                 </div>
                 <div class="singola-copertina">
@@ -110,6 +124,7 @@
                     <div>
                         <h3>Roma, Italia</h3>
                         <p>Un po' di testo</p>
+                        <p><span>€€€</span> prezzo</p>
                     </div>
                 </div>
                 <div class="singola-copertina">
@@ -117,6 +132,7 @@
                     <div>
                         <h3>Roma, Italia</h3>
                         <p>Un po' di testo</p>
+                        <p><span>€€€</span> prezzo</p>
                     </div>
                 </div>
         </div>
@@ -132,7 +148,7 @@ export default {
 <style lang="scss" scoped>
 
 .contenitore-home {
-    padding-top: 350px;
+    padding-top: 250px;
 }
 .contenitore-home .contenitore-copertine {
     display: flex;
