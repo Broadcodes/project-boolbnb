@@ -31,7 +31,51 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        return view('ura.apartments.create');
+
+        $categories = [
+            'Parchi nazionali',
+            'Baite',
+            'Viste mozzafiato',
+            'Spazi accessibili',
+            'Novità',
+            'Sulle piste',
+            'Case sull\'albero',
+            'Design',
+            'Wow!',
+            'Minicase',
+            'Fronte lago',
+            'Castelli',
+            'Piscine incredibili',
+            'Campagna',
+            'Luxe',
+            'Dimore storiche',
+            'Luoghi remoti',
+            'Ville',
+            'Stanze private',
+            'In cima al mondo',
+            'BnB',
+            'Agriturismi',
+            'Tropicali',
+            'Spiaggia',
+            'Grotte',
+            'Di tendenza',
+            'Città popolari',
+            'Polo nord',
+            'Spazi per giocare',
+            'Isole',
+            'Sull\'acqua',
+            'Spazi creativi',
+            'Case galleggianti',
+            'Vigneti',
+            'Iurte',
+            'Case organiche',
+            'Torri',
+            'Cupole',
+            'Fienili',
+            'Ryokan',
+        ];
+
+        return view('ura.apartments.create', compact('categories'));
     }
 
     /**
@@ -82,11 +126,7 @@ class ApartmentController extends Controller
 
         $apartment = new Apartment();
         $apartment->fill($dataApartment);
-
-
-        $apartment->visible = 0;  //test
-
-
+        $apartment->visible = true;
         $slug = Str::slug($apartment->apartment_title);
         $slug_base = $slug;
         $counter = 1;

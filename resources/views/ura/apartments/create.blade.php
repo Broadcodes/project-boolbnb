@@ -72,11 +72,9 @@
             <div class="p-3">
                 <label class="px-2" for="category">{{ __('Categoria') }}</label>
                 <select name="category" id="category">
-                    <option value="Campo vuoto">Campo vuoto</option>
-                    <option value="Campo vuoto">Campo vuoto</option>
-                    <option value="Campo vuoto">Campo vuoto</option>
-                    <option value="Campo vuoto">Campo vuoto</option>
-                    <option value="Campo vuoto">Campo vuoto</option>
+                    @foreach ($categories as $category)
+                        <option value="{{ $category }}">{{ $category }}</option>
+                    @endforeach
                 </select>
                 @error('category')
                     <h5 class="text-danger ml-4">{{ $message }}</h5>
@@ -86,13 +84,6 @@
                 <label class="px-2" for="price">{{ __('Prezzo') }}</label>
                 <input type="number" name="price" id="price" value="{{ old('price', '') }}">
                 @error('price')
-                    <h5 class="text-danger ml-4">{{ $message }}</h5>
-                @enderror
-            </div>
-            <div class="p-3">
-                <label class="px-2" for="visible">{{ __('Visibile') }}</label>
-                <input type="checkbox" name="visible" id="visible" value="{{ old('visible', '') }}">
-                @error('visible')
                     <h5 class="text-danger ml-4">{{ $message }}</h5>
                 @enderror
             </div>
