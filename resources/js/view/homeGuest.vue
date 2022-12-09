@@ -31,7 +31,6 @@ export default {
 // @import '../../../public/css/generics.scss';
 
       .contenitore-home {
-        height: 1000px;
         background-color: #ff385c;
     }
 </style>

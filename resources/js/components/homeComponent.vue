@@ -1,13 +1,124 @@
 <template>
     <div class="contenitore-home">
-        <div class="contenitore-copertina">
-
+        <div class="contenitore-copertine">
+            <div class="singola-copertina">
+                <div class="immagini"></div>
+                    <div>
+                        <h3>Roma, Italia</h3>
+                        <p>Un po' di testo</p>
+                    </div>
+                </div>
+                <div class="singola-copertina">
+                <div class="immagini"></div>
+                    <div>
+                        <h3>Roma, Italia</h3>
+                        <p>Un po' di testo</p>
+                    </div>
+                </div>
+                <div class="singola-copertina">
+                <div class="immagini"></div>
+                    <div>
+                        <h3>Roma, Italia</h3>
+                        <p>Un po' di testo</p>
+                    </div>
+                </div>
+                <div class="singola-copertina">
+                <div class="immagini"></div>
+                    <div>
+                        <h3>Roma, Italia</h3>
+                        <p>Un po' di testo</p>
+                    </div>
+                </div>
         </div>
-        <div class="contenitore-copertina">
-
+        <div class="contenitore-copertine">
+            <div class="singola-copertina">
+                <div class="immagini"></div>
+                    <div>
+                        <h3>Roma, Italia</h3>
+                        <p>Un po' di testo</p>
+                    </div>
+                </div>
+                <div class="singola-copertina">
+                <div class="immagini"></div>
+                    <div>
+                        <h3>Roma, Italia</h3>
+                        <p>Un po' di testo</p>
+                    </div>
+                </div>
+                <div class="singola-copertina">
+                <div class="immagini"></div>
+                    <div>
+                        <h3>Roma, Italia</h3>
+                        <p>Un po' di testo</p>
+                    </div>
+                </div>
+                <div class="singola-copertina">
+                <div class="immagini"></div>
+                    <div>
+                        <h3>Roma, Italia</h3>
+                        <p>Un po' di testo</p>
+                    </div>
+                </div>
         </div>
-        <div class="contenitore-copertina">
-
+        <div class="contenitore-copertine">
+            <div class="singola-copertina">
+                <div class="immagini"></div>
+                    <div>
+                        <h3>Roma, Italia</h3>
+                        <p>Un po' di testo</p>
+                    </div>
+                </div>
+                <div class="singola-copertina">
+                <div class="immagini"></div>
+                    <div>
+                        <h3>Roma, Italia</h3>
+                        <p>Un po' di testo</p>
+                    </div>
+                </div>
+                <div class="singola-copertina">
+                <div class="immagini"></div>
+                    <div>
+                        <h3>Roma, Italia</h3>
+                        <p>Un po' di testo</p>
+                    </div>
+                </div>
+                <div class="singola-copertina">
+                <div class="immagini"></div>
+                    <div>
+                        <h3>Roma, Italia</h3>
+                        <p>Un po' di testo</p>
+                    </div>
+                </div>
+        </div>
+        <div class="contenitore-copertine">
+            <div class="singola-copertina">
+                <div class="immagini"></div>
+                    <div>
+                        <h3>Roma, Italia</h3>
+                        <p>Un po' di testo</p>
+                    </div>
+                </div>
+                <div class="singola-copertina">
+                <div class="immagini"></div>
+                    <div>
+                        <h3>Roma, Italia</h3>
+                        <p>Un po' di testo</p>
+                    </div>
+                </div>
+                <div class="singola-copertina">
+                <div class="immagini"></div>
+                    <div>
+                        <h3>Roma, Italia</h3>
+                        <p>Un po' di testo</p>
+                    </div>
+                </div>
+                <div class="singola-copertina">
+                <div class="immagini"></div>
+                    <div>
+                        <h3>Roma, Italia</h3>
+                        <p>Un po' di testo</p>
+                    </div>
+                </div>
         </div>
     </div>
 </template>
@@ -19,7 +130,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    // .contenitore-home {
-    //     height: 85%;
-    // }
+
+.contenitore-home {
+    padding-top: 350px;
+}
+.contenitore-home .contenitore-copertine {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 50px;
+}
+   .contenitore-home .contenitore-copertine .immagini {
+    border: 2px solid black;
+    height: 300px;
+    width: 300px;
+    border-radius: 20px;
+   }
 </style>
