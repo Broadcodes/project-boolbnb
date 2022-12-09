@@ -2198,12 +2198,78 @@ var staticRenderFns = [function () {
   return _c("div", {
     staticClass: "contenitore-home"
   }, [_c("div", {
-    staticClass: "contenitore-copertina"
-  }), _vm._v(" "), _c("div", {
-    staticClass: "contenitore-copertina"
-  }), _vm._v(" "), _c("div", {
-    staticClass: "contenitore-copertina"
-  })]);
+    staticClass: "contenitore-copertine"
+  }, [_c("div", {
+    staticClass: "singola-copertina"
+  }, [_c("div", {
+    staticClass: "immagini"
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])]), _vm._v(" "), _c("div", {
+    staticClass: "singola-copertina"
+  }, [_c("div", {
+    staticClass: "immagini"
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])]), _vm._v(" "), _c("div", {
+    staticClass: "singola-copertina"
+  }, [_c("div", {
+    staticClass: "immagini"
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])]), _vm._v(" "), _c("div", {
+    staticClass: "singola-copertina"
+  }, [_c("div", {
+    staticClass: "immagini"
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])])]), _vm._v(" "), _c("div", {
+    staticClass: "contenitore-copertine"
+  }, [_c("div", {
+    staticClass: "singola-copertina"
+  }, [_c("div", {
+    staticClass: "immagini"
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])]), _vm._v(" "), _c("div", {
+    staticClass: "singola-copertina"
+  }, [_c("div", {
+    staticClass: "immagini"
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])]), _vm._v(" "), _c("div", {
+    staticClass: "singola-copertina"
+  }, [_c("div", {
+    staticClass: "immagini"
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])]), _vm._v(" "), _c("div", {
+    staticClass: "singola-copertina"
+  }, [_c("div", {
+    staticClass: "immagini"
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])])]), _vm._v(" "), _c("div", {
+    staticClass: "contenitore-copertine"
+  }, [_c("div", {
+    staticClass: "singola-copertina"
+  }, [_c("div", {
+    staticClass: "immagini"
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])]), _vm._v(" "), _c("div", {
+    staticClass: "singola-copertina"
+  }, [_c("div", {
+    staticClass: "immagini"
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])]), _vm._v(" "), _c("div", {
+    staticClass: "singola-copertina"
+  }, [_c("div", {
+    staticClass: "immagini"
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])]), _vm._v(" "), _c("div", {
+    staticClass: "singola-copertina"
+  }, [_c("div", {
+    staticClass: "immagini"
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])])]), _vm._v(" "), _c("div", {
+    staticClass: "contenitore-copertine"
+  }, [_c("div", {
+    staticClass: "singola-copertina"
+  }, [_c("div", {
+    staticClass: "immagini"
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])]), _vm._v(" "), _c("div", {
+    staticClass: "singola-copertina"
+  }, [_c("div", {
+    staticClass: "immagini"
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])]), _vm._v(" "), _c("div", {
+    staticClass: "singola-copertina"
+  }, [_c("div", {
+    staticClass: "immagini"
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])]), _vm._v(" "), _c("div", {
+    staticClass: "singola-copertina"
+  }, [_c("div", {
+    staticClass: "immagini"
+  }), _vm._v(" "), _c("div", [_c("h3", [_vm._v("Roma, Italia")]), _vm._v(" "), _c("p", [_vm._v("Un po' di testo")])])])])]);
 }];
 render._withStripped = true;
 
@@ -6629,7 +6695,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".contenitore-home[data-v-782dcf83] {\n  padding-top: 350px;\n}\n.contenitore-home .contenitore-copertine[data-v-782dcf83] {\n  display: flex;\n  justify-content: space-around;\n  padding-top: 50px;\n}\n.contenitore-home .contenitore-copertine .immagini[data-v-782dcf83] {\n  border: 2px solid black;\n  height: 300px;\n  width: 300px;\n  border-radius: 20px;\n}", ""]);
 
 // exports
 
@@ -6648,7 +6714,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".contenitore-home {\n  height: 1000px;\n  background-color: #ff385c;\n}", ""]);
+exports.push([module.i, ".contenitore-home {\n  background-color: #ff385c;\n}", ""]);
 
 // exports
 
