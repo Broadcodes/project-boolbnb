@@ -64,7 +64,7 @@
             </div>
             <div class="p-3">
                 <label class="px-2" for="sqm">{{ __('MQ') }}</label>
-                <input type="number" name="sqm" id="sqm" value="{{ old('sqm', '') }}">
+                <input type="number" name="sqm" id="sqm" step=".01" value="{{ old('sqm', '') }}">
                 @error('sqm')
                     <h5 class="text-danger ml-4">{{ $message }}</h5>
                 @enderror
@@ -82,7 +82,7 @@
             </div>
             <div class="p-3">
                 <label class="px-2" for="price">{{ __('Prezzo') }}</label>
-                <input type="number" name="price" id="price" value="{{ old('price', '') }}">
+                <input type="number" name="price" id="price" step=".01" value="{{ old('price', '') }}">
                 @error('price')
                     <h5 class="text-danger ml-4">{{ $message }}</h5>
                 @enderror
