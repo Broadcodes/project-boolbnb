@@ -23,7 +23,7 @@
                                     </a>
                                 </div>
                                 <div class="userActions w-50">
-                                    <a class="btn btn-primary" href="">Modifica</a> <!-- CRUD edit -->
+                                    <a class="btn btn-primary" href="{{ route('ura.apartments.edit', $apartment->apartment_slug) }}">Modifica</a> <!-- CRUD edit -->
                                     <form action="{{ route('ura.apartments.destroy', $apartment->apartment_slug)}}" method="POST">
                                     @csrf
                                     @method('DELETE')

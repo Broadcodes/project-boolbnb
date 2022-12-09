@@ -24,7 +24,7 @@
             </div>
             <div class="p-3">
                 <label class="px-2" for="description">{{ __('Descrizione') }}</label>
-                <textarea name="description" id="description" cols="30" rows="10"> {{ old('description', '') }} </textarea>
+                <textarea name="description" id="description" cols="30" rows="10">{{ old('description', '') }}</textarea>
                 @error('description')
                     <h5 class="text-danger ml-4">{{ $message }}</h5>
                 @enderror
