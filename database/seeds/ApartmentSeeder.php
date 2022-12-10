@@ -40,11 +40,12 @@ class ApartmentSeeder extends Seeder
             $apartment->sqm = 123.45;
             $apartment->category = $faker->word();
             $apartment->price = 123456.78;
-            $apartment->confirmed = false;
+            $apartment->visible = false;
             $apartment->apartment_images = $faker->imageUrl(640, 480, 'animals', true);
             $apartment->address = $faker->address();
             $apartment->civic_number = $faker->numberBetween(1,100);
-            $apartment->state = $faker->country();
+            $apartment->countrySubdivision = $faker->city();
+            $apartment->postalCode = $faker->randomNumber(5, true);
             $apartment->latitude = 12.3456789123;
             $apartment->longitude = 12.3456789123;
             $apartment->city = $faker->city();
