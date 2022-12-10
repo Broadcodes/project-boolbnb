@@ -227,6 +227,9 @@ class ApartmentController extends Controller
      */
     public function destroy(Apartment $apartment)
     {
+        if($apartment->apartment_images){
+            Storage::delete($apartment->apartment_images);
+        }
         $apartment->delete();
         return redirect()->route('ura.apartments.index');
     }
