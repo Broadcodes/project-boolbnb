@@ -6,7 +6,7 @@
 
         <div class="m-5">
             @if ($apartment->apartment_images)
-                <img class="img-fluid" src="{{ asset('storage/' . $apartment->apartment_images) }}"
+                <img class="img-fluid w-50" src="{{ asset('storage/' . $apartment->apartment_images) }}"
                     alt="{{ $apartment->apartment_title }}" />
             @else
                 <h6 class="mx-4">{{ __('Nessuna immagine presente') }}</h6>
