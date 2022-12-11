@@ -105,19 +105,23 @@
             </div>
 
             <div class="p-3">
-                @if ($apartment->apartment_images)
-                    <img class="img-fluid w-50" src="{{ asset('storage/' . $apartment->apartment_images) }}" alt="{{ $apartment->apartment_title }}" />
-                @else
-                    <h6 class="mx-4">{{ __('Nessuna immagine presente') }}</h6>
-                @endif
+                <div>
+                    @if ($apartment->apartment_images)
+                        <img class="img-fluid w-50" src="{{ asset('storage/' . $apartment->apartment_images) }}"
+                            alt="{{ $apartment->apartment_title }}" />
+                    @else
+                        <h6 class="mx-4">{{ __('Nessuna immagine presente') }}</h6>
+                    @endif
+                </div>
+                <div class="mt-4">
+                    <label class="px-2" for="apartment_images">{{ __('Immagine') }}</label>
+                    <input type="file" name="apartment_images" id="apartment_images"
+                        value="{{ old('apartment_images', $apartment->apartment_images) }}">
 
-                <label class="px-2" for="apartment_images">{{ __('Immagine') }}</label>
-                <input type="file" name="apartment_images" id="apartment_images"
-                    value="{{ old('apartment_images', $apartment->apartment_images) }}">
-
-                @error('apartment_images')
-                    <h5 class="text-danger ml-4">{{ $message }}</h5>
-                @enderror
+                    @error('apartment_images')
+                        <h5 class="text-danger ml-4">{{ $message }}</h5>
+                    @enderror
+                </div>
             </div>
 
             <div class="p-3">
