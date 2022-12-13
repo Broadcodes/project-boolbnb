@@ -2038,14 +2038,16 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", [_c("div", {
-    staticClass: "selection fixed-top align-items-center justify-content-around w-100"
+    staticClass: "selection fixed-top w-100"
   }, [_c("div", {
-    staticClass: "centerz"
-  }, [_c("h1", [_vm._v("\n                  where?\n              ")]), _vm._v(" "), _c("label", {
+    staticClass: "centerz d-flex align-items-center justify-content-center"
+  }, [_c("div", {
+    staticClass: "mx-2"
+  }, [_c("label", {
     attrs: {
       "for": "address"
     }
-  }, [_vm._v("address")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Address")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2065,11 +2067,13 @@ var render = function render() {
         _vm.address = $event.target.value;
       }
     }
-  }), _vm._v(" "), _c("label", {
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "mx-2"
+  }, [_c("label", {
     attrs: {
       "for": "country"
     }
-  }, [_vm._v("country")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Country")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2089,11 +2093,13 @@ var render = function render() {
         _vm.country = $event.target.value;
       }
     }
-  }), _vm._v(" "), _c("label", {
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "mx-2"
+  }, [_c("label", {
     attrs: {
       "for": "city"
     }
-  }, [_vm._v("city")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("City")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2113,14 +2119,17 @@ var render = function render() {
         _vm.city = $event.target.value;
       }
     }
-  }), _vm._v(" "), _c("button", {
+  })]), _vm._v(" "), _c("button", {
+    staticClass: "mx-2",
     on: {
       click: function click($event) {
         return _vm.setWhere();
       }
     }
-  }, [_vm._v("search")])]), _vm._v(" "), _c("div", [_c("div", {
-    staticClass: "d-flex align-items-center justify-content-around w-100"
+  }, [_c("i", {
+    staticClass: "fa-solid fa-magnifying-glass"
+  })])]), _vm._v(" "), _c("div", [_c("div", {
+    staticClass: "categoryArea d-flex align-items-center justify-content-around w-100"
   }, [_c("div", {
     staticClass: "flex-column text-center"
   }, [_c("button", {
@@ -2421,7 +2430,7 @@ var render = function render() {
       setCategory: _vm.getCategoryCondition
     }
   })], 1), _vm._v(" "), _c("div", {
-    staticClass: "apartment_container"
+    staticClass: "apartment_container container-fluid mx-5 px-5"
   }, [_vm.filteredData ? _c("div", _vm._l(_vm.apartments, function (apartment) {
     return _c("div", {
       key: apartment.id
@@ -6820,7 +6829,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".centerz[data-v-263f772b] {\n  text-align: center;\n}\nbutton[data-v-263f772b] {\n  text-decoration: none;\n  border: none;\n}", ""]);
+exports.push([module.i, ".centerz[data-v-263f772b] {\n  position: relative;\n  top: -50px;\n}\nbutton[data-v-263f772b] {\n  text-decoration: none;\n  border: none;\n  background-color: rgba(255, 255, 255, 0);\n}\n.categoryArea[data-v-263f772b] {\n  position: relative;\n  top: -10px;\n}", ""]);
 
 // exports
 
@@ -51133,8 +51142,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\boolBnB_project\resources\js\homeGuest.js */"./resources/js/homeGuest.js");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\boolBnB_project\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Gianluca Fabrizio\Desktop\Boolean\1 - Esercizi\56_project-boolbnb\resources\js\homeGuest.js */"./resources/js/homeGuest.js");
+module.exports = __webpack_require__(/*! C:\Users\Gianluca Fabrizio\Desktop\Boolean\1 - Esercizi\56_project-boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

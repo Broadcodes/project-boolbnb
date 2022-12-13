@@ -21,13 +21,13 @@
 
 <body>
     <nav class="navbar navbar-expand-lg bg-light fixed-top">
-        <div class="d-flex align-items-center justify-content-around w-100">
+        <div class="d-flex align-items-center justify-content-between w-100">
             <div class="logo-area">
                 <a href="index.html"><img id="logo" src="img/Airbnb_Logo.svg" alt="logo"></a>
             </div>
 
 
-            <ul class="d-flex">
+            <ul class="d-flex m-0">
                 <li class="nav-item">
                     <a class="btn btn-lg" href="{{ route('login') }}">Login</a>
                 </li>

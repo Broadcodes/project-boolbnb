@@ -5,7 +5,7 @@
 
         </div>
 
-        <div class="apartment_container">
+        <div class="apartment_container container-fluid mx-5 px-5">
                     <div v-if="filteredData">
                         <div v-for="apartment in apartments" :key="apartment.id">
                             {{apartment.address}}

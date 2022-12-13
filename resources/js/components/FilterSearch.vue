@@ -1,102 +1,113 @@
 <template>
-  <div>
+    <div>
 
-    <div class="selection fixed-top align-items-center justify-content-around w-100">
+        <div class="selection fixed-top w-100">
 
-        <div class="centerz">
-                <h1>
-                    where?
-                </h1>
-                <label for="address">address</label>
-                <input type="text" name="address" v-model="address">
-                <label for="country">country</label>
-                <input type="text" name="country" v-model="country">
-                <label for="city">city</label>
-                <input type="text" name="city" v-model="city">
-                <button @click="setWhere()">search</button>
+            <div class="centerz d-flex align-items-center justify-content-center">
 
+                <div class="mx-2">
+                    <label for="address">Address</label>
+                    <input type="text" name="address" v-model="address">
+                </div>
+                <div class="mx-2">
+                    <label for="country">Country</label>
+                    <input type="text" name="country" v-model="country">
+                </div>
+                <div class="mx-2">
+                    <label for="city">City</label>
+                    <input type="text" name="city" v-model="city">
+                </div>
+                <button class="mx-2" @click="setWhere()"><i class="fa-solid fa-magnifying-glass"></i></button>
 
-        </div>
-        <div>
-            <div class=" d-flex align-items-center justify-content-around w-100">
+            </div>
+            <div>
+                <div class="categoryArea d-flex align-items-center justify-content-around w-100">
 
                     <div class="flex-column text-center">
-                        <button @click="setCategory('Parchi nazionali')"><span class="flex-column"><i class="fa-solid fa-mountain-sun"></i></span>
+                        <button @click="setCategory('Parchi nazionali')"><span class="flex-column"><i
+                                    class="fa-solid fa-mountain-sun"></i></span>
                             <p>Montagna</p>
                         </button>
                     </div>
 
                     <div class="flex-column text-center">
-                        <button @click="setCategory('qui')" ><span class="flex-column"><i class="fa-solid fa-house-crack"></i></span>
+                        <button @click="setCategory('qui')"><span class="flex-column"><i
+                                    class="fa-solid fa-house-crack"></i></span>
                             <p>Baite</p>
                         </button>
                     </div>
 
                     <div class="flex-column text-center">
-                        <button @click="setCategory('nobis')"><span class="flex-column"><i class="fa-solid fa-campground"></i></span>
+                        <button @click="setCategory('nobis')"><span class="flex-column"><i
+                                    class="fa-solid fa-campground"></i></span>
                             <p>Campagna</p>
                         </button>
                     </div>
 
                     <div class="flex-column text-center">
-                        <button @click="setCategory('et')"><span class="flex-column"><i class="fa-solid fa-panorama"></i></span>
+                        <button @click="setCategory('et')"><span class="flex-column"><i
+                                    class="fa-solid fa-panorama"></i></span>
                             <p>Viste mozzafiato</p>
                         </button>
                     </div>
 
                     <div class="flex-column text-center">
-                        <button @click="setCategory('Sulle piste')"><span class="flex-column"><i class="fa-solid fa-person-skiing"></i></span>
+                        <button @click="setCategory('Sulle piste')"><span class="flex-column"><i
+                                    class="fa-solid fa-person-skiing"></i></span>
                             <p>Sulle piste</p>
                         </button>
                     </div>
 
                     <div class="flex-column text-center">
-                        <button @click="setCategory('Luoghi remoti')"><span class="flex-column"><i class="fa-solid fa-igloo"></i></span>
+                        <button @click="setCategory('Luoghi remoti')"><span class="flex-column"><i
+                                    class="fa-solid fa-igloo"></i></span>
                             <p>Igloo</p>
                         </button>
                     </div>
 
                     <div class="flex-column text-center">
-                        <button @click="setCategory('Di tendenza')"><span class="flex-column"><i class="fa-solid fa-city"></i></span>
+                        <button @click="setCategory('Di tendenza')"><span class="flex-column"><i
+                                    class="fa-solid fa-city"></i></span>
                             <p>Città</p>
                         </button>
                     </div>
 
                     <div class="flex-column text-center">
-                        <button @click="setCategory('Dimore storiche')"><span class="flex-column"><i class="fa-solid fa-landmark"></i></span>
+                        <button @click="setCategory('Dimore storiche')"><span class="flex-column"><i
+                                    class="fa-solid fa-landmark"></i></span>
                             <p>Città d'Arte</p>
                         </button>
                     </div>
 
                 </div>
+            </div>
         </div>
+
+
+
     </div>
-
-
-
-  </div>
 </template>
 
 <script>
 export default {
-    name:'FilterSearch',
-    data(){
-        return{
-            address:'',
-            country:'',
-            city:''
+    name: 'FilterSearch',
+    data() {
+        return {
+            address: '',
+            country: '',
+            city: ''
 
         }
     },
-    methods:{
-        setWhere(){
+    methods: {
+        setWhere() {
             let array = [];
-            array.push(this.address,this.country,this.city);
+            array.push(this.address, this.country, this.city);
             console.log('hey');
             console.log(array);
             this.$emit('whereCondition', array)
         },
-        setCategory(input){
+        setCategory(input) {
             console.log(input)
 
             this.$emit('setCategory', input)
@@ -108,13 +119,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.centerz{
-    text-align: center;
-}
-button{
-    text-decoration: none;
-    border: none;
+.centerz {
+    position: relative;
+    top: -50px;
 }
 
+button {
+    text-decoration: none;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.categoryArea{
+    position: relative;
+    top: -10px;
+}
 
 </style>
