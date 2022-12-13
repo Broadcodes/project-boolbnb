@@ -1923,7 +1923,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_HomeComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/HomeComponent.vue */ "./resources/js/components/HomeComponent.vue");
+/* harmony import */ var _components_HomeComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/HomeComponent */ "./resources/js/components/HomeComponent.vue");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "homeGuest",
@@ -1935,7 +1935,7 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   components: {
-    HomeComponent: _components_HomeComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    HomeComponent: _components_HomeComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
 });
 
