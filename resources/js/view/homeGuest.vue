@@ -1,13 +1,11 @@
 <template>
     <div>
-        <HeaderComponent />
         <HomeComponent />
     </div>
 </template>
 
 <script>
 
-import HeaderComponent from '../components/HeaderComponent.vue';
 import HomeComponent from '../components/HomeComponent.vue';
 
 export default {
@@ -20,7 +18,6 @@ export default {
         });
     },
     components: {
-        HeaderComponent,
         HomeComponent
     }
 }
@@ -28,9 +25,4 @@ export default {
 
 <style lang="scss">
 
-// @import '../../../public/css/generics.scss';
-
-      .contenitore-home {
-        background-color: #ff385c;
-    }
 </style>

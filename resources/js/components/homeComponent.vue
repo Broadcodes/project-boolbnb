@@ -1,140 +1,61 @@
 <template>
-    <div class="contenitore-home">
-        <div class="contenitore-copertine">
-            <div class="singola-copertina">
-                <div class="immagini"></div>
-                    <div>
-                        <h3>Roma, Italia</h3>
-                        <p>Un po' di testo</p>
-                        <p><span>€€€</span> prezzo</p>
-                    </div>
+    <div class="mx-5 px-5">
+        <!-- CARD SECTION -->
+
+        <div class="container-fluid carte">
+            <div class="row">
+
+                <div class="col-3">
+                    <a href="#"><img src="img/casa_campagna.jpeg" class="img-fluid rounded" alt="">
+                        <p class="text-center mt-2">Case in campagna</p>
+                    </a>
                 </div>
-                <div class="singola-copertina">
-                <div class="immagini"></div>
-                    <div>
-                        <h3>Roma, Italia</h3>
-                        <p>Un po' di testo</p>
-                        <p><span>€€€</span> prezzo</p>
-                    </div>
+
+                <div class="col-3">
+                    <a href="#"><img src="img/casa_mare.jpeg" class="img-fluid rounded" alt="">
+                        <p class="text-center mt-2">Case al Mare</p>
+                    </a>
                 </div>
-                <div class="singola-copertina">
-                <div class="immagini"></div>
-                    <div>
-                        <h3>Roma, Italia</h3>
-                        <p>Un po' di testo</p>
-                        <p><span>€€€</span> prezzo</p>
-                    </div>
+
+                <div class="col-3">
+                    <a href="#"><img src="img/Igloo1.jpeg" class="img-fluid rounded" alt="">
+                        <p class="text-center mt-2">Igloo</p>
+                    </a>
                 </div>
-                <div class="singola-copertina">
-                <div class="immagini"></div>
-                    <div>
-                        <h3>Roma, Italia</h3>
-                        <p>Un po' di testo</p>
-                        <p><span>€€€</span> prezzo</p>
-                    </div>
+
+                <div class="col-3">
+                    <a href="#"><img src="img/casa_montagna.jpeg" class="img-fluid rounded" alt="">
+                        <p class="text-center mt-2">Case in Montagna</p>
+                    </a>
                 </div>
-        </div>
-        <div class="contenitore-copertine">
-            <div class="singola-copertina">
-                <div class="immagini"></div>
-                    <div>
-                        <h3>Roma, Italia</h3>
-                        <p>Un po' di testo</p>
-                        <p><span>€€€</span> prezzo</p>
-                    </div>
+
+                <div class="col-3">
+                    <a href="#"><img src="img/campeggio-italia.webp" class="img-fluid rounded" alt="">
+                        <p class="text-center mt-2">Campeggio</p>
+                    </a>
                 </div>
-                <div class="singola-copertina">
-                <div class="immagini"></div>
-                    <div>
-                        <h3>Roma, Italia</h3>
-                        <p>Un po' di testo</p>
-                        <p><span>€€€</span> prezzo</p>
-                    </div>
+
+                <div class="col-3">
+                    <a href="#"><img src="img/citta.jpeg" class="img-fluid rounded" alt="">
+                        <p class="text-center mt-2">Case in Città</p>
+                    </a>
                 </div>
-                <div class="singola-copertina">
-                <div class="immagini"></div>
-                    <div>
-                        <h3>Roma, Italia</h3>
-                        <p>Un po' di testo</p>
-                        <p><span>€€€</span> prezzo</p>
-                    </div>
+
+                <div class="col-3">
+                    <a href="#"><img src="img/Roma.jpeg" class="img-fluid rounded" alt="">
+                        <p class="text-center mt-2">Città d'arte</p>
+                    </a>
                 </div>
-                <div class="singola-copertina">
-                <div class="immagini"></div>
-                    <div>
-                        <h3>Roma, Italia</h3>
-                        <p>Un po' di testo</p>
-                        <p><span>€€€</span> prezzo</p>
-                    </div>
+
+                <div class="col-3">
+                    <a href="#"><img src="img/panorama.jpeg" class="img-fluid rounded" alt="">
+                        <p class="text-center mt-2">Vista mozzafiato</p>
+                    </a>
                 </div>
-        </div>
-        <div class="contenitore-copertine">
-            <div class="singola-copertina">
-                <div class="immagini"></div>
-                    <div>
-                        <h3>Roma, Italia</h3>
-                        <p>Un po' di testo</p>
-                        <p><span>€€€</span> prezzo</p>
-                    </div>
-                </div>
-                <div class="singola-copertina">
-                <div class="immagini"></div>
-                    <div>
-                        <h3>Roma, Italia</h3>
-                        <p>Un po' di testo</p>
-                        <p><span>€€€</span> prezzo</p>
-                    </div>
-                </div>
-                <div class="singola-copertina">
-                <div class="immagini"></div>
-                    <div>
-                        <h3>Roma, Italia</h3>
-                        <p>Un po' di testo</p>
-                        <p><span>€€€</span> prezzo</p>
-                    </div>
-                </div>
-                <div class="singola-copertina">
-                <div class="immagini"></div>
-                    <div>
-                        <h3>Roma, Italia</h3>
-                        <p>Un po' di testo</p>
-                        <p><span>€€€</span> prezzo</p>
-                    </div>
-                </div>
-        </div>
-        <div class="contenitore-copertine">
-            <div class="singola-copertina">
-                <div class="immagini"></div>
-                    <div>
-                        <h3>Roma, Italia</h3>
-                        <p>Un po' di testo</p>
-                        <p><span>€€€</span> prezzo</p>
-                    </div>
-                </div>
-                <div class="singola-copertina">
-                <div class="immagini"></div>
-                    <div>
-                        <h3>Roma, Italia</h3>
-                        <p>Un po' di testo</p>
-                        <p><span>€€€</span> prezzo</p>
-                    </div>
-                </div>
-                <div class="singola-copertina">
-                <div class="immagini"></div>
-                    <div>
-                        <h3>Roma, Italia</h3>
-                        <p>Un po' di testo</p>
-                        <p><span>€€€</span> prezzo</p>
-                    </div>
-                </div>
-                <div class="singola-copertina">
-                <div class="immagini"></div>
-                    <div>
-                        <h3>Roma, Italia</h3>
-                        <p>Un po' di testo</p>
-                        <p><span>€€€</span> prezzo</p>
-                    </div>
-                </div>
+
+
+            </div>
+
         </div>
     </div>
 </template>
@@ -146,19 +67,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.carte {
+    margin-top: 220px;
 
-.contenitore-home {
-    padding-top: 250px;
+    a {
+        transition: 0.1s;
+
+        &:hover {
+            opacity: 80%;
+        }
+    }
 }
-.contenitore-home .contenitore-copertine {
-    display: flex;
-    justify-content: space-around;
-    padding-top: 50px;
-}
-   .contenitore-home .contenitore-copertine .immagini {
-    border: 2px solid black;
-    height: 300px;
-    width: 300px;
-    border-radius: 20px;
-   }
 </style>

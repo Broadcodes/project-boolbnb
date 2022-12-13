@@ -4,6 +4,7 @@
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 body {
@@ -12,6 +13,49 @@ body {
 
 img {
   width: 100%;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: gray;
+}
+
+#logo {
+  width: 200px;
+  height: 50px;
+}
+
+.div a {
+  text-decoration: none;
+  color: black;
+}
+
+.selection {
+  margin-top: 80px !important;
+  height: auto;
+  text-decoration: none;
+  color: black;
+  padding-top: 25px;
+  background-color: white;
+  border-bottom: 1px solid lightgray;
+}
+
+.selection a {
+  text-decoration: none;
+  color: #727171;
+  transition: 0.5s;
+}
+
+.selection a:hover {
+  color: black;
 }
 
 /*!
@@ -10989,6 +11033,32 @@ a.text-dark:focus {
 
 .nc-accountInfo .nc-userAction p {
   font-size: 2.5rem;
+}
+
+.generalInfo {
+  -moz-column-gap: 0.8rem;
+       column-gap: 0.8rem;
+}
+
+.cardsContainer {
+  row-gap: 0.7rem;
+}
+
+.cardsContainer .hello {
+  display: flex;
+  justify-content: center;
+}
+
+.cardsContainer .apartmentCard {
+  width: 40vw;
+  background-color: #ccc;
+  box-shadow: 10px 5px 5px #a6a6a6;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+
+.cardsContainer .apartmentCard .apartmentTitle {
+  font-size: 0.9rem;
 }
 
 /**********************************/

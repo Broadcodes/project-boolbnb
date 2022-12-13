@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 body {
@@ -14,4 +15,43 @@ img {
 
 li {
     list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+        color: gray;
+    }
+}
+
+#logo {
+    width: 200px;
+    height: 50px;
+}
+
+.div a {
+    text-decoration: none;
+    color: black;
+}
+
+.selection {
+    margin-top: 80px !important;
+    height: auto;
+    text-decoration: none;
+    color: black;
+    padding-top: 25px;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+
+    a {
+        text-decoration: none;
+        color: #727171;
+        transition: 0.5s;
+
+        &:hover {
+            color: black;
+        }
+    }
 }
