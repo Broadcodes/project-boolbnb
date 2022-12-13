@@ -26,13 +26,7 @@
                 <a href="index.html"><img id="logo" src="img/Airbnb_Logo.svg" alt="logo"></a>
             </div>
 
-            <div class="d-flex">
-                <input type="text" placeholder="Dove?" aria-label="" class="form-control text-center rounded-5">
-                <input placeholder="Quando?" class="ms-1 mx-3 form-control text-center rounded-5" type="text"
-                    onfocus="(this.type='date')" onblur="(this.type='text')" id="date" />
-                <button type="button" class="ms-1 btn btn-light rounded-5"><i
-                        class="fa-solid fa-magnifying-glass"></i></button>
-            </div>
+
             <ul class="d-flex">
                 <li class="nav-item">
                     <a class="btn btn-lg" href="{{ route('login') }}">Login</a>
@@ -46,56 +40,7 @@
 
     <!-- TYPE NAVBAR -->
 
-    <div class="selection fixed-top d-flex align-items-center justify-content-around w-100">
-        <div class="flex-column text-center">
-            <a href=""><span class="flex-column"><i class="fa-solid fa-mountain-sun"></i></span>
-                <p>Montagna</p>
-            </a>
-        </div>
 
-        <div class="flex-column text-center">
-            <a href=""><span class="flex-column"><i class="fa-solid fa-house-crack"></i></span>
-                <p>Baite</p>
-            </a>
-        </div>
-
-        <div class="flex-column text-center">
-            <a href=""><span class="flex-column"><i class="fa-solid fa-campground"></i></span>
-                <p>Campeggio</p>
-            </a>
-        </div>
-
-        <div class="flex-column text-center">
-            <a href=""><span class="flex-column"><i class="fa-solid fa-panorama"></i></span>
-                <p>Panorama</p>
-            </a>
-        </div>
-
-        <div class="flex-column text-center">
-            <a href=""><span class="flex-column"><i class="fa-solid fa-person-skiing"></i></span>
-                <p>Sulle piste</p>
-            </a>
-        </div>
-
-        <div class="flex-column text-center">
-            <a href=""><span class="flex-column"><i class="fa-solid fa-igloo"></i></span>
-                <p>Igloo</p>
-            </a>
-        </div>
-
-        <div class="flex-column text-center">
-            <a href=""><span class="flex-column"><i class="fa-solid fa-city"></i></span>
-                <p>Città</p>
-            </a>
-        </div>
-
-        <div class="flex-column text-center">
-            <a href=""><span class="flex-column"><i class="fa-solid fa-landmark"></i></span>
-                <p>Città d'Arte</p>
-            </a>
-        </div>
-
-    </div>
     @yield('content')
 </body>
 
