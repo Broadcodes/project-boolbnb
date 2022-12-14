@@ -38,7 +38,7 @@
                 <label class="px-2" for="bedrooms">{{ __('Numero di stanze') }}</label>
                 <select name="bedrooms" id="bedrooms">
                     @for ($i = 1; $i <= 10; $i++)
-                        <option value="{{ $i }}" {{ old('bedrooms') == $i ? 'selected' : '' }}>
+                        <option value="{{ $i }}" {{ $apartment->bedrooms == $i ? 'selected' : '' }}>
                             {{ $i }}</option>
                     @endfor
                 </select>
@@ -51,7 +51,7 @@
                 <label class="px-2" for="bed">{{ __('Numero di letti') }}</label>
                 <select name="bed" id="bed">
                     @for ($i = 1; $i <= 10; $i++)
-                        <option value="{{ $i }}" {{ old('bed') == $i ? 'selected' : '' }}>{{ $i }}
+                        <option value="{{ $i }}" {{ $apartment->bed == $i ? 'selected' : '' }}>{{ $i }}
                         </option>
                     @endfor
                 </select>
@@ -64,7 +64,7 @@
                 <label class="px-2" for="bathrooms">{{ __('Numero di bagni') }}</label>
                 <select name="bathrooms" id="bathrooms">
                     @for ($i = 1; $i <= 10; $i++)
-                        <option value="{{ $i }}" {{ old('bathrooms') == $i ? 'selected' : '' }}>
+                        <option value="{{ $i }}" {{ $apartment->bathrooms == $i ? 'selected' : '' }}>
                             {{ $i }}</option>
                     @endfor
                 </select>
