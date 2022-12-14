@@ -1908,6 +1908,8 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_searchBoxComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/searchBoxComponent.vue */ "./resources/js/components/searchBoxComponent.vue");
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'FilterSearch',
   data: function data() {
@@ -1921,14 +1923,19 @@ __webpack_require__.r(__webpack_exports__);
     setWhere: function setWhere() {
       var array = [];
       array.push(this.address, this.country, this.city);
-      console.log('hey');
-      console.log(array);
       this.$emit('whereCondition', array);
     },
     setCategory: function setCategory(input) {
       console.log(input);
       this.$emit('setCategory', input);
+    },
+    getPosition: function getPosition(data) {
+      this.$emit('coordinate', data); //data:object
     }
+  },
+
+  components: {
+    searchBoxComponent: _components_searchBoxComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
 });
 
@@ -1945,6 +1952,49 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'homeComponent'
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/searchBoxComponent.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/searchBoxComponent.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'searchBoxComponent',
+  data: function data() {
+    return {};
+  },
+  mounted: function mounted() {
+    this.getPosition();
+  },
+  methods: {
+    getPosition: function getPosition() {
+      var options = {
+        searchOptions: {
+          key: 'APoE4D1CGAlRGOWQcaSfdelLIwY944gV',
+          language: 'en-GB',
+          limit: 5
+        },
+        autocompleteOptions: {
+          key: 'APoE4D1CGAlRGOWQcaSfdelLIwY944gV',
+          language: 'en-GB'
+        }
+      };
+      var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
+      var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
+      ttSearchBox.on('tomtom.searchbox.resultsfound', this.boh);
+      document.body.append(searchBoxHTML);
+    },
+    boh: function boh(data) {
+      this.$emit('setPosition', data.data.results.fuzzySearch.results[0].position);
+    }
+  }
 });
 
 /***/ }),
@@ -1983,8 +2033,9 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
       axios.get("/api/apiHome").then(function (response) {
         if (response.data.success) {
-          console.log(response.data);
           _this.apartments = response.data.results;
+          _this.apartmentToShow = response.data.results;
+          console.log(_this.apartmentToShow);
         }
       });
     },
@@ -2005,7 +2056,6 @@ __webpack_require__.r(__webpack_exports__);
       this.apartmentToShow = [];
       this.apartments.forEach(function (element) {
         if (element.address.toLowerCase().includes(_this2.addressCondition.toLowerCase() || element.address.toLowerCase() === _this2.addressCondition.toLowerCase) || element.countrySubdivision.toLowerCase().includes(_this2.countryCondition.toLowerCase() || element.countrySubdivision.toLowerCase() === _this2.countryCondition.toLowerCase) || element.city.toLowerCase().includes(_this2.cityCondition.toLowerCase() || element.city.toLowerCase() === _this2.cityCondition.toLowerCase()) || element.category === _this2.currentCategory) {
-          _this2.apartmentToShow = [];
           _this2.apartmentToShow.push(element);
           _this2.filteredData = false;
         }
@@ -2013,7 +2063,15 @@ __webpack_require__.r(__webpack_exports__);
     },
     getBack: function getBack() {
       this.filteredData = true;
-      this.apartmentToShow = [];
+      this.apartmentToShow = this.apartments;
+    },
+    sentCoordinate: function sentCoordinate(data) {
+      console.log(data);
+      axios.get('/api/coordinate', data.lat).then(function (response) {
+        if (response.data) {
+          console.log(response);
+        }
+      });
     }
   },
   components: {
@@ -2143,7 +2201,7 @@ var render = function render() {
   }, [_c("button", {
     on: {
       click: function click($event) {
-        return _vm.setCategory("qui");
+        return _vm.setCategory("Baite");
       }
     }
   }, [_vm._m(1), _vm._v(" "), _c("p", [_vm._v("Baite")])])]), _vm._v(" "), _c("div", {
@@ -2151,7 +2209,7 @@ var render = function render() {
   }, [_c("button", {
     on: {
       click: function click($event) {
-        return _vm.setCategory("nobis");
+        return _vm.setCategory("Campagna");
       }
     }
   }, [_vm._m(2), _vm._v(" "), _c("p", [_vm._v("Campagna")])])]), _vm._v(" "), _c("div", {
@@ -2159,7 +2217,7 @@ var render = function render() {
   }, [_c("button", {
     on: {
       click: function click($event) {
-        return _vm.setCategory("et");
+        return _vm.setCategory("Viste mozzafiato");
       }
     }
   }, [_vm._m(3), _vm._v(" "), _c("p", [_vm._v("Viste mozzafiato")])])]), _vm._v(" "), _c("div", {
@@ -2183,7 +2241,7 @@ var render = function render() {
   }, [_c("button", {
     on: {
       click: function click($event) {
-        return _vm.setCategory("Di tendenza");
+        return _vm.setCategory("Città popolari");
       }
     }
   }, [_vm._m(6), _vm._v(" "), _c("p", [_vm._v("Città")])])]), _vm._v(" "), _c("div", {
@@ -2194,7 +2252,11 @@ var render = function render() {
         return _vm.setCategory("Dimore storiche");
       }
     }
-  }, [_vm._m(7), _vm._v(" "), _c("p", [_vm._v("Città d'Arte")])])])])])])]);
+  }, [_vm._m(7), _vm._v(" "), _c("p", [_vm._v("Città d'Arte")])])])])]), _vm._v(" "), _c("div", [_c("searchBoxComponent", {
+    on: {
+      setPosition: _vm.getPosition
+    }
+  })], 1)])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -2410,6 +2472,28 @@ render._withStripped = true;
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/searchBoxComponent.vue?vue&type=template&id=7ce7a1c5&":
+/*!***************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/searchBoxComponent.vue?vue&type=template&id=7ce7a1c5& ***!
+  \***************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div");
+};
+var staticRenderFns = [];
+render._withStripped = true;
+
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/view/homeGuest.vue?vue&type=template&id=871cb066&":
 /*!************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/view/homeGuest.vue?vue&type=template&id=871cb066& ***!
@@ -2427,7 +2511,8 @@ var render = function render() {
   return _c("div", [_c("div", [_c("FilterSearch", {
     on: {
       whereCondition: _vm.getWhereCondition,
-      setCategory: _vm.getCategoryCondition
+      setCategory: _vm.getCategoryCondition,
+      coordinate: _vm.sentCoordinate
     }
   })], 1), _vm._v(" "), _c("div", {
     staticClass: "apartment_container container-fluid mx-5 px-5"
@@ -51015,6 +51100,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/searchBoxComponent.vue":
+/*!********************************************************!*\
+  !*** ./resources/js/components/searchBoxComponent.vue ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _searchBoxComponent_vue_vue_type_template_id_7ce7a1c5___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./searchBoxComponent.vue?vue&type=template&id=7ce7a1c5& */ "./resources/js/components/searchBoxComponent.vue?vue&type=template&id=7ce7a1c5&");
+/* harmony import */ var _searchBoxComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./searchBoxComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/searchBoxComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _searchBoxComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _searchBoxComponent_vue_vue_type_template_id_7ce7a1c5___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _searchBoxComponent_vue_vue_type_template_id_7ce7a1c5___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/searchBoxComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/searchBoxComponent.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/searchBoxComponent.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_searchBoxComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./searchBoxComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/searchBoxComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_searchBoxComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/searchBoxComponent.vue?vue&type=template&id=7ce7a1c5&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/searchBoxComponent.vue?vue&type=template&id=7ce7a1c5& ***!
+  \***************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_searchBoxComponent_vue_vue_type_template_id_7ce7a1c5___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!../../../node_modules/vue-loader/lib??vue-loader-options!./searchBoxComponent.vue?vue&type=template&id=7ce7a1c5& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/searchBoxComponent.vue?vue&type=template&id=7ce7a1c5&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_searchBoxComponent_vue_vue_type_template_id_7ce7a1c5___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_searchBoxComponent_vue_vue_type_template_id_7ce7a1c5___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/homeGuest.js":
 /*!***********************************!*\
   !*** ./resources/js/homeGuest.js ***!
@@ -51142,8 +51296,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Gianluca Fabrizio\Desktop\Boolean\1 - Esercizi\56_project-boolbnb\resources\js\homeGuest.js */"./resources/js/homeGuest.js");
-module.exports = __webpack_require__(/*! C:\Users\Gianluca Fabrizio\Desktop\Boolean\1 - Esercizi\56_project-boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\boolBnB_project\resources\js\homeGuest.js */"./resources/js/homeGuest.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\boolBnB_project\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

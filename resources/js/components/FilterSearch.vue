@@ -1,6 +1,8 @@
 <template>
     <div>
 
+
+
         <div class="selection fixed-top w-100">
 
             <div class="centerz d-flex align-items-center justify-content-center">
@@ -80,6 +82,12 @@
                     </div>
 
                 </div>
+
+            </div>
+            <div>
+            <searchBoxComponent @setPosition="getPosition" />
+
+
             </div>
         </div>
 
@@ -89,6 +97,7 @@
 </template>
 
 <script>
+import searchBoxComponent from '../components/searchBoxComponent.vue';
 export default {
     name: 'FilterSearch',
     data() {
@@ -103,16 +112,24 @@ export default {
         setWhere() {
             let array = [];
             array.push(this.address, this.country, this.city);
-            console.log('hey');
-            console.log(array);
+
             this.$emit('whereCondition', array)
         },
         setCategory(input) {
             console.log(input)
 
             this.$emit('setCategory', input)
+        },
+        getPosition(data){
+
+            this.$emit('coordinate',data)//data:object
+
+
         }
 
+    },
+    components:{
+        searchBoxComponent
     }
 
 }

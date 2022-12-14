@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            <FilterSearch @whereCondition="getWhereCondition" @setCategory="getCategoryCondition"/>
+            <FilterSearch @whereCondition="getWhereCondition" @setCategory="getCategoryCondition" @coordinate="sentCoordinate"/>
 
         </div>
 
@@ -119,6 +119,17 @@ export default {
         getBack(){
             this.filteredData=true;
             this.apartmentToShow =this.apartments;
+        },
+        sentCoordinate(data){
+            console.log(data);
+            axios.get('/api/coordinate',data.lat).then(response=>{
+                if(response.data)
+                {
+                    console.log(response)
+                }
+
+            })
+
         }
 
 
