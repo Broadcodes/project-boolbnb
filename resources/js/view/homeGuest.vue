@@ -59,8 +59,10 @@ export default {
         getApartment(){
             axios.get("/api/apiHome").then(response => {
             if (response.data.success) {
-                console.log(response.data);
+
                 this.apartments  = response.data.results
+                this.apartmentToShow = response.data.results
+                console.log(this.apartmentToShow)
 
 
             }
@@ -92,6 +94,7 @@ export default {
 
         },
         getApartmentToShow(){
+
             this.apartmentToShow=[];
             this.apartments.forEach(element=>{
                 if(element.address.toLowerCase().includes(this.addressCondition.toLowerCase()||element.address.toLowerCase()===this.addressCondition.toLowerCase)||
@@ -100,21 +103,22 @@ export default {
                 ||element.category===this.currentCategory){
 
 
-                    this.apartmentToShow=[];
+
 
 
                     this.apartmentToShow.push(element);
                     this.filteredData = false;
                 }
 
-            })
+             }
+            )
 
 
 
         },
         getBack(){
             this.filteredData=true;
-            this.apartmentToShow =[];
+            this.apartmentToShow =this.apartments;
         }
 
 

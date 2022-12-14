@@ -31,21 +31,21 @@
                     </div>
 
                     <div class="flex-column text-center">
-                        <button @click="setCategory('qui')"><span class="flex-column"><i
+                        <button @click="setCategory('Baite')"><span class="flex-column"><i
                                     class="fa-solid fa-house-crack"></i></span>
                             <p>Baite</p>
                         </button>
                     </div>
 
                     <div class="flex-column text-center">
-                        <button @click="setCategory('nobis')"><span class="flex-column"><i
+                        <button @click="setCategory('Campagna')"><span class="flex-column"><i
                                     class="fa-solid fa-campground"></i></span>
                             <p>Campagna</p>
                         </button>
                     </div>
 
                     <div class="flex-column text-center">
-                        <button @click="setCategory('et')"><span class="flex-column"><i
+                        <button @click="setCategory('Viste mozzafiato')"><span class="flex-column"><i
                                     class="fa-solid fa-panorama"></i></span>
                             <p>Viste mozzafiato</p>
                         </button>
@@ -66,7 +66,7 @@
                     </div>
 
                     <div class="flex-column text-center">
-                        <button @click="setCategory('Di tendenza')"><span class="flex-column"><i
+                        <button @click="setCategory('Città popolari')"><span class="flex-column"><i
                                     class="fa-solid fa-city"></i></span>
                             <p>Città</p>
                         </button>
