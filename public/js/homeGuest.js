@@ -6829,7 +6829,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".centerz[data-v-263f772b] {\n  position: relative;\n  top: -50px;\n}\nbutton[data-v-263f772b] {\n  text-decoration: none;\n  border: none;\n  background-color: rgba(255, 255, 255, 0);\n}\n.categoryArea[data-v-263f772b] {\n  position: relative;\n  top: -10px;\n}", ""]);
+exports.push([module.i, ".centerz[data-v-263f772b] {\n  position: relative;\n  top: -50px;\n  left: 50%;\n  transform: translateX(-50%);\n  width: 50%;\n}\nbutton[data-v-263f772b] {\n  text-decoration: none;\n  border: none;\n  background-color: rgba(255, 255, 255, 0);\n}\n.categoryArea[data-v-263f772b] {\n  position: relative;\n  top: -10px;\n}", ""]);
 
 // exports
 
