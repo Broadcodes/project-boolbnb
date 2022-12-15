@@ -2067,9 +2067,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     sentCoordinate: function sentCoordinate(data) {
       console.log(data);
-      axios.get('/api/coordinate', {
-        result: data
-      }).then(function (response) {
+      axios.post('/api/coordinate', data).then(function (response) {
         if (response) {
           console.log(response);
         }

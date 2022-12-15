@@ -113,7 +113,5 @@ class apiGuestController extends Controller
     {
         //
     }
-    public function coordinate($data){
-        //
-    }
+
 }

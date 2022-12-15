@@ -11,7 +11,11 @@ use Illuminate\Support\Facades\DB;
 
 class apiCoordinateController extends Controller
 {
-    public function index(Request $request) {
+    public function store(Request $request) {
+
+        $coordinate=$request->all();
+
+
 
 
 
@@ -31,7 +35,7 @@ class apiCoordinateController extends Controller
 
         $sql="SELECT
         *
-        ,((ACOS(SIN(45.46362 * PI() / 180) * SIN(`latitude` * PI() / 180) + COS(45.46362 * PI() / 180) * COS(`latitude` * PI() / 180) * COS((9.18812 - `longitude`) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) AS `distance`
+        ,((ACOS(SIN(".$coordinate['lat']." * PI() / 180) * SIN(`latitude` * PI() / 180) + COS(45.46362 * PI() / 180) * COS(`latitude` * PI() / 180) * COS((9.18812 - `longitude`) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) AS `distance`
         FROM `apartments`
         WHERE
         (

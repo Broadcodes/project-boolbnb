@@ -123,7 +123,7 @@ export default {
         sentCoordinate(data){
             console.log(data);
 
-            axios.get('/api/coordinate',{result:data}).then(response=>{
+            axios.post('/api/coordinate',data).then(response=>{
                 if(response)
                 {
                     console.log(response)
