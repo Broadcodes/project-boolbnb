@@ -121,12 +121,13 @@ export default {
             this.apartmentToShow =this.apartments;
         },
         sentCoordinate(data){
-            console.log(data);
-            axios.get('/api/coordinate',data.lat).then(response=>{
-                if(response.data)
+
+            axios.get('/api/coordinate',data).then(response=>{
+                if(response)
                 {
-                    console.log(response)
+                    console.log(response.data)
                 }
+
 
             })
 
