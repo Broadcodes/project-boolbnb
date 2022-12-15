@@ -27,7 +27,11 @@
                                     <h3 class="card-title">{{ $apartment->apartment_title }}</h3>
                                 </a>
                                 <p class="card-text">
-                                <h5>{{ substr($apartment->description, 0, 50) }}...</h5>
+                                <h5>{{ substr($apartment->description, 0, 50) }}
+                                    @if (strlen($apartment->description) > 50)
+                                        ...
+                                    @endif
+                                </h5>
                                 </p>
                             </div>
                             <div class="bottoni text-center">
