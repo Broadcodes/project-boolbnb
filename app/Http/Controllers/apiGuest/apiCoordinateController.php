@@ -38,7 +38,7 @@ class apiCoordinateController extends Controller
         $sql="SELECT
         *,
         (
-            6371 *
+            3959 *
             acos(
                 cos( radians( " . $coordinate['lat'] . " ) ) *
                 cos( radians( `latitude` ) ) *
@@ -52,7 +52,7 @@ class apiCoordinateController extends Controller
     FROM
         `apartments`
     HAVING
-        `distance` < 100
+        `distance` < 20
     ORDER BY
         `distance`
     LIMIT
@@ -60,7 +60,7 @@ class apiCoordinateController extends Controller
 
         $apartments=DB::select($sql);
 
-        $data=array($apartments);
+        $data=array($apartments,$coordinate);
 
 
 
@@ -74,7 +74,7 @@ class apiCoordinateController extends Controller
 
 
 
-        return response()->json($apartments);
+        return response()->json($data);
 
 
     }

@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            <FilterSearch  @setCategory="getCategoryCondition" @coordinate="sentCoordinate"/>
+            <FilterSearch   @coordinate="sentCoordinate"/>
 
         </div>
 
@@ -61,8 +61,7 @@ export default {
             if (response.data.success) {
 
                 this.apartments  = response.data.results
-                this.apartmentToShow = response.data.results
-                console.log(this.apartmentToShow)
+
 
 
             }
@@ -72,16 +71,7 @@ export default {
 
 
 
-        getCategoryCondition(category){
 
-            this.apartmentToShow=[];
-            this.currentCategory=category;
-
-            this.getApartmentToShow();
-
-
-
-        },
 
         getBack(){
             this.filteredData=true;
@@ -97,8 +87,8 @@ export default {
                 {
 
 
-                    console.log(response.data)
-                    this.apartmentToShow=response.data
+                    console.log(response)
+                    this.apartmentToShow=response.data[0];
 
                 }
 

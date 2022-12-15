@@ -2034,15 +2034,8 @@ __webpack_require__.r(__webpack_exports__);
       axios.get("/api/apiHome").then(function (response) {
         if (response.data.success) {
           _this.apartments = response.data.results;
-          _this.apartmentToShow = response.data.results;
-          console.log(_this.apartmentToShow);
         }
       });
-    },
-    getCategoryCondition: function getCategoryCondition(category) {
-      this.apartmentToShow = [];
-      this.currentCategory = category;
-      this.getApartmentToShow();
     },
     getBack: function getBack() {
       this.filteredData = true;
@@ -2052,8 +2045,8 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
       axios.post('/api/coordinate', data).then(function (response) {
         if (response) {
-          console.log(response.data);
-          _this2.apartmentToShow = response.data;
+          console.log(response);
+          _this2.apartmentToShow = response.data[0];
         }
       });
       this.filteredData = false;
@@ -2417,7 +2410,6 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("div", [_c("div", [_c("FilterSearch", {
     on: {
-      setCategory: _vm.getCategoryCondition,
       coordinate: _vm.sentCoordinate
     }
   })], 1), _vm._v(" "), _c("div", {
