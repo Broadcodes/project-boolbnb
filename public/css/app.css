@@ -11038,6 +11038,10 @@ a.text-dark:focus {
      object-fit: cover;
 }
 
+.card {
+  max-height: 600px;
+}
+
 .nc-accountInfo {
   -moz-column-gap: 2rem;
        column-gap: 2rem;
@@ -11108,6 +11112,10 @@ a.text-dark:focus {
   max-height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.card {
+  max-height: 600px;
 }
 
 /**********************************/

@@ -42,13 +42,13 @@
                                     </button></a>
                                 <button type="button" class="m-2 btn btn-lightgreen text-light"><i
                                         class="fa-solid fa-envelope"></i> Messaggi</button>
-                                <button type="button" class=" m-2 btn btn-success"> <i class="fa-solid fa-pen"></i>
+                                <button type="button" class="m-2 btn btn-success"> <i class="fa-solid fa-pen"></i>
                                     Sponsorizza</button>
                                 <form action="{{ route('ura.apartments.destroy', $apartment->apartment_slug) }}"
                                     method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <input class="m-2 btn btn-danger m-1" type="submit" value="Elimina">
+                                    <input class="m-2 btn btn-danger" type="submit" value="Elimina">
                                     <!-- CRUD delete -->
                                 </form>
                             </div>
