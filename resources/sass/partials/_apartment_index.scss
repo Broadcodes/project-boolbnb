@@ -8,9 +8,14 @@
 
 }
 
-.apartmentCard {
-    border: 1px solid blue;
+.btn-lightgreen{
+    background-color: #61D5B9;
 }
+
+.btn-lightgreen:hover{
+    background-color: rgb(149, 216, 216);
+}
+
 
 .bg_color_af {
     background-color: #ffffff;
@@ -26,6 +31,10 @@
     border: 2px solid green;
     width: 90%;
     margin: 0 auto;
+}
+
+.bg-orange{
+    background-color: #F2BC17;
 }
 
 // .cardsContainer {
