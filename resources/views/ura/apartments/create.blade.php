@@ -19,10 +19,10 @@
             <div class="p-3">
                 <label class="px-2 fs-1 form-label" for="apartment_title">{{ __('Tipologia alloggio') }}</label>
 
-                {{-- <input type="text" class="form-control" name="apartment_title" id="apartment_title"
-                value="{{ old('apartment_title', '') }}"> --}}
+                <input type="text" class="form-control" name="apartment_title" id="apartment_title"
+                    value="{{ old('apartment_title', '') }}">
 
-                <select class="form-select" aria-label="Default select example">
+                {{-- <select class="form-select" aria-label="Default select example">
                     <option selected>Casa</option>
                     <option value="1">Appartamento</option>
                     <option value="2">Fienile</option>
@@ -32,7 +32,7 @@
                     <option value="6">Camper</option>
                     <option value="7">Castello</option>
                     <option value="8">Grotta</option>
-                </select>
+                </select> --}}
                 @error('apartment_title')
                     <h5 class="text-danger ml-4">{{ $message }}</h5>
                 @enderror
@@ -181,10 +181,11 @@
                     @enderror
                 </div>
             </div>
-            {{-- bottone crea --}}
-            <button type="button" class="btn btn-success">Crea</button>
+            {{-- input crea --}}
+
+            <input class="btn btn-success" type="submit" value="Crea">
             {{-- bottone indietro --}}
-            <button type="button" class="btn btn-warning"><a
+            <button type="submit" class="btn btn-warning"><a
                     href="{{ route('ura.apartments.index') }}">Indietro</a></button>
 
         </form>
