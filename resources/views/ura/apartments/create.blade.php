@@ -15,14 +15,30 @@
                 </div>
             @endif
             {{-- titolo annuncio --}}
+
             <div class="p-3">
-                <label class="px-2 form-label" for="apartment_title">{{ __('Titolo annuncio') }}</label>
-                <input type="text" class="form-control" name="apartment_title" id="apartment_title"
-                    value="{{ old('apartment_title', '') }}">
+                <label class="px-2 fs-1 form-label" for="apartment_title">{{ __('Tipologia alloggio') }}</label>
+
+                {{-- <input type="text" class="form-control" name="apartment_title" id="apartment_title"
+                value="{{ old('apartment_title', '') }}"> --}}
+
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Casa</option>
+                    <option value="1">Appartamento</option>
+                    <option value="2">Fienile</option>
+                    <option value="3">B&B</option>
+                    <option value="4">Baita</option>
+                    <option value="5">Barca</option>
+                    <option value="6">Camper</option>
+                    <option value="7">Castello</option>
+                    <option value="8">Grotta</option>
+                </select>
                 @error('apartment_title')
                     <h5 class="text-danger ml-4">{{ $message }}</h5>
                 @enderror
             </div>
+
+
             {{-- descrizione --}}
             <div class="p-3">
                 <label class="px-2 form-label" for="description">{{ __('Descrizione') }}</label>
