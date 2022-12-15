@@ -14,7 +14,7 @@
                     </ul>
                 </div>
             @endif
-            {{-- titolo annuncio --}}
+
             <div class="p-3">
                 <label class="px-2 form-label" for="apartment_title">{{ __('Titolo annuncio') }}</label>
                 <input type="text" class="form-control" name="apartment_title" id="apartment_title"
