@@ -11000,6 +11000,44 @@ a.text-dark:focus {
   background-color: #ffffff;
 }
 
+.container {
+  padding: 0;
+}
+
+.btn-lightgreen {
+  background-color: #61D5B9;
+}
+
+.btn-lightgreen:hover {
+  background-color: rgb(149, 216, 216);
+}
+
+.bg_color_af {
+  background-color: #ffffff;
+  border-bottom: 1px solid rgb(80, 79, 79);
+}
+
+.card_af {
+  border: 1px solid lightgray;
+}
+
+.ar_contenitore_immagini {
+  border: 2px solid green;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.bg-orange {
+  background-color: #F2BC17;
+}
+
+.resize-img {
+  min-height: 300px;
+  max-height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .nc-accountInfo {
   -moz-column-gap: 2rem;
        column-gap: 2rem;
@@ -11063,6 +11101,13 @@ a.text-dark:focus {
 
 .bg-orange {
   background-color: #F2BC17;
+}
+
+.resize-img {
+  min-height: 300px;
+  max-height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 /**********************************/

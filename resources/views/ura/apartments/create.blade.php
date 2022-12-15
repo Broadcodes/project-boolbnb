@@ -17,7 +17,7 @@
             {{-- titolo annuncio --}}
 
             <div class="p-3">
-                <label class="px-2 fs-1 form-label" for="apartment_title">{{ __('Tipologia alloggio') }}</label>
+                <label class="px-2 fs-1 form-label" for="apartment_title">{{ __('Titolo alloggio') }}</label>
 
                 <input type="text" class="form-control" name="apartment_title" id="apartment_title"
                     value="{{ old('apartment_title', '') }}">

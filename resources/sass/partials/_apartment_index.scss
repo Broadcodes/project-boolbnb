@@ -35,3 +35,9 @@
     background-color: #F2BC17;
 }
 
+.resize-img {
+    min-height: 300px;
+    max-height: 300px;
+    object-fit: cover;
+}
+
