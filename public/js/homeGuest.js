@@ -2066,9 +2066,12 @@ __webpack_require__.r(__webpack_exports__);
       this.apartmentToShow = this.apartments;
     },
     sentCoordinate: function sentCoordinate(data) {
-      axios.get('/api/coordinate', data).then(function (response) {
+      console.log(data);
+      axios.get('/api/coordinate', {
+        result: data
+      }).then(function (response) {
         if (response) {
-          console.log(response.data);
+          console.log(response);
         }
       });
     }

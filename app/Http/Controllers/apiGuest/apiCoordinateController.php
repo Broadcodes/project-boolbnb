@@ -14,7 +14,20 @@ class apiCoordinateController extends Controller
     public function index(Request $request) {
 
 
-         //put a temporary number in as it wont pass the lng in the JSON
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //put a temporary number in as it wont pass the lng in the JSON
 
         $sql="SELECT
         *
@@ -28,8 +41,8 @@ class apiCoordinateController extends Controller
         ORDER BY `distance` ASC
         limit 25";
 
-        $apartments=DB::raw($sql);
-        var_dump($apartments);
+        $apartments=DB::select($sql);
+
 
 
 
