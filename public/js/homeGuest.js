@@ -2066,7 +2066,6 @@ __webpack_require__.r(__webpack_exports__);
       this.apartmentToShow = this.apartments;
     },
     sentCoordinate: function sentCoordinate(data) {
-      console.log(data);
       axios.post('/api/coordinate', data).then(function (response) {
         if (response) {
           console.log(response);
