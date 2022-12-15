@@ -36,7 +36,7 @@ class apiCoordinateController extends Controller
         //put a temporary number in as it wont pass the lng in the JSON
 
         $sql="SELECT
-        `id`,`latitude`,`longitude`,
+        *,
         (
             6371 *
             acos(
@@ -74,7 +74,7 @@ class apiCoordinateController extends Controller
 
 
 
-        return response()->json($data);
+        return response()->json($apartments);
 
 
     }

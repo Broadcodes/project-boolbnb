@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            <FilterSearch @whereCondition="getWhereCondition" @setCategory="getCategoryCondition" @coordinate="sentCoordinate"/>
+            <FilterSearch  @setCategory="getCategoryCondition" @coordinate="sentCoordinate"/>
 
         </div>
 
@@ -70,18 +70,7 @@ export default {
         });
         },
 
-        getWhereCondition(array){
-            this.apartmentToShow=[];
 
-            this.addressCondition = array[0];
-            this.countryCondition = array[1];
-            this.cityCondition = array[2];
-
-            this.getApartmentToShow();
-
-
-
-        },
 
         getCategoryCondition(category){
 
@@ -93,29 +82,7 @@ export default {
 
 
         },
-        getApartmentToShow(){
 
-            this.apartmentToShow=[];
-            this.apartments.forEach(element=>{
-                if(element.address.toLowerCase().includes(this.addressCondition.toLowerCase()||element.address.toLowerCase()===this.addressCondition.toLowerCase)||
-                element.countrySubdivision.toLowerCase().includes(this.countryCondition.toLowerCase()||element.countrySubdivision.toLowerCase()===this.countryCondition.toLowerCase)||
-                element.city.toLowerCase().includes(this.cityCondition.toLowerCase()||element.city.toLowerCase()===this.cityCondition.toLowerCase() )
-                ||element.category===this.currentCategory){
-
-
-
-
-
-                    this.apartmentToShow.push(element);
-                    this.filteredData = false;
-                }
-
-             }
-            )
-
-
-
-        },
         getBack(){
             this.filteredData=true;
             this.apartmentToShow =this.apartments;
@@ -123,15 +90,22 @@ export default {
         sentCoordinate(data){
 
 
+
+
             axios.post('/api/coordinate',data).then(response=>{
                 if(response)
                 {
-                    console.log(response)
+
+
+                    console.log(response.data)
+                    this.apartmentToShow=response.data
 
                 }
 
 
+
             })
+            this.filteredData=false;
 
         }
 

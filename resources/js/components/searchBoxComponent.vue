@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div id="searchBox" class="tp">
+
+    </div>
 
   </div>
 </template>
@@ -49,7 +52,7 @@ export default {
             var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
 
             ttSearchBox.on('tomtom.searchbox.resultsfound', this.boh);
-            document.body.append(searchBoxHTML);
+            document.getElementById("searchBox").append(searchBoxHTML);
 
             },
             boh(data){
@@ -66,5 +69,9 @@ export default {
 </script>
 
 <style>
+
+  .tp{
+    margin-top: 200px;
+  }
 
 </style>
