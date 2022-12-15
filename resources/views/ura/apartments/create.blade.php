@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+
+    @if (session('popup'))
+        <div class="alert alert-danger">
+            {{ session('popup') }}
+        </div>
+    @endif
+
     <div class="py-4">
         <form action="{{ route('ura.apartments.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -17,8 +24,7 @@
 
             <div class="p-3">
                 <label class="px-2" for="apartment_title">{{ __('Titolo annuncio') }}</label>
-                <input type="text" name="apartment_title" id="apartment_title" value="{{ old('apartment_title', '') }}"
-                    required maxlength="255">
+                <input type="text" name="apartment_title" id="apartment_title" value="{{ old('apartment_title', '') }}" required maxlength="255">
                 @error('apartment_title')
                     <h5 class="text-danger ml-4">{{ $message }}</h5>
                 @enderror

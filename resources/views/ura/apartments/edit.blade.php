@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+
+    @if (session('popup'))
+        <div class="alert alert-danger">
+            {{ session('popup') }}
+        </div>
+    @endif
+
     <div class="py-4">
         <form action="{{ route('ura.apartments.update', $apartment->apartment_slug) }}" method="POST"
             enctype="multipart/form-data">
