@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="container">
         <div class="text-center p-4">
             <h1 class="display-5">I tuoi appartamenti</h1>
@@ -11,31 +12,32 @@
 
 
 
+
         @if ($apartmentNumber > 0)
             <!-- se l'utente possiede appartamenti visualizza questa porzione-->
                 <div class="row">
                     @foreach ($apartments as $apartment)
                         {{-- contenitore card --}}
-                        <div class="col-12 col-lg-4 col-md-6  my-3">
+                        <div class="col-12 col-lg-4 col-md-6 my-3">
                             <div class="card">
-                                <img class="card-img-top" src="../images/campeggio-italia.webp" alt="immagine">
+                                <img class="card-img-top" src="../images/blank-img.jpeg" alt="immagine">
                                     <div class="card-body text-center">
                                         <h5 class="card-title">Appartamento</h5>
                                         <p class="card-text">
                                             <a href="{{ route('ura.apartments.show', $apartment->apartment_slug) }}">{{ $apartment->apartment_title }}
                                         </p>
                                     </div>
-                                    <div class="bottoni text-center p-3">
-                                        <a href="{{ route('ura.apartments.edit', $apartment->apartment_slug) }}"> <button type="button" class="btn btn-warning bg-orange text-light"><i class="fa-solid fa-circle-info"></i>
+                                    <div class="bottoni text-center">
+                                        <a href="{{ route('ura.apartments.edit', $apartment->apartment_slug) }}"> <button type="button" class="m-2 btn btn-warning bg-orange text-light"><i class="fa-solid fa-circle-info"></i>
                                             Modifica
                                         </button></a>
-                                        <button type="button" class="btn btn-lightgreen text-light"><i class="fa-solid fa-envelope"></i> Messaggi</button>
-                                        <button type="button" class="btn btn-success"> <i class="fa-solid fa-pen"></i> Sponsorizza</button>
+                                        <button type="button" class="m-2 btn btn-lightgreen text-light"><i class="fa-solid fa-envelope"></i> Messaggi</button>
+                                        <button type="button" class=" m-2 btn btn-success"> <i class="fa-solid fa-pen"></i> Sponsorizza</button>
                                         <form action="{{ route('ura.apartments.destroy', $apartment->apartment_slug) }}"
                                             method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <input class="btn btn-danger m-1" type="submit" value="Elimina">
+                                            <input class="m-2 btn btn-danger m-1" type="submit" value="Elimina">
                                             <!-- CRUD delete -->
                                         </form>
                                     </div>
