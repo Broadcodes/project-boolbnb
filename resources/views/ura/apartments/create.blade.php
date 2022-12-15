@@ -190,43 +190,6 @@
             </div>
             {{-- input crea --}}
 
-            <div class="p-3">
-                <label class="px-2" for="civic_number">{{ __('Civico') }}</label>
-                <input type="number" name="civic_number" id="civic_number" value="{{ old('civic_number', '') }}"
-                    required>
-                @error('civic_number')
-                    <h5 class="text-danger ml-4">{{ $message }}</h5>
-                @enderror
-            </div>
-
-            <div class="p-3">
-                <label class="px-2" for="postalCode">{{ __('CAP') }}</label>
-                <input type="text" name="postalCode" id="postalCode" maxlength='5' required
-                    value="{{ old('postalCode', '') }}">
-                @error('postalCode')
-                    <h5 class="text-danger ml-4">{{ $message }}</h5>
-                @enderror
-            </div>
-
-            <div class="p-3">
-                <label class="px-2" for="city">{{ __('Città') }}</label>
-                <input type="text" name="city" id="city" value="{{ old('city', '') }}" required
-                    maxlength="255">
-                @error('city')
-                    <h5 class="text-danger ml-4">{{ $message }}</h5>
-                @enderror
-            </div>
-
-            <div class="p-3">
-                <label class="px-2" for="countrySubdivision">{{ __('Provincia') }}</label>
-                <input type="text" name="countrySubdivision" id="countrySubdivision"
-                    value="{{ old('countrySubdivision', '') }}" required maxlength="255">
-                @error('countrySubdivision')
-                    <h5 class="text-danger ml-4">{{ $message }}</h5>
-                @enderror
-            </div>
-
-
             <input class="btn btn-success" type="submit" value="Crea">
             {{-- bottone indietro --}}
             <button type="submit" class="btn btn-warning"><a
