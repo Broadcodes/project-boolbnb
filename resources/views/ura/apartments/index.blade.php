@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="container">
-        <div class="text-center  p-4">
-            <h3 class="text-uppercase">I tuoi appartamenti</h3>
+        <div class="text-center p-4">
+            <h1 class="display-5">I tuoi appartamenti</h1>
             <p class="pt-2">Appartamenti totali: <strong>{{ $apartmentNumber }}</strong></p>
             <a class="mt-0 btn btn-primary" href="{{ route('ura.apartments.create') }}">Aggiungi un appartamento!</a>
             <!-- CRUD create -->
@@ -16,7 +16,7 @@
                 <div class="row">
                     @foreach ($apartments as $apartment)
                         {{-- contenitore card --}}
-                        <div class="col-4 my-3">
+                        <div class="col-12 col-lg-4 col-md-6  my-3">
                             <div class="card">
                                 <img class="card-img-top" src="../images/campeggio-italia.webp" alt="immagine">
                                     <div class="card-body text-center">
