@@ -183,6 +183,9 @@
             </div>
             {{-- bottone crea --}}
             <button type="button" class="btn btn-success">Crea</button>
+            {{-- bottone indietro --}}
+            <button type="button" class="btn btn-warning"><a
+                    href="{{ route('ura.apartments.index') }}">Indietro</a></button>
 
         </form>
     </div>
