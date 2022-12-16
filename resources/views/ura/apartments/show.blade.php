@@ -33,6 +33,6 @@
             <li class="list-group-item">{{ __('Latitudine') }}: {{ $apartment->latitude }}</li>
         </ul>
 
-        <a href="{{ route('ura.apartments.index') }}">Torna ai miei annunci</a>
+        <a href="{{ route('ura.apartments.index') }}" class="btn btn-primary">Torna ai miei annunci</a>
     </div>
 @endsection
