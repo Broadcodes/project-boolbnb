@@ -23,7 +23,7 @@
                 <li>Provincia: {{ dataListArr.countrySubdivision }}</li>
             </ul>
 
-            <form action="" method="POST">
+            <form method="POST">
                 <div class="d-flex flex-column">
                     <label for="message">Invia un messaggio al proprietario</label>
                     <textarea name="message" id="message" cols="30" rows="10"></textarea>
