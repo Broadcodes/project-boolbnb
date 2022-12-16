@@ -51,14 +51,16 @@ export default {
             var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
             var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
 
-            ttSearchBox.on('tomtom.searchbox.resultsfound', this.emitPosition);
+            ttSearchBox.on('tomtom.searchbox.resultselected', this.emitPosition);
             document.getElementById("searchBox").append(searchBoxHTML);
 
             },
             emitPosition(data){
+              console.log(data.data.result.position);
 
 
-            this.$emit('setPosition',data.data.results.fuzzySearch.results[0].position)
+
+            this.$emit('setPosition',data.data.result.position)
           }
 
     },
