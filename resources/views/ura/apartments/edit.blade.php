@@ -30,7 +30,7 @@
             {{-- categoria --}}
             <div class="p-3">
                 <label class="px-2" for="category">{{ __('Categoria') }}</label>
-                <select name="category" id="category">
+                <select name="category" class="form-control" id="category">
                     @foreach ($categories as $category)
                         <option value="{{ $category }}" {{ old('category') == $category ? 'selected' : '' }}>
                             {{ $category }}</option>
@@ -56,7 +56,7 @@
                 {{-- stanze --}}
                 <div class="p-3">
                     <label class="px-2" for="bedrooms">{{ __('Numero di stanze') }}</label>
-                    <select name="bedrooms" id="bedrooms">
+                    <select name="bedrooms" class="form-control" id="bedrooms">
                         @for ($i = 1; $i <= 10; $i++)
                             <option value="{{ $i }}" {{ old('bedrooms') == $i ? 'selected' : '' }}>
                                 {{ $i }}</option>
@@ -69,7 +69,7 @@
                 {{-- letti --}}
                 <div class="p-3">
                     <label class="px-2" for="bed">{{ __('Numero di letti') }}</label>
-                    <select name="bed" id="bed">
+                    <select name="bed" class="form-control" id="bed">
                         @for ($i = 1; $i <= 10; $i++)
                             <option value="{{ $i }}" {{ old('bed') == $i ? 'selected' : '' }}>
                                 {{ $i }}
@@ -83,7 +83,7 @@
                 {{-- bagni --}}
                 <div class="p-3">
                     <label class="px-2" for="bathrooms">{{ __('Numero di bagni') }}</label>
-                    <select name="bathrooms" id="bathrooms">
+                    <select name="bathrooms" class="form-control" id="bathrooms">
                         @for ($i = 1; $i <= 10; $i++)
                             <option value="{{ $i }}" {{ old('bathrooms') == $i ? 'selected' : '' }}>
                                 {{ $i }}</option>
@@ -98,18 +98,18 @@
             {{-- mq-prezzo --}}
             <div class="d-flex">
                 {{-- mq --}}
-                <div class="p-3">
+                <div class="p-3 d-flex align-items-baseline">
                     <label class="px-2" for="sqm">{{ __('MQ') }}</label>
-                    <input type="number" name="sqm" id="sqm" step=".01"
+                    <input type="number" class="form-control" name="sqm" id="sqm" step=".01"
                         value="{{ old('sqm', $apartment->sqm) }}">
                     @error('sqm')
                         <h5 class="text-danger ml-4">{{ $message }}</h5>
                     @enderror
                 </div>
                 {{-- prezzo --}}
-                <div class="p-3">
+                <div class="p-3 d-flex align-items-baseline">
                     <label class="px-2" for="price">{{ __('Prezzo') }}</label>
-                    <input type="number" name="price" id="price" step=".01"
+                    <input type="number" class="form-control" name="price" id="price" step=".01"
                         value="{{ old('price', $apartment->price) }}">
                     @error('price')
                         <h5 class="text-danger ml-4">{{ $message }}</h5>
@@ -143,7 +143,8 @@
                 {{-- indirizzo --}}
                 <div class="p-3">
                     <label class="px-2" for="address">{{ __('Indirizzo') }}</label>
-                    <input type="text" name="address" id="address" value="{{ old('address', $apartment->address) }}">
+                    <input type="text" class="form-control" name="address" id="address"
+                        value="{{ old('address', $apartment->address) }}">
                     @error('address')
                         <h5 class="text-danger ml-4">{{ $message }}</h5>
                     @enderror
@@ -151,7 +152,7 @@
                 {{-- civico --}}
                 <div class="p-3">
                     <label class="px-2" for="civic_number">{{ __('Civico') }}</label>
-                    <input type="number" name="civic_number" id="civic_number"
+                    <input type="number" class="form-control" name="civic_number" id="civic_number"
                         value="{{ old('civic_number', $apartment->civic_number) }}">
                     @error('civic_number')
                         <h5 class="text-danger ml-4">{{ $message }}</h5>
@@ -160,7 +161,7 @@
                 {{-- CAP --}}
                 <div class="p-3">
                     <label class="px-2" for="postalCode">{{ __('CAP') }}</label>
-                    <input type="text" name="postalCode" id="postalCode" maxlength='5'
+                    <input type="text" class="form-control" name="postalCode" id="postalCode" maxlength='5'
                         value="{{ old('postalCode', $apartment->postalCode) }}">
                     @error('postalCode')
                         <h5 class="text-danger ml-4">{{ $message }}</h5>
@@ -169,7 +170,8 @@
                 {{-- città --}}
                 <div class="p-3">
                     <label class="px-2" for="city">{{ __('Città') }}</label>
-                    <input type="text" name="city" id="city" value="{{ old('city', $apartment->city) }}">
+                    <input type="text" class="form-control" name="city" id="city"
+                        value="{{ old('city', $apartment->city) }}">
                     @error('city')
                         <h5 class="text-danger ml-4">{{ $message }}</h5>
                     @enderror
@@ -177,7 +179,7 @@
                 {{-- provincia --}}
                 <div class="p-3">
                     <label class="px-2" for="countrySubdivision">{{ __('Provincia') }}</label>
-                    <input type="text" name="countrySubdivision" id="countrySubdivision"
+                    <input type="text" class="form-control" name="countrySubdivision" id="countrySubdivision"
                         value="{{ old('countrySubdivision', $apartment->countrySubdivision) }}">
                     @error('countrySubdivision')
                         <h5 class="text-danger ml-4">{{ $message }}</h5>

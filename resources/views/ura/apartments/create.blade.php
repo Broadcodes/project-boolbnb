@@ -41,7 +41,7 @@
             {{-- categoria --}}
             <div class="p-3">
                 <label class="px-2" for="category">{{ __('Categoria') }}</label>
-                <select name="category" id="category">
+                <select name="category" class="form-control" id="category">
                     @foreach ($categories as $category)
                         <option value="{{ $category }}" {{ old('category') == $category ? 'selected' : '' }}>
                             {{ $category }}</option>
@@ -66,7 +66,7 @@
                 {{-- stanze --}}
                 <div class="p-3">
                     <label class="px-2" for="bedrooms">{{ __('Numero di stanze') }}</label>
-                    <select class="form-select" name="bedrooms" id="bedrooms">
+                    <select class="form-control" name="bedrooms" id="bedrooms">
                         @for ($i = 1; $i <= 10; $i++)
                             <option value="{{ $i }}" {{ old('bedrooms') == $i ? 'selected' : '' }}>
                                 {{ $i }}</option>
@@ -79,7 +79,7 @@
                 {{-- letti --}}
                 <div class="p-3">
                     <label class="px-2" for="bed">{{ __('Numero di letti') }}</label>
-                    <select name="bed" id="bed">
+                    <select name="bed" class="form-control" id="bed">
                         @for ($i = 1; $i <= 10; $i++)
                             <option value="{{ $i }}" {{ old('bed') == $i ? 'selected' : '' }}>
                                 {{ $i }}
@@ -93,7 +93,7 @@
                 {{-- bagni --}}
                 <div class="p-3">
                     <label class="px-2" for="bathrooms">{{ __('Numero di bagni') }}</label>
-                    <select name="bathrooms" id="bathrooms">
+                    <select name="bathrooms" class="form-control" id="bathrooms">
                         @for ($i = 1; $i <= 10; $i++)
                             <option value="{{ $i }}" {{ old('bathrooms') == $i ? 'selected' : '' }}>
                                 {{ $i }}</option>
@@ -107,7 +107,7 @@
             {{-- mq-prezzo --}}
             <div class="d-flex">
                 {{-- mq --}}
-                <div class="p-3">
+                <div class="p-3 d-flex align-items-baseline">
                     <label class="px-2 form-label" for="sqm">{{ __('MQ') }}</label>
                     <input type="number" class="form-control" name="sqm" id="sqm" step=".01"
                         value="{{ old('sqm', '') }}">
@@ -117,7 +117,7 @@
                 </div>
 
                 {{-- prezzo --}}
-                <div class="p-3">
+                <div class="p-3 d-flex align-items-baseline">
                     <label class="px-2 form-label" for="price">{{ __('Prezzo') }}</label>
                     <input type="number" class="form-control" name="price" id="price" step=".01"
                         value="{{ old('price', '') }}">
@@ -127,8 +127,8 @@
                 </div>
             </div>
             {{-- immagine --}}
-            <div class="p-3 input-group mb-3">
-                <label class="px-2" for="apartment_images">{{ __('Immagine') }}</label>
+            <div class="p-3 input-group mb-3 d-flex align-items-baseline">
+                <label class="px-2" for="apartment_images">{{ __('Inserisci un\'immagine->') }}</label>
                 <input class="input-group-text" type="file" name="apartment_images" id="apartment_images"
                     value="{{ old('apartment_images', '') }}">
                 @error('apartment_images')
