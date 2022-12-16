@@ -40,12 +40,12 @@ export default {
                 let options = {
                     searchOptions: {
                         key: 'APoE4D1CGAlRGOWQcaSfdelLIwY944gV',
-                        language: 'it',
+                        language: 'it-IT',
                         limit: 5
                     },
                     autocompleteOptions: {
                         key: 'APoE4D1CGAlRGOWQcaSfdelLIwY944gV',
-                        language: 'it'
+                        language: 'it-IT'
                     }
             };
             var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
