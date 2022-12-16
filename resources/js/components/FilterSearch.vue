@@ -91,19 +91,12 @@ export default {
     name: 'FilterSearch',
     data() {
         return {
-            address: '',
-            country: '',
-            city: ''
+
 
         }
     },
     methods: {
-        setWhere() {
-            let array = [];
-            array.push(this.address, this.country, this.city);
 
-            this.$emit('whereCondition', array)
-        },
         setCategory(input) {
             console.log(input)
 

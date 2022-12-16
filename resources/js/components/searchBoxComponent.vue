@@ -40,22 +40,22 @@ export default {
                 let options = {
                     searchOptions: {
                         key: 'APoE4D1CGAlRGOWQcaSfdelLIwY944gV',
-                        language: 'en-GB',
+                        language: 'it',
                         limit: 5
                     },
                     autocompleteOptions: {
                         key: 'APoE4D1CGAlRGOWQcaSfdelLIwY944gV',
-                        language: 'en-GB'
+                        language: 'it'
                     }
             };
             var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
             var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
 
-            ttSearchBox.on('tomtom.searchbox.resultsfound', this.boh);
+            ttSearchBox.on('tomtom.searchbox.resultsfound', this.emitPosition);
             document.getElementById("searchBox").append(searchBoxHTML);
 
             },
-            boh(data){
+            emitPosition(data){
 
 
             this.$emit('setPosition',data.data.results.fuzzySearch.results[0].position)

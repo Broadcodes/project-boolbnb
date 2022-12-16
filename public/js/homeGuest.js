@@ -1913,18 +1913,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'FilterSearch',
   data: function data() {
-    return {
-      address: '',
-      country: '',
-      city: ''
-    };
+    return {};
   },
   methods: {
-    setWhere: function setWhere() {
-      var array = [];
-      array.push(this.address, this.country, this.city);
-      this.$emit('whereCondition', array);
-    },
     setCategory: function setCategory(input) {
       console.log(input);
       this.$emit('setCategory', input);
@@ -1978,20 +1969,20 @@ __webpack_require__.r(__webpack_exports__);
       var options = {
         searchOptions: {
           key: 'APoE4D1CGAlRGOWQcaSfdelLIwY944gV',
-          language: 'en-GB',
+          language: 'it',
           limit: 5
         },
         autocompleteOptions: {
           key: 'APoE4D1CGAlRGOWQcaSfdelLIwY944gV',
-          language: 'en-GB'
+          language: 'it'
         }
       };
       var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
       var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
-      ttSearchBox.on('tomtom.searchbox.resultsfound', this.boh);
+      ttSearchBox.on('tomtom.searchbox.resultsfound', this.emitPosition);
       document.getElementById("searchBox").append(searchBoxHTML);
     },
-    boh: function boh(data) {
+    emitPosition: function emitPosition(data) {
       this.$emit('setPosition', data.data.results.fuzzySearch.results[0].position);
     }
   }
@@ -2421,7 +2412,7 @@ var render = function render() {
   }), 0) : _c("div", _vm._l(_vm.apartmentToShow, function (apartment) {
     return _c("div", {
       key: apartment.id
-    }, [_vm._v("\n\n                        " + _vm._s(apartment.address) + "\n\n                    ")]);
+    }, [_vm._v("\n\n                        " + _vm._s(apartment.address) + "\n                        " + _vm._s(apartment.apartment_title) + "\n\n                    ")]);
   }), 0), _vm._v(" "), _c("button", {
     on: {
       click: _vm.getBack

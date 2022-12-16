@@ -18,6 +18,7 @@
                         <div v-for="apartment in apartmentToShow" :key="apartment.id">
 
                             {{apartment.address}}
+                            {{apartment.apartment_title}}
 
                         </div>
 
