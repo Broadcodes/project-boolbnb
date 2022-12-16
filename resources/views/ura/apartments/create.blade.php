@@ -190,12 +190,15 @@
                     @enderror
                 </div>
             </div>
-            {{-- input crea --}}
 
-            <input class="btn btn-success" type="submit" value="Crea">
-            {{-- bottone indietro --}}
-            <button type="submit" class="btn btn-warning"><a
-                    href="{{ route('ura.apartments.index') }}">Indietro</a></button>
+            <div class="text-center p-3">
+                {{-- input crea --}}
+
+                <input class="btn btn-success" type="submit" value="Crea">
+                {{-- bottone indietro --}}
+                <button type="submit" class="btn btn-warning m-3"><a
+                        href="{{ route('ura.apartments.index') }}">Indietro</a></button>
+            </div>
 
         </form>
     </div>

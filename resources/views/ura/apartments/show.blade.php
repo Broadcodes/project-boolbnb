@@ -2,35 +2,51 @@
 
 @section('content')
     <div class="container">
-        <h1>show apartments id: {{ $apartment->id }}</h1>
+        <div class="text-center">
+            <h1>{{ $apartment->apartment_title }}</h1>
 
-        <div class="m-5">
-            @if ($apartment->apartment_images)
-                <img class="img-fluid w-50" src="{{ asset('storage/' . $apartment->apartment_images) }}"
-                    alt="{{ $apartment->apartment_title }}" />
-            @else
-                <h6 class="mx-4">{{ __('Nessuna immagine presente') }}</h6>
-            @endif
+            {{-- immagine --}}
+            <div class="m-5">
+                @if ($apartment->apartment_images)
+                    <img class="img-fluid w-50" src="{{ asset('storage/' . $apartment->apartment_images) }}"
+                        alt="{{ $apartment->apartment_title }}" />
+                @else
+                    <h6 class="mx-4">{{ __('Nessuna immagine presente') }}</h6>
+                @endif
+            </div>
         </div>
 
-        <ul class="m-5">
-            <li>{{ __('Titolo annuncio') }}: {{ $apartment->apartment_title }}</li>
-            <li>{{ __('Descrizione') }}: {{ $apartment->description }}</li>
-            <li>{{ __('Numero di stanze') }}: {{ $apartment->bedrooms }}</li>
-            <li>{{ __('Numero di letti') }}: {{ $apartment->bed }}</li>
-            <li>{{ __('Numero di bagni') }}: {{ $apartment->bathrooms }}</li>
-            <li>{{ __('MQ') }}: {{ $apartment->sqm }}</li>
-            <li>{{ __('Categoria') }}: {{ $apartment->category }}</li>
-            <li>{{ __('Prezzo') }}: {{ $apartment->price }}</li>
-            <li>{{ __('Indirizzo') }}: {{ $apartment->address }}</li>
-            <li>{{ __('Civico') }}: {{ $apartment->civic_number }}</li>
-            <li>{{ __('CAP') }}: {{ $apartment->postalCode }}</li>
-            <li>{{ __('Città') }}: {{ $apartment->city }}</li>
-            <li>{{ __('Provincia') }}: {{ $apartment->countrySubdivision }}</li>
-            <li>{{ __('Longitudine') }}: {{ $apartment->longitude }}</li>
-            <li>{{ __('Latitudine') }}: {{ $apartment->latitude }}</li>
+        {{-- elenco voci --}}
+        <ul class="m-5 list-group">
+            <li class="list-group-item">{{ __('Titolo annuncio') }}: <span
+                    class="brown">{{ $apartment->apartment_title }}</span></li>
+            <li class="list-group-item">{{ __('Descrizione') }}: <span class="brown">{{ $apartment->description }}</span>
+            </li>
+            <li class="list-group-item">{{ __('Numero di stanze') }}: <span class="brown">{{ $apartment->bedrooms }}</span>
+            </li>
+            <li class="list-group-item">{{ __('Numero di letti') }}: <span class="brown">{{ $apartment->bed }}</span>
+            </li>
+            <li class="list-group-item">{{ __('Numero di bagni') }}: <span
+                    class="brown">{{ $apartment->bathrooms }}</span></li>
+            <li class="list-group-item">{{ __('MQ') }}: <span class="brown">{{ $apartment->sqm }}</span></li>
+            <li class="list-group-item">{{ __('Categoria') }}: <span class="brown">{{ $apartment->category }}</span></li>
+            <li class="list-group-item">{{ __('Prezzo') }}: <span class="brown">{{ $apartment->price }}</span></li>
+            <li class="list-group-item">{{ __('Indirizzo') }}: <span class="brown">{{ $apartment->address }}</span></li>
+            <li class="list-group-item">{{ __('Civico') }}: <span class="brown">{{ $apartment->civic_number }}</span>
+            </li>
+            <li class="list-group-item">{{ __('CAP') }}: <span class="brown">{{ $apartment->postalCode }}</span></li>
+            <li class="list-group-item">{{ __('Città') }}: <span class="brown">{{ $apartment->city }}</span></li>
+            <li class="list-group-item">{{ __('Provincia') }}: <span
+                    class="brown">{{ $apartment->countrySubdivision }}</span></li>
+            <li class="list-group-item">{{ __('Longitudine') }}: <span class="green">{{ $apartment->longitude }}</span>
+            </li>
+            <li class="list-group-item">{{ __('Latitudine') }}: <span class="green">{{ $apartment->latitude }}</span>
+            </li>
         </ul>
 
-        <a href="{{ route('ura.apartments.index') }}">Torna ai miei annunci</a>
+        <div class="text-center">
+            <a href="{{ route('ura.apartments.index') }}" class="btn btn-primary">Torna ai miei annunci</a>
+        </div>
+
     </div>
 @endsection

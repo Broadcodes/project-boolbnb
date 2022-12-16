@@ -2038,8 +2038,8 @@ __webpack_require__.r(__webpack_exports__);
       });
       this.filteredData = false;
     },
-    getSrcImages: function getSrcImages(path) {
-      return 'storage/' + path;
+    getSrcImages: function getSrcImages(folder, path) {
+      return folder + '/' + path;
     }
   },
   components: {
@@ -2068,8 +2068,8 @@ __webpack_require__.r(__webpack_exports__);
     getBack: function getBack() {
       this.$emit('pageBack', '');
     },
-    getSrcImages: function getSrcImages(path) {
-      return 'storage/' + path;
+    getSrcImages: function getSrcImages(folder, path) {
+      return folder + '/' + path;
     }
   }
 });
@@ -2299,13 +2299,13 @@ var render = function render() {
     }, [apartment.apartment_images == null ? _c("img", {
       staticClass: "img-fluid w-25",
       attrs: {
-        src: __webpack_require__(/*! ../../../public/images/immagine_non_disponibile.png */ "./public/images/immagine_non_disponibile.png"),
+        src: _vm.getSrcImages("images", "immagine_non_disponibile.png"),
         alt: "Nessuna immagine"
       }
     }) : _c("img", {
       staticClass: "img-fluid w-25",
       attrs: {
-        src: _vm.getSrcImages(apartment.apartment_images),
+        src: _vm.getSrcImages("storage", apartment.apartment_images),
         alt: apartment.apartment_title
       }
     }), _vm._v(" "), _c("h4", [_vm._v(" " + _vm._s(apartment.apartment_title))])]);
@@ -2321,13 +2321,13 @@ var render = function render() {
     }, [apartment.apartment_images == null ? _c("img", {
       staticClass: "img-fluid w-25",
       attrs: {
-        src: __webpack_require__(/*! ../../../public/images/immagine_non_disponibile.png */ "./public/images/immagine_non_disponibile.png"),
+        src: _vm.getSrcImages("images", "immagine_non_disponibile.png"),
         alt: "Nessuna immagine"
       }
     }) : _c("img", {
       staticClass: "img-fluid w-25",
       attrs: {
-        src: _vm.getSrcImages(apartment.apartment_images),
+        src: _vm.getSrcImages("storage", apartment.apartment_images),
         alt: apartment.apartment_title
       }
     }), _vm._v(" "), _c("h4", [_vm._v(" " + _vm._s(apartment.apartment_title))])]);
@@ -2369,13 +2369,13 @@ var render = function render() {
   }, [_vm.dataListArr.apartment_images == null ? _c("img", {
     staticClass: "img-fluid w-25",
     attrs: {
-      src: __webpack_require__(/*! ../../../public/images/immagine_non_disponibile.png */ "./public/images/immagine_non_disponibile.png"),
+      src: _vm.getSrcImages("images", "immagine_non_disponibile.png"),
       alt: "Nessuna immagine"
     }
   }) : _c("img", {
     staticClass: "img-fluid w-25",
     attrs: {
-      src: _vm.getSrcImages(_vm.dataListArr.apartment_images),
+      src: _vm.getSrcImages("storage", _vm.dataListArr.apartment_images),
       alt: _vm.dataListArr.apartment_title
     }
   }), _vm._v(" "), _c("ul", {
@@ -50733,17 +50733,6 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./public/images/immagine_non_disponibile.png":
-/*!****************************************************!*\
-  !*** ./public/images/immagine_non_disponibile.png ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/immagine_non_disponibile.png?c2c545d03c84f2a7a88608ff3dfeb51b";
-
-/***/ }),
-
 /***/ "./resources/js/bootstrap.js":
 /*!***********************************!*\
   !*** ./resources/js/bootstrap.js ***!
@@ -51163,8 +51152,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Gianluca Fabrizio\Desktop\Boolean\1 - Esercizi\56_project-boolbnb\resources\js\homeGuest.js */"./resources/js/homeGuest.js");
-module.exports = __webpack_require__(/*! C:\Users\Gianluca Fabrizio\Desktop\Boolean\1 - Esercizi\56_project-boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Utente\Desktop\boolean\boolean\Progetto_finale_BoolBnB\project-boolbnb\resources\js\homeGuest.js */"./resources/js/homeGuest.js");
+module.exports = __webpack_require__(/*! C:\Users\Utente\Desktop\boolean\boolean\Progetto_finale_BoolBnB\project-boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
