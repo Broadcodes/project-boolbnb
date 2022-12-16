@@ -38,6 +38,20 @@
                 @enderror
             </div>
 
+            {{-- categoria --}}
+            <div class="p-3">
+                <label class="px-2" for="category">{{ __('Categoria') }}</label>
+                <select name="category" id="category">
+                    @foreach ($categories as $category)
+                        <option value="{{ $category }}" {{ old('category') == $category ? 'selected' : '' }}>
+                            {{ $category }}</option>
+                    @endforeach
+                </select>
+                @error('category')
+                    <h5 class="text-danger ml-4">{{ $message }}</h5>
+                @enderror
+            </div>
+
 
             {{-- descrizione --}}
             <div class="p-3">
@@ -90,7 +104,7 @@
                     @enderror
                 </div>
             </div>
-            {{-- mq-categoria-prezzo --}}
+            {{-- mq-prezzo --}}
             <div class="d-flex">
                 {{-- mq --}}
                 <div class="p-3">
@@ -101,19 +115,7 @@
                         <h5 class="text-danger ml-4">{{ $message }}</h5>
                     @enderror
                 </div>
-                {{-- categoria --}}
-                <div class="p-3">
-                    <label class="px-2" for="category">{{ __('Categoria') }}</label>
-                    <select name="category" id="category">
-                        @foreach ($categories as $category)
-                            <option value="{{ $category }}" {{ old('category') == $category ? 'selected' : '' }}>
-                                {{ $category }}</option>
-                        @endforeach
-                    </select>
-                    @error('category')
-                        <h5 class="text-danger ml-4">{{ $message }}</h5>
-                    @enderror
-                </div>
+
                 {{-- prezzo --}}
                 <div class="p-3">
                     <label class="px-2 form-label" for="price">{{ __('Prezzo') }}</label>
