@@ -2398,6 +2398,30 @@ var staticRenderFns = [function () {
     staticClass: "d-flex flex-column"
   }, [_c("label", {
     attrs: {
+      "for": "name"
+    }
+  }, [_vm._v("Nome e cognome")]), _vm._v(" "), _c("input", {
+    attrs: {
+      type: "text",
+      name: "name",
+      id: "name"
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "d-flex flex-column"
+  }, [_c("label", {
+    attrs: {
+      "for": "email"
+    }
+  }, [_vm._v("Email")]), _vm._v(" "), _c("input", {
+    attrs: {
+      type: "email",
+      name: "email",
+      id: "email"
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "d-flex flex-column"
+  }, [_c("label", {
+    attrs: {
       "for": "message"
     }
   }, [_vm._v("Invia un messaggio al proprietario")]), _vm._v(" "), _c("textarea", {

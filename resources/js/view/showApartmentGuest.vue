@@ -26,6 +26,14 @@
             <div>
                 <form action="" method="POST">
                     <div class="d-flex flex-column">
+                        <label for="name">Nome e cognome</label>
+                        <input type="text" name="name" id="name">
+                    </div>
+                    <div class="d-flex flex-column">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email">
+                    </div>
+                    <div class="d-flex flex-column">
                         <label for="message">Invia un messaggio al proprietario</label>
                         <textarea name="message" id="message" cols="30" rows="10"></textarea>
                     </div>
