@@ -2,10 +2,10 @@
     <div>
         <div class="apartment_container container-fluid mx-5 px-5">
 
-            <img v-if="dataListArr.apartment_images == null" class="img-fluid w-25"
+            <!-- <img v-if="dataListArr.apartment_images == null" class="img-fluid w-25"
                 src="../../../public/images/immagine_non_disponibile.png" alt="Nessuna immagine">
             <img v-else class="img-fluid w-25" :src="getSrcImages(dataListArr.apartment_images)"
-                :alt="dataListArr.apartment_title">
+                :alt="dataListArr.apartment_title"> -->
 
             <ul class="m-5">
                 <li>Titolo annuncio: {{ dataListArr.apartment_title }}</li>
