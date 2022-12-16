@@ -2,7 +2,7 @@
     <div>
         <div>
             <FilterSearch   @coordinate="sentCoordinate"/>
-
+            <!-- <HomeComponent /> -->
         </div>
 
         <div class="apartment_container container-fluid mx-5 px-5">
@@ -110,7 +110,8 @@ export default {
 
     components: {
 
-        FilterSearch
+        FilterSearch,
+        // HomeComponent
     }
 }
 </script>
