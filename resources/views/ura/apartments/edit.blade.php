@@ -186,13 +186,16 @@
                     @enderror
                 </div>
             </div>
-            {{-- input aggiorna --}}
 
-            <input type="submit" class="btn btn-success" value="Aggiorna">
+            <div class="text-center p-3">
+                {{-- input aggiorna --}}
 
-            {{-- bottone annulla --}}
-            <button type="submit" class="btn btn-warning"><a
-                    href="{{ route('ura.apartments.index') }}">Annulla</a></button>
+                <input type="submit" class="btn btn-success" value="Aggiorna">
+
+                {{-- bottone annulla --}}
+                <button type="submit" class="btn btn-warning m-3"><a
+                        href="{{ route('ura.apartments.index') }}">Annulla</a></button>
+            </div>
         </form>
     </div>
 @endsection

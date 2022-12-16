@@ -11044,11 +11044,18 @@ a.text-dark:focus {
 
 ul li {
   color: black;
-  font-size: 1.3em;
+  font-size: 1.2em;
+  font-weight: 500;
 }
 
 .green {
   color: green;
+  font-size: 1.1em;
+  font-weight: 700;
+}
+
+.brown {
+  color: rgb(102, 17, 17);
   font-weight: 600;
 }
 

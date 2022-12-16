@@ -18,19 +18,26 @@
 
         {{-- elenco voci --}}
         <ul class="m-5 list-group">
-            <li class="list-group-item">{{ __('Titolo annuncio') }}: {{ $apartment->apartment_title }}</li>
-            <li class="list-group-item">{{ __('Descrizione') }}: {{ $apartment->description }}</li>
-            <li class="list-group-item">{{ __('Numero di stanze') }}: {{ $apartment->bedrooms }}</li>
-            <li class="list-group-item">{{ __('Numero di letti') }}: {{ $apartment->bed }}</li>
-            <li class="list-group-item">{{ __('Numero di bagni') }}: {{ $apartment->bathrooms }}</li>
-            <li class="list-group-item">{{ __('MQ') }}: {{ $apartment->sqm }}</li>
-            <li class="list-group-item">{{ __('Categoria') }}: {{ $apartment->category }}</li>
-            <li class="list-group-item">{{ __('Prezzo') }}: {{ $apartment->price }}</li>
-            <li class="list-group-item">{{ __('Indirizzo') }}: {{ $apartment->address }}</li>
-            <li class="list-group-item">{{ __('Civico') }}: {{ $apartment->civic_number }}</li>
-            <li class="list-group-item">{{ __('CAP') }}: {{ $apartment->postalCode }}</li>
-            <li class="list-group-item">{{ __('Città') }}: {{ $apartment->city }}</li>
-            <li class="list-group-item">{{ __('Provincia') }}: {{ $apartment->countrySubdivision }}</li>
+            <li class="list-group-item">{{ __('Titolo annuncio') }}: <span
+                    class="brown">{{ $apartment->apartment_title }}</span></li>
+            <li class="list-group-item">{{ __('Descrizione') }}: <span class="brown">{{ $apartment->description }}</span>
+            </li>
+            <li class="list-group-item">{{ __('Numero di stanze') }}: <span class="brown">{{ $apartment->bedrooms }}</span>
+            </li>
+            <li class="list-group-item">{{ __('Numero di letti') }}: <span class="brown">{{ $apartment->bed }}</span>
+            </li>
+            <li class="list-group-item">{{ __('Numero di bagni') }}: <span
+                    class="brown">{{ $apartment->bathrooms }}</span></li>
+            <li class="list-group-item">{{ __('MQ') }}: <span class="brown">{{ $apartment->sqm }}</span></li>
+            <li class="list-group-item">{{ __('Categoria') }}: <span class="brown">{{ $apartment->category }}</span></li>
+            <li class="list-group-item">{{ __('Prezzo') }}: <span class="brown">{{ $apartment->price }}</span></li>
+            <li class="list-group-item">{{ __('Indirizzo') }}: <span class="brown">{{ $apartment->address }}</span></li>
+            <li class="list-group-item">{{ __('Civico') }}: <span class="brown">{{ $apartment->civic_number }}</span>
+            </li>
+            <li class="list-group-item">{{ __('CAP') }}: <span class="brown">{{ $apartment->postalCode }}</span></li>
+            <li class="list-group-item">{{ __('Città') }}: <span class="brown">{{ $apartment->city }}</span></li>
+            <li class="list-group-item">{{ __('Provincia') }}: <span
+                    class="brown">{{ $apartment->countrySubdivision }}</span></li>
             <li class="list-group-item">{{ __('Longitudine') }}: <span class="green">{{ $apartment->longitude }}</span>
             </li>
             <li class="list-group-item">{{ __('Latitudine') }}: <span class="green">{{ $apartment->latitude }}</span>
