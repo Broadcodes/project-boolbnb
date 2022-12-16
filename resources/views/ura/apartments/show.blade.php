@@ -2,8 +2,9 @@
 
 @section('content')
     <div class="container">
-        <h1>show apartments id: {{ $apartment->id }}</h1>
+        <h1>Codice univoco struttura: {{ $apartment->id }}</h1>
 
+        {{-- immagine --}}
         <div class="m-5">
             @if ($apartment->apartment_images)
                 <img class="img-fluid w-50" src="{{ asset('storage/' . $apartment->apartment_images) }}"
@@ -13,22 +14,23 @@
             @endif
         </div>
 
-        <ul class="m-5">
-            <li>{{ __('Titolo annuncio') }}: {{ $apartment->apartment_title }}</li>
-            <li>{{ __('Descrizione') }}: {{ $apartment->description }}</li>
-            <li>{{ __('Numero di stanze') }}: {{ $apartment->bedrooms }}</li>
-            <li>{{ __('Numero di letti') }}: {{ $apartment->bed }}</li>
-            <li>{{ __('Numero di bagni') }}: {{ $apartment->bathrooms }}</li>
-            <li>{{ __('MQ') }}: {{ $apartment->sqm }}</li>
-            <li>{{ __('Categoria') }}: {{ $apartment->category }}</li>
-            <li>{{ __('Prezzo') }}: {{ $apartment->price }}</li>
-            <li>{{ __('Indirizzo') }}: {{ $apartment->address }}</li>
-            <li>{{ __('Civico') }}: {{ $apartment->civic_number }}</li>
-            <li>{{ __('CAP') }}: {{ $apartment->postalCode }}</li>
-            <li>{{ __('Città') }}: {{ $apartment->city }}</li>
-            <li>{{ __('Provincia') }}: {{ $apartment->countrySubdivision }}</li>
-            <li>{{ __('Longitudine') }}: {{ $apartment->longitude }}</li>
-            <li>{{ __('Latitudine') }}: {{ $apartment->latitude }}</li>
+        {{-- elenco voci --}}
+        <ul class="m-5 list-group">
+            <li class="list-group-item">{{ __('Titolo annuncio') }}: {{ $apartment->apartment_title }}</li>
+            <li class="list-group-item">{{ __('Descrizione') }}: {{ $apartment->description }}</li>
+            <li class="list-group-item">{{ __('Numero di stanze') }}: {{ $apartment->bedrooms }}</li>
+            <li class="list-group-item">{{ __('Numero di letti') }}: {{ $apartment->bed }}</li>
+            <li class="list-group-item">{{ __('Numero di bagni') }}: {{ $apartment->bathrooms }}</li>
+            <li class="list-group-item">{{ __('MQ') }}: {{ $apartment->sqm }}</li>
+            <li class="list-group-item">{{ __('Categoria') }}: {{ $apartment->category }}</li>
+            <li class="list-group-item">{{ __('Prezzo') }}: {{ $apartment->price }}</li>
+            <li class="list-group-item">{{ __('Indirizzo') }}: {{ $apartment->address }}</li>
+            <li class="list-group-item">{{ __('Civico') }}: {{ $apartment->civic_number }}</li>
+            <li class="list-group-item">{{ __('CAP') }}: {{ $apartment->postalCode }}</li>
+            <li class="list-group-item">{{ __('Città') }}: {{ $apartment->city }}</li>
+            <li class="list-group-item">{{ __('Provincia') }}: {{ $apartment->countrySubdivision }}</li>
+            <li class="list-group-item">{{ __('Longitudine') }}: {{ $apartment->longitude }}</li>
+            <li class="list-group-item">{{ __('Latitudine') }}: {{ $apartment->latitude }}</li>
         </ul>
 
         <a href="{{ route('ura.apartments.index') }}">Torna ai miei annunci</a>
