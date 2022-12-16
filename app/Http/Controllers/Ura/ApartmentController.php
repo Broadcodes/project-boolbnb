@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Apartment;
+use ErrorException;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
@@ -74,10 +75,11 @@ class ApartmentController extends Controller
 
         $dataApartment = $request->all();
 
-        if(array_key_exists('apartment_images', $dataApartment)){
+        if (array_key_exists('apartment_images', $dataApartment)) {
             $path_image = Storage::put('apartments_img', $dataApartment['apartment_images']);
             $dataApartment['apartment_images'] = $path_image;
         }
+
 
         $url = "https://api.tomtom.com/search/2/structuredGeocode.json?key=vSAxkJlB4BU0GdRiKvwGGSjCvkYkn0qe&countryCode=IT&limit=1&ofss=0&streetNumber=" . trim(str_replace(' ', '%20', $dataApartment['civic_number'])) . "&streetName=" . trim(str_replace(' ', '%20', $dataApartment['address'])) . "&municipality=" . trim(str_replace(' ', '%20', $dataApartment['city'])) . "&countrySubdivision=" . trim(str_replace(' ', '%20', $dataApartment['countrySubdivision'])) . "&postalCode=" . trim(str_replace(' ', '%20', $dataApartment['postalCode'])) . "&mapcodes=Local,Alternative,International";
 
@@ -103,9 +105,12 @@ class ApartmentController extends Controller
             $existingApartment = Apartment::where('apartment_slug', $slug)->first();
         }
         $apartment->apartment_slug = $slug;
-
-        $apartment->latitude = $obj['results'][0]['position']['lat'];
-        $apartment->longitude = $obj['results'][0]['position']['lon'];
+        try {
+            $apartment->latitude = $obj['results'][0]['position']['lat'];
+            $apartment->longitude = $obj['results'][0]['position']['lon'];
+        } catch (ErrorException $e) {
+            return redirect()->back()->with('popup', 'Attenzione: l\'indirizzo digitato risulta essere non corretto. Riprovare digitando un indirizzo valido');
+        };
         $apartment->user_id = Auth::id();
         $apartment->save();
 
@@ -173,8 +178,8 @@ class ApartmentController extends Controller
 
         $dataApartment = $request->all();
 
-        if(array_key_exists('apartment_images', $dataApartment)){
-            if($apartment->apartment_images){
+        if (array_key_exists('apartment_images', $dataApartment)) {
+            if ($apartment->apartment_images) {
                 Storage::delete($apartment->apartment_images);
             }
             $path_image = Storage::put('apartments_img', $dataApartment['apartment_images']);
@@ -210,8 +215,12 @@ class ApartmentController extends Controller
             $resp = curl_exec($curl);
             $obj = json_decode($resp);
 
-            $dataApartment['latitude'] = $obj->results[0]->position->lat;
-            $dataApartment['longitude'] = $obj->results[0]->position->lon;
+            try {
+                $dataApartment['latitude'] = $obj->results[0]->position->lat;
+                $dataApartment['longitude'] = $obj->results[0]->position->lon;
+            } catch (ErrorException $e) {
+                return redirect()->back()->with('popup', 'Attenzione: l\'indirizzo digitato risulta essere non corretto. Riprovare digitando un indirizzo valido');
+            };
         }
 
         $dataApartment['visible'] = true;
@@ -229,7 +238,7 @@ class ApartmentController extends Controller
      */
     public function destroy(Apartment $apartment)
     {
-        if($apartment->apartment_images){
+        if ($apartment->apartment_images) {
             Storage::delete($apartment->apartment_images);
         }
         $apartment->delete();

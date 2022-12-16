@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            <FilterSearch @whereCondition="getWhereCondition" @setCategory="getCategoryCondition"/>
+            <FilterSearch   @coordinate="sentCoordinate"/>
 
         </div>
 
@@ -18,6 +18,7 @@
                         <div v-for="apartment in apartmentToShow" :key="apartment.id">
 
                             {{apartment.address}}
+                            {{apartment.apartment_title}}
 
                         </div>
 
@@ -61,8 +62,7 @@ export default {
             if (response.data.success) {
 
                 this.apartments  = response.data.results
-                this.apartmentToShow = response.data.results
-                console.log(this.apartmentToShow)
+
 
 
             }
@@ -70,55 +70,34 @@ export default {
         });
         },
 
-        getWhereCondition(array){
-            this.apartmentToShow=[];
-
-            this.addressCondition = array[0];
-            this.countryCondition = array[1];
-            this.cityCondition = array[2];
-
-            this.getApartmentToShow();
-
-
-
-        },
-
-        getCategoryCondition(category){
-
-            this.apartmentToShow=[];
-            this.currentCategory=category;
-
-            this.getApartmentToShow();
-
-
-
-        },
-        getApartmentToShow(){
-
-            this.apartmentToShow=[];
-            this.apartments.forEach(element=>{
-                if(element.address.toLowerCase().includes(this.addressCondition.toLowerCase()||element.address.toLowerCase()===this.addressCondition.toLowerCase)||
-                element.countrySubdivision.toLowerCase().includes(this.countryCondition.toLowerCase()||element.countrySubdivision.toLowerCase()===this.countryCondition.toLowerCase)||
-                element.city.toLowerCase().includes(this.cityCondition.toLowerCase()||element.city.toLowerCase()===this.cityCondition.toLowerCase() )
-                ||element.category===this.currentCategory){
 
 
 
 
-
-                    this.apartmentToShow.push(element);
-                    this.filteredData = false;
-                }
-
-             }
-            )
-
-
-
-        },
         getBack(){
             this.filteredData=true;
             this.apartmentToShow =this.apartments;
+        },
+        sentCoordinate(data){
+
+
+
+
+            axios.post('/api/coordinate',data).then(response=>{
+                if(response)
+                {
+
+
+                    console.log(response)
+                    this.apartmentToShow=response.data[0];
+
+                }
+
+
+
+            })
+            this.filteredData=false;
+
         }
 
 

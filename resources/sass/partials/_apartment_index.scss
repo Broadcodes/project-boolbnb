@@ -1,24 +1,49 @@
-.generalInfo {
-    column-gap: .8rem;
-}
 
-.cardsContainer {
-    row-gap: .7rem;
 
-    .hello {
-        display: flex;
-        justify-content: center;
-    }
-
-    .apartmentCard {
-        width: 40vw;
-        background-color: #ccc;
-        box-shadow: 10px 5px 5px #a6a6a6;
-        column-gap: 1rem;
-
-        .apartmentTitle {
-            font-size: .9rem;
-        }
-    }
+.container {
+    // border: 1px solid red;
+    padding: 0;
 
 }
+
+.btn-lightgreen{
+    background-color: #61D5B9;
+}
+
+.btn-lightgreen:hover{
+    background-color: rgb(149, 216, 216);
+}
+
+
+.bg_color_af {
+    background-color: #ffffff;
+    border-bottom: 1px solid rgb(80, 79, 79);
+}
+
+.card_af {
+    border: 1px solid lightgray;
+    // width: calc(100% / 2);
+}
+
+.ar_contenitore_immagini {
+    border: 2px solid green;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.bg-orange{
+    background-color: #F2BC17;
+}
+
+.resize-img {
+    min-height: 300px;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+
+.card{
+    max-height: 600px;
+
+}
+
