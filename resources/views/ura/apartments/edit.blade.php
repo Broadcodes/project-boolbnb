@@ -195,22 +195,4 @@
                     href="{{ route('ura.apartments.index') }}">Annulla</a></button>
         </form>
     </div>
-
-    <div class="p-3">
-        <label class="px-2" for="countrySubdivision">{{ __('Provincia') }}</label>
-        <input type="text" name="countrySubdivision" id="countrySubdivision"
-            value="{{ old('countrySubdivision', $apartment->countrySubdivision) }}" required
-            maxlength="255>
-                @error('countrySubdivision')
-<h5 class="text-danger ml-4">{{ $message }}
-        </h5>
-    @enderror
-</div>
-
-<div class="p-3">
-    <input type="submit" value="Aggiorna">
-</div>
-
-</form>
-</div>
 @endsection
