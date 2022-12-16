@@ -11043,7 +11043,13 @@ a.text-dark:focus {
 }
 
 ul li {
-  color: red;
+  color: black;
+  font-size: 1.3em;
+}
+
+.green {
+  color: green;
+  font-weight: 600;
 }
 
 .nc-accountInfo {

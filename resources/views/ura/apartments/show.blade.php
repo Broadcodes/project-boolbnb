@@ -13,8 +13,8 @@
                 @else
                     <h6 class="mx-4">{{ __('Nessuna immagine presente') }}</h6>
                 @endif
+            </div>
         </div>
-    </div>
 
         {{-- elenco voci --}}
         <ul class="m-5 list-group">
@@ -31,10 +31,15 @@
             <li class="list-group-item">{{ __('CAP') }}: {{ $apartment->postalCode }}</li>
             <li class="list-group-item">{{ __('Città') }}: {{ $apartment->city }}</li>
             <li class="list-group-item">{{ __('Provincia') }}: {{ $apartment->countrySubdivision }}</li>
-            <li class="list-group-item">{{ __('Longitudine') }}: {{ $apartment->longitude }}</li>
-            <li class="list-group-item">{{ __('Latitudine') }}: {{ $apartment->latitude }}</li>
+            <li class="list-group-item">{{ __('Longitudine') }}: <span class="green">{{ $apartment->longitude }}</span>
+            </li>
+            <li class="list-group-item">{{ __('Latitudine') }}: <span class="green">{{ $apartment->latitude }}</span>
+            </li>
         </ul>
 
-        <a href="{{ route('ura.apartments.index') }}" class="btn btn-primary">Torna ai miei annunci</a>
+        <div class="text-center">
+            <a href="{{ route('ura.apartments.index') }}" class="btn btn-primary">Torna ai miei annunci</a>
+        </div>
+
     </div>
 @endsection
