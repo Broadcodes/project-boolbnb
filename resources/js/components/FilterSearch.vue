@@ -1,25 +1,16 @@
 <template>
     <div>
+        <div class="centerz d-flex align-items-center justify-content-center">
+
+             <searchBoxComponent @setPosition="getPosition" />
+
+        </div>
+
+
 
         <div class="selection fixed-top w-100">
 
-            <div class="centerz d-flex align-items-center justify-content-center">
 
-                <div class="mx-2">
-                    <label for="address">Address</label>
-                    <input type="text" name="address" v-model="address">
-                </div>
-                <div class="mx-2">
-                    <label for="country">Country</label>
-                    <input type="text" name="country" v-model="country">
-                </div>
-                <div class="mx-2">
-                    <label for="city">City</label>
-                    <input type="text" name="city" v-model="city">
-                </div>
-                <button class="mx-2" @click="setWhere()"><i class="fa-solid fa-magnifying-glass"></i></button>
-
-            </div>
             <div>
                 <div class="categoryArea d-flex align-items-center justify-content-around w-100">
 
@@ -80,6 +71,12 @@
                     </div>
 
                 </div>
+
+            </div>
+            <div>
+
+
+
             </div>
         </div>
 
@@ -89,30 +86,32 @@
 </template>
 
 <script>
+import searchBoxComponent from '../components/searchBoxComponent.vue';
 export default {
     name: 'FilterSearch',
     data() {
         return {
-            address: '',
-            country: '',
-            city: ''
+
 
         }
     },
     methods: {
-        setWhere() {
-            let array = [];
-            array.push(this.address, this.country, this.city);
-            console.log('hey');
-            console.log(array);
-            this.$emit('whereCondition', array)
-        },
+
         setCategory(input) {
             console.log(input)
 
             this.$emit('setCategory', input)
+        },
+        getPosition(data){
+
+            this.$emit('coordinate',data)//data:object
+
+
         }
 
+    },
+    components:{
+        searchBoxComponent
     }
 
 }

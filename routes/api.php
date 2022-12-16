@@ -20,4 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 
-Route::resource('apiHome', 'apiGuest\apiGuestController',['only'=>['index', 'show']]);
+Route::resource('apiHome', 'apiGuest\apiGuestController',['only'=>['index', 'show','coordinate']]);
+Route::resource('coordinate','apiGuest\apiCoordinateController');

@@ -17,6 +17,7 @@ class apiGuestController extends Controller
      */
     public function index()
     {
+        //$lat=$request->lat();
         $apartments = Apartment::all();
 
         try{
@@ -32,7 +33,7 @@ class apiGuestController extends Controller
                 'success' => false
             ];
         }
-
+       // return request()->json($lat);
         return response()->json($data);
 
     }
@@ -112,4 +113,5 @@ class apiGuestController extends Controller
     {
         //
     }
+
 }
