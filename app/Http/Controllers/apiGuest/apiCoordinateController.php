@@ -52,7 +52,7 @@ class apiCoordinateController extends Controller
     FROM
         `apartments`
     HAVING
-        `distance` < 10
+        `distance` < " . $radius . "
     ORDER BY
         `distance`
     LIMIT
