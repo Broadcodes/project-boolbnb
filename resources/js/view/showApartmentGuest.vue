@@ -23,15 +23,18 @@
                 <li>Provincia: {{ dataListArr.countrySubdivision }}</li>
             </ul>
 
-            <form action="" method="POST">
-                <div class="d-flex flex-column">
-                    <label for="message">Invia un messaggio al proprietario</label>
-                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
-                </div>
-                <div>
-                    <input type="submit" value="Invia Messaggio">
-                </div>
-            </form>
+            <div>
+                <form action="" method="POST">
+                    <div class="d-flex flex-column">
+                        <label for="message">Invia un messaggio al proprietario</label>
+                        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                    </div>
+                    <div>
+                        <input type="submit" value="Invia Messaggio">
+                    </div>
+                </form>
+            </div>
+
 
             <button @click="getBack">get back</button>
         </div>

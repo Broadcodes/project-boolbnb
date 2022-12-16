@@ -2380,13 +2380,40 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("ul", {
     staticClass: "m-5"
-  }, [_c("li", [_vm._v("Titolo annuncio: " + _vm._s(_vm.dataListArr.apartment_title))]), _vm._v(" "), _c("li", [_vm._v("Descrizione: " + _vm._s(_vm.dataListArr.description))]), _vm._v(" "), _c("li", [_vm._v("Numero di stanze: " + _vm._s(_vm.dataListArr.bedrooms))]), _vm._v(" "), _c("li", [_vm._v("Numero di letti: " + _vm._s(_vm.dataListArr.bed))]), _vm._v(" "), _c("li", [_vm._v("Numero di bagni: " + _vm._s(_vm.dataListArr.bathrooms))]), _vm._v(" "), _c("li", [_vm._v("MQ': " + _vm._s(_vm.dataListArr.sqm))]), _vm._v(" "), _c("li", [_vm._v("Categoria: " + _vm._s(_vm.dataListArr.category))]), _vm._v(" "), _c("li", [_vm._v("Prezzo: " + _vm._s(_vm.dataListArr.price))]), _vm._v(" "), _c("li", [_vm._v("Indirizzo: " + _vm._s(_vm.dataListArr.address))]), _vm._v(" "), _c("li", [_vm._v("Civico: " + _vm._s(_vm.dataListArr.civic_number))]), _vm._v(" "), _c("li", [_vm._v("CAP: " + _vm._s(_vm.dataListArr.postalCode))]), _vm._v(" "), _c("li", [_vm._v("Città: " + _vm._s(_vm.dataListArr.city))]), _vm._v(" "), _c("li", [_vm._v("Provincia: " + _vm._s(_vm.dataListArr.countrySubdivision))])]), _vm._v(" "), _c("button", {
+  }, [_c("li", [_vm._v("Titolo annuncio: " + _vm._s(_vm.dataListArr.apartment_title))]), _vm._v(" "), _c("li", [_vm._v("Descrizione: " + _vm._s(_vm.dataListArr.description))]), _vm._v(" "), _c("li", [_vm._v("Numero di stanze: " + _vm._s(_vm.dataListArr.bedrooms))]), _vm._v(" "), _c("li", [_vm._v("Numero di letti: " + _vm._s(_vm.dataListArr.bed))]), _vm._v(" "), _c("li", [_vm._v("Numero di bagni: " + _vm._s(_vm.dataListArr.bathrooms))]), _vm._v(" "), _c("li", [_vm._v("MQ': " + _vm._s(_vm.dataListArr.sqm))]), _vm._v(" "), _c("li", [_vm._v("Categoria: " + _vm._s(_vm.dataListArr.category))]), _vm._v(" "), _c("li", [_vm._v("Prezzo: " + _vm._s(_vm.dataListArr.price))]), _vm._v(" "), _c("li", [_vm._v("Indirizzo: " + _vm._s(_vm.dataListArr.address))]), _vm._v(" "), _c("li", [_vm._v("Civico: " + _vm._s(_vm.dataListArr.civic_number))]), _vm._v(" "), _c("li", [_vm._v("CAP: " + _vm._s(_vm.dataListArr.postalCode))]), _vm._v(" "), _c("li", [_vm._v("Città: " + _vm._s(_vm.dataListArr.city))]), _vm._v(" "), _c("li", [_vm._v("Provincia: " + _vm._s(_vm.dataListArr.countrySubdivision))])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("button", {
     on: {
       click: _vm.getBack
     }
   }, [_vm._v("get back")])])]);
 };
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div", [_c("form", {
+    attrs: {
+      action: "",
+      method: "POST"
+    }
+  }, [_c("div", {
+    staticClass: "d-flex flex-column"
+  }, [_c("label", {
+    attrs: {
+      "for": "message"
+    }
+  }, [_vm._v("Invia un messaggio al proprietario")]), _vm._v(" "), _c("textarea", {
+    attrs: {
+      name: "message",
+      id: "message",
+      cols: "30",
+      rows: "10"
+    }
+  })]), _vm._v(" "), _c("div", [_c("input", {
+    attrs: {
+      type: "submit",
+      value: "Invia Messaggio"
+    }
+  })])])]);
+}];
 render._withStripped = true;
 
 
@@ -51152,8 +51179,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Utente\Desktop\boolean\boolean\Progetto_finale_BoolBnB\project-boolbnb\resources\js\homeGuest.js */"./resources/js/homeGuest.js");
-module.exports = __webpack_require__(/*! C:\Users\Utente\Desktop\boolean\boolean\Progetto_finale_BoolBnB\project-boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Gianluca Fabrizio\Desktop\Boolean\1 - Esercizi\56_project-boolbnb\resources\js\homeGuest.js */"./resources/js/homeGuest.js");
+module.exports = __webpack_require__(/*! C:\Users\Gianluca Fabrizio\Desktop\Boolean\1 - Esercizi\56_project-boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
