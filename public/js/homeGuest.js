@@ -1918,7 +1918,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     setCategory: function setCategory(input) {
       console.log(input);
-      this.$emit('setCategory', input);
+      this.$emit('sentCategory', input);
     },
     getPosition: function getPosition(data) {
       this.$emit('coordinate', data); //data:object
@@ -2008,13 +2008,11 @@ __webpack_require__.r(__webpack_exports__);
   name: "homeGuest",
   data: function data() {
     return {
-      apartmentToShow: [],
-      filteredData: true,
+      apartmentsToShow: [],
+      loading: true,
       apartments: [],
-      addressCondition: '',
-      countryCondition: '',
-      cityCondition: '',
-      currentCategory: ''
+      positionSet: false,
+      apartmentsInRadius: []
     };
   },
   mounted: function mounted() {
@@ -2026,22 +2024,44 @@ __webpack_require__.r(__webpack_exports__);
       axios.get("/api/apiHome").then(function (response) {
         if (response.data.success) {
           _this.apartments = response.data.results;
+          _this.apartmentsToShow = response.data.results;
+          _this.loading = false;
+          console.log(_this.apartmentsToShow);
         }
       });
     },
     getBack: function getBack() {
-      this.filteredData = true;
-      this.apartmentToShow = this.apartments;
+      this.apartmentsToShow = this.apartments;
+      this.positionSet = false;
     },
     sentCoordinate: function sentCoordinate(data) {
       var _this2 = this;
       axios.post('/api/coordinate', data).then(function (response) {
         if (response) {
           console.log(response);
-          _this2.apartmentToShow = response.data[0];
+          _this2.apartmentsInRadius = response.data[0];
+          _this2.apartmentsToShow = response.data[0];
+          _this2.positionSet = true;
         }
       });
-      this.filteredData = false;
+    },
+    setCategory: function setCategory(category) {
+      if (!this.positionSet) {
+        this.apartmentsToShow = this.apartments;
+        var arr = [];
+        arr = this.apartmentsToShow.filter(function (apartment) {
+          return apartment.category.toLowerCase() === category.toLowerCase();
+        });
+        this.apartmentsToShow = arr;
+      } else {
+        var _arr = [];
+        this.apartmentsToShow = this.apartmentsInRadius;
+        console.log(this.apartmentsToShow);
+        _arr = this.apartmentsToShow.filter(function (apartment) {
+          return apartment.category.toLowerCase() === category.toLowerCase();
+        });
+        this.apartmentsToShow = _arr;
+      }
     }
   },
   components: {
@@ -2066,14 +2086,12 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", [_c("div", {
-    staticClass: "centerz d-flex align-items-center justify-content-center"
-  }, [_c("searchBoxComponent", {
+    staticClass: "selection position w-100"
+  }, [_c("div", {}, [_c("searchBoxComponent", {
     on: {
       setPosition: _vm.getPosition
     }
-  })], 1), _vm._v(" "), _c("div", {
-    staticClass: "selection fixed-top w-100"
-  }, [_c("div", [_c("div", {
+  })], 1), _vm._v(" "), _c("div", [_c("div", {
     staticClass: "categoryArea d-flex align-items-center justify-content-around w-100"
   }, [_c("div", {
     staticClass: "flex-column text-center"
@@ -2402,15 +2420,12 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("div", [_c("div", [_c("FilterSearch", {
     on: {
-      coordinate: _vm.sentCoordinate
+      coordinate: _vm.sentCoordinate,
+      sentCategory: _vm.setCategory
     }
   })], 1), _vm._v(" "), _c("div", {
     staticClass: "apartment_container container-fluid mx-5 px-5"
-  }, [_vm.filteredData ? _c("div", _vm._l(_vm.apartments, function (apartment) {
-    return _c("div", {
-      key: apartment.id
-    }, [_vm._v("\n                        " + _vm._s(apartment.address) + "\n\n\n                    ")]);
-  }), 0) : _c("div", _vm._l(_vm.apartmentToShow, function (apartment) {
+  }, [_vm.loading ? _c("div") : _c("div", _vm._l(_vm.apartmentsToShow, function (apartment) {
     return _c("div", {
       key: apartment.id
     }, [_vm._v("\n\n                        " + _vm._s(apartment.address) + "\n                        " + _vm._s(apartment.apartment_title) + "\n\n                    ")]);
@@ -6804,7 +6819,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".centerz[data-v-263f772b] {\n  position: relative;\n  top: -50px;\n  left: 50%;\n  transform: translateX(-50%);\n  width: 50%;\n}\nbutton[data-v-263f772b] {\n  text-decoration: none;\n  border: none;\n  background-color: rgba(255, 255, 255, 0);\n}\n.categoryArea[data-v-263f772b] {\n  position: relative;\n  top: -10px;\n}", ""]);
+exports.push([module.i, ".centerz[data-v-263f772b] {\n  position: relative;\n  top: -50px;\n  left: 50%;\n  transform: translateX(-50%);\n  width: 50%;\n}\nbutton[data-v-263f772b] {\n  text-decoration: none;\n  border: none;\n  background-color: rgba(255, 255, 255, 0);\n}\n.position[data-v-263f772b] {\n  position: fixed;\n  top: -200px;\n}\n.categoryArea[data-v-263f772b] {\n  padding-top: 20px;\n}", ""]);
 
 // exports
 
@@ -6842,7 +6857,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".apartment_container {\n  margin-top: 250px;\n}", ""]);
+exports.push([module.i, ".apartment_container {\n  margin-top: 450px;\n}", ""]);
 
 // exports
 
@@ -6861,7 +6876,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.tp{\n  margin-top: 200px;\n}\n\n", ""]);
+exports.push([module.i, "\n.tp{\n  margin-top: 200px;\n  width: 30vw;\n  margin-left: 20px;\n}\n\n", ""]);
 
 // exports
 

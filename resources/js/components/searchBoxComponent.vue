@@ -1,5 +1,7 @@
 <template>
   <div>
+
+
     <div id="searchBox" class="tp">
 
     </div>
@@ -74,6 +76,8 @@ export default {
 
   .tp{
     margin-top: 200px;
+    width: 30vw;
+    margin-left: 20px;
   }
 
 </style>

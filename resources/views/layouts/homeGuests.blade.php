@@ -259,6 +259,12 @@
         </div>
     </div>
 
+    <style>
+        body{
+            width: 95vw;
+        }
+    </style>
+
 
     @push('scripts')
         <script>

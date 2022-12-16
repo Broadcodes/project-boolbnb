@@ -1,21 +1,17 @@
 <template>
     <div>
         <div>
-            <FilterSearch   @coordinate="sentCoordinate"/>
+            <FilterSearch   @coordinate="sentCoordinate" @sentCategory="setCategory"/>
 
         </div>
 
         <div class="apartment_container container-fluid mx-5 px-5">
-                    <div v-if="filteredData">
-                        <div v-for="apartment in apartments" :key="apartment.id">
-                            {{apartment.address}}
-
-
-                        </div>
+                    <div v-if="loading">
 
                     </div>
-                    <div v-else>
-                        <div v-for="apartment in apartmentToShow" :key="apartment.id">
+
+                    <div v-else >
+                        <div v-for="apartment in apartmentsToShow" :key="apartment.id">
 
                             {{apartment.address}}
                             {{apartment.apartment_title}}
@@ -41,13 +37,12 @@ export default {
     data(){
 
         return{
-            apartmentToShow :[],
-            filteredData : true,
+            apartmentsToShow :[],
+            loading:true,
+
             apartments:[],
-            addressCondition:'',
-            countryCondition:'',
-            cityCondition:'',
-            currentCategory:''
+            positionSet:false,
+            apartmentsInRadius:[]
 
 
         }
@@ -61,7 +56,13 @@ export default {
             axios.get("/api/apiHome").then(response => {
             if (response.data.success) {
 
-                this.apartments  = response.data.results
+                this.apartments= response.data.results
+
+                this.apartmentsToShow  = response.data.results
+                this.loading=false
+                console.log(this.apartmentsToShow);
+
+
 
 
 
@@ -75,8 +76,9 @@ export default {
 
 
         getBack(){
-            this.filteredData=true;
-            this.apartmentToShow =this.apartments;
+            this.apartmentsToShow=this.apartments;
+            this.positionSet=false;
+
         },
         sentCoordinate(data){
 
@@ -89,16 +91,69 @@ export default {
 
 
                     console.log(response)
-                    this.apartmentToShow=response.data[0];
+                    this.apartmentsInRadius=response.data[0];
+                    this.apartmentsToShow=response.data[0];
+
+                    this.positionSet=true;
 
                 }
 
 
 
             })
-            this.filteredData=false;
 
-        }
+
+        },
+        setCategory(category){
+
+
+                if(!this.positionSet){
+                    this.apartmentsToShow=this.apartments
+
+
+
+                let arr=[];
+
+
+
+                arr=this.apartmentsToShow.filter(function(apartment){
+                    return apartment.category.toLowerCase()===category.toLowerCase()
+
+                })
+
+
+
+
+
+                this.apartmentsToShow=arr;
+
+
+                }
+                else{
+
+                    let arr=[];
+                    this.apartmentsToShow=this.apartmentsInRadius
+                    console.log(this.apartmentsToShow);
+
+
+
+                arr=this.apartmentsToShow.filter(function(apartment){
+                    return apartment.category.toLowerCase()===category.toLowerCase()
+
+                })
+
+
+
+
+
+                this.apartmentsToShow=arr;
+
+
+                }
+
+
+        },
+
 
 
 
@@ -118,7 +173,7 @@ export default {
 <style lang="scss">
 
 .apartment_container{
-    margin-top: 250px;
+    margin-top: 450px;
 }
 
 

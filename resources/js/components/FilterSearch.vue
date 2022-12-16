@@ -1,14 +1,15 @@
 <template>
     <div>
-        <div class="centerz d-flex align-items-center justify-content-center">
-
-             <searchBoxComponent @setPosition="getPosition" />
-
-        </div>
 
 
 
-        <div class="selection fixed-top w-100">
+
+        <div class="selection position w-100">
+            <div class="">
+
+                <searchBoxComponent @setPosition="getPosition" />
+
+            </div>
 
 
             <div>
@@ -100,7 +101,7 @@ export default {
         setCategory(input) {
             console.log(input)
 
-            this.$emit('setCategory', input)
+            this.$emit('sentCategory', input)
         },
         getPosition(data){
 
@@ -132,9 +133,14 @@ button {
     background-color: rgba(255, 255, 255, 0);
 }
 
-.categoryArea{
-    position: relative;
-    top: -10px;
+.position{
+    position: fixed;
+    top:-200px;
 }
+.categoryArea{
+    padding-top: 20px;
+}
+
+
 
 </style>
