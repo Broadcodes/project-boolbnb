@@ -2,10 +2,10 @@
     <div>
         <div class="apartment_container container-fluid mx-5 px-5">
 
-            <!-- <img v-if="dataListArr.apartment_images == null" class="img-fluid w-25"
-                src="../../../public/images/immagine_non_disponibile.png" alt="Nessuna immagine">
-            <img v-else class="img-fluid w-25" :src="getSrcImages(dataListArr.apartment_images)"
-                :alt="dataListArr.apartment_title"> -->
+            <img v-if="dataListArr.apartment_images == null" class="img-fluid w-25"
+                :src="getSrcImages('images', 'immagine_non_disponibile.png')" alt="Nessuna immagine">
+            <img v-else class="img-fluid w-25" :src="getSrcImages('storage', dataListArr.apartment_images)"
+                :alt="dataListArr.apartment_title">
 
             <ul class="m-5">
                 <li>Titolo annuncio: {{ dataListArr.apartment_title }}</li>
@@ -38,8 +38,8 @@ export default {
         getBack() {
             this.$emit('pageBack', '')
         },
-        getSrcImages(path){
-            return 'storage/' + path;
+        getSrcImages(folder, path){
+            return folder + '/' + path;
         }
     }
 }
