@@ -2,17 +2,19 @@
 
 @section('content')
     <div class="container">
-        <h1>Codice univoco struttura: {{ $apartment->id }}</h1>
+        <div class="text-center">
+            <h1>{{ $apartment->apartment_title }}</h1>
 
-        {{-- immagine --}}
-        <div class="m-5">
-            @if ($apartment->apartment_images)
-                <img class="img-fluid w-50" src="{{ asset('storage/' . $apartment->apartment_images) }}"
-                    alt="{{ $apartment->apartment_title }}" />
-            @else
-                <h6 class="mx-4">{{ __('Nessuna immagine presente') }}</h6>
-            @endif
+            {{-- immagine --}}
+            <div class="m-5">
+                @if ($apartment->apartment_images)
+                    <img class="img-fluid w-50" src="{{ asset('storage/' . $apartment->apartment_images) }}"
+                        alt="{{ $apartment->apartment_title }}" />
+                @else
+                    <h6 class="mx-4">{{ __('Nessuna immagine presente') }}</h6>
+                @endif
         </div>
+    </div>
 
         {{-- elenco voci --}}
         <ul class="m-5 list-group">
