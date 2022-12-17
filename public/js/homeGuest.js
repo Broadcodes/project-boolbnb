@@ -2490,13 +2490,13 @@ var staticRenderFns = [function () {
   }, [_c("label", {
     staticClass: "form-label",
     attrs: {
-      "for": "message"
+      "for": "content_message"
     }
   }, [_vm._v("Invia un messaggio al proprietario")]), _vm._v(" "), _c("textarea", {
     staticClass: "form-control",
     attrs: {
-      name: "message",
-      id: "message",
+      name: "content_message",
+      id: "content_message",
       cols: "30",
       rows: "10",
       placeholder: "Chiedi tutto quello che vuoi!"

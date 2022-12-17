@@ -37,7 +37,7 @@
                         <input class="form-control" type="email" name="email" id="email" placeholder="email">
                     </div>
                     <div class="d-flex flex-column">
-                        <label class="form-label" for="message">Invia un messaggio al proprietario</label>
+                        <label class="form-label" for="content_message">Invia un messaggio al proprietario</label>
                         <textarea class="form-control" name="content_message" id="content_message" cols="30" rows="10"
                             placeholder="Chiedi tutto quello che vuoi!"></textarea>
                     </div>
