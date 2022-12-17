@@ -1,7 +1,7 @@
 @extends('layouts.homeGuests')
 
 @section('title')
-    {{config('app.name')}}
+    {{ config('app.name') }}
 @endsection
 
 @section('content')

@@ -7,16 +7,22 @@
 
             <div class="apartment_container container-fluid mx-5 px-5">
                 <div v-if="filteredData">
-                    <div class="apartmentShow" v-for="apartment in apartments" :key="apartment.id" @click="getApartmentShow(apartment)">
-                        <img v-if="apartment.apartment_images == null" class="img-fluid w-25" :src="getSrcImages('images', 'immagine_non_disponibile.png')" alt="Nessuna immagine">
-                        <img v-else class="img-fluid w-25" :src="getSrcImages('storage', apartment.apartment_images)" :alt="apartment.apartment_title">
+                    <div class="apartmentShow" v-for="apartment in apartments" :key="apartment.id"
+                        @click="getApartmentShow(apartment)">
+                        <img v-if="apartment.apartment_images == null" class="img-fluid w-25"
+                            :src="getSrcImages('images', 'immagine_non_disponibile.png')" alt="Nessuna immagine">
+                        <img v-else class="img-fluid w-25" :src="getSrcImages('storage', apartment.apartment_images)"
+                            :alt="apartment.apartment_title">
                         <h4> {{ apartment.apartment_title }}</h4>
                     </div>
                 </div>
                 <div v-else>
-                    <div class="apartmentShow" v-for="apartment in apartmentToShow" :key="apartment.id" @click="getApartmentShow(apartment)">
-                        <img v-if="apartment.apartment_images == null" class="img-fluid w-25" :src="getSrcImages('images', 'immagine_non_disponibile.png')" alt="Nessuna immagine">
-                        <img v-else class="img-fluid w-25" :src="getSrcImages('storage', apartment.apartment_images)" :alt="apartment.apartment_title">
+                    <div class="apartmentShow" v-for="apartment in apartmentToShow" :key="apartment.id"
+                        @click="getApartmentShow(apartment)">
+                        <img v-if="apartment.apartment_images == null" class="img-fluid w-25"
+                            :src="getSrcImages('images', 'immagine_non_disponibile.png')" alt="Nessuna immagine">
+                        <img v-else class="img-fluid w-25" :src="getSrcImages('storage', apartment.apartment_images)"
+                            :alt="apartment.apartment_title">
                         <h4> {{ apartment.apartment_title }}</h4>
                     </div>
 
@@ -67,6 +73,11 @@ export default {
         },
 
         getApartmentShow(value) {
+
+            if (this.titleApartmentShow != '') {
+                alert('Messaggio inviato correttamente');
+            }
+
             this.titleApartmentShow = value.apartment_title;
             this.showDetailsApartment = value;
         },
@@ -88,11 +99,10 @@ export default {
             })
             this.filteredData = false;
         },
-        getSrcImages(folder, path){
+        getSrcImages(folder, path) {
             return folder + '/' + path;
         }
     },
-
     components: {
         FilterSearch,
         showApartmentGuest

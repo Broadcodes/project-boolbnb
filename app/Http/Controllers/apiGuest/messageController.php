@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\apiGuest;
 
 use App\Http\Controllers\Controller;
-use Error;
-use Illuminate\Http\Request;
+use App\Message;
 use App\Apartment;
+use Illuminate\Http\Request;
 
-
-class apiGuestController extends Controller
+class messageController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -17,25 +17,12 @@ class apiGuestController extends Controller
      */
     public function index()
     {
-        //$lat=$request->lat();
-        $apartments = Apartment::all();
+        $id_apartment = $_SERVER['REQUEST_URI'];
+        $id_apartment = substr(strstr($id_apartment, '?'), 1);
 
-        try{
+        $messages = Message::all();
 
-
-            $data = [
-                'results' => $apartments,
-                'success' => true
-            ];
-        }catch(Error $e){
-            $data = [
-                'error' => $e->message,
-                'success' => false
-            ];
-        }
-       // return request()->json($lat);
-        return response()->json($data);
-
+        return view('message.index', compact(['id_apartment', 'messages']));
     }
 
     /**
@@ -56,7 +43,13 @@ class apiGuestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dataMessage = $request->all();
+
+        $message = new Message();
+        $message->fill($dataMessage);
+        $message->save();
+
+        return redirect()->route('homePage');
     }
 
     /**
@@ -65,19 +58,10 @@ class apiGuestController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show(Message $message)
     {
-        // come ->with([...]) esiste anche ->without([...])
-       // $post = Post::find($id)->with(['tags', 'category'])->first();
-
-       // $post = Post::where('slug', $slug)->with(['tags', 'category'])->first();
-
-      //  $data = [
-       //     'results' => $post,
-       //     'success' => isset($post)
-       // ];
-      //  return response()->json($data);
-
+        dd($message);
+        return view('ura.apartments.show', compact('message'));
     }
 
     /**
@@ -113,5 +97,4 @@ class apiGuestController extends Controller
     {
         //
     }
-
 }

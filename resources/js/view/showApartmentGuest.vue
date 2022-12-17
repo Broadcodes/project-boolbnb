@@ -24,7 +24,10 @@
             </ul>
 
             <div>
-                <form action="" method="POST">
+                <form action="api/message" method="POST">
+                    <!-- non toccare l'input con il name="apartment_id" tanto è nascosto, ma di fondamentale importanza -->
+                    <input class="d-none" type="text" name="apartment_id" id="apartment_id" :value="dataListArr.id">
+                    <!-- ------------------------------ -->
                     <div class="d-flex flex-column">
                         <label for="name">Nome e cognome</label>
                         <input type="text" name="name" id="name">
@@ -34,11 +37,11 @@
                         <input type="email" name="email" id="email">
                     </div>
                     <div class="d-flex flex-column">
-                        <label for="message">Invia un messaggio al proprietario</label>
-                        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                        <label for="content_message">Invia un messaggio al proprietario</label>
+                        <textarea name="content_message" id="content_message" cols="30" rows="10"></textarea>
                     </div>
                     <div>
-                        <input type="submit" value="Invia Messaggio">
+                        <input onclick="return alert('Messaggio inviato correttamente')" type="submit" value="Invia Messaggio">
                     </div>
                 </form>
             </div>
