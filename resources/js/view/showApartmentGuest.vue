@@ -22,9 +22,12 @@
                 <li class="list-group-item">Città: {{ dataListArr.city }}</li>
                 <li class="list-group-item">Provincia: {{ dataListArr.countrySubdivision }}</li>
             </ul>
-<!-- contenitore form -->
+
             <div class="d-flex align-items-end">
-                <form class="w-100" action="" method="POST">
+                <form class="w-100" action="api/message" method="POST">
+                    <!-- non toccare l'input con il name="apartment_id" tanto è nascosto, ma di fondamentale importanza -->
+                    <input class="d-none" type="text" name="apartment_id" id="apartment_id" :value="dataListArr.id">
+                    <!-- ------------------------------ -->
                     <div class="d-flex flex-column">
                         <label class="form-label" for="name">Nome e cognome</label>
                         <input class="form-control" type="text" name="name" id="name" placeholder="Nome e cognome">
@@ -35,11 +38,13 @@
                     </div>
                     <div class="d-flex flex-column">
                         <label class="form-label" for="message">Invia un messaggio al proprietario</label>
-                        <textarea class="form-control" name="message" id="message" cols="30" rows="10" placeholder="Chiedi tutto quello che vuoi!"></textarea>
+                        <textarea class="form-control" name="message" id="message" cols="30" rows="10"
+                            placeholder="Chiedi tutto quello che vuoi!"></textarea>
                     </div>
                     <div class="d-flex">
                         <div>
-                            <input type="submit" class="btn btn-success m-2" value="Invia Messaggio">
+                            <input class="btn btn-success m-2" onclick="return alert('Messaggio inviato correttamente')" type="submit"
+                                value="Invia Messaggio">
                         </div>
                         <div>
                             <button @click="getBack" class="btn btn-primary m-2">Torna alla home</button>
@@ -70,10 +75,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
- .resize-img {
-                min-height: 400px;
-                max-height: 400px;
-                object-fit: contain;
-            }
-
+.resize-img {
+    min-height: 400px;
+    max-height: 400px;
+    object-fit: contain;
+}
 </style>

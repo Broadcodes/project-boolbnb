@@ -44,8 +44,9 @@
                                             class="fa-solid fa-circle-info"></i>
                                         Modifica
                                     </button></a>
-                                <button type="button" class="m-2 btn btn-lightgreen text-light"><i
-                                        class="fa-solid fa-envelope"></i> Messaggi</button>
+                                <a href="{{ route('message.index', $apartment->id) }}"><button type="button"
+                                        class="m-2 btn btn-lightgreen text-light"><i class="fa-solid fa-envelope"></i>
+                                        Messaggi</button></a>
                                 <button type="button" class="m-2 btn btn-success"> <i class="fa-solid fa-pen"></i>
                                     Sponsorizza</button>
                                 <form action="{{ route('ura.apartments.destroy', $apartment->apartment_slug) }}"

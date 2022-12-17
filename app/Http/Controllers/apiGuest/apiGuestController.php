@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\apiGuest;
 
 use App\Http\Controllers\Controller;
+use Error;
 use Illuminate\Http\Request;
-
 use App\Apartment;
 
 

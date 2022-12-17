@@ -2017,6 +2017,9 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     getApartmentShow: function getApartmentShow(value) {
+      if (this.titleApartmentShow != '') {
+        alert('Messaggio inviato correttamente');
+      }
       this.titleApartmentShow = value.apartment_title;
       this.showDetailsApartment = value;
     },
@@ -2419,10 +2422,20 @@ var render = function render() {
   }, [_c("form", {
     staticClass: "w-100",
     attrs: {
-      action: "",
+      action: "api/message",
       method: "POST"
     }
-  }, [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _c("div", {
+  }, [_c("input", {
+    staticClass: "d-none",
+    attrs: {
+      type: "text",
+      name: "apartment_id",
+      id: "apartment_id"
+    },
+    domProps: {
+      value: _vm.dataListArr.id
+    }
+  }), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _c("div", {
     staticClass: "d-flex"
   }, [_vm._m(3), _vm._v(" "), _c("div", [_c("button", {
     staticClass: "btn btn-primary m-2",
@@ -2495,6 +2508,7 @@ var staticRenderFns = [function () {
   return _c("div", [_c("input", {
     staticClass: "btn btn-success m-2",
     attrs: {
+      onclick: "return alert('Messaggio inviato correttamente')",
       type: "submit",
       value: "Invia Messaggio"
     }
@@ -51332,8 +51346,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Utente\Desktop\boolean\boolean\Progetto_finale_BoolBnB\project-boolbnb\resources\js\homeGuest.js */"./resources/js/homeGuest.js");
-module.exports = __webpack_require__(/*! C:\Users\Utente\Desktop\boolean\boolean\Progetto_finale_BoolBnB\project-boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Gianluca Fabrizio\Desktop\Boolean\1 - Esercizi\56_project-boolbnb\resources\js\homeGuest.js */"./resources/js/homeGuest.js");
+module.exports = __webpack_require__(/*! C:\Users\Gianluca Fabrizio\Desktop\Boolean\1 - Esercizi\56_project-boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
