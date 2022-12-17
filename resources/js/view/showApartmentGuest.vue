@@ -1,26 +1,26 @@
 <template>
-    <div>
-        <div class="apartment_container container-fluid mx-5 px-5">
+    <div class="container-fluid">
+        <div class="apartment_containermx-5 px-5">
 
-            <img v-if="dataListArr.apartment_images == null" class="img-fluid w-25"
+            <img v-if="dataListArr.apartment_images == null" class="resize-img img-thumbnail"
                 :src="getSrcImages('images', 'immagine_non_disponibile.png')" alt="Nessuna immagine">
-            <img v-else class="img-fluid w-25" :src="getSrcImages('storage', dataListArr.apartment_images)"
+            <img v-else class="resize-img img-thumbnail" :src="getSrcImages('storage', dataListArr.apartment_images)"
                 :alt="dataListArr.apartment_title">
 
-            <ul class="m-5">
-                <li>Titolo annuncio: {{ dataListArr.apartment_title }}</li>
-                <li>Descrizione: {{ dataListArr.description }}</li>
-                <li>Numero di stanze: {{ dataListArr.bedrooms }}</li>
-                <li>Numero di letti: {{ dataListArr.bed }}</li>
-                <li>Numero di bagni: {{ dataListArr.bathrooms }}</li>
-                <li>MQ': {{ dataListArr.sqm }}</li>
-                <li>Categoria: {{ dataListArr.category }}</li>
-                <li>Prezzo: {{ dataListArr.price }}</li>
-                <li>Indirizzo: {{ dataListArr.address }}</li>
-                <li>Civico: {{ dataListArr.civic_number }}</li>
-                <li>CAP: {{ dataListArr.postalCode }}</li>
-                <li>Città: {{ dataListArr.city }}</li>
-                <li>Provincia: {{ dataListArr.countrySubdivision }}</li>
+            <ul class="m-5 list-group">
+                <li class="list-group-item">Titolo annuncio: {{ dataListArr.apartment_title }}</li>
+                <li class="list-group-item">Descrizione: {{ dataListArr.description }}</li>
+                <li class="list-group-item">Numero di stanze: {{ dataListArr.bedrooms }}</li>
+                <li class="list-group-item">Numero di letti: {{ dataListArr.bed }}</li>
+                <li class="list-group-item">Numero di bagni: {{ dataListArr.bathrooms }}</li>
+                <li class="list-group-item">MQ': {{ dataListArr.sqm }}</li>
+                <li class="list-group-item">Categoria: {{ dataListArr.category }}</li>
+                <li class="list-group-item">Prezzo: {{ dataListArr.price }}</li>
+                <li class="list-group-item">Indirizzo: {{ dataListArr.address }}</li>
+                <li class="list-group-item">Civico: {{ dataListArr.civic_number }}</li>
+                <li class="list-group-item">CAP: {{ dataListArr.postalCode }}</li>
+                <li class="list-group-item">Città: {{ dataListArr.city }}</li>
+                <li class="list-group-item">Provincia: {{ dataListArr.countrySubdivision }}</li>
             </ul>
 
             <div>
@@ -38,13 +38,13 @@
                         <textarea name="message" id="message" cols="30" rows="10"></textarea>
                     </div>
                     <div>
-                        <input type="submit" value="Invia Messaggio">
+                        <input type="submit" class="btn btn-success m-2" value="Invia Messaggio">
                     </div>
                 </form>
             </div>
 
 
-            <button @click="getBack">get back</button>
+            <button @click="getBack" class="btn btn-primary m-2">Torna alla home</button>
         </div>
     </div>
 </template>
@@ -67,5 +67,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+ .resize-img {
+                min-height: 400px;
+                max-height: 400px;
+                object-fit: contain;
+            }
 
 </style>
