@@ -2282,13 +2282,13 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", {
-    staticClass: "container-fluid"
+    staticClass: "container-fluid mb-5"
   }, [_vm.titleApartmentShow == "" ? _c("div", [_c("div", [_c("FilterSearch", {
     on: {
       coordinate: _vm.sentCoordinate
     }
   })], 1), _vm._v(" "), _c("div", {
-    staticClass: "apartment_container container-fluid mx-5 px-5"
+    staticClass: "apartment_container mx-5 px-5"
   }, [_vm.filteredData ? _c("div", {
     staticClass: "contenitore-card"
   }, _vm._l(_vm.apartments, function (apartment) {
@@ -2314,8 +2314,10 @@ var render = function render() {
       }
     }), _vm._v(" "), _c("h4", {
       staticClass: "testo-card"
-    }, [_vm._v(" " + _vm._s(apartment.apartment_title))])]);
-  }), 0) : _c("div", _vm._l(_vm.apartmentToShow, function (apartment) {
+    }, [_vm._v(_vm._s(apartment.apartment_title.substr(0, 20)) + " "), apartment.apartment_title.length > 20 ? _c("span", [_vm._v("...")]) : _vm._e()])]);
+  }), 0) : _c("div", {
+    staticClass: "contenitore-card"
+  }, _vm._l(_vm.apartmentToShow, function (apartment) {
     return _c("div", {
       key: apartment.id,
       staticClass: "singola-card",
@@ -2338,7 +2340,7 @@ var render = function render() {
       }
     }), _vm._v(" "), _c("h4", {
       staticClass: "testo-card"
-    }, [_vm._v(" " + _vm._s(apartment.apartment_title))])]);
+    }, [_vm._v(_vm._s(apartment.apartment_title.substr(0, 20)) + " "), apartment.apartment_title.length > 20 ? _c("span", [_vm._v("...")]) : _vm._e()])]);
   }), 0)])]) : _c("div", [_c("showApartmentGuest", {
     attrs: {
       dataListArr: _vm.showDetailsApartment
@@ -2371,7 +2373,7 @@ var render = function render() {
   return _c("div", {
     staticClass: "container-fluid"
   }, [_c("div", {
-    staticClass: "apartment_containermx-5 px-5"
+    staticClass: "apartment_containermx-5 px-5 mt-5 pt-5"
   }, [_vm.dataListArr.apartment_images == null ? _c("img", {
     staticClass: "resize-img img-thumbnail",
     attrs: {
@@ -2412,65 +2414,91 @@ var render = function render() {
     staticClass: "list-group-item"
   }, [_vm._v("Città: " + _vm._s(_vm.dataListArr.city))]), _vm._v(" "), _c("li", {
     staticClass: "list-group-item"
-  }, [_vm._v("Provincia: " + _vm._s(_vm.dataListArr.countrySubdivision))])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-primary m-2",
-    on: {
-      click: _vm.getBack
-    }
-  }, [_vm._v("Torna alla home")])])]);
-};
-var staticRenderFns = [function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("div", [_c("form", {
+  }, [_vm._v("Provincia: " + _vm._s(_vm.dataListArr.countrySubdivision))])]), _vm._v(" "), _c("div", {
+    staticClass: "d-flex align-items-end"
+  }, [_c("form", {
+    staticClass: "w-100",
     attrs: {
       action: "",
       method: "POST"
     }
-  }, [_c("div", {
+  }, [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _c("div", {
+    staticClass: "d-flex"
+  }, [_vm._m(3), _vm._v(" "), _c("div", [_c("button", {
+    staticClass: "btn btn-primary m-2",
+    on: {
+      click: _vm.getBack
+    }
+  }, [_vm._v("Torna alla home")])])])])])])]);
+};
+var staticRenderFns = [function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div", {
     staticClass: "d-flex flex-column"
   }, [_c("label", {
+    staticClass: "form-label",
     attrs: {
       "for": "name"
     }
   }, [_vm._v("Nome e cognome")]), _vm._v(" "), _c("input", {
+    staticClass: "form-control",
     attrs: {
       type: "text",
       name: "name",
-      id: "name"
+      id: "name",
+      placeholder: "Nome e cognome"
     }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "d-flex flex-column"
+  })]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div", {
+    staticClass: "d-flex flex-column my-2"
   }, [_c("label", {
+    staticClass: "form-label",
     attrs: {
       "for": "email"
     }
   }, [_vm._v("Email")]), _vm._v(" "), _c("input", {
+    staticClass: "form-control",
     attrs: {
       type: "email",
       name: "email",
-      id: "email"
+      id: "email",
+      placeholder: "email"
     }
-  })]), _vm._v(" "), _c("div", {
+  })]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div", {
     staticClass: "d-flex flex-column"
   }, [_c("label", {
+    staticClass: "form-label",
     attrs: {
       "for": "message"
     }
   }, [_vm._v("Invia un messaggio al proprietario")]), _vm._v(" "), _c("textarea", {
+    staticClass: "form-control",
     attrs: {
       name: "message",
       id: "message",
       cols: "30",
-      rows: "10"
+      rows: "10",
+      placeholder: "Chiedi tutto quello che vuoi!"
     }
-  })]), _vm._v(" "), _c("div", [_c("input", {
+  })]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div", [_c("input", {
     staticClass: "btn btn-success m-2",
     attrs: {
       type: "submit",
       value: "Invia Messaggio"
     }
-  })])])]);
+  })]);
 }];
 render._withStripped = true;
 
@@ -6874,7 +6902,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".contenitore-card {\n  display: flex;\n  justify-content: space-around;\n  flex-wrap: wrap;\n  gap: 30px;\n}\n.singola-card {\n  cursor: pointer;\n  width: calc(33.3333333333% - 90px);\n  border: 3px solid brown;\n  border-radius: 20px;\n  padding: 10px;\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n  -o-object-fit: contain;\n     object-fit: contain;\n}\n.singola-card .resize-img {\n  min-height: 200px;\n  max-height: 200px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.singola-card .testo-card {\n  font-size: 1.3em;\n  font-weight: 600;\n  color: brown;\n  padding: 5px;\n}", ""]);
+exports.push([module.i, ".contenitore-card {\n  display: flex;\n  justify-content: space-around;\n  flex-wrap: wrap;\n  gap: 30px;\n}\n.singola-card {\n  cursor: pointer;\n  width: calc(33.3333333333% - 90px);\n  border: 3px solid #ff5a5f;\n  border-radius: 20px;\n  padding: 10px;\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n  -o-object-fit: contain;\n     object-fit: contain;\n  transition: all 0.5s;\n}\n.singola-card .resize-img {\n  min-height: 200px;\n  max-height: 200px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.singola-card .testo-card {\n  font-size: 1.3em;\n  font-weight: 600;\n  color: brown;\n  padding: 5px;\n}\n.singola-card:hover {\n  transform: scale(1.05);\n  box-shadow: 8px 8px 20px rgb(201, 201, 201);\n}", ""]);
 
 // exports
 

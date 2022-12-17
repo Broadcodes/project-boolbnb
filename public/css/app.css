@@ -11032,14 +11032,18 @@ a.text-dark:focus {
 }
 
 .resize-img {
-  min-height: 300px;
-  max-height: 300px;
+  min-height: 270px;
+  max-height: 270px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 .card {
   max-height: 600px;
+}
+
+.card-body {
+  min-height: 150px;
 }
 
 ul li {
@@ -11125,14 +11129,18 @@ ul li {
 }
 
 .resize-img {
-  min-height: 300px;
-  max-height: 300px;
+  min-height: 270px;
+  max-height: 270px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 .card {
   max-height: 600px;
+}
+
+.card-body {
+  min-height: 150px;
 }
 
 /**********************************/

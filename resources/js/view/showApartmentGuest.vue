@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid">
-        <div class="apartment_containermx-5 px-5">
+        <div class="apartment_containermx-5 px-5 mt-5 pt-5">
 
             <img v-if="dataListArr.apartment_images == null" class="resize-img img-thumbnail"
                 :src="getSrcImages('images', 'immagine_non_disponibile.png')" alt="Nessuna immagine">
@@ -22,29 +22,32 @@
                 <li class="list-group-item">Città: {{ dataListArr.city }}</li>
                 <li class="list-group-item">Provincia: {{ dataListArr.countrySubdivision }}</li>
             </ul>
-
-            <div>
-                <form action="" method="POST">
+<!-- contenitore form -->
+            <div class="d-flex align-items-end">
+                <form class="w-100" action="" method="POST">
                     <div class="d-flex flex-column">
-                        <label for="name">Nome e cognome</label>
-                        <input type="text" name="name" id="name">
+                        <label class="form-label" for="name">Nome e cognome</label>
+                        <input class="form-control" type="text" name="name" id="name" placeholder="Nome e cognome">
+                    </div>
+                    <div class="d-flex flex-column my-2">
+                        <label class="form-label" for="email">Email</label>
+                        <input class="form-control" type="email" name="email" id="email" placeholder="email">
                     </div>
                     <div class="d-flex flex-column">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email">
+                        <label class="form-label" for="message">Invia un messaggio al proprietario</label>
+                        <textarea class="form-control" name="message" id="message" cols="30" rows="10" placeholder="Chiedi tutto quello che vuoi!"></textarea>
                     </div>
-                    <div class="d-flex flex-column">
-                        <label for="message">Invia un messaggio al proprietario</label>
-                        <textarea name="message" id="message" cols="30" rows="10"></textarea>
-                    </div>
-                    <div>
-                        <input type="submit" class="btn btn-success m-2" value="Invia Messaggio">
+                    <div class="d-flex">
+                        <div>
+                            <input type="submit" class="btn btn-success m-2" value="Invia Messaggio">
+                        </div>
+                        <div>
+                            <button @click="getBack" class="btn btn-primary m-2">Torna alla home</button>
+                        </div>
                     </div>
                 </form>
+
             </div>
-
-
-            <button @click="getBack" class="btn btn-primary m-2">Torna alla home</button>
         </div>
     </div>
 </template>

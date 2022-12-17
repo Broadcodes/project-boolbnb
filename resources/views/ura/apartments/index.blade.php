@@ -24,7 +24,11 @@
                                 alt="{{ $apartment->apartment_title }}" />
                             <div class="card-body text-center">
                                 <a href="{{ route('ura.apartments.show', $apartment->apartment_slug) }}">
-                                    <h3 class="card-title">{{ $apartment->apartment_title }}</h3>
+                                    <h3 class="card-title">{{ substr($apartment->apartment_title, 0, 20) }}
+                                        @if (strlen($apartment->apartment_title) > 20)
+                                            ...
+                                        @endif
+                                    </h3>
                                 </a>
                                 <p class="card-text">
                                 <h5>{{ substr($apartment->description, 0, 50) }}
