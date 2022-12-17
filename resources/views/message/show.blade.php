@@ -21,10 +21,10 @@
         </div>
 
         <div class="d-flex justify-content-center">
-            <div class="my-2 mx-2">
+            <div class="my-1 mx-2">
                 <a href="{{ route('ura.apartments.index') }}"><input class="btn btn-primary" type="button" value="Torna indietro"></a>
             </div>
-            <div class="my-2 mx-2">
+            <div class="my-1 mx-2">
                 <form action="{{ route('message.destroy', $message->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
