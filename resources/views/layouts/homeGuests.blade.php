@@ -34,7 +34,7 @@
     <nav class="navbar navbar-expand-lg bg-light fixed-top">
         <div class="d-flex align-items-center justify-content-between w-100">
             <div class="logo-area">
-                <a href="index.html"><img id="logo" src="img/Airbnb_Logo.svg" alt="logo"></a>
+                <a href="index.html"><img id="logo" src="img/Airbnb_Logo-1.png" alt="logo"></a>
             </div>
             <ul class="d-flex m-0">
                 <li class="nav-item">
