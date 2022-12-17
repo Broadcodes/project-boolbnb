@@ -15,24 +15,32 @@ class messageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Apartment $apartment)
     {
-        $id_apartment = $_SERVER['REQUEST_URI'];
+        $id_apartment = $_SERVER['REQUEST_URI'];        //passare lo slug
         $id_apartment = substr(strstr($id_apartment, '?'), 1);
 
+        $apartment->messages;
         $messages = Message::all();
+        $apartments = Apartment::all();
+        $messageApartment = [];
+        $aparment_title = '';
 
-        return view('message.index', compact(['id_apartment', 'messages']));
-    }
+        foreach ($apartments as $apartment) {
+            if ($id_apartment == $apartment->id) {
+                $aparment_title = $apartment->apartment_title;
+            }
+        }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        if(count($messages) > 0){
+            foreach ($messages as $message) {
+                if ($id_apartment == $message->apartment_id) {
+                    array_push($messageApartment, $message);
+                }
+            }
+        }
+
+        return view('message.index', compact(['messageApartment', 'aparment_title']));
     }
 
     /**
@@ -62,29 +70,6 @@ class messageController extends Controller
     {
         dd($message);
         return view('ura.apartments.show', compact('message'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
     }
 
     /**
