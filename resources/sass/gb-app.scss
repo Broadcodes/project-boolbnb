@@ -1,0 +1,40 @@
+.imgMessage{
+    width: 40px;
+}
+
+.testoMess{
+    font-size: 1.1rem;
+    padding: 4px;
+}
+
+.areaMessaggioTesto{
+    height: 200px;
+    overflow-y: auto;
+}
+
+.bg-message{
+    background-color: rgba(245, 242, 230, 0.508);
+    box-shadow: inset 0px 0px 20px rgb(195, 192, 177);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 25px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

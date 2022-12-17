@@ -17,8 +17,8 @@ class messageController extends Controller
      */
     public function index(Apartment $apartment)
     {
-        $slug_apartment = $_SERVER['REQUEST_URI'];        //passare lo slug
-        $slug_apartment = substr(strstr($slug_apartment, '?'), 1);
+        $slug_apartment_in = $_SERVER['REQUEST_URI'];
+        $slug_apartment = substr(strstr($slug_apartment_in, '?'), 1);
 
         $apartment->messages;
         $messages = Message::all();
@@ -70,8 +70,7 @@ class messageController extends Controller
      */
     public function show(Message $message)
     {
-        dd($message);
-        return view('ura.apartments.show', compact('message'));
+        return view('message.show', compact('message'));
     }
 
     /**
@@ -80,8 +79,9 @@ class messageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Message $message)
     {
-        //
+        $message->delete();
+        return redirect()->route('homePage');
     }
 }
