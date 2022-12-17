@@ -82,6 +82,6 @@ class messageController extends Controller
     public function destroy(Message $message)
     {
         $message->delete();
-        return redirect()->route('homePage');
+        return redirect()->route('ura.apartments.index');
     }
 }

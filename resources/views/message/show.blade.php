@@ -22,7 +22,7 @@
 
         <div class="d-flex justify-content-center">
             <div class="my-2 mx-2">
-                <a href="{{ route('homePage') }}"><input class="btn btn-primary" type="button" value="Torna indietro"></a>
+                <a href="{{ route('ura.apartments.index') }}"><input class="btn btn-primary" type="button" value="Torna indietro"></a>
             </div>
             <div class="my-2 mx-2">
                 <form action="{{ route('message.destroy', $message->id) }}" method="POST">
