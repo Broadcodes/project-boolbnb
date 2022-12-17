@@ -17,18 +17,20 @@ class messageController extends Controller
      */
     public function index(Apartment $apartment)
     {
-        $id_apartment = $_SERVER['REQUEST_URI'];        //passare lo slug
-        $id_apartment = substr(strstr($id_apartment, '?'), 1);
+        $slug_apartment = $_SERVER['REQUEST_URI'];        //passare lo slug
+        $slug_apartment = substr(strstr($slug_apartment, '?'), 1);
 
         $apartment->messages;
         $messages = Message::all();
         $apartments = Apartment::all();
         $messageApartment = [];
         $aparment_title = '';
+        $id_apartment = '';
 
         foreach ($apartments as $apartment) {
-            if ($id_apartment == $apartment->id) {
+            if ($slug_apartment == $apartment->apartment_slug) {
                 $aparment_title = $apartment->apartment_title;
+                $id_apartment = $apartment->id;
             }
         }
 

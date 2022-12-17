@@ -26,25 +26,24 @@
             <div class="d-flex align-items-end">
                 <form class="w-100" action="api/message" method="POST">
                     <!-- non toccare l'input con il name="apartment_id" tanto è nascosto, ma di fondamentale importanza -->
-                    <input class="d-none" type="text" name="apartment_id" id="apartment_id" :value="dataListArr.id">
+                    <input class="d-none" type="text" name="apartment_id" required id="apartment_id" :value="dataListArr.id">
                     <!-- ------------------------------ -->
                     <div class="d-flex flex-column">
                         <label class="form-label" for="name">Nome e cognome</label>
-                        <input class="form-control" type="text" name="name" id="name" placeholder="Nome e cognome">
+                        <input class="form-control" type="text" name="name" required id="name" placeholder="Nome e cognome">
                     </div>
                     <div class="d-flex flex-column my-2">
                         <label class="form-label" for="email">Email</label>
-                        <input class="form-control" type="email" name="email" id="email" placeholder="email">
+                        <input class="form-control" type="email" name="email" required id="email" placeholder="email">
                     </div>
                     <div class="d-flex flex-column">
                         <label class="form-label" for="content_message">Invia un messaggio al proprietario</label>
-                        <textarea class="form-control" name="content_message" id="content_message" cols="30" rows="10"
+                        <textarea class="form-control" required name="content_message" id="content_message" cols="30" rows="10"
                             placeholder="Chiedi tutto quello che vuoi!"></textarea>
                     </div>
                     <div class="d-flex">
                         <div>
-                            <input class="btn btn-success m-2" onclick="return alert('Messaggio inviato correttamente')" type="submit"
-                                value="Invia Messaggio">
+                            <input class="btn btn-success m-2" type="submit" value="Invia Messaggio">
                         </div>
                         <div>
                             <button @click="getBack" class="btn btn-primary m-2">Torna alla home</button>

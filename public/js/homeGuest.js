@@ -2430,6 +2430,7 @@ var render = function render() {
     attrs: {
       type: "text",
       name: "apartment_id",
+      required: "",
       id: "apartment_id"
     },
     domProps: {
@@ -2459,6 +2460,7 @@ var staticRenderFns = [function () {
     attrs: {
       type: "text",
       name: "name",
+      required: "",
       id: "name",
       placeholder: "Nome e cognome"
     }
@@ -2478,6 +2480,7 @@ var staticRenderFns = [function () {
     attrs: {
       type: "email",
       name: "email",
+      required: "",
       id: "email",
       placeholder: "email"
     }
@@ -2495,6 +2498,7 @@ var staticRenderFns = [function () {
   }, [_vm._v("Invia un messaggio al proprietario")]), _vm._v(" "), _c("textarea", {
     staticClass: "form-control",
     attrs: {
+      required: "",
       name: "content_message",
       id: "content_message",
       cols: "30",
@@ -2508,7 +2512,6 @@ var staticRenderFns = [function () {
   return _c("div", [_c("input", {
     staticClass: "btn btn-success m-2",
     attrs: {
-      onclick: "return alert('Messaggio inviato correttamente')",
       type: "submit",
       value: "Invia Messaggio"
     }
