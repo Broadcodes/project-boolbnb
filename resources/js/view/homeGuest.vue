@@ -1,28 +1,31 @@
 <template>
-    <div>
+    <div class="container-fluid">
+
         <div v-if="titleApartmentShow == ''">
+
             <div>
                 <FilterSearch @coordinate="sentCoordinate" />
             </div>
 
             <div class="apartment_container container-fluid mx-5 px-5">
-                <div v-if="filteredData">
-                    <div class="apartmentShow" v-for="apartment in apartments" :key="apartment.id" @click="getApartmentShow(apartment)">
-                        <img v-if="apartment.apartment_images == null" class="img-fluid w-25" :src="getSrcImages('images', 'immagine_non_disponibile.png')" alt="Nessuna immagine">
-                        <img v-else class="img-fluid w-25" :src="getSrcImages('storage', apartment.apartment_images)" :alt="apartment.apartment_title">
-                        <h4> {{ apartment.apartment_title }}</h4>
+
+                    <div v-if="filteredData" class="contenitore-card">
+                        <div class="singola-card" v-for="apartment in apartments" :key="apartment.id" @click="getApartmentShow(apartment)">
+                            <img v-if="apartment.apartment_images == null" class="img-fluid resize-img img-thumbnail" :src="getSrcImages('images', 'immagine_non_disponibile.png')" alt="Nessuna immagine">
+                            <img v-else class="img-fluid resize-img img-thumbnail" :src="getSrcImages('storage', apartment.apartment_images)" :alt="apartment.apartment_title">
+                            <h4 class="testo-card"> {{ apartment.apartment_title }}</h4>
+                        </div>
                     </div>
-                </div>
-                <div v-else>
-                    <div class="apartmentShow" v-for="apartment in apartmentToShow" :key="apartment.id" @click="getApartmentShow(apartment)">
-                        <img v-if="apartment.apartment_images == null" class="img-fluid w-25" :src="getSrcImages('images', 'immagine_non_disponibile.png')" alt="Nessuna immagine">
-                        <img v-else class="img-fluid w-25" :src="getSrcImages('storage', apartment.apartment_images)" :alt="apartment.apartment_title">
-                        <h4> {{ apartment.apartment_title }}</h4>
+                    <div v-else>
+                        <div class="singola-card" v-for="apartment in apartmentToShow" :key="apartment.id" @click="getApartmentShow(apartment)">
+                            <img v-if="apartment.apartment_images == null" class="img-fluid resize-img img-thumbnail" :src="getSrcImages('images', 'immagine_non_disponibile.png')" alt="Nessuna immagine">
+                            <img v-else class="img-fluid resize-img img-thumbnail" :src="getSrcImages('storage', apartment.apartment_images)" :alt="apartment.apartment_title">
+                            <h4 class="testo-card"> {{ apartment.apartment_title }}</h4>
+                        </div>
                     </div>
 
-                </div>
-                <button @click="getBack">get back</button>
             </div>
+
         </div>
         <div v-else>
             <showApartmentGuest :dataListArr="showDetailsApartment" @pageBack="changePage" />
@@ -101,11 +104,37 @@ export default {
 </script>
 
 <style lang="scss">
-.apartment_container {
-    margin-top: 250px;
+    .contenitore-card {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 30px;
+     }
 
-    .apartmentShow {
+    .singola-card {
         cursor: pointer;
+        width: calc(100% / 3 - 90px);
+        border: 3px solid brown;
+        border-radius: 20px;
+        padding: 10px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        object-fit: contain;
+            .resize-img {
+                min-height: 200px;
+                max-height: 200px;
+                object-fit: cover;
+
+            }
+            .testo-card {
+                font-size: 1.3em;
+                font-weight: 600;
+                color: brown;
+                padding: 5px;
     }
+
+
 }
+
 </style>
