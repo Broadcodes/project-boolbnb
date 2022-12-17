@@ -16,4 +16,7 @@
             </div>
         </div>
     @endif
+    <div class="my-5 text-center">
+        <a href="{{ route('ura.apartments.index') }}"><input class="btn btn-primary" type="button" value="Torna indietro"></a>
+    </div>
 @endsection
