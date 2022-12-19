@@ -70,6 +70,8 @@ class messageController extends Controller
      */
     public function show(Message $message)
     {
+        $message->read_status = 1;
+        $message->save();
         return view('message.show', compact('message'));
     }
 

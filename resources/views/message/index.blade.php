@@ -9,7 +9,12 @@
             <div class="border border-dark my-5 p-4">
                 @foreach ($messageApartment as $message)
                     <div class="d-flex align-items-center">
-                        <img class="imgMessage" src="../images/email.png" alt="New message">
+                        @if ($message->read_status == 0)
+                            <img class="imgMessage" src="../images/email.png" alt="New message">
+                        @else
+                            <img class="imgMessage" src="../images/email_letta.png" alt="Message read">
+                        @endif
+
                         <a href="{{ route('message.show', $message->id) }}"><h5 class="pt-2 mx-3">{{ $message->name }} - {{ $message->email }}</h5></a>
                     </div>
                 @endforeach

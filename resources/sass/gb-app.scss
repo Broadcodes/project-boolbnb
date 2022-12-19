@@ -1,18 +1,18 @@
-.imgMessage{
+.imgMessage {
     width: 40px;
 }
 
-.testoMess{
+.testoMess {
     font-size: 1.1rem;
     padding: 4px;
 }
 
-.areaMessaggioTesto{
+.areaMessaggioTesto {
     height: 200px;
     overflow-y: auto;
 }
 
-.bg-message{
+.bg-message {
     background-color: rgba(245, 242, 230, 0.508);
     box-shadow: inset 0px 0px 20px rgb(195, 192, 177);
 }
@@ -37,4 +37,19 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
+}
+
+#notificationMessage-btn {
+position: relative;
+
+    #notificationMessage {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: -8px;
+        right: -10px;
+        background-color: red;
+        border-radius: 50%;
+        font-size: 0.85rem;
+    }
 }
