@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <div class="container b-red">
+        <div class="container search_box">
             <searchBoxComponent @setPosition="getPosition" />
         </div>
 
@@ -116,9 +116,12 @@ export default {
 
 <style lang="scss" scoped>
 
-.b-red{
-
+.search_box{
     margin-top: 150px;
+    position: relative;
+    top: -150px;
+    z-index: 2000;
+    max-width: calc(100vh - 300px);
 }
 
 button {

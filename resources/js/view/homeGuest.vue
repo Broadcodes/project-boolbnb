@@ -114,9 +114,7 @@ export default {
 
 <style lang="scss">
 
-.apartment_container{
-    margin-top: 40px;
-}
+
 
 
 .contenitore-card {

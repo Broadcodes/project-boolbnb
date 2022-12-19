@@ -10993,11 +10993,16 @@ a.text-dark:focus {
     Team Imports
 *****************/
 
+.modal {
+  z-index: 2500;
+}
+
 #navbar-login {
   position: fixed;
   top: 0;
   width: 100%;
   background-color: #ffffff;
+  z-index: 2500;
 }
 
 .btn-lightgreen {

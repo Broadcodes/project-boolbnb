@@ -2094,7 +2094,7 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", [_c("div", {
-    staticClass: "container b-red"
+    staticClass: "container search_box"
   }, [_c("searchBoxComponent", {
     on: {
       setPosition: _vm.getPosition
@@ -2243,7 +2243,7 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", [_c("div", {
-    staticClass: "container tp justify-content-center d-flex",
+    staticClass: "container justify-content-center d-flex",
     attrs: {
       id: "searchBox"
     }
@@ -6884,7 +6884,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".b-red[data-v-263f772b] {\n  margin-top: 150px;\n}\nbutton[data-v-263f772b] {\n  text-decoration: none;\n  border: none;\n  background-color: rgba(255, 255, 255, 0);\n  color: #727171;\n  transition: 0.3s;\n}\nbutton[data-v-263f772b]:hover {\n  color: black;\n}\n.selection[data-v-263f772b] {\n  margin-top: 66px !important;\n  padding-top: 15px;\n  border-bottom: 1px solid lightgray;\n}", ""]);
+exports.push([module.i, ".search_box[data-v-263f772b] {\n  margin-top: 150px;\n  position: relative;\n  top: -150px;\n  z-index: 2000;\n  max-width: calc(100vh - 300px);\n}\nbutton[data-v-263f772b] {\n  text-decoration: none;\n  border: none;\n  background-color: rgba(255, 255, 255, 0);\n  color: #727171;\n  transition: 0.3s;\n}\nbutton[data-v-263f772b]:hover {\n  color: black;\n}\n.selection[data-v-263f772b] {\n  margin-top: 66px !important;\n  padding-top: 15px;\n  border-bottom: 1px solid lightgray;\n}", ""]);
 
 // exports
 
@@ -6903,7 +6903,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".apartment_container {\n  margin-top: 40px;\n}\n.contenitore-card {\n  display: flex;\n  justify-content: space-around;\n  flex-wrap: wrap;\n  gap: 30px;\n}\n.singola-card {\n  cursor: pointer;\n  width: calc(33.3333333333% - 90px);\n  border-radius: 20px;\n  padding: 10px;\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n  -o-object-fit: contain;\n     object-fit: contain;\n  transition: all 0.5s;\n}\n.singola-card .resize-img {\n  min-height: 200px;\n  max-height: 200px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.singola-card .testo-card {\n  font-size: 1.3em;\n  font-weight: 600;\n  padding: 5px;\n}\n.singola-card:hover {\n  transform: scale(1.05);\n  box-shadow: 8px 8px 20px rgb(201, 201, 201);\n}", ""]);
+exports.push([module.i, ".contenitore-card {\n  display: flex;\n  justify-content: space-around;\n  flex-wrap: wrap;\n  gap: 30px;\n}\n.singola-card {\n  cursor: pointer;\n  width: calc(33.3333333333% - 90px);\n  border-radius: 20px;\n  padding: 10px;\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n  -o-object-fit: contain;\n     object-fit: contain;\n  transition: all 0.5s;\n}\n.singola-card .resize-img {\n  min-height: 200px;\n  max-height: 200px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.singola-card .testo-card {\n  font-size: 1.3em;\n  font-weight: 600;\n  padding: 5px;\n}\n.singola-card:hover {\n  transform: scale(1.05);\n  box-shadow: 8px 8px 20px rgb(201, 201, 201);\n}", ""]);
 
 // exports
 
