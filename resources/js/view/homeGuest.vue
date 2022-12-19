@@ -126,7 +126,7 @@ export default {
 
 .singola-card {
     cursor: pointer;
-    width: calc(100% / 3 - 90px);
+    min-width: 300px;
     border-radius: 20px;
     padding: 10px;
     align-items: center;
