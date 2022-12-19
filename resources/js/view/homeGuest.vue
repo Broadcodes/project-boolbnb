@@ -1,5 +1,6 @@
 <template>
-    <div class="container-fluid mb-5">
+
+<div class="container carte">
 
         <div v-if="titleApartmentShow == ''">
 
@@ -7,9 +8,10 @@
                 <FilterSearch @coordinate="sentCoordinate" />
             </div>
 
-            <div class="apartment_container mx-5 px-5">
-                <div v-if="filteredData" class="contenitore-card">
-                    <div class="singola-card" v-for="apartment in apartments" :key="apartment.id"
+            <div class="container mt-4">
+                <div class="row">
+                <div v-if="filteredData" class="col-3">
+                    <div class="" v-for="apartment in apartments" :key="apartment.id"
                         @click="getApartmentShow(apartment)">
                         <img v-if="apartment.apartment_images == null" class="img-fluid resize-img img-thumbnail"
                             :src="getSrcImages('images', 'immagine_non_disponibile.png')" alt="Nessuna immagine">
@@ -19,8 +21,8 @@
                                 v-if="apartment.apartment_title.length > 20">...</span></h4>
                     </div>
                 </div>
-                <div v-else class="contenitore-card">
-                    <div class="singola-card" v-for="apartment in apartmentToShow" :key="apartment.id"
+                <div v-else class="col-3">
+                    <div class="" v-for="apartment in apartmentToShow" :key="apartment.id"
                         @click="getApartmentShow(apartment)">
                         <img v-if="apartment.apartment_images == null" class="img-fluid resize-img img-thumbnail"
                             :src="getSrcImages('images', 'immagine_non_disponibile.png')" alt="Nessuna immagine">
@@ -29,13 +31,17 @@
                         <h4 class="testo-card">{{ apartment.apartment_title.substr(0, 20) }} <span
                                 v-if="apartment.apartment_title.length > 20">...</span></h4>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
+
         <div v-else>
             <showApartmentGuest :dataListArr="showDetailsApartment" @pageBack="changePage" />
         </div>
-    </div>
+
+</div>
+
 </template>
 
 <script>
@@ -115,7 +121,7 @@ export default {
 <style lang="scss">
 .contenitore-card {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
     gap: 30px;
 }
@@ -123,7 +129,6 @@ export default {
 .singola-card {
     cursor: pointer;
     width: calc(100% / 3 - 90px);
-    border: 3px solid #ff5a5f;
     border-radius: 20px;
     padding: 10px;
     align-items: center;

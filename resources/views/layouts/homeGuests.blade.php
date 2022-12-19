@@ -38,6 +38,7 @@
             </div>
             <ul class="d-flex m-0">
                 <li class="nav-item">
+
                     <button class="btn btn-lg" data-toggle="modal" data-target="#loginModal"
                         href="{{ route('login') }}">Login</button>
                 </li>

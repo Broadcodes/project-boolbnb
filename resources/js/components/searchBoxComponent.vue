@@ -1,10 +1,9 @@
 <template>
-  <div>
-    <div id="searchBox" class="tp">
+
+    <div id="searchBox" class="d-flex justify-content-center">
 
     </div>
 
-  </div>
 </template>
 
 <script>
@@ -70,10 +69,3 @@ export default {
 }
 </script>
 
-<style>
-
-  .tp{
-    margin-top: 200px;
-  }
-
-</style>

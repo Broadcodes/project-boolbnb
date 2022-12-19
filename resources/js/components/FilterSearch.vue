@@ -1,9 +1,7 @@
 <template>
     <div>
-        <div class="centerz d-flex align-items-center justify-content-center">
-
-             <searchBoxComponent @setPosition="getPosition" />
-
+        <div>
+            <searchBoxComponent @setPosition="getPosition" />
         </div>
 
 
@@ -118,13 +116,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.centerz {
-    position: relative;
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50%;
-}
+// .centerz {
+//     position: relative;
+//     top: -40px;
+//     left: 50%;
+//     transform: translateX(-50%);
+//     width: 80%;
+//     border: 1px solid blue;
+// }
 
 button {
     text-decoration: none;
