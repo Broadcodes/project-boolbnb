@@ -18,6 +18,7 @@ class CreateMessagesTable extends Migration
             $table->string('name')->nullable(false);
             $table->string('email',100)->nullable(false);
             $table->text('content_message')->nullable(false);
+            $table->boolean('read_status')->nullable(false)->default(0);
             $table->timestamps();
         });
     }

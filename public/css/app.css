@@ -29,7 +29,7 @@ a:hover {
 }
 
 #logo {
-  width: 135px;
+  width: 200px;
   height: 50px;
 }
 
@@ -11111,6 +11111,21 @@ ul li {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+#notificationMessage-btn {
+  position: relative;
+}
+
+#notificationMessage-btn #notificationMessage {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: red;
+  border-radius: 50%;
+  font-size: 0.85rem;
 }
 
 .nc-accountInfo {

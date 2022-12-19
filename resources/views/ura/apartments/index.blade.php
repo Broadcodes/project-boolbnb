@@ -44,9 +44,26 @@
                                             class="fa-solid fa-circle-info"></i>
                                         Modifica
                                     </button></a>
-                                <a href="{{ route('message.index', $apartment->apartment_slug) }}"><button type="button"
-                                        class="m-2 btn btn-lightgreen text-light"><i class="fa-solid fa-envelope"></i>
-                                        Messaggi</button></a>
+                                <a href="{{ route('message.index', $apartment->apartment_slug) }}">
+                                    <button id="notificationMessage-btn" type="button" class="m-2 btn btn-lightgreen text-light">
+                                        <i class="fa-solid fa-envelope"></i> Messaggi
+                                        @php
+                                            $numMessage = 0;
+                                        @endphp
+                                        @foreach ($messages as $message)
+                                            @if ($message->apartment_id == $apartment->id)
+                                                @if ($message->read_status == 0)
+                                                    @php
+                                                        $numMessage++;
+                                                    @endphp
+                                                @endif
+                                            @endif
+                                        @endforeach
+                                        @if ($numMessage > 0)
+                                            <span id="notificationMessage">{{ $numMessage }}</span>
+                                        @endif
+                                    </button>
+                                </a>
                                 <button type="button" class="m-2 btn btn-success"> <i class="fa-solid fa-pen"></i>
                                     Sponsorizza</button>
                                 <form action="{{ route('ura.apartments.destroy', $apartment->apartment_slug) }}"
