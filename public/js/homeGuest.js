@@ -6919,7 +6919,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".contenitore-card {\n  display: flex;\n  justify-content: space-around;\n  flex-wrap: wrap;\n  gap: 30px;\n}\n.singola-card {\n  cursor: pointer;\n  width: calc(33.3333333333% - 90px);\n  border: 3px solid #ff5a5f;\n  border-radius: 20px;\n  padding: 10px;\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n  -o-object-fit: contain;\n     object-fit: contain;\n  transition: all 0.5s;\n}\n.singola-card .resize-img {\n  min-height: 200px;\n  max-height: 200px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.singola-card .testo-card {\n  font-size: 1.3em;\n  font-weight: 600;\n  color: brown;\n  padding: 5px;\n}\n.singola-card:hover {\n  transform: scale(1.05);\n  box-shadow: 8px 8px 20px rgb(201, 201, 201);\n}", ""]);
+exports.push([module.i, ".contenitore-card {\n  display: flex;\n  justify-content: space-around;\n  flex-wrap: wrap;\n}\n.singola-card {\n  cursor: pointer;\n  width: calc(25% - 80px);\n  margin-top: 30px;\n  border: 3px solid #ff5a5f;\n  border-radius: 20px;\n  padding: 10px 0px;\n  margin-left: 20px;\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n  -o-object-fit: contain;\n     object-fit: contain;\n  transition: all 0.5s;\n}\n.singola-card .resize-img {\n  min-height: 200px;\n  max-height: 200px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.singola-card .testo-card {\n  font-size: 1.3em;\n  font-weight: 600;\n  color: brown;\n  padding: 5px;\n}\n.singola-card:hover {\n  transform: scale(1.05);\n  box-shadow: 8px 8px 20px rgb(201, 201, 201);\n}\n@media screen and (max-width: 480px) {\n.singola-card {\n    width: 100%;\n}\n}\n@media screen and (max-width: 1024px) {\n.singola-card {\n    cursor: pointer;\n    width: calc(33.3333333333% - 60px);\n}\n}\n@media screen and (max-width: 768px) {\n.singola-card {\n    cursor: pointer;\n    width: calc(50% - 40px);\n}\n}", ""]);
 
 // exports
 
@@ -51349,8 +51349,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Gianluca Fabrizio\Desktop\Boolean\1 - Esercizi\56_project-boolbnb\resources\js\homeGuest.js */"./resources/js/homeGuest.js");
-module.exports = __webpack_require__(/*! C:\Users\Gianluca Fabrizio\Desktop\Boolean\1 - Esercizi\56_project-boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Utente\Desktop\boolean\boolean\Progetto_finale_BoolBnB\project-boolbnb\resources\js\homeGuest.js */"./resources/js/homeGuest.js");
+module.exports = __webpack_require__(/*! C:\Users\Utente\Desktop\boolean\boolean\Progetto_finale_BoolBnB\project-boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

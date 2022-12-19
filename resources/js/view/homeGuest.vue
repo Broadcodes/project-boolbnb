@@ -117,15 +117,16 @@ export default {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    gap: 30px;
 }
 
 .singola-card {
     cursor: pointer;
-    width: calc(100% / 3 - 90px);
+    width: calc(100% / 4 - 80px);
+    margin-top: 30px;
     border: 3px solid #ff5a5f;
     border-radius: 20px;
-    padding: 10px;
+    padding: 10px 0px;
+    margin-left: 20px;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -152,6 +153,36 @@ export default {
         box-shadow: 8px 8px 20px rgb(201, 201, 201);
     }
 
-
+    // Media query
 }
+
+
+    // @media screen and (max-width: 500px) {
+    //     .singola-card {
+    //         width: 100%;
+    //     }
+    // }
+
+     @media screen and (max-width: 480px) {
+         .singola-card {
+            width: 100%;
+         }
+     }
+
+    @media screen and (max-width: 1024px) {
+                .singola-card {
+                    cursor: pointer;
+                    width: calc(100% / 3 - 60px);
+                }
+            }
+
+    @media screen and (max-width: 768px) {
+        .singola-card {
+            cursor: pointer;
+            width: calc(100% / 2 - 40px);
+        }
+    }
+
+
+
 </style>
