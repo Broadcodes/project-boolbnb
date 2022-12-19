@@ -1,6 +1,6 @@
 <template>
 
-    <div id="searchBox" class="d-flex justify-content-center">
+    <div id="searchBox" class="container d-flex justify-content-center">
 
     </div>
 
