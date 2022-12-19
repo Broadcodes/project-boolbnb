@@ -31,7 +31,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-light fixed-top">
+    <nav id="max_width" class="navbar navbar-expand-lg bg-light fixed-top">
         <div class="d-flex align-items-center justify-content-between w-100">
             <div class="logo-area">
                 <a href="index.html"><img id="logo" src="img/Airbnb_Logo.svg" alt="logo"></a>
@@ -46,12 +46,12 @@
                         href="{{ route('register') }}">Register</button>
                 </li>
             </ul>
-        </div>
+        </div >
     </nav>
 
     <!-- MODAL LOGIN -->
 
-    <div class="modal fade" wire:ignore.self id="loginModal" tabindex="-1" data-backdrop="static" data-keyboard="false"
+    <div id="max_width" class="modal fade" wire:ignore.self id="loginModal" tabindex="-1" data-backdrop="static" data-keyboard="false"
         role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -260,9 +260,11 @@
     </div>
 
     <style>
-        body{
-            width: 95vw;
+
+        #max_width{
+            max-width: 100vw !important;
         }
+
     </style>
 
 

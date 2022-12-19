@@ -15,25 +15,11 @@ export default {
     data(){
         return{
 
-
-
-
-
-
-
-
-
-
-
         }
     },
     mounted(){
 
-
         this.getPosition();
-
-
-
 
     },
     methods:{
@@ -58,12 +44,9 @@ export default {
 
             },
             emitPosition(data){
-              console.log(data.data.result.position);
 
-
-
-            this.$emit('setPosition',data.data.result.position)
-          }
+              this.$emit('setPosition',data.data.result.position)
+            }
 
     },
 
