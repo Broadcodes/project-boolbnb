@@ -28,6 +28,11 @@ a:hover {
   color: gray;
 }
 
+#logo {
+  width: 135px;
+  height: 50px;
+}
+
 .div a {
   text-decoration: none;
   color: black;
@@ -11042,13 +11047,8 @@ a.text-dark:focus {
   min-height: 150px;
 }
 
-#logo {
-  width: 135px;
-  height: 50px;
-}
-
 .carte {
-  margin-top: 140px;
+  margin-top: 150px;
 }
 
 ul li {
@@ -11194,13 +11194,8 @@ ul li {
   min-height: 150px;
 }
 
-#logo {
-  width: 135px;
-  height: 50px;
-}
-
 .carte {
-  margin-top: 140px;
+  margin-top: 150px;
 }
 
 /**********************************/
