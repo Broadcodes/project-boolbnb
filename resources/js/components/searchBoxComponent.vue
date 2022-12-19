@@ -72,8 +72,6 @@
 
   <style>
 
-    .tp{
-      margin-top: 200px;
-    }
+
 
   </style>

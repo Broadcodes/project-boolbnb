@@ -1,10 +1,9 @@
 <template>
     <div>
-        <div>
+
+        <div class="container b-red">
             <searchBoxComponent @setPosition="getPosition" />
         </div>
-
-
 
         <div class="selection fixed-top">
 
@@ -116,6 +115,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.b-red{
+
+    margin-top: 150px;
+}
 
 button {
     text-decoration: none;
