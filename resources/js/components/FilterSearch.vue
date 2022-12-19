@@ -1,70 +1,67 @@
 <template>
     <div>
-        <div class="centerz d-flex align-items-center justify-content-center">
 
-             <searchBoxComponent @setPosition="getPosition" />
-
+        <div class="container search_box">
+            <searchBoxComponent @setPosition="getPosition" />
         </div>
 
-
-
-        <div class="selection fixed-top w-100">
+        <div class="selection fixed-top">
 
 
             <div>
-                <div class="categoryArea d-flex align-items-center justify-content-around w-100">
+                <div class="d-flex align-items-center justify-content-around">
 
                     <div class="flex-column text-center">
-                        <button @click="setCategory('Parchi nazionali')"><span class="flex-column"><i
+                        <button @click="setCategory('Parchi nazionali')"><span><i
                                     class="fa-solid fa-mountain-sun"></i></span>
                             <p>Montagna</p>
                         </button>
                     </div>
 
                     <div class="flex-column text-center">
-                        <button @click="setCategory('Baite')"><span class="flex-column"><i
+                        <button @click="setCategory('Baite')"><span><i
                                     class="fa-solid fa-house-crack"></i></span>
                             <p>Baite</p>
                         </button>
                     </div>
 
                     <div class="flex-column text-center">
-                        <button @click="setCategory('Campagna')"><span class="flex-column"><i
+                        <button @click="setCategory('Campagna')"><span><i
                                     class="fa-solid fa-campground"></i></span>
                             <p>Campagna</p>
                         </button>
                     </div>
 
                     <div class="flex-column text-center">
-                        <button @click="setCategory('Viste mozzafiato')"><span class="flex-column"><i
-                                    class="fa-solid fa-panorama"></i></span>
+                        <button @click="setCategory('Viste mozzafiato')">
+                            <span><i class="fa-solid fa-panorama"></i></span>
                             <p>Viste mozzafiato</p>
                         </button>
                     </div>
 
                     <div class="flex-column text-center">
-                        <button @click="setCategory('Sulle piste')"><span class="flex-column"><i
+                        <button @click="setCategory('Sulle piste')"><span><i
                                     class="fa-solid fa-person-skiing"></i></span>
                             <p>Sulle piste</p>
                         </button>
                     </div>
 
                     <div class="flex-column text-center">
-                        <button @click="setCategory('Luoghi remoti')"><span class="flex-column"><i
+                        <button @click="setCategory('Luoghi remoti')"><span><i
                                     class="fa-solid fa-igloo"></i></span>
                             <p>Igloo</p>
                         </button>
                     </div>
 
                     <div class="flex-column text-center">
-                        <button @click="setCategory('Città popolari')"><span class="flex-column"><i
+                        <button @click="setCategory('Città popolari')"><span><i
                                     class="fa-solid fa-city"></i></span>
                             <p>Città</p>
                         </button>
                     </div>
 
                     <div class="flex-column text-center">
-                        <button @click="setCategory('Dimore storiche')"><span class="flex-column"><i
+                        <button @click="setCategory('Dimore storiche')"><span><i
                                     class="fa-solid fa-landmark"></i></span>
                             <p>Città d'Arte</p>
                         </button>
@@ -118,23 +115,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.centerz {
+
+.search_box{
+    margin-top: 150px;
     position: relative;
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50%;
+    top: -150px;
+    z-index: 2000;
+    max-width: calc(100vh - 300px);
 }
 
 button {
     text-decoration: none;
     border: none;
     background-color: rgba(255, 255, 255, 0);
+    color: #727171;
+    transition: 0.3s;
 }
 
-.categoryArea{
-    position: relative;
-    top: -10px;
+button:hover {
+    color: black;
+}
+
+.selection{
+    margin-top: 66px !important;
+    padding-top: 15px;
+    border-bottom: 1px solid lightgray;
 }
 
 </style>

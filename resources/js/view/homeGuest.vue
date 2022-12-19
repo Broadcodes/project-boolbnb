@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid mb-5">
+    <div class="container-fluid">
 
         <div v-if="titleApartmentShow == ''">
 
@@ -15,7 +15,7 @@
                             :src="getSrcImages('images', 'immagine_non_disponibile.png')" alt="Nessuna immagine">
                         <img v-else class="img-fluid resize-img img-thumbnail"
                             :src="getSrcImages('storage', apartment.apartment_images)" :alt="apartment.apartment_title">
-                        <h4 class="testo-card">{{ apartment.apartment_title.substr(0, 20) }} <span
+                        <h4 class="testo-card mt-3">{{ apartment.apartment_title.substr(0, 20) }} <span
                                 v-if="apartment.apartment_title.length > 20">...</span></h4>
                     </div>
                 </div>
@@ -113,6 +113,10 @@ export default {
 </script>
 
 <style lang="scss">
+
+
+
+
 .contenitore-card {
     display: flex;
     justify-content: space-around;
@@ -123,7 +127,6 @@ export default {
 .singola-card {
     cursor: pointer;
     width: calc(100% / 3 - 90px);
-    border: 3px solid #ff5a5f;
     border-radius: 20px;
     padding: 10px;
     align-items: center;
@@ -142,7 +145,6 @@ export default {
     .testo-card {
         font-size: 1.3em;
         font-weight: 600;
-        color: brown;
         padding: 5px;
 
     }

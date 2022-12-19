@@ -10993,15 +10993,16 @@ a.text-dark:focus {
     Team Imports
 *****************/
 
+.modal {
+  z-index: 2500;
+}
+
 #navbar-login {
   position: fixed;
   top: 0;
   width: 100%;
   background-color: #ffffff;
-}
-
-.container {
-  padding: 0;
+  z-index: 2500;
 }
 
 .btn-lightgreen {
@@ -11044,6 +11045,10 @@ a.text-dark:focus {
 
 .card-body {
   min-height: 150px;
+}
+
+.carte {
+  margin-top: 150px;
 }
 
 ul li {
@@ -11142,10 +11147,6 @@ ul li {
   font-size: 2.5rem;
 }
 
-.container {
-  padding: 0;
-}
-
 .btn-lightgreen {
   background-color: #61D5B9;
 }
@@ -11186,6 +11187,10 @@ ul li {
 
 .card-body {
   min-height: 150px;
+}
+
+.carte {
+  margin-top: 150px;
 }
 
 /**********************************/
