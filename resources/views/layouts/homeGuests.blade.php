@@ -9,7 +9,7 @@
 
     <title>@yield('title')</title>
 
-    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
 

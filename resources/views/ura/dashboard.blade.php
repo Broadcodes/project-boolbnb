@@ -13,7 +13,7 @@
                 <div class="col">
                     <div class="nc-accountInfo d-flex">
                         <div class="nc-card d-flex flex-column align-items-center">
-                            <img class="nc-profilePic mt-3" src="{{ url('/images/profile-pic.png') }}" alt="profile pic">
+                            <img class="img-fluid nc-profilePic mt-3" src="{{ url('/images/profile-pic.png') }}" alt="profile pic">
                             <h3>{{ $user->name }} {{ $user->surname }}</h3>
                             <div class="personalInfo">
                                 <p>
