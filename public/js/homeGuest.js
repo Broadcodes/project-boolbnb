@@ -2093,16 +2093,14 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", [_c("div", {
-    staticClass: "centerz d-flex align-items-center justify-content-center"
-  }, [_c("searchBoxComponent", {
+  return _c("div", [_c("div", [_c("searchBoxComponent", {
     on: {
       setPosition: _vm.getPosition
     }
   })], 1), _vm._v(" "), _c("div", {
-    staticClass: "selection fixed-top w-100"
+    staticClass: "selection fixed-top"
   }, [_c("div", [_c("div", {
-    staticClass: "categoryArea d-flex align-items-center justify-content-around w-100"
+    staticClass: "d-flex align-items-center justify-content-around"
   }, [_c("div", {
     staticClass: "flex-column text-center"
   }, [_c("button", {
@@ -2172,65 +2170,49 @@ var render = function render() {
 var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("span", {
-    staticClass: "flex-column"
-  }, [_c("i", {
+  return _c("span", [_c("i", {
     staticClass: "fa-solid fa-mountain-sun"
   })]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("span", {
-    staticClass: "flex-column"
-  }, [_c("i", {
+  return _c("span", [_c("i", {
     staticClass: "fa-solid fa-house-crack"
   })]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("span", {
-    staticClass: "flex-column"
-  }, [_c("i", {
+  return _c("span", [_c("i", {
     staticClass: "fa-solid fa-campground"
   })]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("span", {
-    staticClass: "flex-column"
-  }, [_c("i", {
+  return _c("span", [_c("i", {
     staticClass: "fa-solid fa-panorama"
   })]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("span", {
-    staticClass: "flex-column"
-  }, [_c("i", {
+  return _c("span", [_c("i", {
     staticClass: "fa-solid fa-person-skiing"
   })]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("span", {
-    staticClass: "flex-column"
-  }, [_c("i", {
+  return _c("span", [_c("i", {
     staticClass: "fa-solid fa-igloo"
   })]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("span", {
-    staticClass: "flex-column"
-  }, [_c("i", {
+  return _c("span", [_c("i", {
     staticClass: "fa-solid fa-city"
   })]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("span", {
-    staticClass: "flex-column"
-  }, [_c("i", {
+  return _c("span", [_c("i", {
     staticClass: "fa-solid fa-landmark"
   })]);
 }];
@@ -2259,7 +2241,7 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", [_c("div", {
-    staticClass: "tp",
+    staticClass: "container tp justify-content-center d-flex",
     attrs: {
       id: "searchBox"
     }
@@ -2285,7 +2267,7 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", {
-    staticClass: "container-fluid mb-5"
+    staticClass: "container-fluid"
   }, [_vm.titleApartmentShow == "" ? _c("div", [_c("div", [_c("FilterSearch", {
     on: {
       coordinate: _vm.sentCoordinate
@@ -6900,7 +6882,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".centerz[data-v-263f772b] {\n  position: relative;\n  top: -50px;\n  left: 50%;\n  transform: translateX(-50%);\n  width: 50%;\n}\nbutton[data-v-263f772b] {\n  text-decoration: none;\n  border: none;\n  background-color: rgba(255, 255, 255, 0);\n}\n.categoryArea[data-v-263f772b] {\n  position: relative;\n  top: -10px;\n}", ""]);
+exports.push([module.i, "button[data-v-263f772b] {\n  text-decoration: none;\n  border: none;\n  background-color: rgba(255, 255, 255, 0);\n  color: #727171;\n  transition: 0.3s;\n}\nbutton[data-v-263f772b]:hover {\n  color: black;\n}\n.selection[data-v-263f772b] {\n  margin-top: 66px !important;\n  padding-top: 15px;\n  border-bottom: 1px solid lightgray;\n}", ""]);
 
 // exports
 
@@ -6919,7 +6901,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".contenitore-card {\n  display: flex;\n  justify-content: space-around;\n  flex-wrap: wrap;\n  gap: 30px;\n}\n.singola-card {\n  cursor: pointer;\n  width: calc(33.3333333333% - 90px);\n  border: 3px solid #ff5a5f;\n  border-radius: 20px;\n  padding: 10px;\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n  -o-object-fit: contain;\n     object-fit: contain;\n  transition: all 0.5s;\n}\n.singola-card .resize-img {\n  min-height: 200px;\n  max-height: 200px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.singola-card .testo-card {\n  font-size: 1.3em;\n  font-weight: 600;\n  color: brown;\n  padding: 5px;\n}\n.singola-card:hover {\n  transform: scale(1.05);\n  box-shadow: 8px 8px 20px rgb(201, 201, 201);\n}", ""]);
+exports.push([module.i, ".apartment_container {\n  margin-top: 100px;\n}\n.contenitore-card {\n  display: flex;\n  justify-content: space-around;\n  flex-wrap: wrap;\n  gap: 30px;\n}\n.singola-card {\n  cursor: pointer;\n  width: calc(33.3333333333% - 90px);\n  border: 3px solid #ff5a5f;\n  border-radius: 20px;\n  padding: 10px;\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n  -o-object-fit: contain;\n     object-fit: contain;\n  transition: all 0.5s;\n}\n.singola-card .resize-img {\n  min-height: 200px;\n  max-height: 200px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.singola-card .testo-card {\n  font-size: 1.3em;\n  font-weight: 600;\n  color: brown;\n  padding: 5px;\n}\n.singola-card:hover {\n  transform: scale(1.05);\n  box-shadow: 8px 8px 20px rgb(201, 201, 201);\n}", ""]);
 
 // exports
 
@@ -51349,8 +51331,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Gianluca Fabrizio\Desktop\Boolean\1 - Esercizi\56_project-boolbnb\resources\js\homeGuest.js */"./resources/js/homeGuest.js");
-module.exports = __webpack_require__(/*! C:\Users\Gianluca Fabrizio\Desktop\Boolean\1 - Esercizi\56_project-boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/francescomiceli/project-boolbnb/resources/js/homeGuest.js */"./resources/js/homeGuest.js");
+module.exports = __webpack_require__(/*! /Users/francescomiceli/project-boolbnb/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
