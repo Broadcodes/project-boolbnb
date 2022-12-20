@@ -11128,6 +11128,10 @@ ul li {
   font-size: 0.85rem;
 }
 
+.dropdown-menu {
+  z-index: 2500;
+}
+
 .nc-accountInfo {
   -moz-column-gap: 2rem;
        column-gap: 2rem;
@@ -11136,7 +11140,7 @@ ul li {
 }
 
 .nc-accountInfo .nc-card {
-  height: 40vh;
+  height: 370px;
   width: 30%;
   border: 1px solid gray;
   border-radius: 10px;

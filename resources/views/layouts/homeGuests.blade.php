@@ -31,12 +31,13 @@
 </head>
 
 <body>
+
     <nav class="navbar navbar-expand-lg bg-light fixed-top">
         <div class="d-flex align-items-center justify-content-between w-100">
             <div class="logo-area">
                 <a href="index.html"><img id="logo" src="img/Airbnb_Logo-1.png" alt="logo"></a>
             </div>
-            <ul class="d-flex m-0">
+            {{-- <ul class="d-flex m-0">
                 <li class="nav-item">
 
                     <button class="btn btn-lg" data-toggle="modal" data-target="#loginModal"
@@ -46,6 +47,39 @@
                     <button class="btn btn-lg" data-toggle="modal" data-target="#registerModal"
                         href="{{ route('register') }}">Register</button>
                 </li>
+            </ul> --}}
+            <ul class="navbar-nav ml-auto">
+                <!-- Authentication Links -->
+                @guest
+                    <li class="nav-item">
+
+                        <button class="btn btn-lg" data-toggle="modal" data-target="#loginModal"
+                            href="{{ route('login') }}">Login</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-lg" data-toggle="modal" data-target="#registerModal"
+                            href="{{ route('register') }}">Register</button>
+                    </li>
+                @else
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }}
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                @endguest
             </ul>
         </div>
     </nav>
@@ -108,8 +142,8 @@
                             <div class="form-group row">
                                 <div class="col-md-6 offset-md-4">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="remember" id="remember"
-                                            {{ old('remember') ? 'checked' : '' }}>
+                                        <input class="form-check-input" type="checkbox" name="remember"
+                                            id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                         <label class="form-check-label" for="remember">
                                             {{ __('Remember Me') }}

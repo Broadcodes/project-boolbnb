@@ -140,6 +140,7 @@ button:hover {
     margin-top: 66px !important;
     padding-top: 15px;
     border-bottom: 1px solid lightgray;
+    z-index: 200;
 }
 
 </style>
