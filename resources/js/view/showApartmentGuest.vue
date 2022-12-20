@@ -50,7 +50,7 @@
                                 <h5>MQ</h5>
                             </div>
                         </div>
-                        <h4 class="description mt-5">{{ dataListArr.description }}</h4>
+                        <h4 class="description mt-5 descrizione">{{ dataListArr.description }}</h4>
                         <div>
                             <button @click="getBack" class="btn btn-primary">Torna alla home</button>
                         </div>
@@ -229,6 +229,7 @@ export default {
                         align-items: center;
                         padding: 15px;
                         transition: all .5s;
+                        cursor: pointer;
 
                         &:hover {
                             transform: scale(1.1);
@@ -255,6 +256,10 @@ export default {
                     text-align: left;
                     height: 400px;
                     overflow-y: auto;
+                }
+
+                .descrizione {
+                    border: 1px solid black;
                 }
             }
         }
