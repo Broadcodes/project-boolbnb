@@ -222,8 +222,8 @@ export default {
 
         .showDetail {
             width: 100%;
-            height: 350px;
-            margin-top: -73px;
+            // height: 350px;
+            // margin-top: -73px;
             padding: 25px 0px;
             // background-color: #ededed;
 
