@@ -4,7 +4,7 @@
         <input class="d-none" type="text" name="apartment_id" required id="apartment_id" :value="dataListArr.id">
         <!-- ------------------------------ -->
 
-        <div class="areaShow">
+        <div class="areaShow smooth">
             <div class="jumbo">
                 <img v-if="dataListArr.apartment_images == null" class="imgJumbo"
                     :src="getSrcImages('images', 'immagine_non_disponibile.png')" alt="Nessuna immagine">
@@ -84,6 +84,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.smooth {
+    scroll-behavior: smooth;
+}
 .areaShow {
     margin-top: 100px;
     padding: 0px;
