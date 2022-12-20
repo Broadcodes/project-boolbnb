@@ -2429,7 +2429,7 @@ var render = function render() {
   }, [_c("h5", {
     staticClass: "text-center mb-3"
   }, [_vm._v("Descrizione:")]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.dataListArr.description))])]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", [_c("button", {
-    staticClass: "btn btn-primary mt-3",
+    staticClass: "btn btn-primary mt-5",
     on: {
       click: _vm.getBack
     }

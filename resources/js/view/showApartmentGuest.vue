@@ -63,21 +63,11 @@
 
 
                         <div>
-                            <button @click="getBack" class="btn btn-primary mt-3">Torna alla home</button>
+                            <button @click="getBack" class="btn btn-primary mt-5">Torna alla home</button>
                         </div>
 
 
                     </div>
-
-                    <!-- <div class="description">
-                            <h3>Descrizione</h3>
-                            <p>{{ dataListArr.description }}</p>
-                        </div>
-
-
-                        <div>
-                            <button @click="getBack" class="btn btn-primary mt-3">Torna alla home</button>
-                        </div> -->
 
                 </div>
             </div>
