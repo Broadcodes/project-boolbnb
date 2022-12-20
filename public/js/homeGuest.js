@@ -2388,7 +2388,7 @@ var render = function render() {
     staticClass: "text"
   }, [_c("div", {
     staticClass: "textArea"
-  }, [_c("h1", [_vm._v(_vm._s(_vm.dataListArr.apartment_title))]), _vm._v(" "), _c("h3", [_vm._v(_vm._s(_vm.dataListArr.address) + ", " + _vm._s(_vm.dataListArr.civic_number) + " - " + _vm._s(_vm.dataListArr.city) + " " + _vm._s(_vm.dataListArr.city))]), _vm._v(" "), _c("h3", [_vm._v("Categoria: " + _vm._s(_vm.dataListArr.category))])])]), _vm._v(" "), _c("a", {
+  }, [_c("h1", [_vm._v(_vm._s(_vm.dataListArr.apartment_title))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.dataListArr.address) + ", " + _vm._s(_vm.dataListArr.civic_number) + " - " + _vm._s(_vm.dataListArr.city) + " " + _vm._s(_vm.dataListArr.city))]), _vm._v(" "), _c("p", [_vm._v("Categoria: " + _vm._s(_vm.dataListArr.category))])])]), _vm._v(" "), _c("a", {
     staticClass: "buttonMoreDetail",
     attrs: {
       href: "#areaDetail"
@@ -2404,29 +2404,36 @@ var render = function render() {
     attrs: {
       id: "moreDetail"
     }
-  }, [_c("h2", [_vm._v("Prezzo dell'immobile: "), _c("span", {
+  }, [_c("h4", [_vm._v("Prezzo a Notte: "), _c("span", {
     staticClass: "price"
-  }, [_vm._v("€ " + _vm._s(_vm.dataListArr.price))])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("€ " + _vm._s(_vm.dataListArr.price))])]), _vm._v(" "), _c("h5", [_vm._v("Dettagli:")]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", {
     staticClass: "detail"
   }, [_c("div", {
     staticClass: "detailElement"
   }, [_c("i", {
     staticClass: "fa-solid fa-people-roof"
-  }), _vm._v(" "), _c("h4", [_vm._v(_vm._s(_vm.dataListArr.bedrooms))]), _vm._v(" "), _c("h5", [_vm._v("Numero di stanze")])]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.dataListArr.bedrooms))]), _vm._v(" "), _c("p", [_vm._v("Numero di stanze")])]), _vm._v(" "), _c("div", {
     staticClass: "detailElement"
   }, [_c("i", {
     staticClass: "fa-solid fa-bed"
-  }), _vm._v(" "), _c("h4", [_vm._v(_vm._s(_vm.dataListArr.bed))]), _vm._v(" "), _c("h5", [_vm._v("Numero di letti")])]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.dataListArr.bed))]), _vm._v(" "), _c("p", [_vm._v("Numero di letti")])]), _vm._v(" "), _c("div", {
     staticClass: "detailElement"
   }, [_c("i", {
     staticClass: "fa-solid fa-bath"
-  }), _vm._v(" "), _c("h4", [_vm._v(_vm._s(_vm.dataListArr.bathrooms))]), _vm._v(" "), _c("h5", [_vm._v("Numero di bagni")])]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.dataListArr.bathrooms))]), _vm._v(" "), _c("p", [_vm._v("Numero di bagni")])]), _vm._v(" "), _c("div", {
     staticClass: "detailElement"
   }, [_c("i", {
     staticClass: "fa-solid fa-ruler"
-  }), _vm._v(" "), _c("h4", [_vm._v(_vm._s(_vm.dataListArr.sqm))]), _vm._v(" "), _c("h5", [_vm._v("MQ")])])]), _vm._v(" "), _c("h4", {
-    staticClass: "description mt-5"
-  }, [_vm._v(_vm._s(_vm.dataListArr.description))])])])])])]);
+  }), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.dataListArr.sqm))]), _vm._v(" "), _c("p", [_vm._v("Metri Quadrati")])])]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", {
+    staticClass: "description"
+  }, [_c("h5", {
+    staticClass: "text-center mb-3"
+  }, [_vm._v("Descrizione:")]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.dataListArr.description))])]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", [_c("button", {
+    staticClass: "btn btn-primary mt-3",
+    on: {
+      click: _vm.getBack
+    }
+  }, [_vm._v("Torna alla home")])])])])])])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -6850,7 +6857,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".areaShow[data-v-dfae5582] {\n  margin-top: 100px;\n  padding: 0px;\n}\n.areaShow .jumbo[data-v-dfae5582] {\n  width: 100%;\n  height: 700px;\n  position: relative;\n}\n.areaShow .jumbo .imgJumbo[data-v-dfae5582] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center right;\n     object-position: center right;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n.areaShow .jumbo .filter[data-v-dfae5582] {\n  width: 100%;\n  height: 100%;\n  background: rgb(0, 0, 0);\n  background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(26, 26, 26, 0.75) 37%, rgba(56, 56, 56, 0.65) 72%, rgba(255, 255, 255, 0) 100%);\n  position: absolute;\n  top: 0;\n  left: 0;\n  text-align: center;\n  overflow: hidden;\n}\n.areaShow .jumbo .filter .text[data-v-dfae5582] {\n  width: 50%;\n  height: 100%;\n  display: flex;\n  padding-left: 200px;\n  align-items: center;\n}\n.areaShow .jumbo .filter .textArea[data-v-dfae5582] {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  padding: 50px;\n  transition: all 0.5s;\n  position: relative;\n  animation: moveToRight-dfae5582 2s ease;\n}\n.areaShow .jumbo .filter .textArea[data-v-dfae5582]:hover {\n  scale: 1.05;\n  box-shadow: 0px 0px 40px #fff;\n}\n.areaShow .jumbo .filter .textArea h1[data-v-dfae5582],\n.areaShow .jumbo .filter .textArea h3[data-v-dfae5582] {\n  text-align: left;\n  color: #fff;\n}\n.areaShow .jumbo .filter .textArea h1[data-v-dfae5582] {\n  padding-bottom: 10px;\n  font-size: 4rem;\n}\n@keyframes moveToRight-dfae5582 {\nfrom {\n    left: -500px;\n}\nto {\n    left: 0px;\n}\n}\n.areaShow .jumbo .filter .buttonMoreDetail[data-v-dfae5582] {\n  width: 240px;\n  height: 240px;\n  line-height: 115px;\n  border-radius: 50%;\n  position: absolute;\n  font-size: 1.2rem;\n  color: #fff;\n  bottom: -150px;\n  transform: translateX(-50%);\n  background-color: rgba(0, 0, 0, 0.5);\n  box-shadow: inset 0px 0px 20px #fff;\n  text-decoration: none;\n  animation: moveToTop-dfae5582 2s ease;\n}\n.areaShow .jumbo .filter .buttonMoreDetail[data-v-dfae5582]:hover {\n  font-size: 1.3rem;\n}\n@keyframes moveToTop-dfae5582 {\nfrom {\n    bottom: -250px;\n}\nto {\n    bottom: -150px;\n}\n}\n.areaShow #areaDetail[data-v-dfae5582] {\n  padding-top: 50px;\n}\n.areaShow #areaDetail .showDetail[data-v-dfae5582] {\n  width: 100%;\n  height: 400px;\n  margin-top: 120px;\n  padding: 25px 0px;\n  background-color: #ededed;\n}\n.areaShow #areaDetail .showDetail .moreDetail[data-v-dfae5582] {\n  width: 100%;\n  height: 1000px;\n  text-align: center;\n}\n.areaShow #areaDetail .showDetail .moreDetail h2[data-v-dfae5582] {\n  font-size: 3rem;\n  margin: 35px 0;\n}\n.areaShow #areaDetail .showDetail .moreDetail h2 .price[data-v-dfae5582] {\n  color: rgb(28, 141, 233);\n  font-size: 4.5rem;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail[data-v-dfae5582] {\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n  padding: 40px;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement[data-v-dfae5582] {\n  display: flex;\n  min-width: 150px;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 15px;\n  transition: all 0.5s;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement[data-v-dfae5582]:hover {\n  transform: scale(1.1);\n  box-shadow: 20px 20px 15px rgba(0, 0, 0, 0.25);\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement i[data-v-dfae5582] {\n  font-size: 2rem;\n  margin-bottom: 20px;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement h4[data-v-dfae5582] {\n  font-size: 1.6rem;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement h5[data-v-dfae5582] {\n  font-size: 1.2rem;\n}\n.areaShow #areaDetail .showDetail .moreDetail .description[data-v-dfae5582] {\n  padding: 30px;\n  text-align: left;\n  height: 400px;\n  overflow-y: auto;\n}", ""]);
+exports.push([module.i, ".areaShow[data-v-dfae5582] {\n  margin-top: 100px;\n  padding: 0px;\n}\n.areaShow .jumbo[data-v-dfae5582] {\n  width: 100%;\n  height: 480px;\n  position: relative;\n}\n.areaShow .jumbo .imgJumbo[data-v-dfae5582] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center right;\n     object-position: center right;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n.areaShow .jumbo .filter[data-v-dfae5582] {\n  width: 100%;\n  height: 100%;\n  background: rgb(0, 0, 0);\n  background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(26, 26, 26, 0.75) 37%, rgba(56, 56, 56, 0.65) 72%, rgba(255, 255, 255, 0) 100%);\n  position: absolute;\n  top: 0;\n  left: 0;\n  text-align: center;\n  overflow: hidden;\n}\n.areaShow .jumbo .filter .text[data-v-dfae5582] {\n  width: 50%;\n  height: 100%;\n  display: flex;\n  padding-left: 200px;\n  align-items: center;\n}\n.areaShow .jumbo .filter .textArea[data-v-dfae5582] {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  padding: 50px;\n  transition: all 0.5s;\n  position: relative;\n  animation: moveToRight-dfae5582 2s ease;\n}\n.areaShow .jumbo .filter .textArea h1[data-v-dfae5582],\n.areaShow .jumbo .filter .textArea h3[data-v-dfae5582],\n.areaShow .jumbo .filter .textArea h4[data-v-dfae5582],\n.areaShow .jumbo .filter .textArea p[data-v-dfae5582] {\n  text-align: left;\n  color: #fff;\n}\n.areaShow .jumbo .filter .textArea h2[data-v-dfae5582] {\n  padding-bottom: 10px;\n  color: white;\n}\n@keyframes moveToRight-dfae5582 {\nfrom {\n    left: -500px;\n}\nto {\n    left: 0px;\n}\n}\n.areaShow .jumbo .filter .buttonMoreDetail[data-v-dfae5582] {\n  width: 240px;\n  height: 240px;\n  line-height: 115px;\n  border-radius: 50%;\n  position: absolute;\n  font-size: 1.2rem;\n  color: #fff;\n  bottom: -150px;\n  transform: translateX(-50%);\n  background-color: rgba(0, 0, 0, 0.5);\n  box-shadow: inset 0px 0px 20px #fff;\n  text-decoration: none;\n  animation: moveToTop-dfae5582 2s ease;\n}\n.areaShow .jumbo .filter .buttonMoreDetail[data-v-dfae5582]:hover {\n  font-size: 1.3rem;\n}\n@keyframes moveToTop-dfae5582 {\nfrom {\n    bottom: -250px;\n}\nto {\n    bottom: -150px;\n}\n}\n.areaShow #areaDetail[data-v-dfae5582] {\n  padding-top: 50px;\n}\n.areaShow #areaDetail .showDetail[data-v-dfae5582] {\n  width: 100%;\n  height: 350px;\n  margin-top: -73px;\n  padding: 25px 0px;\n}\n.areaShow #areaDetail .showDetail .moreDetail[data-v-dfae5582] {\n  width: 100%;\n  height: 1000px;\n  text-align: center;\n}\n.areaShow #areaDetail .showDetail .moreDetail h4[data-v-dfae5582] {\n  margin: 35px 0;\n}\n.areaShow #areaDetail .showDetail .moreDetail h4 .price[data-v-dfae5582] {\n  color: #ff385c;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail[data-v-dfae5582] {\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement[data-v-dfae5582] {\n  display: flex;\n  min-width: 150px;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 15px;\n  transition: all 0.5s;\n  cursor: pointer;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement[data-v-dfae5582]:hover {\n  transform: scale(1.1);\n  box-shadow: 20px 20px 15px rgba(0, 0, 0, 0.25);\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement i[data-v-dfae5582] {\n  font-size: 1.5rem;\n  margin-bottom: 20px;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement h4[data-v-dfae5582] {\n  font-size: 1.6rem;\n}\n.areaShow #areaDetail .showDetail .moreDetail .description[data-v-dfae5582] {\n  padding: 30px;\n  text-align: left;\n  height: 200px;\n  overflow-y: auto;\n  border-radius: 10px;\n  margin-top: 55px;\n}", ""]);
 
 // exports
 
@@ -51194,8 +51201,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Gianluca Fabrizio\Desktop\Boolean\1 - Esercizi\56_project-boolbnb\resources\js\homeGuest.js */"./resources/js/homeGuest.js");
-module.exports = __webpack_require__(/*! C:\Users\Gianluca Fabrizio\Desktop\Boolean\1 - Esercizi\56_project-boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/francescomiceli/project-boolbnb/resources/js/homeGuest.js */"./resources/js/homeGuest.js");
+module.exports = __webpack_require__(/*! /Users/francescomiceli/project-boolbnb/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

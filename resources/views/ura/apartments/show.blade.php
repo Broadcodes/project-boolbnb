@@ -30,7 +30,7 @@
                     class="brown">{{ $apartment->bathrooms }}</span></li>
             <li class="list-group-item">{{ __('MQ') }}: <span class="brown">{{ $apartment->sqm }}</span></li>
             <li class="list-group-item">{{ __('Categoria') }}: <span class="brown">{{ $apartment->category }}</span></li>
-            <li class="list-group-item">{{ __('Prezzo') }}: <span class="brown">{{ $apartment->price }}</span></li>
+            <li class="list-group-item">{{ __('Prezzo a Notte') }}: <span class="brown">{{ $apartment->price }}</span></li>
             <li class="list-group-item">{{ __('Indirizzo') }}: <span class="brown">{{ $apartment->address }}</span></li>
             <li class="list-group-item">{{ __('Civico') }}: <span class="brown">{{ $apartment->civic_number }}</span>
             </li>

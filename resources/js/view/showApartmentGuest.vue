@@ -14,10 +14,10 @@
                     <div class="text">
                         <div class="textArea">
                             <h1>{{ dataListArr.apartment_title }}</h1>
-                            <h3>{{ dataListArr.address }}, {{ dataListArr.civic_number }} - {{ dataListArr.city }} {{
+                            <p>{{ dataListArr.address }}, {{ dataListArr.civic_number }} - {{ dataListArr.city }} {{
                                     dataListArr.city
-                            }}</h3>
-                            <h3>Categoria: {{ dataListArr.category }}</h3>
+                            }}</p>
+                            <p>Categoria: {{ dataListArr.category }}</p>
                         </div>
                     </div>
 
@@ -27,34 +27,58 @@
             <div id="areaDetail">
                 <div class="showDetail">
                     <div id="moreDetail" class="moreDetail container">
-                        <h2>Prezzo dell'immobile: <span class="price">€ {{ dataListArr.price }}</span></h2>
+                        <h4>Prezzo a Notte: <span class="price">€ {{ dataListArr.price }}</span></h4>
+                        <h5>Dettagli:</h5>
+                        <hr>
                         <div class="detail">
+
                             <div class="detailElement">
                                 <i class="fa-solid fa-people-roof"></i>
-                                <h4>{{ dataListArr.bedrooms }}</h4>
-                                <h5>Numero di stanze</h5>
+                                <p>{{ dataListArr.bedrooms }}</p>
+                                <p>Numero di stanze</p>
                             </div>
                             <div class="detailElement">
                                 <i class="fa-solid fa-bed"></i>
-                                <h4>{{ dataListArr.bed }}</h4>
-                                <h5>Numero di letti</h5>
+                                <p>{{ dataListArr.bed }}</p>
+                                <p>Numero di letti</p>
                             </div>
                             <div class="detailElement">
                                 <i class="fa-solid fa-bath"></i>
-                                <h4>{{ dataListArr.bathrooms }}</h4>
-                                <h5>Numero di bagni</h5>
+                                <p>{{ dataListArr.bathrooms }}</p>
+                                <p>Numero di bagni</p>
                             </div>
                             <div class="detailElement">
                                 <i class="fa-solid fa-ruler"></i>
-                                <h4>{{ dataListArr.sqm }}</h4>
-                                <h5>MQ</h5>
+                                <p>{{ dataListArr.sqm }}</p>
+                                <p>Metri Quadrati</p>
                             </div>
                         </div>
-                        <h4 class="description mt-5">{{ dataListArr.description }}</h4>
-                        <div>
-                            <button @click="getBack" class="btn btn-primary">Torna alla home</button>
+                        <hr>
+
+                        <div class="description">
+                            <h5 class="text-center mb-3">Descrizione:</h5>
+                            <p>{{ dataListArr.description }}</p>
                         </div>
+                        <hr>
+
+
+                        <div>
+                            <button @click="getBack" class="btn btn-primary mt-3">Torna alla home</button>
+                        </div>
+
+
                     </div>
+
+                    <!-- <div class="description">
+                            <h3>Descrizione</h3>
+                            <p>{{ dataListArr.description }}</p>
+                        </div>
+
+
+                        <div>
+                            <button @click="getBack" class="btn btn-primary mt-3">Torna alla home</button>
+                        </div> -->
+
                 </div>
             </div>
         </div>
@@ -90,7 +114,7 @@ export default {
 
     .jumbo {
         width: 100%;
-        height: 700px;
+        height: 480px;
         position: relative;
 
         .imgJumbo {
@@ -131,20 +155,22 @@ export default {
                 position: relative;
                 animation: moveToRight 2s ease;
 
-                &:hover {
-                    scale: 1.05;
-                    box-shadow: 0px 0px 40px #fff;
-                }
+                // &:hover {
+                //     scale: 1.05;
+                //     box-shadow: 0px 0px 40px #fff;
+                // }
 
                 h1,
-                h3 {
+                h3,
+                h4,
+                p {
                     text-align: left;
                     color: #fff;
                 }
 
-                h1 {
+                h2 {
                     padding-bottom: 10px;
-                    font-size: 4rem;
+                    color: white;
                 }
             }
 
@@ -193,25 +219,26 @@ export default {
     #areaDetail {
         padding-top: 50px;
 
+
         .showDetail {
             width: 100%;
-            height: 400px;
-            margin-top: 120px;
+            height: 350px;
+            margin-top: -73px;
             padding: 25px 0px;
-            background-color: #ededed;
+            // background-color: #ededed;
 
             .moreDetail {
                 width: 100%;
                 height: 1000px;
                 text-align: center;
 
-                h2 {
-                    font-size: 3rem;
+                h4 {
+
                     margin: 35px 0;
 
                     .price {
-                        color: rgb(28, 141, 233);
-                        font-size: 4.5rem;
+                        color: #ff385c;
+
                     }
                 }
 
@@ -219,7 +246,8 @@ export default {
                     display: flex;
                     justify-content: space-around;
                     align-items: center;
-                    padding: 40px;
+                    // padding: 40px;
+                    // border: 1px solid blue;
 
                     .detailElement {
                         display: flex;
@@ -229,6 +257,7 @@ export default {
                         align-items: center;
                         padding: 15px;
                         transition: all .5s;
+                        cursor: pointer;
 
                         &:hover {
                             transform: scale(1.1);
@@ -236,7 +265,7 @@ export default {
                         }
 
                         i {
-                            font-size: 2rem;
+                            font-size: 1.5rem;
                             margin-bottom: 20px;
                         }
 
@@ -244,19 +273,21 @@ export default {
                             font-size: 1.6rem;
                         }
 
-                        h5 {
-                            font-size: 1.2rem;
-                        }
+
                     }
                 }
 
                 .description {
                     padding: 30px;
                     text-align: left;
-                    height: 400px;
+                    height: 200px;
                     overflow-y: auto;
-                }
-            }
+                    border-radius: 10px;
+                    margin-top: 55px;
+                    }
+
+
+}
         }
     }
 
