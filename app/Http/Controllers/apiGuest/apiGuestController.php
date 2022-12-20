@@ -67,16 +67,14 @@ class apiGuestController extends Controller
      */
     public function show($slug)
     {
-        // come ->with([...]) esiste anche ->without([...])
-       // $post = Post::find($id)->with(['tags', 'category'])->first();
 
-       // $post = Post::where('slug', $slug)->with(['tags', 'category'])->first();
+        $apartments = Apartment::where('apartment_slug', $slug)->first();
 
-      //  $data = [
-       //     'results' => $post,
-       //     'success' => isset($post)
-       // ];
-      //  return response()->json($data);
+        $data = [
+            'results' => $apartments,
+            'success' => isset($apartments)
+        ];
+        return response()->json($data);
 
     }
 

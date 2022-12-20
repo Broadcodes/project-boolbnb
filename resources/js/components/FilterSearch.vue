@@ -97,7 +97,7 @@ export default {
         setCategory(input) {
             console.log(input)
 
-            this.$emit('setCategory', input)
+            this.$emit('sentCategory', input)
         },
         getPosition(data){
 
