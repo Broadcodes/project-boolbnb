@@ -114,7 +114,9 @@ export default {
 
 <style lang="scss">
 
-
+html{
+    scroll-behavior: smooth;
+}
 
 
 .contenitore-card {
