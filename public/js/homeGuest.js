@@ -2426,7 +2426,12 @@ var render = function render() {
     staticClass: "fa-solid fa-ruler"
   }), _vm._v(" "), _c("h4", [_vm._v(_vm._s(_vm.dataListArr.sqm))]), _vm._v(" "), _c("h5", [_vm._v("MQ")])])]), _vm._v(" "), _c("h4", {
     staticClass: "description mt-5"
-  }, [_vm._v(_vm._s(_vm.dataListArr.description))])])])])])]);
+  }, [_vm._v(_vm._s(_vm.dataListArr.description))]), _vm._v(" "), _c("button", {
+    staticClass: "btn btn-primary",
+    on: {
+      click: _vm.getBack
+    }
+  }, [_vm._v("Torna alla home")])])])])])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -6831,7 +6836,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".contenitore-card {\n  display: flex;\n  justify-content: space-around;\n  flex-wrap: wrap;\n  gap: 30px;\n}\n.singola-card {\n  cursor: pointer;\n  width: calc(33.3333333333% - 90px);\n  min-width: 300px;\n  border-radius: 20px;\n  padding: 10px;\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n  -o-object-fit: contain;\n     object-fit: contain;\n  transition: all 0.5s;\n}\n.singola-card .resize-img {\n  min-height: 200px;\n  max-height: 200px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.singola-card .testo-card {\n  font-size: 1.3em;\n  font-weight: 600;\n  padding: 5px;\n}\n.singola-card:hover {\n  transform: scale(1.05);\n  box-shadow: 8px 8px 20px rgb(201, 201, 201);\n}", ""]);
+exports.push([module.i, "html {\n  scroll-behavior: smooth;\n}\n.contenitore-card {\n  display: flex;\n  justify-content: space-around;\n  flex-wrap: wrap;\n  gap: 30px;\n}\n.singola-card {\n  cursor: pointer;\n  width: calc(33.3333333333% - 90px);\n  min-width: 300px;\n  border-radius: 20px;\n  padding: 10px;\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n  -o-object-fit: contain;\n     object-fit: contain;\n  transition: all 0.5s;\n}\n.singola-card .resize-img {\n  min-height: 200px;\n  max-height: 200px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.singola-card .testo-card {\n  font-size: 1.3em;\n  font-weight: 600;\n  padding: 5px;\n}\n.singola-card:hover {\n  transform: scale(1.05);\n  box-shadow: 8px 8px 20px rgb(201, 201, 201);\n}", ""]);
 
 // exports
 
