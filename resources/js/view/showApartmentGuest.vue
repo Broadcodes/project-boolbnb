@@ -51,11 +51,12 @@
                             </div>
                         </div>
                         <h4 class="description mt-5">{{ dataListArr.description }}</h4>
+                        <div>
+                            <button @click="getBack" class="btn btn-primary">Torna alla home</button>
+                        </div>
                     </div>
                 </div>
             </div>
-
-
         </div>
 
 
