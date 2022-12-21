@@ -73,10 +73,10 @@
                                     @method('DELETE')
 
                                     <button type="button" class="btn btn-outline-dark m-2 text-center">
-                                        <img style="width: 15px;" height="15px;"
+                                        <img class="m-2" style="width: 15px;" height="15px;"
                                             src="https://www.svgrepo.com/show/264841/garbage-trash.svg" alt="">
-                                        <span class="ml-4">Elimina</span>
-                                        <input class="btn" id="delete" type="submit" value="">
+                                        <span class="ml-2 fw-semibold"><strong>Elimina</strong></span>
+                                        <input class="btn" type="submit" value="">
                                     </button>
                                     <!-- CRUD delete -->
                                 </form>
