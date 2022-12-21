@@ -78,9 +78,8 @@
 
                 <div class="p-2 lh-1 fw-bolder text-center">
                     <img class="w-25 mb-3" src="https://www.svgrepo.com/show/8269/location.svg" alt="">
-                    <p class="text-center fs-2">{{ $apartment->postalCode }}</p>
                     <p class="fs-3">{{ $apartment->city }},{{ $apartment->countrySubdivision }}</p>
-
+                    <p class="text-center fs-2">{{ $apartment->postalCode }}</p>
                 </div>
             </div>
             <div class="col12 p-5">
