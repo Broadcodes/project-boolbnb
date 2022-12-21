@@ -49,23 +49,23 @@
             <div class="container d-flex justify-content-around mt-5 background">
                 <div class="d-flex flex-column align-items-center p-2 first-line">
                     <span><i
-                            class="fa-solid fa-location-dot"></i></span><span>{{ __('Indirizzo') }}:</span><span>{{ $apartment->address }}</span>
+                            class="fa-solid fa-location-dot"></i></span><span>{{ __('Indirizzo') }}</span><span>{{ $apartment->address }}</span>
                 </div>
                 <div class="d-flex flex-column align-items-center p-2 first-line">
                     <span><i
-                            class="fa-solid fa-arrow-up-9-1"></i></span><span>{{ __('Civico') }}:</span><span>{{ $apartment->civic_number }}</span>
+                            class="fa-solid fa-arrow-up-9-1"></i></span><span>{{ __('Civico') }}</span><span>{{ $apartment->civic_number }}</span>
                 </div>
                 <div class="d-flex flex-column align-items-center p-2 first-line">
                     <span><i
-                            class="fa-solid fa-envelopes-bulk"></i></span><span>{{ __('CAP') }}:</span><span>{{ $apartment->postalCode }}</span>
+                            class="fa-solid fa-envelopes-bulk"></i></span><span>{{ __('CAP') }}</span><span>{{ $apartment->postalCode }}</span>
                 </div>
                 <div class="d-flex flex-column align-items-center p-2 first-line">
                     <span><i
-                            class="fa-solid fa-city"></i></span><span>{{ __('Città') }}:</span><span>{{ $apartment->city }}</span>
+                            class="fa-solid fa-city"></i></span><span>{{ __('Città') }}</span><span>{{ $apartment->city }}</span>
                 </div>
                 <div class="d-flex flex-column align-items-center p-2 first-line">
                     <span><i
-                            class="fa-solid fa-map-location-dot"></i></span><span>{{ __('Provincia') }}:</span><span>{{ $apartment->countrySubdivision }}</span>
+                            class="fa-solid fa-map-location-dot"></i></span><span>{{ __('Provincia') }}</span><span>{{ $apartment->countrySubdivision }}</span>
                 </div>
             </div>
         </div>
