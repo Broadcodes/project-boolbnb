@@ -72,7 +72,7 @@
                                     @csrf
                                     @method('DELETE')
 
-                                    <button type="button" class="btn btn-outline-dark m-2 text-center">
+                                    <button type="submit" class="btn btn-outline-dark m-2 text-center">
                                         <img class="m-2" style="width: 15px;" height="15px;"
                                             src="https://www.svgrepo.com/show/264841/garbage-trash.svg" alt="">
                                         <span class="ml-2 fw-semibold"><strong>Elimina</strong></span>
