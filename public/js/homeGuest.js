@@ -2369,18 +2369,7 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", [_c("input", {
-    staticClass: "d-none",
-    attrs: {
-      type: "text",
-      name: "apartment_id",
-      required: "",
-      id: "apartment_id"
-    },
-    domProps: {
-      value: _vm.dataListArr.id
-    }
-  }), _vm._v(" "), _c("div", {
+  return _c("div", [_c("div", {
     staticClass: "areaShow"
   }, [_c("div", {
     staticClass: "jumbo"
@@ -2464,7 +2453,18 @@ var render = function render() {
       action: "api/message",
       method: "POST"
     }
-  }, [_vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4), _vm._v(" "), _c("div", {
+  }, [_c("input", {
+    staticClass: "d-none",
+    attrs: {
+      type: "text",
+      name: "apartment_id",
+      required: "",
+      id: "apartment_id"
+    },
+    domProps: {
+      value: _vm.dataListArr.id
+    }
+  }), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4), _vm._v(" "), _c("div", {
     staticClass: "d-flex justify-content-center my-5"
   }, [_vm._m(5), _vm._v(" "), _c("div", [_c("button", {
     staticClass: "btn btn-primary",
@@ -51223,14 +51223,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************************!*\
   !*** ./resources/js/view/showApartmentGuest.vue ***!
   \**************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _showApartmentGuest_vue_vue_type_template_id_dfae5582_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./showApartmentGuest.vue?vue&type=template&id=dfae5582&scoped=true& */ "./resources/js/view/showApartmentGuest.vue?vue&type=template&id=dfae5582&scoped=true&");
 /* harmony import */ var _showApartmentGuest_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./showApartmentGuest.vue?vue&type=script&lang=js& */ "./resources/js/view/showApartmentGuest.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _showApartmentGuest_vue_vue_type_style_index_0_id_dfae5582_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./showApartmentGuest.vue?vue&type=style&index=0&id=dfae5582&lang=scss&scoped=true& */ "./resources/js/view/showApartmentGuest.vue?vue&type=style&index=0&id=dfae5582&lang=scss&scoped=true&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _showApartmentGuest_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _showApartmentGuest_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _showApartmentGuest_vue_vue_type_style_index_0_id_dfae5582_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./showApartmentGuest.vue?vue&type=style&index=0&id=dfae5582&lang=scss&scoped=true& */ "./resources/js/view/showApartmentGuest.vue?vue&type=style&index=0&id=dfae5582&lang=scss&scoped=true&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -51262,7 +51263,7 @@ component.options.__file = "resources/js/view/showApartmentGuest.vue"
 /*!***************************************************************************!*\
   !*** ./resources/js/view/showApartmentGuest.vue?vue&type=script&lang=js& ***!
   \***************************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51324,8 +51325,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/francescomiceli/project-boolbnb/resources/js/homeGuest.js */"./resources/js/homeGuest.js");
-module.exports = __webpack_require__(/*! /Users/francescomiceli/project-boolbnb/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Gianluca Fabrizio\Desktop\Boolean\1 - Esercizi\56_project-boolbnb\resources\js\homeGuest.js */"./resources/js/homeGuest.js");
+module.exports = __webpack_require__(/*! C:\Users\Gianluca Fabrizio\Desktop\Boolean\1 - Esercizi\56_project-boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

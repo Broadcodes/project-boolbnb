@@ -1,9 +1,5 @@
 <template>
     <div>
-        <!-- non toccare l'input con il name="apartment_id" tanto è nascosto, ma di fondamentale importanza -->
-        <input class="d-none" type="text" name="apartment_id" required id="apartment_id" :value="dataListArr.id">
-        <!-- ------------------------------ -->
-
         <div class="areaShow">
             <div class="jumbo">
                 <img v-if="dataListArr.apartment_images == null" class="imgJumbo"
@@ -91,6 +87,10 @@
 
                         <div class="d-flex align-items-end">
                             <form class="w-100" action="api/message" method="POST">
+                                <!-- non toccare l'input con il name="apartment_id" tanto è nascosto, ma di fondamentale importanza -->
+                                <input class="d-none" type="text" name="apartment_id" required id="apartment_id"
+                                    :value="dataListArr.id">
+                                <!-- ------------------------------ -->
 
                                 <div class="d-flex flex-column">
                                     <input class="form-control" type="text" name="name" required id="name"
