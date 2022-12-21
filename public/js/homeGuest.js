@@ -2456,8 +2456,23 @@ var render = function render() {
     staticClass: "detailElement"
   }, [_c("i", {
     staticClass: "fa-solid fa-ruler"
-  }), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.dataListArr.sqm))]), _vm._v(" "), _c("p", [_vm._v("Metri Quadrati")])])]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", [_c("button", {
-    staticClass: "btn btn-primary mt-5",
+  }), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.dataListArr.sqm))]), _vm._v(" "), _c("p", [_vm._v("Metri Quadrati")])])]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", {
+    staticClass: "d-flex align-items-end"
+  }, [_c("form", {
+    staticClass: "w-100",
+    attrs: {
+      action: "api/message",
+      method: "POST"
+    }
+  }, [_vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4), _vm._v(" "), _c("div", {
+    staticClass: "d-flex"
+  }, [_vm._m(5), _vm._v(" "), _c("div", [_c("button", {
+    staticClass: "btn btn-primary m-2",
+    on: {
+      click: _vm.getBack
+    }
+  }, [_vm._v("Torna alla home")])])])])]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", [_c("button", {
+    staticClass: "btn btn-primary m-5",
     on: {
       click: _vm.getBack
     }
@@ -2490,6 +2505,62 @@ var staticRenderFns = [function () {
     staticClass: "modal-content",
     attrs: {
       id: "img01"
+    }
+  })]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div", {
+    staticClass: "d-flex flex-column"
+  }, [_c("input", {
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      name: "name",
+      required: "",
+      id: "name",
+      placeholder: "Nome e cognome"
+    }
+  })]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div", {
+    staticClass: "d-flex flex-column my-4"
+  }, [_c("input", {
+    staticClass: "form-control",
+    attrs: {
+      type: "email",
+      name: "email",
+      required: "",
+      id: "email",
+      placeholder: "email"
+    }
+  })]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div", {
+    staticClass: "d-flex flex-column"
+  }, [_c("textarea", {
+    staticClass: "form-control",
+    attrs: {
+      required: "",
+      name: "content_message",
+      id: "content_message",
+      cols: "30",
+      rows: "10",
+      placeholder: "Chiedi tutto quello che vuoi!"
+    }
+  })]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div", [_c("input", {
+    staticClass: "btn btn-success m-2",
+    attrs: {
+      type: "submit",
+      value: "Invia Messaggio"
     }
   })]);
 }];

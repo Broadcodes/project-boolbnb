@@ -39,8 +39,10 @@
                                 <div class="col-4">
                                     <div>
                                         <img v-if="dataListArr.apartment_images == null" class="img-thumbnail"
-                                            :src="getSrcImages('images', 'immagine_non_disponibile.png')" alt="Nessuna immagine">
-                                        <img id="myImg" v-else class="img-thumbnail" :src="getSrcImages('storage', dataListArr.apartment_images)"
+                                            :src="getSrcImages('images', 'immagine_non_disponibile.png')"
+                                            alt="Nessuna immagine">
+                                        <img id="myImg" v-else class="img-thumbnail"
+                                            :src="getSrcImages('storage', dataListArr.apartment_images)"
                                             :alt="dataListArr.apartment_title">
                                     </div>
 
@@ -87,8 +89,37 @@
 
                         <hr>
 
+                        <div class="d-flex align-items-end">
+                            <form class="w-100" action="api/message" method="POST">
+
+                                <div class="d-flex flex-column">
+                                    <input class="form-control" type="text" name="name" required id="name"
+                                        placeholder="Nome e cognome">
+                                </div>
+                                <div class="d-flex flex-column my-4">
+                                    <input class="form-control" type="email" name="email" required id="email"
+                                        placeholder="email">
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <textarea class="form-control" required name="content_message" id="content_message"
+                                        cols="30" rows="10" placeholder="Chiedi tutto quello che vuoi!"></textarea>
+                                </div>
+                                <div class="d-flex">
+                                    <div>
+                                        <input class="btn btn-success m-2" type="submit" value="Invia Messaggio">
+                                    </div>
+                                    <div>
+                                        <button @click="getBack" class="btn btn-primary m-2">Torna alla home</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <hr>
+
                         <div>
-                            <button @click="getBack" class="btn btn-primary mt-5">Torna alla home</button>
+                            <button @click="getBack" class="btn btn-primary m-5">Torna alla home</button>
                         </div>
 
 
@@ -115,22 +146,22 @@ export default {
         }
     },
 
-    mounted(){
+    mounted() {
         let modal = document.getElementById("myModal");
 
         let img = document.getElementById("myImg");
         let modalImg = document.getElementById("img01");
 
-        img.addEventListener('click', function(){
-        modal.style.display = "block";
-        modalImg.src = this.src;
+        img.addEventListener('click', function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
         });
 
         let span = document.getElementById("close");
 
-        span.addEventListener('click', function() {
+        span.addEventListener('click', function () {
             console.log('okok');
-        modal.style.display = "none";
+            modal.style.display = "none";
         });
     }
 }
@@ -302,76 +333,88 @@ export default {
                     overflow-y: auto;
                     border-radius: 10px;
 
-                    }
+                }
             }
         }
     }
 
 
-#myImg {
-  cursor: pointer;
-  transition: 0.3s;
-}
+    #myImg {
+        cursor: pointer;
+        transition: 0.3s;
+    }
 
-#myImg:hover {opacity: 0.7;}
-
-
-.modal {
-  margin-top: 65px;
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.9);
-}
+    #myImg:hover {
+        opacity: 0.7;
+    }
 
 
-.modal-content {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-}
-
-@-webkit-keyframes zoom {
-  from {-webkit-transform:scale(0)}
-  to {-webkit-transform:scale(1)}
-}
-
-@keyframes zoom {
-  from {transform:scale(0)}
-  to {transform:scale(1)}
-}
+    .modal {
+        margin-top: 65px;
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.9);
+    }
 
 
-#close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-}
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+    }
 
-#close:hover,
-#close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
+    @-webkit-keyframes zoom {
+        from {
+            -webkit-transform: scale(0)
+        }
 
-@media only screen and (max-width: 700px){
-  .modal-content {
-    width: 100%;
-  }
-}
+        to {
+            -webkit-transform: scale(1)
+        }
+    }
+
+    @keyframes zoom {
+        from {
+            transform: scale(0)
+        }
+
+        to {
+            transform: scale(1)
+        }
+    }
+
+
+    #close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    #close:hover,
+    #close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    @media only screen and (max-width: 700px) {
+        .modal-content {
+            width: 100%;
+        }
+    }
 
 
 }
