@@ -45,7 +45,7 @@
                                     </div>
 
                                     <div id="myModal" class="modal">
-                                        <span class="close">&times;</span>
+                                        <span id="close">&times;</span>
                                         <img class="modal-content" id="img01">
                                     </div>
                                 </div>
@@ -122,15 +122,14 @@ export default {
         let modalImg = document.getElementById("img01");
 
         img.addEventListener('click', function(){
-            console.log('ok');
         modal.style.display = "block";
         modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
         });
 
-        let span = document.getElementsByClassName("close")[0];
+        let span = document.getElementById("close");
 
         span.addEventListener('click', function() {
+            console.log('okok');
         modal.style.display = "none";
         });
     }
@@ -340,14 +339,6 @@ export default {
   max-width: 700px;
 }
 
-
-.modal-content, #caption {
-  -webkit-animation-name: zoom;
-  -webkit-animation-duration: 0.6s;
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
-
 @-webkit-keyframes zoom {
   from {-webkit-transform:scale(0)}
   to {-webkit-transform:scale(1)}
@@ -359,7 +350,7 @@ export default {
 }
 
 
-.close {
+#close {
   position: absolute;
   top: 15px;
   right: 35px;
@@ -369,8 +360,8 @@ export default {
   transition: 0.3s;
 }
 
-.close:hover,
-.close:focus {
+#close:hover,
+#close:focus {
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
