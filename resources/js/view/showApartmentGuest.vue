@@ -104,23 +104,18 @@
                                     <textarea class="form-control" required name="content_message" id="content_message"
                                         cols="30" rows="10" placeholder="Chiedi tutto quello che vuoi!"></textarea>
                                 </div>
-                                <div class="d-flex">
+                                <div class="d-flex justify-content-center my-5">
                                     <div>
-                                        <input class="btn btn-success m-2" type="submit" value="Invia Messaggio">
+                                        <input class="btn btn-success mx-2" type="submit" value="Invia Messaggio">
                                     </div>
                                     <div>
-                                        <button @click="getBack" class="btn btn-primary m-2">Torna alla home</button>
+                                        <button @click="getBack" class="btn btn-primary ">Torna alla home</button>
                                     </div>
                                 </div>
                             </form>
 
                         </div>
 
-                        <hr>
-
-                        <div>
-                            <button @click="getBack" class="btn btn-primary m-5">Torna alla home</button>
-                        </div>
 
 
                     </div>
