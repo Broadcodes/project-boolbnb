@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="w-100 container">
+    <div>
         <div class="text-center">
             <h1>{{ $apartment->apartment_title }}</h1>
             <div class="d-flex justify-content-center align-items-baseline pt-3">
