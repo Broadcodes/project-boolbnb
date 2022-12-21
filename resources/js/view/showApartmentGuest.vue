@@ -14,21 +14,54 @@
                     <div class="text">
                         <div class="textArea">
                             <h1>{{ dataListArr.apartment_title }}</h1>
-                            <p>{{ dataListArr.address }}, {{ dataListArr.civic_number }} - {{ dataListArr.city }} {{
-                                    dataListArr.city
-                            }}</p>
-                            <p>Categoria: {{ dataListArr.category }}</p>
+                            <h4>{{ dataListArr.address }}, {{ dataListArr.civic_number }} - {{ dataListArr.city }}</h4>
+                            <h4>Categoria: {{ dataListArr.category }}</h4>
                         </div>
                     </div>
 
-                    <a class="buttonMoreDetail" href="#areaDetail">Mostra dettagli</a>
+                    <a class="buttonMoreDetail flex-column" href="#areaDetail">
+                        <i class="fa-solid fa-arrow-down fa-xl"></i>
+                    </a>
                 </div>
             </div>
+
+
+
             <div id="areaDetail">
+
                 <div class="showDetail">
-                    <div id="moreDetail" class="moreDetail container">
+                    <div id="moreDetail" class="moreDetail container mt-5">
                         <h4>Prezzo a Notte: <span class="price">€ {{ dataListArr.price }}</span></h4>
-                        <h5>Dettagli:</h5>
+                        <hr>
+
+                        <div class="container mt-4">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div id="myModal">
+                                        <img v-if="dataListArr.apartment_images == null" class="img-thumbnail"
+                                            :src="getSrcImages('images', 'immagine_non_disponibile.png')" alt="Nessuna immagine">
+                                        <img v-else class="img-thumbnail" :src="getSrcImages('storage', dataListArr.apartment_images)"
+                                            :alt="dataListArr.apartment_title">
+                                    </div>
+
+                                    <div id="myModal" class="modal">
+                                        <span class="close">&times;</span>
+                                        <img class="modal-content" id="img01">
+                                        <div id="caption"></div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-8 description">
+                                    <h5>Descrizione:</h5>
+                                    <br>
+                                    <p>{{ dataListArr.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <h5 class="mt-1">Dettagli:</h5>
                         <hr>
                         <div class="detail">
 
@@ -53,12 +86,29 @@
                                 <p>Metri Quadrati</p>
                             </div>
                         </div>
-                        <hr>
 
-                        <div class="description">
+
+                        <!-- <div class="container  mt-5">
+                            <div class="row">
+                                <div class="col-4">
+                                    <img v-if="dataListArr.apartment_images == null" class="img-thumbnail"
+                                        :src="getSrcImages('images', 'immagine_non_disponibile.png')" alt="Nessuna immagine">
+                                    <img v-else class="img-thumbnail" :src="getSrcImages('storage', dataListArr.apartment_images)"
+                                        :alt="dataListArr.apartment_title">
+                                </div>
+
+                                <div class="col-8 description">
+                                    <h5 class="fw-bold">Descrizione:</h5>
+                                    <br>
+                                    <p>{{ dataListArr.description }}</p>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!-- <div class="description">
                             <h5 class="text-center mb-3">Descrizione:</h5>
                             <p>{{ dataListArr.description }}</p>
-                        </div>
+                        </div> -->
                         <hr>
 
 
@@ -93,18 +143,37 @@ export default {
         getSrcImages(folder, path) {
             return folder + '/' + path;
         }
+    },
+
+    mounted(){
+        let modal = document.getElementById("myModal");
+
+        let img = document.getElementById("myImg");
+        let modalImg = document.getElementById("img01");
+
+        img.addEventListener('click', function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+        });
+
+        let span = document.getElementsByClassName("close")[0];
+
+        span.addEventListener('click', function() {
+        modal.style.display = "none";
+        });
     }
+
 }
 </script>
 
 <style lang="scss" scoped>
 .areaShow {
-    margin-top: 100px;
-    padding: 0px;
+
 
     .jumbo {
         width: 100%;
-        height: 480px;
+        height: 100vh;
         position: relative;
 
         .imgJumbo {
@@ -145,10 +214,6 @@ export default {
                 position: relative;
                 animation: moveToRight 2s ease;
 
-                // &:hover {
-                //     scale: 1.05;
-                //     box-shadow: 0px 0px 40px #fff;
-                // }
 
                 h1,
                 h3,
@@ -212,10 +277,8 @@ export default {
 
         .showDetail {
             width: 100%;
-            // height: 350px;
-            // margin-top: -73px;
-            padding: 25px 0px;
-            // background-color: #ededed;
+
+
 
             .moreDetail {
                 width: 100%;
@@ -223,12 +286,11 @@ export default {
                 text-align: center;
 
                 h4 {
-
                     margin: 35px 0;
 
                     .price {
                         color: #ff385c;
-
+                        font-size: 1.7rem;
                     }
                 }
 
@@ -236,8 +298,6 @@ export default {
                     display: flex;
                     justify-content: space-around;
                     align-items: center;
-                    // padding: 40px;
-                    // border: 1px solid blue;
 
                     .detailElement {
                         display: flex;
@@ -268,18 +328,88 @@ export default {
                 }
 
                 .description {
-                    padding: 30px;
                     text-align: left;
-                    height: 200px;
+                    height: auto;
                     overflow-y: auto;
                     border-radius: 10px;
-                    margin-top: 55px;
+
                     }
-
-
-}
+            }
         }
     }
+
+
+#myImg {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.9);
+}
+
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+
+.modal-content, #caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)}
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
 
 
 }
