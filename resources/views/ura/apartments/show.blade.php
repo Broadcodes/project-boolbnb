@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="containerShow d-flex p-5 ">
+
         <div class="text-center">
             <h1>{{ $apartment->apartment_title }}</h1>
 
@@ -16,37 +17,84 @@
             </div>
         </div>
 
-        {{-- elenco voci --}}
-        <ul class="m-5 list-group">
-            <li class="list-group-item">{{ __('Titolo annuncio') }}: <span
-                    class="brown">{{ $apartment->apartment_title }}</span></li>
-            <li class="list-group-item">{{ __('Descrizione') }}: <span class="brown">{{ $apartment->description }}</span>
-            </li>
-            <li class="list-group-item">{{ __('Numero di stanze') }}: <span class="brown">{{ $apartment->bedrooms }}</span>
-            </li>
-            <li class="list-group-item">{{ __('Numero di letti') }}: <span class="brown">{{ $apartment->bed }}</span>
-            </li>
-            <li class="list-group-item">{{ __('Numero di bagni') }}: <span
-                    class="brown">{{ $apartment->bathrooms }}</span></li>
-            <li class="list-group-item">{{ __('MQ') }}: <span class="brown">{{ $apartment->sqm }}</span></li>
-            <li class="list-group-item">{{ __('Categoria') }}: <span class="brown">{{ $apartment->category }}</span></li>
-            <li class="list-group-item">{{ __('Prezzo') }}: <span class="brown">{{ $apartment->price }}</span></li>
-            <li class="list-group-item">{{ __('Indirizzo') }}: <span class="brown">{{ $apartment->address }}</span></li>
-            <li class="list-group-item">{{ __('Civico') }}: <span class="brown">{{ $apartment->civic_number }}</span>
-            </li>
-            <li class="list-group-item">{{ __('CAP') }}: <span class="brown">{{ $apartment->postalCode }}</span></li>
-            <li class="list-group-item">{{ __('Città') }}: <span class="brown">{{ $apartment->city }}</span></li>
-            <li class="list-group-item">{{ __('Provincia') }}: <span
-                    class="brown">{{ $apartment->countrySubdivision }}</span></li>
-            <li class="list-group-item">{{ __('Longitudine') }}: <span class="green">{{ $apartment->longitude }}</span>
-            </li>
-            <li class="list-group-item">{{ __('Latitudine') }}: <span class="green">{{ $apartment->latitude }}</span>
-            </li>
-        </ul>
+        <div class="row mt-5">
+            <div class="col4 w-25 p-2 d-flex ">
 
-        <div class="text-center">
-            <a href="{{ route('ura.apartments.index') }}" class="btn btn-primary">Torna ai miei annunci</a>
+                <div class="p-2 lh-1 fw-bolder text-center">
+                    <p class=" fs-2">{{ $apartment->bedrooms }}</p>
+                    <p class="fs-3">Camere</p>
+                    <img class="w-25" src="https://www.svgrepo.com/show/21422/living-room.svg" alt="">
+                </div>
+
+            </div>
+            <div class="col4 w-25 p-2 d-flex ">
+
+                <div class="p-2 lh-1 fw-bolder text-center">
+                    <p class="text-center fs-2">{{ $apartment->bed }}</p>
+                    <p class="fs-3">Letti</p>
+                    <img class="w-25" src="https://www.svgrepo.com/show/17785/bed.svg" alt="">
+                </div>
+            </div>
+            <div class="col4 w-25 p-2 d-flex ">
+
+                <div class="p-2 lh-1 fw-bolder text-center">
+                    <p class="text-center fs-2">{{ $apartment->bathrooms }}</p>
+                    <p class="fs-3">Bagni</p>
+                    <img class="w-25" src="https://www.svgrepo.com/show/15059/bathtub.svg" alt="">
+                </div>
+            </div>
+            <div class="col4 w-25 p-2 d-flex ">
+
+                <div class="p-2 lh-1 fw-bolder text-center">
+                    <p class="text-center fs-2">{{ $apartment->sqm }}</p>
+                    <p class="fs-3">Mq</p>
+                    <img class="w-25" src="https://www.svgrepo.com/show/352332/pen-square.svg" alt="">
+                </div>
+            </div>
+            <div class="col4 w-25 p-2  d-flex ">
+
+                <div class="p-2 lh-1 fw-bolder text-center">
+                    <img class="w-25 mb-3" src="https://www.svgrepo.com/show/98251/price-tag.svg" alt="">
+                    <p class="text-center fs-2">{{ $apartment->price }}</p>
+                    <p class="fs-3">€/D</p>
+
+                </div>
+            </div>
+            <div class="col4 w-25 p-2  d-flex ">
+
+                <div class="p-2 lh-1 fw-bolder text-center">
+                    <img class="w-25 mb-3" src="https://www.svgrepo.com/show/45406/road-map.svg" alt="">
+                    <p class="fs-2">{{ $apartment->category }}</p>
+
+                </div>
+            </div>
+            <div class="col4 w-25 p-2  d-flex ">
+
+                <div class="p-2 lh-1 fw-bolder text-center">
+                    <img class="w-25 mb-3" src="https://www.svgrepo.com/show/347355/road-map.svg" alt="">
+                    <p class="text-center fs-2">{{ $apartment->civic_number }}</p>
+                    <p class="fs-3">{{ $apartment->address }}</p>
+
+                </div>
+            </div>
+            <div class="col4 w-25 p-2  d-flex ">
+
+                <div class="p-2 lh-1 fw-bolder text-center">
+                    <img class="w-25 mb-3" src="https://www.svgrepo.com/show/347355/road-map.svg" alt="">
+                    <p class="text-center fs-2">{{ $apartment->postalCode }}</p>
+                    <p class="fs-3">{{ $apartment->city }},{{ $apartment->countrySubdivision }}</p>
+
+                </div>
+            </div>
+            <div class="col12 p-5">
+                <h1>Descrizione</h1>
+                <p>{{ $apartment->description }}</p>
+            </div>
         </div>
 
+
+    </div>
+    <div class="text-center">
+        <a href="{{ route('ura.apartments.index') }}" class="btn btn-primary">Torna ai miei annunci</a>
     </div>
 @endsection
