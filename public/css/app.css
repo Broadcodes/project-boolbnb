@@ -11116,6 +11116,10 @@ ul li {
   width: 100%;
 }
 
+.contenitore {
+  font-size: 0.9em;
+}
+
 .imgMessage {
   width: 40px;
 }
