@@ -46,15 +46,38 @@ class SponsorController extends Controller
             'paymentMethodNonce' => 'fake-valid-visa-nonce',
         ]);
 
+        // la funzione calcola il giorno di scadenza dello sponsor acquistato
+        function getEndDate($sponsorId) {
+            $today = Carbon::now();
+
+            if ($sponsorId == 1) {
+
+                return $today->addDays(1)->toDateTimeString();
+
+            } elseif ($sponsorId == 2) {
+
+                return $today->addDays(3)->toDateTimeString();
+
+            } else {
+
+                return $today->addDays(6)->toDateTimeString();
+            }
+        }
+        // ---------------------------------------------------------------
         $currentDate = Carbon::now()->toDateTimeString();
 
-        //$apartment->sponsors()->attach($sponsor_id, ['start_date' => $currentDate, 'end_date' => '2022-12-22 17:00:00']);
-        //$sponsor->apartments()->attach($id);
+        $apartment -> sponsors()->sync($sponsor);
 
-        // $update = DB::table('apartment_sponsor')->update(['apartment_sponsor.start_date' => Carbon::now()->toDateTimeString()]);
-        //$apartment->save();
+        $update = DB::table('apartment_sponsor')
+        ->where('apartment_sponsor.apartment_id', '=', $id)
+        ->update(['apartment_sponsor.start_date' => $currentDate,
+        'apartment_sponsor.end_date' => getEndDate($sponsor_id)
+        ]);
+
+        $apartment->save();
 
         return response()->json($result);
 
     }
 }
+
