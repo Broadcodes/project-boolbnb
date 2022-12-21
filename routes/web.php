@@ -18,6 +18,10 @@ Route::middleware('auth')
     ->group(function () {
         Route::get('/', 'DashboardController@index')->name('home');
         Route::resource('apartments', "ApartmentController" )->parameters(['apartments' => 'apartment:apartment_slug']);
+        Route::get('/sponsor{id}', 'SponsorController@sponsorIndex')->name('sponsor');
+        Route::get('/apartment/{id}/summary/{sponsor_id}', 'SponsorController@paymentIndex')->name('summary');
+        Route::get('/payment/{id}/{sponsor_id}', 'SponsorController@getToken')->name('token');
+        Route::get('/payment/process/{id}/{sponsor_id}', 'SponsorController@process')->name('process');
     });
 
 Route::get('{any?}', function () {

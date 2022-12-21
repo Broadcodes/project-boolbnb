@@ -45,7 +45,8 @@
                                         Modifica
                                     </button></a>
                                 <a href="{{ route('message.index', $apartment->apartment_slug) }}">
-                                    <button id="notificationMessage-btn" type="button" class="m-2 btn btn-lightgreen text-light">
+                                    <button id="notificationMessage-btn" type="button"
+                                        class="m-2 btn btn-lightgreen text-light">
                                         <i class="fa-solid fa-envelope"></i> Messaggi
                                         @php
                                             $numMessage = 0;
@@ -65,7 +66,7 @@
                                     </button>
                                 </a>
                                 <button type="button" class="m-2 btn btn-success"> <i class="fa-solid fa-pen"></i>
-                                    Sponsorizza</button>
+                                    <a href="{{ route('ura.sponsor', $apartment->id) }}">Sponsorizza</a></button>
                                 <form action="{{ route('ura.apartments.destroy', $apartment->apartment_slug) }}"
                                     method="POST">
                                     @csrf
