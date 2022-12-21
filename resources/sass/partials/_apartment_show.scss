@@ -15,3 +15,39 @@ ul li {
     color: rgb(102, 17, 17);
     font-weight: 600;
 }
+.categoria {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #ff595e;
+    padding-left: 10px;
+}
+.testo-categoria {
+    font-size: 1.3em;
+    font-weight: 500;
+}
+.light {
+    font-size: 1.6em;
+    padding-right: 10px;
+}
+
+.first-line {
+    font-size: 1.5em;
+    width: 100%;
+    transition: all 0.5s;
+}
+
+.first-line:hover {
+    border-radius: 10px;
+    transform: scale(1.1);
+    box-shadow: 20px 20px 15px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.price {
+    color: rgb(28, 141, 233);
+    font-size: 3.5rem;
+}
+
+.prezzo {
+    font-size: 2em;
+}
