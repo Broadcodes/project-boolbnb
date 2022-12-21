@@ -2427,7 +2427,7 @@ var render = function render() {
     staticClass: "col-8 description"
   }, [_c("h5", [_vm._v("Descrizione:")]), _vm._v(" "), _c("br"), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.dataListArr.description))])])])]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("h5", {
     staticClass: "mt-1"
-  }, [_vm._v("Dettagli:")]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", {
+  }, [_vm._v("Dettagli")]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", {
     staticClass: "detail"
   }, [_c("div", {
     staticClass: "detailElement"
@@ -2445,11 +2445,12 @@ var render = function render() {
     staticClass: "detailElement"
   }, [_c("i", {
     staticClass: "fa-solid fa-ruler"
-  }), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.dataListArr.sqm))]), _vm._v(" "), _c("p", [_vm._v("Metri Quadrati")])])]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.dataListArr.sqm))]), _vm._v(" "), _c("p", [_vm._v("Metri Quadrati")])])]), _vm._v(" "), _c("hr"), _vm._v(" "), _vm._m(2), _vm._v(" "), _c("div", {
     staticClass: "d-flex align-items-end"
   }, [_c("form", {
     staticClass: "w-100",
     attrs: {
+      id: "formMessage",
       action: "api/message",
       method: "POST"
     }
@@ -2464,14 +2465,16 @@ var render = function render() {
     domProps: {
       value: _vm.dataListArr.id
     }
-  }), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5), _vm._v(" "), _c("div", {
     staticClass: "d-flex justify-content-center my-5"
-  }, [_vm._m(5), _vm._v(" "), _c("div", [_c("button", {
-    staticClass: "btn btn-primary",
+  }, [_vm._m(6), _vm._v(" "), _c("div", [_c("button", {
+    staticClass: "btn btn-outline-dark",
     on: {
       click: _vm.getBack
     }
-  }, [_vm._v("Torna alla home")])])])])])])])])])]);
+  }, [_c("i", {
+    staticClass: "fa-solid fa-house"
+  }), _vm._v(" Torna alla home")])])])])])])])])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -2502,6 +2505,17 @@ var staticRenderFns = [function () {
       id: "img01"
     }
   })]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("a", {
+    staticClass: "btn btn-outline-dark btn-custom",
+    attrs: {
+      href: "#formMessage"
+    }
+  }, [_c("i", {
+    staticClass: "fa-regular fa-envelope"
+  }), _vm._v(" Contatta per info")]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -2552,7 +2566,7 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", [_c("input", {
-    staticClass: "btn btn-success mx-2",
+    staticClass: "btn btn-outline-dark mx-2",
     attrs: {
       type: "submit",
       value: "Invia Messaggio"
@@ -6942,7 +6956,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".search_box[data-v-263f772b] {\n  margin-top: 150px;\n  position: relative;\n  top: -150px;\n  z-index: 2000;\n  max-width: calc(100vh - 300px);\n}\nbutton[data-v-263f772b] {\n  text-decoration: none;\n  border: none;\n  background-color: rgba(255, 255, 255, 0);\n  color: #727171;\n  transition: 0.3s;\n}\nbutton[data-v-263f772b]:hover {\n  color: black;\n}\n.selection[data-v-263f772b] {\n  margin-top: 66px !important;\n  padding-top: 15px;\n  border-bottom: 1px solid lightgray;\n  z-index: 200;\n}", ""]);
+exports.push([module.i, ".search_box[data-v-263f772b] {\n  margin-top: 150px;\n  position: relative;\n  top: -150px;\n  z-index: 2000;\n  max-width: calc(100vh - 200px);\n}\nbutton[data-v-263f772b] {\n  text-decoration: none;\n  border: none;\n  background-color: rgba(255, 255, 255, 0);\n  color: #727171;\n  transition: 0.3s;\n}\nbutton[data-v-263f772b]:hover {\n  color: black;\n}\n.selection[data-v-263f772b] {\n  margin-top: 66px !important;\n  padding-top: 15px;\n  border-bottom: 1px solid lightgray;\n  z-index: 200;\n}", ""]);
 
 // exports
 
@@ -6980,7 +6994,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".areaShow .jumbo[data-v-dfae5582] {\n  width: 100%;\n  height: 100vh;\n  position: relative;\n}\n.areaShow .jumbo .imgJumbo[data-v-dfae5582] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center right;\n     object-position: center right;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n.areaShow .jumbo .filter[data-v-dfae5582] {\n  width: 100%;\n  height: 100%;\n  background: rgb(0, 0, 0);\n  background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(26, 26, 26, 0.75) 37%, rgba(56, 56, 56, 0.65) 72%, rgba(255, 255, 255, 0) 100%);\n  position: absolute;\n  top: 0;\n  left: 0;\n  text-align: center;\n  overflow: hidden;\n}\n.areaShow .jumbo .filter .text[data-v-dfae5582] {\n  width: 50%;\n  height: 100%;\n  display: flex;\n  padding-left: 200px;\n  align-items: center;\n}\n.areaShow .jumbo .filter .textArea[data-v-dfae5582] {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  padding: 50px;\n  transition: all 0.5s;\n  position: relative;\n  animation: moveToRight-dfae5582 2s ease;\n}\n.areaShow .jumbo .filter .textArea h1[data-v-dfae5582],\n.areaShow .jumbo .filter .textArea h3[data-v-dfae5582],\n.areaShow .jumbo .filter .textArea h4[data-v-dfae5582],\n.areaShow .jumbo .filter .textArea p[data-v-dfae5582] {\n  text-align: left;\n  color: #fff;\n}\n.areaShow .jumbo .filter .textArea h2[data-v-dfae5582] {\n  padding-bottom: 10px;\n  color: white;\n}\n@keyframes moveToRight-dfae5582 {\nfrom {\n    left: -500px;\n}\nto {\n    left: 0px;\n}\n}\n.areaShow .jumbo .filter .buttonMoreDetail[data-v-dfae5582] {\n  width: 240px;\n  height: 240px;\n  line-height: 115px;\n  border-radius: 50%;\n  position: absolute;\n  font-size: 1.2rem;\n  color: #fff;\n  bottom: -150px;\n  transform: translateX(-50%);\n  background-color: rgba(0, 0, 0, 0.5);\n  box-shadow: inset 0px 0px 20px #fff;\n  text-decoration: none;\n  animation: moveToTop-dfae5582 2s ease;\n}\n.areaShow .jumbo .filter .buttonMoreDetail[data-v-dfae5582]:hover {\n  font-size: 1.3rem;\n}\n@keyframes moveToTop-dfae5582 {\nfrom {\n    bottom: -250px;\n}\nto {\n    bottom: -150px;\n}\n}\n.areaShow #areaDetail[data-v-dfae5582] {\n  padding-top: 50px;\n}\n.areaShow #areaDetail .showDetail[data-v-dfae5582] {\n  width: 100%;\n}\n.areaShow #areaDetail .showDetail .moreDetail[data-v-dfae5582] {\n  width: 100%;\n  height: 1000px;\n  text-align: center;\n}\n.areaShow #areaDetail .showDetail .moreDetail h4[data-v-dfae5582] {\n  margin: 35px 0;\n}\n.areaShow #areaDetail .showDetail .moreDetail h4 .price[data-v-dfae5582] {\n  color: #ff385c;\n  font-size: 1.7rem;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail[data-v-dfae5582] {\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement[data-v-dfae5582] {\n  display: flex;\n  min-width: 150px;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 15px;\n  transition: all 0.5s;\n  cursor: pointer;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement[data-v-dfae5582]:hover {\n  transform: scale(1.1);\n  box-shadow: 20px 20px 15px rgba(0, 0, 0, 0.25);\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement i[data-v-dfae5582] {\n  font-size: 1.5rem;\n  margin-bottom: 20px;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement h4[data-v-dfae5582] {\n  font-size: 1.6rem;\n}\n.areaShow #areaDetail .showDetail .moreDetail .description[data-v-dfae5582] {\n  text-align: left;\n  height: auto;\n  overflow-y: auto;\n  border-radius: 10px;\n}\n.areaShow #myImg[data-v-dfae5582] {\n  cursor: pointer;\n  transition: 0.3s;\n}\n.areaShow #myImg[data-v-dfae5582]:hover {\n  opacity: 0.7;\n}\n.areaShow .modal[data-v-dfae5582] {\n  margin-top: 65px;\n  display: none;\n  position: fixed;\n  z-index: 1;\n  padding-top: 100px;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  overflow: auto;\n  background-color: rgb(0, 0, 0);\n  background-color: rgba(0, 0, 0, 0.9);\n}\n.areaShow .modal-content[data-v-dfae5582] {\n  margin: auto;\n  display: block;\n  width: 80%;\n  max-width: 700px;\n}\n@keyframes zoom-dfae5582 {\nfrom {\n    transform: scale(0);\n}\nto {\n    transform: scale(1);\n}\n}\n.areaShow #close[data-v-dfae5582] {\n  position: absolute;\n  top: 15px;\n  right: 35px;\n  color: #f1f1f1;\n  font-size: 40px;\n  font-weight: bold;\n  transition: 0.3s;\n}\n.areaShow #close[data-v-dfae5582]:hover,\n.areaShow #close[data-v-dfae5582]:focus {\n  color: #bbb;\n  text-decoration: none;\n  cursor: pointer;\n}\n@media only screen and (max-width: 700px) {\n.areaShow .modal-content[data-v-dfae5582] {\n    width: 100%;\n}\n}", ""]);
+exports.push([module.i, ".areaShow .jumbo[data-v-dfae5582] {\n  width: 100%;\n  height: 100vh;\n  position: relative;\n}\n.areaShow .jumbo .imgJumbo[data-v-dfae5582] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center right;\n     object-position: center right;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n.areaShow .jumbo .filter[data-v-dfae5582] {\n  width: 100%;\n  height: 100%;\n  background: rgb(0, 0, 0);\n  background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(26, 26, 26, 0.75) 37%, rgba(56, 56, 56, 0.65) 72%, rgba(255, 255, 255, 0) 100%);\n  position: absolute;\n  top: 0;\n  left: 0;\n  text-align: center;\n  overflow: hidden;\n}\n.areaShow .jumbo .filter .text[data-v-dfae5582] {\n  width: 50%;\n  height: 100%;\n  display: flex;\n  padding-left: 200px;\n  align-items: center;\n}\n.areaShow .jumbo .filter .textArea[data-v-dfae5582] {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  padding: 50px;\n  transition: all 0.5s;\n  position: relative;\n  animation: moveToRight-dfae5582 2s ease;\n}\n.areaShow .jumbo .filter .textArea h1[data-v-dfae5582],\n.areaShow .jumbo .filter .textArea h3[data-v-dfae5582],\n.areaShow .jumbo .filter .textArea h4[data-v-dfae5582],\n.areaShow .jumbo .filter .textArea p[data-v-dfae5582] {\n  text-align: left;\n  color: #fff;\n}\n.areaShow .jumbo .filter .textArea h2[data-v-dfae5582] {\n  padding-bottom: 10px;\n  color: white;\n}\n@keyframes moveToRight-dfae5582 {\nfrom {\n    left: -500px;\n}\nto {\n    left: 0px;\n}\n}\n.areaShow .jumbo .filter .buttonMoreDetail[data-v-dfae5582] {\n  width: 240px;\n  height: 240px;\n  line-height: 115px;\n  border-radius: 50%;\n  position: absolute;\n  font-size: 1.2rem;\n  color: #fff;\n  bottom: -150px;\n  transform: translateX(-50%);\n  background-color: rgba(0, 0, 0, 0.5);\n  box-shadow: inset 0px 0px 20px #fff;\n  text-decoration: none;\n  animation: moveToTop-dfae5582 2s ease;\n}\n.areaShow .jumbo .filter .buttonMoreDetail[data-v-dfae5582]:hover {\n  font-size: 1.3rem;\n}\n@keyframes moveToTop-dfae5582 {\nfrom {\n    bottom: -250px;\n}\nto {\n    bottom: -150px;\n}\n}\n.areaShow #areaDetail[data-v-dfae5582] {\n  padding-top: 50px;\n}\n.areaShow #areaDetail .showDetail[data-v-dfae5582] {\n  width: 100%;\n}\n.areaShow #areaDetail .showDetail .moreDetail[data-v-dfae5582] {\n  width: 100%;\n  height: 1000px;\n  text-align: center;\n}\n.areaShow #areaDetail .showDetail .moreDetail h4[data-v-dfae5582] {\n  margin: 35px 0;\n}\n.areaShow #areaDetail .showDetail .moreDetail h4 .price[data-v-dfae5582] {\n  color: #ff385c;\n  font-size: 1.7rem;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail[data-v-dfae5582] {\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement[data-v-dfae5582] {\n  display: flex;\n  min-width: 150px;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 15px;\n  transition: all 0.5s;\n  cursor: pointer;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement[data-v-dfae5582]:hover {\n  transform: scale(1.1);\n  box-shadow: 20px 20px 15px rgba(0, 0, 0, 0.25);\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement i[data-v-dfae5582] {\n  font-size: 1.5rem;\n  margin-bottom: 20px;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement h4[data-v-dfae5582] {\n  font-size: 1.6rem;\n}\n.areaShow #areaDetail .showDetail .moreDetail .description[data-v-dfae5582] {\n  text-align: left;\n  height: auto;\n  overflow-y: auto;\n  border-radius: 10px;\n}\n.areaShow #myImg[data-v-dfae5582] {\n  cursor: pointer;\n  transition: 0.3s;\n}\n.areaShow #myImg[data-v-dfae5582]:hover {\n  opacity: 0.7;\n}\n.areaShow .modal[data-v-dfae5582] {\n  margin-top: 65px;\n  display: none;\n  position: fixed;\n  z-index: 1;\n  padding-top: 100px;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  overflow: auto;\n  background-color: rgb(0, 0, 0);\n  background-color: rgba(0, 0, 0, 0.9);\n}\n.areaShow .modal-content[data-v-dfae5582] {\n  margin: auto;\n  display: block;\n  width: 80%;\n  max-width: 700px;\n}\n@keyframes zoom-dfae5582 {\nfrom {\n    transform: scale(0);\n}\nto {\n    transform: scale(1);\n}\n}\n.areaShow #close[data-v-dfae5582] {\n  position: absolute;\n  top: 15px;\n  right: 35px;\n  color: #f1f1f1;\n  font-size: 40px;\n  font-weight: bold;\n  transition: 0.3s;\n}\n.areaShow #close[data-v-dfae5582]:hover,\n.areaShow #close[data-v-dfae5582]:focus {\n  color: #bbb;\n  text-decoration: none;\n  cursor: pointer;\n}\n@media only screen and (max-width: 700px) {\n.areaShow .modal-content[data-v-dfae5582] {\n    width: 100%;\n}\n}\n.areaShow .btn-custom[data-v-dfae5582] {\n  margin: 30px 0;\n}", ""]);
 
 // exports
 
@@ -51223,15 +51237,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************************!*\
   !*** ./resources/js/view/showApartmentGuest.vue ***!
   \**************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _showApartmentGuest_vue_vue_type_template_id_dfae5582_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./showApartmentGuest.vue?vue&type=template&id=dfae5582&scoped=true& */ "./resources/js/view/showApartmentGuest.vue?vue&type=template&id=dfae5582&scoped=true&");
 /* harmony import */ var _showApartmentGuest_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./showApartmentGuest.vue?vue&type=script&lang=js& */ "./resources/js/view/showApartmentGuest.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _showApartmentGuest_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _showApartmentGuest_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _showApartmentGuest_vue_vue_type_style_index_0_id_dfae5582_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./showApartmentGuest.vue?vue&type=style&index=0&id=dfae5582&lang=scss&scoped=true& */ "./resources/js/view/showApartmentGuest.vue?vue&type=style&index=0&id=dfae5582&lang=scss&scoped=true&");
+/* empty/unused harmony star reexport *//* harmony import */ var _showApartmentGuest_vue_vue_type_style_index_0_id_dfae5582_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./showApartmentGuest.vue?vue&type=style&index=0&id=dfae5582&lang=scss&scoped=true& */ "./resources/js/view/showApartmentGuest.vue?vue&type=style&index=0&id=dfae5582&lang=scss&scoped=true&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -51263,7 +51276,7 @@ component.options.__file = "resources/js/view/showApartmentGuest.vue"
 /*!***************************************************************************!*\
   !*** ./resources/js/view/showApartmentGuest.vue?vue&type=script&lang=js& ***!
   \***************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51325,8 +51338,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Gianluca Fabrizio\Desktop\Boolean\1 - Esercizi\56_project-boolbnb\resources\js\homeGuest.js */"./resources/js/homeGuest.js");
-module.exports = __webpack_require__(/*! C:\Users\Gianluca Fabrizio\Desktop\Boolean\1 - Esercizi\56_project-boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/francescomiceli/project-boolbnb/resources/js/homeGuest.js */"./resources/js/homeGuest.js");
+module.exports = __webpack_require__(/*! /Users/francescomiceli/project-boolbnb/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

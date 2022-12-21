@@ -38,14 +38,14 @@
                                 </h5>
                                 </p>
                             </div>
-                            <div class="bottoni text-center">
+                            <div class="text-center">
                                 <a href="{{ route('ura.apartments.edit', $apartment->apartment_slug) }}"> <button
-                                        type="button" class="m-2 btn btn-warning bg-orange text-light"><i
+                                        type="button" class="m-2 btn btn-outline-dark"><i
                                             class="fa-solid fa-circle-info"></i>
                                         Modifica
                                     </button></a>
                                 <a href="{{ route('message.index', $apartment->apartment_slug) }}">
-                                    <button id="notificationMessage-btn" type="button" class="m-2 btn btn-lightgreen text-light">
+                                    <button id="notificationMessage-btn" type="button" class="m-2 btn btn-outline-dark">
                                         <i class="fa-solid fa-envelope"></i> Messaggi
                                         @php
                                             $numMessage = 0;
@@ -64,13 +64,16 @@
                                         @endif
                                     </button>
                                 </a>
-                                <button type="button" class="m-2 btn btn-success"> <i class="fa-solid fa-pen"></i>
+                                <button type="button" class="m-2 btn btn-outline-dark"> <i class="fa-solid fa-pen"></i>
                                     Sponsorizza</button>
                                 <form action="{{ route('ura.apartments.destroy', $apartment->apartment_slug) }}"
                                     method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <input class="m-2 btn btn-danger" type="submit" value="Elimina">
+
+
+                                    <input class="bg-btn m-2 btn btn-outline-dark" type="submit" value="Elimina">
+
                                     <!-- CRUD delete -->
                                 </form>
                             </div>

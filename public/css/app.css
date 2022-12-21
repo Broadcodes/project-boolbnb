@@ -11136,6 +11136,10 @@ ul li {
   z-index: 2500;
 }
 
+.tt-search-box {
+  width: calc(100vh - 200px);
+}
+
 .nc-accountInfo {
   -moz-column-gap: 2rem;
        column-gap: 2rem;

@@ -57,7 +57,7 @@
                         </div>
                         <hr>
 
-                        <h5 class="mt-1">Dettagli:</h5>
+                        <h5 class="mt-1">Dettagli</h5>
                         <hr>
                         <div class="detail">
 
@@ -85,8 +85,10 @@
 
                         <hr>
 
+                        <a class="btn btn-outline-dark btn-custom" href="#formMessage"><i class="fa-regular fa-envelope"></i> Contatta per info</a>
+
                         <div class="d-flex align-items-end">
-                            <form class="w-100" action="api/message" method="POST">
+                            <form id="formMessage" class="w-100" action="api/message" method="POST">
                                 <!-- non toccare l'input con il name="apartment_id" tanto è nascosto, ma di fondamentale importanza -->
                                 <input class="d-none" type="text" name="apartment_id" required id="apartment_id"
                                     :value="dataListArr.id">
@@ -106,10 +108,10 @@
                                 </div>
                                 <div class="d-flex justify-content-center my-5">
                                     <div>
-                                        <input class="btn btn-success mx-2" type="submit" value="Invia Messaggio">
+                                        <input class="btn btn-outline-dark mx-2" type="submit" value="Invia Messaggio">
                                     </div>
                                     <div>
-                                        <button @click="getBack" class="btn btn-primary ">Torna alla home</button>
+                                        <button @click="getBack" class="btn btn-outline-dark "><i class="fa-solid fa-house"></i> Torna alla home</button>
                                     </div>
                                 </div>
                             </form>
@@ -411,6 +413,9 @@ export default {
         }
     }
 
+.btn-custom{
+    margin: 30px 0;
+}
 
 }
 </style>
