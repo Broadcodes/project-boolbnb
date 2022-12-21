@@ -2080,6 +2080,7 @@ __webpack_require__.r(__webpack_exports__);
     var img = document.getElementById("myImg");
     var modalImg = document.getElementById("img01");
     img.addEventListener('click', function () {
+      console.log('ok');
       modal.style.display = "block";
       modalImg.src = this.src;
       captionText.innerHTML = this.alt;
@@ -2421,11 +2422,7 @@ var render = function render() {
     staticClass: "row"
   }, [_c("div", {
     staticClass: "col-4"
-  }, [_c("div", {
-    attrs: {
-      id: "myModal"
-    }
-  }, [_vm.dataListArr.apartment_images == null ? _c("img", {
+  }, [_c("div", [_vm.dataListArr.apartment_images == null ? _c("img", {
     staticClass: "img-thumbnail",
     attrs: {
       src: _vm.getSrcImages("images", "immagine_non_disponibile.png"),
@@ -2434,6 +2431,7 @@ var render = function render() {
   }) : _c("img", {
     staticClass: "img-thumbnail",
     attrs: {
+      id: "myImg",
       src: _vm.getSrcImages("storage", _vm.dataListArr.apartment_images),
       alt: _vm.dataListArr.apartment_title
     }
@@ -2491,10 +2489,6 @@ var staticRenderFns = [function () {
     staticClass: "modal-content",
     attrs: {
       id: "img01"
-    }
-  }), _vm._v(" "), _c("div", {
-    attrs: {
-      id: "caption"
     }
   })]);
 }];
@@ -6919,7 +6913,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".areaShow .jumbo[data-v-dfae5582] {\n  width: 100%;\n  height: 100vh;\n  position: relative;\n}\n.areaShow .jumbo .imgJumbo[data-v-dfae5582] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center right;\n     object-position: center right;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n.areaShow .jumbo .filter[data-v-dfae5582] {\n  width: 100%;\n  height: 100%;\n  background: rgb(0, 0, 0);\n  background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(26, 26, 26, 0.75) 37%, rgba(56, 56, 56, 0.65) 72%, rgba(255, 255, 255, 0) 100%);\n  position: absolute;\n  top: 0;\n  left: 0;\n  text-align: center;\n  overflow: hidden;\n}\n.areaShow .jumbo .filter .text[data-v-dfae5582] {\n  width: 50%;\n  height: 100%;\n  display: flex;\n  padding-left: 200px;\n  align-items: center;\n}\n.areaShow .jumbo .filter .textArea[data-v-dfae5582] {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  padding: 50px;\n  transition: all 0.5s;\n  position: relative;\n  animation: moveToRight-dfae5582 2s ease;\n}\n.areaShow .jumbo .filter .textArea h1[data-v-dfae5582],\n.areaShow .jumbo .filter .textArea h3[data-v-dfae5582],\n.areaShow .jumbo .filter .textArea h4[data-v-dfae5582],\n.areaShow .jumbo .filter .textArea p[data-v-dfae5582] {\n  text-align: left;\n  color: #fff;\n}\n.areaShow .jumbo .filter .textArea h2[data-v-dfae5582] {\n  padding-bottom: 10px;\n  color: white;\n}\n@keyframes moveToRight-dfae5582 {\nfrom {\n    left: -500px;\n}\nto {\n    left: 0px;\n}\n}\n.areaShow .jumbo .filter .buttonMoreDetail[data-v-dfae5582] {\n  width: 240px;\n  height: 240px;\n  line-height: 115px;\n  border-radius: 50%;\n  position: absolute;\n  font-size: 1.2rem;\n  color: #fff;\n  bottom: -150px;\n  transform: translateX(-50%);\n  background-color: rgba(0, 0, 0, 0.5);\n  box-shadow: inset 0px 0px 20px #fff;\n  text-decoration: none;\n  animation: moveToTop-dfae5582 2s ease;\n}\n.areaShow .jumbo .filter .buttonMoreDetail[data-v-dfae5582]:hover {\n  font-size: 1.3rem;\n}\n@keyframes moveToTop-dfae5582 {\nfrom {\n    bottom: -250px;\n}\nto {\n    bottom: -150px;\n}\n}\n.areaShow #areaDetail[data-v-dfae5582] {\n  padding-top: 50px;\n}\n.areaShow #areaDetail .showDetail[data-v-dfae5582] {\n  width: 100%;\n}\n.areaShow #areaDetail .showDetail .moreDetail[data-v-dfae5582] {\n  width: 100%;\n  height: 1000px;\n  text-align: center;\n}\n.areaShow #areaDetail .showDetail .moreDetail h4[data-v-dfae5582] {\n  margin: 35px 0;\n}\n.areaShow #areaDetail .showDetail .moreDetail h4 .price[data-v-dfae5582] {\n  color: #ff385c;\n  font-size: 1.7rem;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail[data-v-dfae5582] {\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement[data-v-dfae5582] {\n  display: flex;\n  min-width: 150px;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 15px;\n  transition: all 0.5s;\n  cursor: pointer;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement[data-v-dfae5582]:hover {\n  transform: scale(1.1);\n  box-shadow: 20px 20px 15px rgba(0, 0, 0, 0.25);\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement i[data-v-dfae5582] {\n  font-size: 1.5rem;\n  margin-bottom: 20px;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement h4[data-v-dfae5582] {\n  font-size: 1.6rem;\n}\n.areaShow #areaDetail .showDetail .moreDetail .description[data-v-dfae5582] {\n  text-align: left;\n  height: auto;\n  overflow-y: auto;\n  border-radius: 10px;\n}\n.areaShow #myImg[data-v-dfae5582] {\n  cursor: pointer;\n  transition: 0.3s;\n}\n.areaShow #myImg[data-v-dfae5582]:hover {\n  opacity: 0.7;\n}\n.areaShow .modal[data-v-dfae5582] {\n  display: none;\n  position: fixed;\n  z-index: 1;\n  padding-top: 100px;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  overflow: auto;\n  background-color: rgb(0, 0, 0);\n  background-color: rgba(0, 0, 0, 0.9);\n}\n.areaShow .modal-content[data-v-dfae5582] {\n  margin: auto;\n  display: block;\n  width: 80%;\n  max-width: 700px;\n}\n.areaShow .modal-content[data-v-dfae5582], .areaShow #caption[data-v-dfae5582] {\n  -webkit-animation-name: zoom-dfae5582;\n  -webkit-animation-duration: 0.6s;\n  animation-name: zoom-dfae5582;\n  animation-duration: 0.6s;\n}\n@keyframes zoom-dfae5582 {\nfrom {\n    transform: scale(0);\n}\nto {\n    transform: scale(1);\n}\n}\n.areaShow .close[data-v-dfae5582] {\n  position: absolute;\n  top: 15px;\n  right: 35px;\n  color: #f1f1f1;\n  font-size: 40px;\n  font-weight: bold;\n  transition: 0.3s;\n}\n.areaShow .close[data-v-dfae5582]:hover,\n.areaShow .close[data-v-dfae5582]:focus {\n  color: #bbb;\n  text-decoration: none;\n  cursor: pointer;\n}\n@media only screen and (max-width: 700px) {\n.areaShow .modal-content[data-v-dfae5582] {\n    width: 100%;\n}\n}", ""]);
+exports.push([module.i, ".areaShow .jumbo[data-v-dfae5582] {\n  width: 100%;\n  height: 100vh;\n  position: relative;\n}\n.areaShow .jumbo .imgJumbo[data-v-dfae5582] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center right;\n     object-position: center right;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n.areaShow .jumbo .filter[data-v-dfae5582] {\n  width: 100%;\n  height: 100%;\n  background: rgb(0, 0, 0);\n  background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(26, 26, 26, 0.75) 37%, rgba(56, 56, 56, 0.65) 72%, rgba(255, 255, 255, 0) 100%);\n  position: absolute;\n  top: 0;\n  left: 0;\n  text-align: center;\n  overflow: hidden;\n}\n.areaShow .jumbo .filter .text[data-v-dfae5582] {\n  width: 50%;\n  height: 100%;\n  display: flex;\n  padding-left: 200px;\n  align-items: center;\n}\n.areaShow .jumbo .filter .textArea[data-v-dfae5582] {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  padding: 50px;\n  transition: all 0.5s;\n  position: relative;\n  animation: moveToRight-dfae5582 2s ease;\n}\n.areaShow .jumbo .filter .textArea h1[data-v-dfae5582],\n.areaShow .jumbo .filter .textArea h3[data-v-dfae5582],\n.areaShow .jumbo .filter .textArea h4[data-v-dfae5582],\n.areaShow .jumbo .filter .textArea p[data-v-dfae5582] {\n  text-align: left;\n  color: #fff;\n}\n.areaShow .jumbo .filter .textArea h2[data-v-dfae5582] {\n  padding-bottom: 10px;\n  color: white;\n}\n@keyframes moveToRight-dfae5582 {\nfrom {\n    left: -500px;\n}\nto {\n    left: 0px;\n}\n}\n.areaShow .jumbo .filter .buttonMoreDetail[data-v-dfae5582] {\n  width: 240px;\n  height: 240px;\n  line-height: 115px;\n  border-radius: 50%;\n  position: absolute;\n  font-size: 1.2rem;\n  color: #fff;\n  bottom: -150px;\n  transform: translateX(-50%);\n  background-color: rgba(0, 0, 0, 0.5);\n  box-shadow: inset 0px 0px 20px #fff;\n  text-decoration: none;\n  animation: moveToTop-dfae5582 2s ease;\n}\n.areaShow .jumbo .filter .buttonMoreDetail[data-v-dfae5582]:hover {\n  font-size: 1.3rem;\n}\n@keyframes moveToTop-dfae5582 {\nfrom {\n    bottom: -250px;\n}\nto {\n    bottom: -150px;\n}\n}\n.areaShow #areaDetail[data-v-dfae5582] {\n  padding-top: 50px;\n}\n.areaShow #areaDetail .showDetail[data-v-dfae5582] {\n  width: 100%;\n}\n.areaShow #areaDetail .showDetail .moreDetail[data-v-dfae5582] {\n  width: 100%;\n  height: 1000px;\n  text-align: center;\n}\n.areaShow #areaDetail .showDetail .moreDetail h4[data-v-dfae5582] {\n  margin: 35px 0;\n}\n.areaShow #areaDetail .showDetail .moreDetail h4 .price[data-v-dfae5582] {\n  color: #ff385c;\n  font-size: 1.7rem;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail[data-v-dfae5582] {\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement[data-v-dfae5582] {\n  display: flex;\n  min-width: 150px;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 15px;\n  transition: all 0.5s;\n  cursor: pointer;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement[data-v-dfae5582]:hover {\n  transform: scale(1.1);\n  box-shadow: 20px 20px 15px rgba(0, 0, 0, 0.25);\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement i[data-v-dfae5582] {\n  font-size: 1.5rem;\n  margin-bottom: 20px;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement h4[data-v-dfae5582] {\n  font-size: 1.6rem;\n}\n.areaShow #areaDetail .showDetail .moreDetail .description[data-v-dfae5582] {\n  text-align: left;\n  height: auto;\n  overflow-y: auto;\n  border-radius: 10px;\n}\n.areaShow #myImg[data-v-dfae5582] {\n  cursor: pointer;\n  transition: 0.3s;\n}\n.areaShow #myImg[data-v-dfae5582]:hover {\n  opacity: 0.7;\n}\n.areaShow .modal[data-v-dfae5582] {\n  margin-top: 65px;\n  display: none;\n  position: fixed;\n  z-index: 1;\n  padding-top: 100px;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  overflow: auto;\n  background-color: rgb(0, 0, 0);\n  background-color: rgba(0, 0, 0, 0.9);\n}\n.areaShow .modal-content[data-v-dfae5582] {\n  margin: auto;\n  display: block;\n  width: 80%;\n  max-width: 700px;\n}\n.areaShow .modal-content[data-v-dfae5582], .areaShow #caption[data-v-dfae5582] {\n  -webkit-animation-name: zoom-dfae5582;\n  -webkit-animation-duration: 0.6s;\n  animation-name: zoom-dfae5582;\n  animation-duration: 0.6s;\n}\n@keyframes zoom-dfae5582 {\nfrom {\n    transform: scale(0);\n}\nto {\n    transform: scale(1);\n}\n}\n.areaShow .close[data-v-dfae5582] {\n  position: absolute;\n  top: 15px;\n  right: 35px;\n  color: #f1f1f1;\n  font-size: 40px;\n  font-weight: bold;\n  transition: 0.3s;\n}\n.areaShow .close[data-v-dfae5582]:hover,\n.areaShow .close[data-v-dfae5582]:focus {\n  color: #bbb;\n  text-decoration: none;\n  cursor: pointer;\n}\n@media only screen and (max-width: 700px) {\n.areaShow .modal-content[data-v-dfae5582] {\n    width: 100%;\n}\n}", ""]);
 
 // exports
 
@@ -51162,14 +51156,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************************!*\
   !*** ./resources/js/view/showApartmentGuest.vue ***!
   \**************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _showApartmentGuest_vue_vue_type_template_id_dfae5582_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./showApartmentGuest.vue?vue&type=template&id=dfae5582&scoped=true& */ "./resources/js/view/showApartmentGuest.vue?vue&type=template&id=dfae5582&scoped=true&");
 /* harmony import */ var _showApartmentGuest_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./showApartmentGuest.vue?vue&type=script&lang=js& */ "./resources/js/view/showApartmentGuest.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _showApartmentGuest_vue_vue_type_style_index_0_id_dfae5582_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./showApartmentGuest.vue?vue&type=style&index=0&id=dfae5582&lang=scss&scoped=true& */ "./resources/js/view/showApartmentGuest.vue?vue&type=style&index=0&id=dfae5582&lang=scss&scoped=true&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _showApartmentGuest_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _showApartmentGuest_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _showApartmentGuest_vue_vue_type_style_index_0_id_dfae5582_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./showApartmentGuest.vue?vue&type=style&index=0&id=dfae5582&lang=scss&scoped=true& */ "./resources/js/view/showApartmentGuest.vue?vue&type=style&index=0&id=dfae5582&lang=scss&scoped=true&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -51201,7 +51196,7 @@ component.options.__file = "resources/js/view/showApartmentGuest.vue"
 /*!***************************************************************************!*\
   !*** ./resources/js/view/showApartmentGuest.vue?vue&type=script&lang=js& ***!
   \***************************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51263,8 +51258,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/francescomiceli/project-boolbnb/resources/js/homeGuest.js */"./resources/js/homeGuest.js");
-module.exports = __webpack_require__(/*! /Users/francescomiceli/project-boolbnb/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Gianluca Fabrizio\Desktop\Boolean\1 - Esercizi\56_project-boolbnb\resources\js\homeGuest.js */"./resources/js/homeGuest.js");
+module.exports = __webpack_require__(/*! C:\Users\Gianluca Fabrizio\Desktop\Boolean\1 - Esercizi\56_project-boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

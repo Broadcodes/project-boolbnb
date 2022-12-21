@@ -37,19 +37,17 @@
                         <div class="container mt-4">
                             <div class="row">
                                 <div class="col-4">
-                                    <div id="myModal">
+                                    <div>
                                         <img v-if="dataListArr.apartment_images == null" class="img-thumbnail"
                                             :src="getSrcImages('images', 'immagine_non_disponibile.png')" alt="Nessuna immagine">
-                                        <img v-else class="img-thumbnail" :src="getSrcImages('storage', dataListArr.apartment_images)"
+                                        <img id="myImg" v-else class="img-thumbnail" :src="getSrcImages('storage', dataListArr.apartment_images)"
                                             :alt="dataListArr.apartment_title">
                                     </div>
 
                                     <div id="myModal" class="modal">
                                         <span class="close">&times;</span>
                                         <img class="modal-content" id="img01">
-                                        <div id="caption"></div>
                                     </div>
-
                                 </div>
 
                                 <div class="col-8 description">
@@ -87,30 +85,7 @@
                             </div>
                         </div>
 
-
-                        <!-- <div class="container  mt-5">
-                            <div class="row">
-                                <div class="col-4">
-                                    <img v-if="dataListArr.apartment_images == null" class="img-thumbnail"
-                                        :src="getSrcImages('images', 'immagine_non_disponibile.png')" alt="Nessuna immagine">
-                                    <img v-else class="img-thumbnail" :src="getSrcImages('storage', dataListArr.apartment_images)"
-                                        :alt="dataListArr.apartment_title">
-                                </div>
-
-                                <div class="col-8 description">
-                                    <h5 class="fw-bold">Descrizione:</h5>
-                                    <br>
-                                    <p>{{ dataListArr.description }}</p>
-                                </div>
-                            </div>
-                        </div> -->
-
-                        <!-- <div class="description">
-                            <h5 class="text-center mb-3">Descrizione:</h5>
-                            <p>{{ dataListArr.description }}</p>
-                        </div> -->
                         <hr>
-
 
                         <div>
                             <button @click="getBack" class="btn btn-primary mt-5">Torna alla home</button>
@@ -122,11 +97,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
-
     </div>
 </template>
 
@@ -152,6 +122,7 @@ export default {
         let modalImg = document.getElementById("img01");
 
         img.addEventListener('click', function(){
+            console.log('ok');
         modal.style.display = "block";
         modalImg.src = this.src;
         captionText.innerHTML = this.alt;
@@ -163,7 +134,6 @@ export default {
         modal.style.display = "none";
         });
     }
-
 }
 </script>
 
@@ -348,6 +318,7 @@ export default {
 
 
 .modal {
+  margin-top: 65px;
   display: none;
   position: fixed;
   z-index: 1;
