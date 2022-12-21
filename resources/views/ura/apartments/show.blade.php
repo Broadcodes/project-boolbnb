@@ -73,7 +73,7 @@
         <hr>
 
         <div class="text-center mt-5">
-            <a href="{{ route('ura.apartments.index') }}" class="btn btn-primary">Torna ai miei annunci</a>
+            <a href="{{ route('ura.apartments.index') }}" class="btn btn-outline-dark">Torna ai miei annunci</a>
         </div>
 
     </div>
