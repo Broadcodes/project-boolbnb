@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <h4 class="text-secondary mt-4 mx-5">
+    <h4 class="container text-secondary mt-4 ">
         {{ count($messageApartment) > 0 ? 'Ci sono ' . count($messageApartment) . ' messaggi per l\'apparamento "' . $aparment_title . '":' : 'Non ci sono messaggi per l\'apparamento "' . $aparment_title . '":' }}
     </h4>
     @if (count($messageApartment) > 0)
-        <div class="container">
+        <div class="container text-secondary">
             <div class="border border-dark my-5 p-4">
                 @foreach ($messageApartment as $message)
                     <div class="d-flex align-items-center">
