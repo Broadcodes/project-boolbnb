@@ -287,7 +287,7 @@ export default {
 
                     .price {
                         color: #ff385c;
-                        font-size: 1.7rem;
+
                     }
                 }
 
