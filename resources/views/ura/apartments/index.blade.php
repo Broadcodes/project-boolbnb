@@ -45,7 +45,8 @@
                                         Modifica
                                     </button></a>
                                 <a href="{{ route('message.index', $apartment->apartment_slug) }}">
-                                    <button id="notificationMessage-btn" type="button" class="m-2 btn btn-lightgreen text-light">
+                                    <button id="notificationMessage-btn" type="button"
+                                        class="m-2 btn btn-lightgreen text-light">
                                         <i class="fa-solid fa-envelope"></i> Messaggi
                                         @php
                                             $numMessage = 0;
@@ -70,7 +71,13 @@
                                     method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <input class="m-2 btn btn-danger" type="submit" value="Elimina">
+
+                                    <button type="button" class="btn btn-outline-dark m-2 text-center">
+                                        <img style="width: 15px;" height="15px;"
+                                            src="https://www.svgrepo.com/show/264841/garbage-trash.svg" alt="">
+                                        <span class="ml-4">Elimina</span>
+                                        <input class="btn" id="delete" type="submit" value="">
+                                    </button>
                                     <!-- CRUD delete -->
                                 </form>
                             </div>
