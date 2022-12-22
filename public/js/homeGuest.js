@@ -6956,7 +6956,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".search_box[data-v-263f772b] {\n  margin-top: 150px;\n  position: relative;\n  top: -150px;\n  z-index: 2000;\n  max-width: calc(100vh - 200px);\n  z-index: 1040;\n  position: relative;\n}\nbutton[data-v-263f772b] {\n  text-decoration: none;\n  border: none;\n  background-color: rgba(255, 255, 255, 0);\n  color: #727171;\n  transition: 0.3s;\n}\nbutton[data-v-263f772b]:hover {\n  color: black;\n}\n.selection[data-v-263f772b] {\n  margin-top: 66px !important;\n  padding-top: 15px;\n  border-bottom: 1px solid lightgray;\n  z-index: 200;\n}", ""]);
+exports.push([module.i, ".search_box[data-v-263f772b] {\n  margin-top: 150px;\n  position: relative;\n  top: -150px;\n  max-width: calc(100vh - 200px);\n  z-index: 1040;\n  position: relative;\n}\nbutton[data-v-263f772b] {\n  text-decoration: none;\n  border: none;\n  background-color: rgba(255, 255, 255, 0);\n  color: #727171;\n  transition: 0.3s;\n}\nbutton[data-v-263f772b]:hover {\n  color: black;\n}\n.selection[data-v-263f772b] {\n  margin-top: 66px !important;\n  padding-top: 15px;\n  border-bottom: 1px solid lightgray;\n  z-index: 200;\n}", ""]);
 
 // exports
 
@@ -51405,8 +51405,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/francescomiceli/project-boolbnb/resources/js/homeGuest.js */"./resources/js/homeGuest.js");
-module.exports = __webpack_require__(/*! /Users/francescomiceli/project-boolbnb/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Gianluca Fabrizio\Desktop\Boolean\1 - Esercizi\56_project-boolbnb\resources\js\homeGuest.js */"./resources/js/homeGuest.js");
+module.exports = __webpack_require__(/*! C:\Users\Gianluca Fabrizio\Desktop\Boolean\1 - Esercizi\56_project-boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

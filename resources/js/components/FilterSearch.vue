@@ -120,7 +120,6 @@ export default {
     margin-top: 150px;
     position: relative;
     top: -150px;
-    z-index: 2000;
     max-width: calc(100vh - 200px);
     z-index: 1040;
     position: relative;
