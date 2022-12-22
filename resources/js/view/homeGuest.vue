@@ -12,24 +12,28 @@
 
 
                     <div v-if="!apartmentClick" >
-                        <h3>Appartamenti sponsorizzati</h3>
-                        <div v-if="apartmentsToShow.length > 0">
+                        <!-- <h3 class=" text-center p-3"><i class="fa-solid fa-star"></i> Appartamenti Premium <i class="fa-solid fa-star"></i></h3> -->
+                        <div class="bd bg-color" v-if="apartmentsToShow.length > 0">
+                            <h3 class="text-center pt-5"><i class="fa-solid fa-star"></i> Appartamenti Premium <i class="fa-solid fa-star"></i></h3>
                             <apartmentListComponent :apartments="apartmentsToShow" @clickedApartment="showApartment" />
                         </div>
 
                         <div v-else>
-                            <h3>Nessuna disponibilità</h3>
+                            <h3 class=" text-center p-3">Purtroppo non ci sono case in questa categoria!</h3>
                         </div>
 
-                        <div v-if="apartmentClick||positionSet||categorySet" id="back" @click="getBack">
+                        <div class="mt-3" v-if="apartmentClick||positionSet||categorySet" id="back" @click="getBack">
                             <button class="btn btn-outline-dark">Mostra tutti</button>
                         </div>
 
-                        <h3>Appartamenti disponibili</h3>
+                        <h3 class=" text-center pt-5"><strong>Tutti gli annunci</strong> </h3>
                         <apartmentListComponent :apartments="apartments" @clickedApartment="showApartment"/>
 
 
+
                     </div>
+
+
 
                 </div>
 
@@ -157,6 +161,17 @@ export default {
    justify-content: center;
    align-items: center;
    width: 100%;
+}
+
+
+
+// .bg-color{
+//     background-color: rgb(251, 255, 147);
+// }
+
+.fa-star{
+    color: rgb(255, 187, 0);
+
 }
 
 </style>

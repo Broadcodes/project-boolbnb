@@ -2642,14 +2642,19 @@ var render = function render() {
       coordinate: _vm.sentCoordinate,
       sentCategory: _vm.setCategory
     }
-  })], 1), _vm._v(" "), !_vm.apartmentClick ? _c("div", [_c("h3", [_vm._v("Appartamenti sponsorizzati")]), _vm._v(" "), _vm.apartmentsToShow.length > 0 ? _c("div", [_c("apartmentListComponent", {
+  })], 1), _vm._v(" "), !_vm.apartmentClick ? _c("div", [_vm.apartmentsToShow.length > 0 ? _c("div", {
+    staticClass: "bd bg-color"
+  }, [_vm._m(0), _vm._v(" "), _c("apartmentListComponent", {
     attrs: {
       apartments: _vm.apartmentsToShow
     },
     on: {
       clickedApartment: _vm.showApartment
     }
-  })], 1) : _c("div", [_c("h3", [_vm._v("Nessuna disponibilità")])]), _vm._v(" "), _vm.apartmentClick || _vm.positionSet || _vm.categorySet ? _c("div", {
+  })], 1) : _c("div", [_c("h3", {
+    staticClass: "text-center p-3"
+  }, [_vm._v("Purtroppo non ci sono case in questa categoria!")])]), _vm._v(" "), _vm.apartmentClick || _vm.positionSet || _vm.categorySet ? _c("div", {
+    staticClass: "mt-3",
     attrs: {
       id: "back"
     },
@@ -2658,7 +2663,7 @@ var render = function render() {
     }
   }, [_c("button", {
     staticClass: "btn btn-outline-dark"
-  }, [_vm._v("Mostra tutti")])]) : _vm._e(), _vm._v(" "), _c("h3", [_vm._v("Appartamenti disponibili")]), _vm._v(" "), _c("apartmentListComponent", {
+  }, [_vm._v("Mostra tutti")])]) : _vm._e(), _vm._v(" "), _vm._m(1), _vm._v(" "), _c("apartmentListComponent", {
     attrs: {
       apartments: _vm.apartments
     },
@@ -2667,7 +2672,23 @@ var render = function render() {
     }
   })], 1) : _vm._e()]) : _c("div", [_vm._v("\n                loading\n            ")])]), _vm._v(" "), _c("router-view")], 1);
 };
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("h3", {
+    staticClass: "text-center pt-5"
+  }, [_c("i", {
+    staticClass: "fa-solid fa-star"
+  }), _vm._v(" Appartamenti Premium "), _c("i", {
+    staticClass: "fa-solid fa-star"
+  })]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("h3", {
+    staticClass: "text-center pt-5"
+  }, [_c("strong", [_vm._v("Tutti gli annunci")])]);
+}];
 render._withStripped = true;
 
 
@@ -7127,7 +7148,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#back {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n}", ""]);
+exports.push([module.i, "#back {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n}\n.fa-star {\n  color: rgb(255, 187, 0);\n}", ""]);
 
 // exports
 
@@ -54852,8 +54873,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Utente\Desktop\boolean\boolean\Progetto_finale_BoolBnB\project-boolbnb\resources\js\homeGuest.js */"./resources/js/homeGuest.js");
-module.exports = __webpack_require__(/*! C:\Users\Utente\Desktop\boolean\boolean\Progetto_finale_BoolBnB\project-boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/francescomiceli/project-boolbnb/resources/js/homeGuest.js */"./resources/js/homeGuest.js");
+module.exports = __webpack_require__(/*! /Users/francescomiceli/project-boolbnb/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
