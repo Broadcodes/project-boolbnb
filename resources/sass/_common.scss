@@ -19,6 +19,13 @@ body {
         color:white !important;
         text-decoration: none;
      }
+     a{
+        color: black;
+        &:hover{
+            color:white !important;
+            text-decoration: none;
+        }
+     }
 }
 
 img {

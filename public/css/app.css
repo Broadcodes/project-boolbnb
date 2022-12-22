@@ -24,6 +24,15 @@ body {
   text-decoration: none;
 }
 
+#skin-color a {
+  color: black;
+}
+
+#skin-color a:hover {
+  color: white !important;
+  text-decoration: none;
+}
+
 img {
   width: 100%;
 }
@@ -11131,6 +11140,16 @@ ul li {
 
 .contenitore {
   font-size: 0.9em;
+}
+
+#posizione {
+  position: relative;
+}
+
+#posizione #posizione2 {
+  position: absolute;
+  top: 298px;
+  left: 133px;
 }
 
 .imgMessage {

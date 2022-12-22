@@ -1,8 +1,8 @@
 <template>
   <div>
 
-    <div class="apartment_container mx-5 px-5">
-                <div class="contenitore-card">
+    <div class="apartment_container px-5">
+                <div class="contenitore-card p-5">
                     <div class="singola-card" v-for="apartment in apartments" :key="apartment.id"
                         @click="showApartment(apartment.apartment_slug)">
                         <img v-if="apartment.apartment_images == null" class="img-fluid resize-img img-thumbnail"
@@ -54,6 +54,7 @@ export default {
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 30px;
+
 }
 
 .singola-card {
