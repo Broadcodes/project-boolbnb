@@ -7,6 +7,10 @@
   font-family: "Nunito Sans", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: sans-serif;
 }
@@ -54,6 +58,10 @@ a:hover {
 }
 
 .selection a:hover {
+  color: black;
+}
+
+#text-color-message {
   color: black;
 }
 
@@ -11068,23 +11076,65 @@ ul li {
   font-weight: 600;
 }
 
+.categoria {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #ff595e;
+  padding-left: 10px;
+}
+
+.testo-categoria {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+
+.light {
+  font-size: 1.6em;
+  padding-right: 10px;
+}
+
+.first-line {
+  font-size: 1.5em;
+  width: 100%;
+  transition: all 0.5s;
+}
+
+.first-line:hover {
+  border-radius: 10px;
+  transform: scale(1.1);
+  box-shadow: 20px 20px 15px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.price {
+  color: #ff595e;
+  font-size: 2rem;
+}
+
+.prezzo {
+  font-size: 2em;
+}
+
+.background {
+  background-color: #ededed;
+  width: 100%;
+}
+
+.contenitore {
+  font-size: 0.9em;
+}
+
 .imgMessage {
   width: 40px;
 }
 
 .testoMess {
   font-size: 1.1rem;
-  padding: 4px;
 }
 
 .areaMessaggioTesto {
-  height: 200px;
+  height: auto;
   overflow-y: auto;
-}
-
-.bg-message {
-  background-color: rgba(245, 242, 230, 0.508);
-  box-shadow: inset 0px 0px 20px rgb(195, 192, 177);
 }
 
 /* width */
@@ -11126,6 +11176,7 @@ ul li {
   background-color: red;
   border-radius: 50%;
   font-size: 0.85rem;
+  color: white;
 }
 
 .dropdown-menu {
@@ -11133,7 +11184,7 @@ ul li {
 }
 
 .tt-search-box {
-  width: calc(100vh - 300px);
+  width: calc(100vh - 200px);
 }
 
 .nc-accountInfo {

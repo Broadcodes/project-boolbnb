@@ -5,9 +5,15 @@
     font-family: 'Nunito Sans', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+
 body {
     font-family: sans-serif;
 }
+
+
 
 img {
     width: 100%;
@@ -53,4 +59,8 @@ a {
             color: black;
         }
     }
+}
+
+#text-color-message{
+    color: black;
 }

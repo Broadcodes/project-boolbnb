@@ -3,10 +3,10 @@
 @section('content')
 
     <div class="container">
-        <div class="text-center p-4">
-            <h1 class="display-5">I tuoi appartamenti</h1>
+        <div class="text-center p-4 border-bottom">
+            <h1 class="display-4">I tuoi appartamenti</h1>
             <p class="pt-2">Appartamenti totali: <strong>{{ $apartmentNumber }}</strong></p>
-            <a class="mt-0 btn btn-primary" href="{{ route('ura.apartments.create') }}">Aggiungi un appartamento!</a>
+            <a class="mt-0 btn btn-outline-primary" href="{{ route('ura.apartments.create') }}">Aggiungi un appartamento!</a>
             <!-- CRUD create -->
         </div>
 
@@ -22,14 +22,15 @@
                         <div class="card">
                             <img class="card-img-top resize-img" src="{{ asset('storage/' . $apartment->apartment_images) }}"
                                 alt="{{ $apartment->apartment_title }}" />
-                            <div class="card-body text-center">
+                            <div class="card-body text-center pb-0">
                                 <a href="{{ route('ura.apartments.show', $apartment->apartment_slug) }}">
-                                    <h3 class="card-title">{{ substr($apartment->apartment_title, 0, 20) }}
+                                    <h3 class="card-title text-muted">{{ substr($apartment->apartment_title, 0, 20) }}
                                         @if (strlen($apartment->apartment_title) > 20)
                                             ...
                                         @endif
                                     </h3>
                                 </a>
+                                <hr>
                                 <p class="card-text">
                                 <h5>{{ substr($apartment->description, 0, 50) }}
                                     @if (strlen($apartment->description) > 50)
@@ -38,15 +39,15 @@
                                 </h5>
                                 </p>
                             </div>
-                            <div class="bottoni text-center">
+
+                            <div class="d-flex flex-wrap justify-content-center mb-4">
                                 <a href="{{ route('ura.apartments.edit', $apartment->apartment_slug) }}"> <button
-                                        type="button" class="m-2 btn btn-warning bg-orange text-light"><i
-                                            class="fa-solid fa-circle-info"></i>
+                                        type="button" class="m-2 btn btn-outline-dark">
+                                        <i class="fa-solid fa-pen"></i>
                                         Modifica
                                     </button></a>
                                 <a href="{{ route('message.index', $apartment->apartment_slug) }}">
-                                    <button id="notificationMessage-btn" type="button"
-                                        class="m-2 btn btn-lightgreen text-light">
+                                    <button id="notificationMessage-btn" type="button" class="m-2 btn btn-outline-dark">
                                         <i class="fa-solid fa-envelope"></i> Messaggi
                                         @php
                                             $numMessage = 0;
@@ -65,13 +66,16 @@
                                         @endif
                                     </button>
                                 </a>
-                                <button type="button" class="m-2 btn btn-success"> <i class="fa-solid fa-pen"></i>
+                                <button type="button" class="m-2 btn btn-outline-dark"> <i class="fa-regular fa-star"></i>
                                     <a href="{{ route('ura.sponsor', $apartment->id) }}">Sponsorizza</a></button>
                                 <form action="{{ route('ura.apartments.destroy', $apartment->apartment_slug) }}"
                                     method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <input class="m-2 btn btn-danger" type="submit" value="Elimina">
+
+
+                                    <input class="bg-btn m-2 btn btn-outline-dark" type="submit" value="Elimina">
+
                                     <!-- CRUD delete -->
                                 </form>
                             </div>

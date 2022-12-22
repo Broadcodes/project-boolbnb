@@ -1,19 +1,17 @@
 <template>
     <div>
-      <div id="searchBox" class="container justify-content-center d-flex">
+        <div id="searchBox" class="container justify-content-center d-flex">
 
-      </div>
+        </div>
 
     </div>
-  </template>
+</template>
 
-  <script>
-  export default {
-      name:'searchBoxComponent',
-      data(){
-          return{
-
-
+<script>
+export default {
+    name: 'searchBoxComponent',
+    data() {
+        return {
 
 
 
@@ -23,55 +21,60 @@
 
 
 
-          }
-      },
-      mounted(){
 
 
-          this.getPosition();
+        }
+    },
+    mounted() {
 
 
-
-
-      },
-      methods:{
-              getPosition(){
-
-                  let options = {
-                      searchOptions: {
-                          key: 'APoE4D1CGAlRGOWQcaSfdelLIwY944gV',
-                          language: 'it-IT',
-                          limit: 5
-                      },
-                      autocompleteOptions: {
-                          key: 'APoE4D1CGAlRGOWQcaSfdelLIwY944gV',
-                          language: 'it-IT'
-                      }
-              };
-              var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
-              var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
-
-              ttSearchBox.on('tomtom.searchbox.resultselected', this.emitPosition);
-              document.getElementById("searchBox").append(searchBoxHTML);
-
-              },
-              emitPosition(data){
-                console.log(data.data.result.position);
+        this.getPosition();
 
 
 
-              this.$emit('setPosition',data.data.result.position)
-            }
 
-      },
+    },
+    methods: {
+        getPosition() {
+
+            let options = {
+                searchOptions: {
+                    key: 'APoE4D1CGAlRGOWQcaSfdelLIwY944gV',
+                    language: 'it-IT',
+                    limit: 5
+                },
+                autocompleteOptions: {
+                    key: 'APoE4D1CGAlRGOWQcaSfdelLIwY944gV',
+                    language: 'it-IT'
+                }
+            };
+            var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
+            var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
+
+            ttSearchBox.on('tomtom.searchbox.resultselected', this.emitPosition);
+            document.getElementById("searchBox").append(searchBoxHTML);
+
+        },
+        emitPosition(data) {
+            console.log(data.data.result.position);
 
 
 
-  }
-  </script>
+            this.$emit('setPosition', data.data.result.position)
+        }
 
-  <style>
+    },
 
 
 
-  </style>
+}
+</script>
+
+<style lang="scss" scoped>
+#searchBox {
+    width: calc(100vh - 200px);
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+}
+</style>
