@@ -6,22 +6,26 @@
     </h4>
     @if (count($messageApartment) > 0)
         <div class="container text-secondary">
-            <div class="border border-dark my-5 p-4">
+            <div class="my-5 p-3">
                 @foreach ($messageApartment as $message)
-                    <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center border-bottom border-dark p-1">
                         @if ($message->read_status == 0)
-                            <img class="imgMessage" src="../images/email.png" alt="New message">
+                            <i class="fa-solid fa-envelope fa-2xl text-dark"></i>
+                            <a href="{{ route('message.show', $message->id) }}"><h5 class="pt-2 mx-3 text-dark">{{ $message->name }} - {{ $message->email }}</h5></a>
+
                         @else
-                            <img class="imgMessage" src="../images/email_letta.png" alt="Message read">
+                            <i class="fa-solid fa-envelope-open fa-2xl text-secondary"></i>
+                        <a href="{{ route('message.show', $message->id) }}"><h5 class="pt-2 mx-3 text-secondary">{{ $message->name }} - {{ $message->email }}</h5></a>
+
                         @endif
 
-                        <a id="text-color-message" href="{{ route('message.show', $message->id) }}"><h5 class="pt-2 mx-3">{{ $message->name }} - {{ $message->email }}</h5></a>
+
                     </div>
                 @endforeach
             </div>
         </div>
     @endif
     <div class="my-5 text-center">
-        <a href="{{ route('ura.apartments.index') }}"><input class="btn btn-primary" type="button" value="Torna indietro"></a>
+        <a href="{{ route('ura.apartments.index') }}"><input class="btn btn-outline-dark" type="button" value="Torna indietro"></a>
     </div>
 @endsection
