@@ -11,8 +11,8 @@
                 <h4 class="mt-2"><i class="fa-solid fa-at"></i></h4>
                 <h4 class="testoMess mt-2 mx-3">{{ $message->email }}</h4>
             </div>
-            <div class="mx-4 d-flex px-4">
-                <h4 class="mt-2 text-primary">Inviato il:</h4>
+            <div class="mx-4 mt-3 d-flex px-4 border-bottom border-secondary">
+                <h4 class="mt-2"><i class="fa-solid fa-calendar"></i></h4>
                 <h4 class="testoMess mt-2 mx-3">{{ $message->created_at }}</h4>
             </div>
         </div>

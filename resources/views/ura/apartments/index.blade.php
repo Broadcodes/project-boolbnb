@@ -3,6 +3,13 @@
 @section('content')
 
     <div class="container">
+
+
+
+
+
+        @if ($apartmentNumber > 0)
+
         <div class="text-center p-4 border-bottom">
             <h1 class="display-4">I tuoi appartamenti</h1>
             <p class="pt-2">Appartamenti totali: <strong>{{ $apartmentNumber }}</strong></p>
@@ -11,9 +18,6 @@
         </div>
 
 
-
-
-        @if ($apartmentNumber > 0)
             <!-- se l'utente possiede appartamenti visualizza questa porzione-->
             <div class="row">
                 @foreach ($apartments as $apartment)
@@ -67,14 +71,13 @@
                                     </button>
                                 </a>
                                 <button type="button" class="m-2 btn btn-outline-dark"> <i class="fa-regular fa-star"></i>
-                                    <a href="{{ route('ura.sponsor', $apartment->id) }}">Sponsorizza</a></button>
+                                    <a class="text-dark" href="{{ route('ura.sponsor', $apartment->id) }}">Sponsorizza</a></button>
                                 <form action="{{ route('ura.apartments.destroy', $apartment->apartment_slug) }}"
                                     method="POST">
                                     @csrf
                                     @method('DELETE')
 
-
-                                    <input class="bg-btn m-2 btn btn-outline-dark" type="submit" value="Elimina">
+                                    <button class="bg-btn m-2 btn btn-outline-dark" type="submit"><i class="fa-solid fa-trash-can"></i> Elimina</button>
 
                                     <!-- CRUD delete -->
                                 </form>
