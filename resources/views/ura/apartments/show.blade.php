@@ -21,7 +21,7 @@
 
         {{-- prezzo --}}
         <div class="d-flex justify-content-center align-items-baseline m-3">
-            <h3 class="prezzo">Prezzo al mese: <span class="price">€ {{ $apartment->price }}</span></h3>
+            <h3 class="prezzo">Prezzo a notte: <span class="price">€ {{ $apartment->price }}</span></h3>
         </div>
 
         <div class="background">
