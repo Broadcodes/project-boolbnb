@@ -32,8 +32,11 @@
 
                         <div class="container mt-4">
                             <div class="row">
+
+
+
                                 <div class="col-4">
-                                    <div>
+                                   <div>
                                         <img v-if="apartment.apartment_images == null" class="img-thumbnail"
                                             :src="getSrcImages('images', 'immagine_non_disponibile.png')"
                                             alt="Nessuna immagine">
@@ -144,6 +147,23 @@ export default {
 
         this.loadPage('/api/apiHome/' + slug);
 
+        let modal = document.getElementById("myModal");
+
+        let img = document.getElementById("myImg");
+        let modalImg = document.getElementById("img01");
+
+        img.addEventListener('click', function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        });
+
+        let span = document.getElementById("close");
+
+        span.addEventListener('click', function () {
+            console.log('okok');
+            modal.style.display = "none";
+});
+
     },
     methods: {
         loadPage(url){
@@ -182,8 +202,7 @@ export default {
 
     .jumbo {
         width: 100%;
-        // height: calc(100vh - 144.11px);
-        height: 100vh;
+        height: calc(100vh - 144.11px);
         position: relative;
 
 
