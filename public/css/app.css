@@ -7,6 +7,10 @@
   font-family: "Nunito Sans", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: sans-serif;
 }
@@ -54,6 +58,10 @@ a:hover {
 }
 
 .selection a:hover {
+  color: black;
+}
+
+#text-color-message {
   color: black;
 }
 
@@ -11074,17 +11082,11 @@ ul li {
 
 .testoMess {
   font-size: 1.1rem;
-  padding: 4px;
 }
 
 .areaMessaggioTesto {
-  height: 200px;
+  height: auto;
   overflow-y: auto;
-}
-
-.bg-message {
-  background-color: rgba(245, 242, 230, 0.508);
-  box-shadow: inset 0px 0px 20px rgb(195, 192, 177);
 }
 
 /* width */
@@ -11126,6 +11128,7 @@ ul li {
   background-color: red;
   border-radius: 50%;
   font-size: 0.85rem;
+  color: white;
 }
 
 .dropdown-menu {
@@ -11133,7 +11136,7 @@ ul li {
 }
 
 .tt-search-box {
-  width: calc(100vh - 300px);
+  width: calc(100vh - 200px);
 }
 
 .nc-accountInfo {

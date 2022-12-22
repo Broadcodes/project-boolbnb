@@ -123,7 +123,7 @@
 
                 {{-- prezzo --}}
                 <div class="p-3 d-flex align-items-baseline">
-                    <label class="px-2 form-label" for="price">{{ __('Prezzo') }}</label>
+                    <label class="px-2 form-label" for="price">{{ __('Prezzo a Notte:') }}</label>
                     <input type="number" class="form-control" name="price" id="price" step=".01"
                         value="{{ old('price', '') }}">
                     @error('price')

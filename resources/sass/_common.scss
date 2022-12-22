@@ -5,6 +5,10 @@
     font-family: 'Nunito Sans', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+
 body {
     font-family: sans-serif;
 }
@@ -53,4 +57,8 @@ a {
             color: black;
         }
     }
+}
+
+#text-color-message{
+    color: black;
 }

@@ -121,7 +121,7 @@ export default {
     position: relative;
     top: -150px;
     z-index: 2000;
-    max-width: calc(100vh - 300px);
+    max-width: calc(100vh - 200px);
 }
 
 button {

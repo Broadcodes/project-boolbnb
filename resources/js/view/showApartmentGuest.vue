@@ -1,9 +1,5 @@
 <template>
     <div>
-        <!-- non toccare l'input con il name="apartment_id" tanto è nascosto, ma di fondamentale importanza -->
-        <input class="d-none" type="text" name="apartment_id" required id="apartment_id" :value="dataListArr.id">
-        <!-- ------------------------------ -->
-
         <div class="areaShow">
             <div class="jumbo">
                 <img v-if="dataListArr.apartment_images == null" class="imgJumbo"
@@ -14,45 +10,118 @@
                     <div class="text">
                         <div class="textArea">
                             <h1>{{ dataListArr.apartment_title }}</h1>
-                            <h3>{{ dataListArr.address }}, {{ dataListArr.civic_number }} - {{ dataListArr.city }} {{
-                                    dataListArr.city
-                            }}</h3>
-                            <h3>Categoria: {{ dataListArr.category }}</h3>
+                            <h4>{{ dataListArr.address }}, {{ dataListArr.civic_number }} - {{ dataListArr.city }}</h4>
+                            <h4>Categoria: {{ dataListArr.category }}</h4>
                         </div>
                     </div>
 
-                    <a class="buttonMoreDetail" href="#areaDetail">Mostra dettagli</a>
+                    <a class="buttonMoreDetail flex-column" href="#areaDetail">
+                        <i class="fa-solid fa-arrow-down fa-xl"></i>
+                    </a>
                 </div>
             </div>
+
+
+
             <div id="areaDetail">
+
                 <div class="showDetail">
-                    <div id="moreDetail" class="moreDetail container">
-                        <h2>Prezzo dell'immobile: <span class="price">€ {{ dataListArr.price }}</span></h2>
+                    <div id="moreDetail" class="moreDetail container mt-5">
+                        <h4>Prezzo a Notte: <span class="price">€ {{ dataListArr.price }}</span></h4>
+                        <hr>
+
+                        <div class="container mt-4">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div>
+                                        <img v-if="dataListArr.apartment_images == null" class="img-thumbnail"
+                                            :src="getSrcImages('images', 'immagine_non_disponibile.png')"
+                                            alt="Nessuna immagine">
+                                        <img id="myImg" v-else class="img-thumbnail"
+                                            :src="getSrcImages('storage', dataListArr.apartment_images)"
+                                            :alt="dataListArr.apartment_title">
+                                    </div>
+
+                                    <div id="myModal" class="modal">
+                                        <span id="close">&times;</span>
+                                        <img class="modal-content" id="img01">
+                                    </div>
+                                </div>
+
+                                <div class="col-8 description">
+                                    <h5>Descrizione:</h5>
+                                    <br>
+                                    <p>{{ dataListArr.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <h5 class="mt-1">Dettagli</h5>
+                        <hr>
                         <div class="detail">
+
                             <div class="detailElement">
                                 <i class="fa-solid fa-people-roof"></i>
-                                <h4>{{ dataListArr.bedrooms }}</h4>
-                                <h5>Numero di stanze</h5>
+                                <p>{{ dataListArr.bedrooms }}</p>
+                                <p>Numero di stanze</p>
                             </div>
                             <div class="detailElement">
                                 <i class="fa-solid fa-bed"></i>
-                                <h4>{{ dataListArr.bed }}</h4>
-                                <h5>Numero di letti</h5>
+                                <p>{{ dataListArr.bed }}</p>
+                                <p>Numero di letti</p>
                             </div>
                             <div class="detailElement">
                                 <i class="fa-solid fa-bath"></i>
-                                <h4>{{ dataListArr.bathrooms }}</h4>
-                                <h5>Numero di bagni</h5>
+                                <p>{{ dataListArr.bathrooms }}</p>
+                                <p>Numero di bagni</p>
                             </div>
                             <div class="detailElement">
                                 <i class="fa-solid fa-ruler"></i>
-                                <h4>{{ dataListArr.sqm }}</h4>
-                                <h5>MQ</h5>
+                                <p>{{ dataListArr.sqm }}</p>
+                                <p>Metri Quadrati</p>
                             </div>
                         </div>
-                        <h4 class="description mt-5">{{ dataListArr.description }}</h4>
-                        <button @click="getBack" class="btn btn-primary">Torna alla home</button>
+
+                        <hr>
+
+                        <a class="btn btn-outline-dark btn-custom" href="#formMessage"><i class="fa-regular fa-envelope"></i> Contatta per info</a>
+
+                        <div class="d-flex align-items-end">
+                            <form id="formMessage" class="w-100" action="api/message" method="POST">
+                                <!-- non toccare l'input con il name="apartment_id" tanto è nascosto, ma di fondamentale importanza -->
+                                <input class="d-none" type="text" name="apartment_id" required id="apartment_id"
+                                    :value="dataListArr.id">
+                                <!-- ------------------------------ -->
+
+                                <div class="d-flex flex-column">
+                                    <input class="form-control" type="text" name="name" required id="name"
+                                        placeholder="Nome e cognome">
+                                </div>
+                                <div class="d-flex flex-column my-4">
+                                    <input class="form-control" type="email" name="email" required id="email"
+                                        placeholder="email">
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <textarea class="form-control" required name="content_message" id="content_message"
+                                        cols="30" rows="10" placeholder="Chiedi tutto quello che vuoi!"></textarea>
+                                </div>
+                                <div class="d-flex justify-content-center my-5">
+                                    <div>
+                                        <input class="btn btn-outline-dark mx-2" type="submit" value="Invia Messaggio">
+                                    </div>
+                                    <div>
+                                        <button @click="getBack" class="btn btn-outline-dark "><i class="fa-solid fa-house"></i> Torna alla home</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+
+
+
                     </div>
+
                 </div>
             </div>
         </div>
@@ -72,18 +141,36 @@ export default {
         getSrcImages(folder, path) {
             return folder + '/' + path;
         }
+    },
+
+    mounted() {
+        let modal = document.getElementById("myModal");
+
+        let img = document.getElementById("myImg");
+        let modalImg = document.getElementById("img01");
+
+        img.addEventListener('click', function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        });
+
+        let span = document.getElementById("close");
+
+        span.addEventListener('click', function () {
+            console.log('okok');
+            modal.style.display = "none";
+        });
     }
 }
 </script>
 
 <style lang="scss" scoped>
 .areaShow {
-    margin-top: 100px;
-    padding: 0px;
+
 
     .jumbo {
         width: 100%;
-        height: 700px;
+        height: 100vh;
         position: relative;
 
         .imgJumbo {
@@ -124,20 +211,18 @@ export default {
                 position: relative;
                 animation: moveToRight 2s ease;
 
-                &:hover {
-                    scale: 1.05;
-                    box-shadow: 0px 0px 40px #fff;
-                }
 
                 h1,
-                h3 {
+                h3,
+                h4,
+                p {
                     text-align: left;
                     color: #fff;
                 }
 
-                h1 {
+                h2 {
                     padding-bottom: 10px;
-                    font-size: 4rem;
+                    color: white;
                 }
             }
 
@@ -186,25 +271,23 @@ export default {
     #areaDetail {
         padding-top: 50px;
 
+
         .showDetail {
             width: 100%;
-            height: 400px;
-            margin-top: 120px;
-            padding: 25px 0px;
-            background-color: #ededed;
+
+
 
             .moreDetail {
                 width: 100%;
                 height: 1000px;
                 text-align: center;
 
-                h2 {
-                    font-size: 3rem;
+                h4 {
                     margin: 35px 0;
 
                     .price {
-                        color: rgb(28, 141, 233);
-                        font-size: 4.5rem;
+                        color: #ff385c;
+
                     }
                 }
 
@@ -212,7 +295,6 @@ export default {
                     display: flex;
                     justify-content: space-around;
                     align-items: center;
-                    padding: 40px;
 
                     .detailElement {
                         display: flex;
@@ -222,6 +304,7 @@ export default {
                         align-items: center;
                         padding: 15px;
                         transition: all .5s;
+                        cursor: pointer;
 
                         &:hover {
                             transform: scale(1.1);
@@ -229,7 +312,7 @@ export default {
                         }
 
                         i {
-                            font-size: 2rem;
+                            font-size: 1.5rem;
                             margin-bottom: 20px;
                         }
 
@@ -237,22 +320,102 @@ export default {
                             font-size: 1.6rem;
                         }
 
-                        h5 {
-                            font-size: 1.2rem;
-                        }
+
                     }
                 }
 
                 .description {
-                    padding: 30px;
                     text-align: left;
-                    height: 400px;
+                    height: auto;
                     overflow-y: auto;
+                    border-radius: 10px;
+
                 }
             }
         }
     }
 
+
+    #myImg {
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    #myImg:hover {
+        opacity: 0.7;
+    }
+
+
+    .modal {
+        margin-top: 65px;
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+    }
+
+    @-webkit-keyframes zoom {
+        from {
+            -webkit-transform: scale(0)
+        }
+
+        to {
+            -webkit-transform: scale(1)
+        }
+    }
+
+    @keyframes zoom {
+        from {
+            transform: scale(0)
+        }
+
+        to {
+            transform: scale(1)
+        }
+    }
+
+
+    #close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    #close:hover,
+    #close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    @media only screen and (max-width: 700px) {
+        .modal-content {
+            width: 100%;
+        }
+    }
+
+.btn-custom{
+    margin: 30px 0;
+}
 
 }
 </style>
