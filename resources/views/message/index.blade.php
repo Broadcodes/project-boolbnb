@@ -15,7 +15,7 @@
                             <img class="imgMessage" src="../images/email_letta.png" alt="Message read">
                         @endif
 
-                        <a href="{{ route('message.show', $message->id) }}"><h5 class="pt-2 mx-3">{{ $message->name }} - {{ $message->email }}</h5></a>
+                        <a id="text-color-message" href="{{ route('message.show', $message->id) }}"><h5 class="pt-2 mx-3">{{ $message->name }} - {{ $message->email }}</h5></a>
                     </div>
                 @endforeach
             </div>
