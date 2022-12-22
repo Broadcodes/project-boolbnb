@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Apartment;
 use App\Message;
+use App\Sponsor;
 use ErrorException;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
@@ -25,8 +26,17 @@ class ApartmentController extends Controller
         $apartments = Apartment::where('user_id', $loggedUser)->get();
         $apartmentNumber = count($apartments);
         $messages = Message::all();
+        $sponsors = Sponsor::all();
+        $apartmentSponsor = [];
 
-        return view('ura.apartments.index', compact('apartments', 'apartmentNumber', 'messages'));
+        $apartmentsAll = Apartment::all();
+        foreach($apartmentsAll as $apartmentAll){
+            foreach($apartmentAll->sponsors as $sponsoredApartment ){
+                array_push($apartmentSponsor, $sponsoredApartment->pivot);
+            }
+        }
+
+        return view('ura.apartments.index', compact('apartments', 'apartmentSponsor', 'sponsors', 'apartmentNumber', 'messages'));
     }
 
     /**

@@ -36,7 +36,13 @@
 
 .card{
     max-height: 600px;
+    position: relative;
 
+    .labelSponsor{
+        position: absolute;
+        background-color: #F2BC17;
+        padding: 5px 15px;
+    }
 }
 
 .card-body {

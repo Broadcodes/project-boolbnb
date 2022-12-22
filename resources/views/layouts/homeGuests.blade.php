@@ -37,17 +37,6 @@
             <div class="logo-area">
                 <a href="{{ route('homePage') }}"><img id="logo" src="img/Airbnb_Logo-1.png" alt="logo"></a>
             </div>
-            {{-- <ul class="d-flex m-0">
-                <li class="nav-item">
-
-                    <button class="btn btn-lg" data-toggle="modal" data-target="#loginModal"
-                        href="{{ route('login') }}">Login</button>
-                </li>
-                <li class="nav-item">
-                    <button class="btn btn-lg" data-toggle="modal" data-target="#registerModal"
-                        href="{{ route('register') }}">Register</button>
-                </li>
-            </ul> --}}
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest
