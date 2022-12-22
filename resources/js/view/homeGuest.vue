@@ -1,162 +1,140 @@
 <template>
+
     <div>
-
-        <div v-if="titleApartmentShow == ''">
-
-            <div>
-                <FilterSearch @coordinate="sentCoordinate" />
-            </div>
-
-            <div class="apartment_container mx-5 px-5">
-                <div v-if="filteredData" class="contenitore-card">
-                    <div class="singola-card" v-for="apartment in apartments" :key="apartment.id"
-                        @click="getApartmentShow(apartment)">
-                        <img v-if="apartment.apartment_images == null" class="img-fluid resize-img img-thumbnail"
-                            :src="getSrcImages('images', 'immagine_non_disponibile.png')" alt="Nessuna immagine">
-                        <img v-else class="img-fluid resize-img img-thumbnail"
-                            :src="getSrcImages('storage', apartment.apartment_images)" :alt="apartment.apartment_title">
-                        <h4 class="testo-card mt-3">{{ apartment.apartment_title.substr(0, 20) }} <span
-                                v-if="apartment.apartment_title.length > 20">...</span></h4>
-                    </div>
+        <div class="container-fluid">
+                <div v-if="apartmentClick" id="back" @click="getBack">
+                    <button>back</button>
                 </div>
-                <div v-else class="contenitore-card">
-                    <div class="singola-card" v-for="apartment in apartmentToShow" :key="apartment.id"
-                        @click="getApartmentShow(apartment)">
-                        <img v-if="apartment.apartment_images == null" class="img-fluid resize-img img-thumbnail"
-                            :src="getSrcImages('images', 'immagine_non_disponibile.png')" alt="Nessuna immagine">
-                        <img v-else class="img-fluid resize-img img-thumbnail"
-                            :src="getSrcImages('storage', apartment.apartment_images)" :alt="apartment.apartment_title">
-                        <h4 class="testo-card">{{ apartment.apartment_title.substr(0, 20) }} <span
-                                v-if="apartment.apartment_title.length > 20">...</span></h4>
+
+                <div v-if="!loading">
+
+                    <div class="psfix">
+                        <FilterSearch @coordinate="sentCoordinate" @sentCategory="setCategory" />
                     </div>
+
+                    <div v-if="!apartmentClick" >
+                        <apartmentListComponent :apartments="apartmentsToShow" @clickedApartment="showApartment" />
+                    </div>
+
+
+
                 </div>
-            </div>
+                <div v-else>
+                    loading
+                </div>
+
         </div>
-        <div v-else>
-            <showApartmentGuest :dataListArr="showDetailsApartment" @pageBack="changePage" />
-        </div>
+        <router-view></router-view>
+
+
     </div>
+
 </template>
 
 <script>
 import FilterSearch from '../components/FilterSearch.vue';
-import showApartmentGuest from '../view/showApartmentGuest.vue';
+import apartmentListComponent from '../components/apartmentListComponent.vue';
 
 export default {
     name: "homeGuest",
     data() {
 
         return {
-            apartmentToShow: [],
-            filteredData: true,
-            apartments: [],
-            addressCondition: '',
-            countryCondition: '',
-            cityCondition: '',
-            currentCategory: '',
-            titleApartmentShow: '',
-            showDetailsApartment: []
+            apartmentsToShow :[],
+            loading:true,
+            apartments:[],
+            positionSet:false,
+            apartmentsInRadius:[],
+            apartmentClick:false,
 
         }
 
     },
     mounted() {
         this.getApartment();
+        console.log(this.$route)
     },
-    methods: {
-        getApartment() {
+    methods:{
+        getApartment(){
             axios.get("/api/apiHome").then(response => {
-                if (response.data.success) {
-
-                    this.apartments = response.data.results
-
-                }
-            });
-        },
-
-        getApartmentShow(value) {
-
-            if (this.titleApartmentShow != '') {
-                alert('Messaggio inviato correttamente');
+            if (response.data.success) {
+                this.apartments= response.data.results
+                this.apartmentsToShow  = response.data.results
+                this.loading=false
+                console.log(this.apartmentsToShow);
             }
 
-            this.titleApartmentShow = value.apartment_title;
-            this.showDetailsApartment = value;
+        });
         },
-        getBack() {
-            this.filteredData = true;
-            this.apartmentToShow = this.apartments;
-        },
-        changePage(value) {
-            this.titleApartmentShow = value;
-            this.showDetailsApartment = [];
-        },
-        sentCoordinate(data) {
 
-            axios.post('/api/coordinate', data).then(response => {
-                if (response) {
-                    console.log(response)
-                    this.apartmentToShow = response.data[0];
-                }
-            })
-            this.filteredData = false;
+        getBack(){
+            this.apartmentsToShow=this.apartments;
+            this.positionSet=false;
+            this.apartmentClick=false;
+            this.$router.go(-1);
+
         },
-        getSrcImages(folder, path) {
-            return folder + '/' + path;
+
+        sentCoordinate(data){
+            axios.post('/api/coordinate',data).then(response=>{
+                if(response)
+                {
+                    this.apartmentsInRadius=response.data[0];
+                    this.apartmentsToShow=response.data[0];
+                    this.positionSet=true;
+                }
+
+            })
+
+        },
+
+        setCategory(category){
+
+                if(!this.positionSet){
+                    this.apartmentsToShow=this.apartments
+                    let arr=[];
+                    arr=this.apartmentsToShow.filter(
+                        function(apartment){
+                                return apartment.category.toLowerCase()===category.toLowerCase()
+                              }
+                    )
+                    this.apartmentsToShow=arr;
+                }
+                else{
+
+                    let arr=[];
+                    this.apartmentsToShow=this.apartmentsInRadius
+                    console.log(this.apartmentsToShow);
+                    arr=this.apartmentsToShow.filter(function(apartment){
+                    return apartment.category.toLowerCase()===category.toLowerCase()
+
+                })
+                this.apartmentsToShow=arr;
+                }
+
+
+        },
+        showApartment(slug){
+            this.apartmentClick=true;
+            console.log('hai cliccato il post con slug:', slug);
+            this.$router.push('/home/' + slug)
         }
+
+
     },
     components: {
         FilterSearch,
-        showApartmentGuest
+        apartmentListComponent
     }
 }
 </script>
 
 <style lang="scss">
-
-html{
-    scroll-behavior: smooth;
+#back{
+    position: fixed;
 }
 
 
-.contenitore-card {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.singola-card {
-    cursor: pointer;
-    width: calc(100% / 3 - 90px);
-    min-width: 300px;
-    border-radius: 20px;
-    padding: 10px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    object-fit: contain;
-    transition: all .5s;
-
-    .resize-img {
-        min-height: 200px;
-        max-height: 200px;
-        object-fit: cover;
-
-    }
-
-    .testo-card {
-        font-size: 1.3em;
-        font-weight: 600;
-        padding: 5px;
-
-    }
-
-    &:hover {
-        transform: scale(1.05);
-        box-shadow: 8px 8px 20px rgb(201, 201, 201);
-    }
 
 
-}
 </style>

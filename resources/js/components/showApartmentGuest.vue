@@ -2,16 +2,16 @@
     <div>
         <div class="areaShow">
             <div class="jumbo">
-                <img v-if="dataListArr.apartment_images == null" class="imgJumbo"
+                <img v-if="apartment.apartment_images == null" class="imgJumbo"
                     :src="getSrcImages('images', 'immagine_non_disponibile.png')" alt="Nessuna immagine">
-                <img v-else class="imgJumbo" :src="getSrcImages('storage', dataListArr.apartment_images)"
-                    :alt="dataListArr.apartment_title">
+                <img v-else class="imgJumbo" :src="getSrcImages('storage', apartment.apartment_images)"
+                    :alt="apartment.apartment_title">
                 <div class="filter">
                     <div class="text">
                         <div class="textArea">
-                            <h1>{{ dataListArr.apartment_title }}</h1>
-                            <h4>{{ dataListArr.address }}, {{ dataListArr.civic_number }} - {{ dataListArr.city }}</h4>
-                            <h4>Categoria: {{ dataListArr.category }}</h4>
+                            <h1>{{ apartment.apartment_title }}</h1>
+                            <h4>{{ apartment.address }}, {{ apartment.civic_number }} - {{ apartment.city }}</h4>
+                            <h4>Categoria: {{ apartment.category }}</h4>
                         </div>
                     </div>
 
@@ -34,12 +34,12 @@
                             <div class="row">
                                 <div class="col-4">
                                     <div>
-                                        <img v-if="dataListArr.apartment_images == null" class="img-thumbnail"
+                                        <img v-if="apartment.apartment_images == null" class="img-thumbnail"
                                             :src="getSrcImages('images', 'immagine_non_disponibile.png')"
                                             alt="Nessuna immagine">
                                         <img id="myImg" v-else class="img-thumbnail"
-                                            :src="getSrcImages('storage', dataListArr.apartment_images)"
-                                            :alt="dataListArr.apartment_title">
+                                            :src="getSrcImages('storage', apartment.apartment_images)"
+                                            :alt="apartment.apartment_title">
                                     </div>
 
                                     <div id="myModal" class="modal">
@@ -51,7 +51,7 @@
                                 <div class="col-8 description">
                                     <h5>Descrizione:</h5>
                                     <br>
-                                    <p>{{ dataListArr.description }}</p>
+                                    <p>{{ apartment.description }}</p>
                                 </div>
                             </div>
                         </div>
@@ -63,22 +63,22 @@
 
                             <div class="detailElement">
                                 <i class="fa-solid fa-people-roof"></i>
-                                <p>{{ dataListArr.bedrooms }}</p>
+                                <p>{{ apartment.bedrooms }}</p>
                                 <p>Numero di stanze</p>
                             </div>
                             <div class="detailElement">
                                 <i class="fa-solid fa-bed"></i>
-                                <p>{{ dataListArr.bed }}</p>
+                                <p>{{ apartment.bed }}</p>
                                 <p>Numero di letti</p>
                             </div>
                             <div class="detailElement">
                                 <i class="fa-solid fa-bath"></i>
-                                <p>{{ dataListArr.bathrooms }}</p>
+                                <p>{{ apartment.bathrooms }}</p>
                                 <p>Numero di bagni</p>
                             </div>
                             <div class="detailElement">
                                 <i class="fa-solid fa-ruler"></i>
-                                <p>{{ dataListArr.sqm }}</p>
+                                <p>{{ apartment.sqm }}</p>
                                 <p>Metri Quadrati</p>
                             </div>
                         </div>
@@ -131,35 +131,44 @@
 <script>
 export default {
     name: 'showApartmentGuest',
-    props: {
-        dataListArr: Object,
-    },
-    methods: {
-        getBack() {
-            this.$emit('pageBack', '')
-        },
-        getSrcImages(folder, path) {
-            return folder + '/' + path;
+    data(){
+        return{
+            apartment:undefined
         }
     },
 
-    mounted() {
-        let modal = document.getElementById("myModal");
+    mounted(){
+        const slug = this.$route.params.slug;
+        console.log(this.$route);
 
-        let img = document.getElementById("myImg");
-        let modalImg = document.getElementById("img01");
+        this.loadPage('/api/apiHome/' + slug);
 
-        img.addEventListener('click', function () {
-            modal.style.display = "block";
-            modalImg.src = this.src;
-        });
+    },
+    methods: {
+        loadPage(url){
+            console.log(url);
 
-        let span = document.getElementById("close");
+            axios.get(url).then(({data})=>{
+                if(data.success){
+                    console.log('data', data)
+                    this.apartment = data.results;
+                    console.log(this.apartment)
+                }else{
+                    console.log('no')
+                }
+            }).catch(e =>{
+                console.log(e);
+            })
+        },
 
-        span.addEventListener('click', function () {
-            console.log('okok');
-            modal.style.display = "none";
-        });
+        getSrcImages(folder, path) {
+            return folder + '/' + path;
+        },
+        getBack(){
+            this.$router.go(-1);
+
+
+        }
     }
 }
 </script>

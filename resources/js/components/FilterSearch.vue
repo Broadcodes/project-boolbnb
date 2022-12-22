@@ -97,7 +97,7 @@ export default {
         setCategory(input) {
             console.log(input)
 
-            this.$emit('setCategory', input)
+            this.$emit('sentCategory', input)
         },
         getPosition(data){
 
@@ -121,7 +121,7 @@ export default {
     position: relative;
     top: -150px;
     z-index: 2000;
-    max-width: calc(100vh - 200px);
+    max-width: calc(100vh - 300px);
 }
 
 button {
@@ -140,7 +140,6 @@ button:hover {
     margin-top: 66px !important;
     padding-top: 15px;
     border-bottom: 1px solid lightgray;
-    z-index: 200;
 }
 
 </style>
