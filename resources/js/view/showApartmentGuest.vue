@@ -165,6 +165,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.smooth {
+    scroll-behavior: smooth;
+}
 .areaShow {
 
 
@@ -330,6 +334,10 @@ export default {
                     overflow-y: auto;
                     border-radius: 10px;
 
+                }
+
+                .descrizione {
+                    border: 1px solid black;
                 }
             }
         }

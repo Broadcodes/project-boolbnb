@@ -1,10 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="contenitore">
         <div class="text-center">
             <h1>{{ $apartment->apartment_title }}</h1>
-
+            <div class="d-flex justify-content-center align-items-baseline pt-3">
+                <i class="fa-regular fa-lightbulb light"></i>
+                <p class="testo-categoria mt-4">Categoria:</p><span class="categoria">{{ $apartment->category }}</span>
+            </div>
             {{-- immagine --}}
             <div class="m-5">
                 @if ($apartment->apartment_images)
@@ -16,36 +19,61 @@
             </div>
         </div>
 
-        {{-- elenco voci --}}
-        <ul class="m-5 list-group">
-            <li class="list-group-item">{{ __('Titolo annuncio') }}: <span
-                    class="brown">{{ $apartment->apartment_title }}</span></li>
-            <li class="list-group-item">{{ __('Descrizione') }}: <span class="brown">{{ $apartment->description }}</span>
-            </li>
-            <li class="list-group-item">{{ __('Numero di stanze') }}: <span class="brown">{{ $apartment->bedrooms }}</span>
-            </li>
-            <li class="list-group-item">{{ __('Numero di letti') }}: <span class="brown">{{ $apartment->bed }}</span>
-            </li>
-            <li class="list-group-item">{{ __('Numero di bagni') }}: <span
-                    class="brown">{{ $apartment->bathrooms }}</span></li>
-            <li class="list-group-item">{{ __('MQ') }}: <span class="brown">{{ $apartment->sqm }}</span></li>
-            <li class="list-group-item">{{ __('Categoria') }}: <span class="brown">{{ $apartment->category }}</span></li>
-            <li class="list-group-item">{{ __('Prezzo a Notte') }}: <span class="brown">{{ $apartment->price }}</span></li>
-            <li class="list-group-item">{{ __('Indirizzo') }}: <span class="brown">{{ $apartment->address }}</span></li>
-            <li class="list-group-item">{{ __('Civico') }}: <span class="brown">{{ $apartment->civic_number }}</span>
-            </li>
-            <li class="list-group-item">{{ __('CAP') }}: <span class="brown">{{ $apartment->postalCode }}</span></li>
-            <li class="list-group-item">{{ __('Città') }}: <span class="brown">{{ $apartment->city }}</span></li>
-            <li class="list-group-item">{{ __('Provincia') }}: <span
-                    class="brown">{{ $apartment->countrySubdivision }}</span></li>
-            <li class="list-group-item">{{ __('Longitudine') }}: <span class="green">{{ $apartment->longitude }}</span>
-            </li>
-            <li class="list-group-item">{{ __('Latitudine') }}: <span class="green">{{ $apartment->latitude }}</span>
-            </li>
-        </ul>
+        {{-- prezzo --}}
+        <div class="d-flex justify-content-center align-items-baseline m-3">
+            <h3 class="prezzo">Prezzo a notte: <span class="price">€ {{ $apartment->price }}</span></h3>
+        </div>
 
-        <div class="text-center">
-            <a href="{{ route('ura.apartments.index') }}" class="btn btn-primary">Torna ai miei annunci</a>
+        <div class="background">
+            {{-- stanze-letti-bagni-mq --}}
+            <div class="container d-flex justify-content-around mt-5 background">
+                <div class="d-flex flex-column align-items-center p-2 first-line">
+                    <span><i
+                            class="fa-solid fa-people-roof"></i></span><span>{{ $apartment->bedrooms }}</span><span>{{ __('Numero di stanze') }}</span>
+                </div>
+                <div class="d-flex flex-column align-items-center p-2 first-line">
+                    <span><i
+                            class="fa-solid fa-bed"></i></span><span>{{ $apartment->bed }}</span><span>{{ __('Numero di letti') }}</span>
+                </div>
+                <div class="d-flex flex-column align-items-center p-2 first-line">
+                    <span><i
+                            class="fa-solid fa-bath"></i></span><span>{{ $apartment->bathrooms }}</span><span>{{ __('Numero di bagni') }}</span>
+                </div>
+                <div class="d-flex flex-column align-items-center p-2 first-line">
+                    <span><i
+                            class="fa-solid fa-ruler"></i></span><span>{{ $apartment->sqm }}</span><span>{{ __('MQ') }}</span>
+                </div>
+            </div>
+
+            {{-- indirizzo-civico-CAP-città-provincia --}}
+            <div class="container d-flex justify-content-around mt-5 background">
+                <div class="d-flex flex-column align-items-center p-2 first-line">
+                    <span><i
+                            class="fa-solid fa-location-dot"></i></span><span>{{ __('Indirizzo') }}</span><span>{{ $apartment->address }}</span>
+                </div>
+                <div class="d-flex flex-column align-items-center p-2 first-line">
+                    <span><i
+                            class="fa-solid fa-arrow-up-9-1"></i></span><span>{{ __('Civico') }}</span><span>{{ $apartment->civic_number }}</span>
+                </div>
+                <div class="d-flex flex-column align-items-center p-2 first-line">
+                    <span><i
+                            class="fa-solid fa-envelopes-bulk"></i></span><span>{{ __('CAP') }}</span><span>{{ $apartment->postalCode }}</span>
+                </div>
+                <div class="d-flex flex-column align-items-center p-2 first-line">
+                    <span><i
+                            class="fa-solid fa-city"></i></span><span>{{ __('Città') }}</span><span>{{ $apartment->city }}</span>
+                </div>
+                <div class="d-flex flex-column align-items-center p-2 first-line">
+                    <span><i
+                            class="fa-solid fa-map-location-dot"></i></span><span>{{ __('Provincia') }}</span><span>{{ $apartment->countrySubdivision }}</span>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="text-center mt-5">
+            <a href="{{ route('ura.apartments.index') }}" class="btn btn-outline-dark">Torna ai miei annunci</a>
         </div>
 
     </div>
