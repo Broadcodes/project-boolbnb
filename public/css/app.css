@@ -11247,6 +11247,10 @@ ul li {
   font-size: 2.5rem;
 }
 
+.nc-accountInfo .nc-userAction .links {
+  margin-left: 50px;
+}
+
 .btn-lightgreen {
   background-color: #61D5B9;
 }
