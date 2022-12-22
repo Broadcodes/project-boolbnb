@@ -65,7 +65,7 @@
                 </div>
                 <div class="d-flex flex-column align-items-center p-2 first-line">
                     <span><i
-                            class="fa-solid fa-map-location-dot"></i></span><span>{{ __('Provincia') }}</span><span>{{ $apartment->countrySubdivision }}</span>
+                            class="fa-solid fa-map-location-dot"></i></span><span>{{ __('Nazione') }}</span><span>{{ $apartment->countrySubdivision }}</span>
                 </div>
             </div>
         </div>

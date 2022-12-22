@@ -186,6 +186,8 @@ export default {
         height: 100vh;
         position: relative;
 
+
+
         .imgJumbo {
             width: 100%;
             height: 100%;
@@ -339,7 +341,7 @@ export default {
 
                 .description {
                     text-align: left;
-                    height: auto;
+                    height: 225px;
                     overflow-y: auto;
                     border-radius: 10px;
 

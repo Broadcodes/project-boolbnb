@@ -178,7 +178,7 @@
                 </div>
                 {{-- provincia --}}
                 <div class="p-3">
-                    <label class="px-2" for="countrySubdivision">{{ __('Provincia') }}</label>
+                    <label class="px-2" for="countrySubdivision">{{ __('Nazione') }}</label>
                     <input type="text" class="form-control" name="countrySubdivision" id="countrySubdivision"
                         value="{{ old('countrySubdivision', $apartment->countrySubdivision) }}">
                     @error('countrySubdivision')
