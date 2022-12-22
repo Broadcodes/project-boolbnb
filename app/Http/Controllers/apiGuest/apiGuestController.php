@@ -55,7 +55,7 @@ class apiGuestController extends Controller
 
             $data = [
                 'results' => $dataToVue,
-
+                'results2'=>$apartments,
                 'success' => true
             ];
         }catch(Error $e){

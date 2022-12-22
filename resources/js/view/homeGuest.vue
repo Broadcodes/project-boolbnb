@@ -46,7 +46,8 @@ export default {
             positionSet:false,
             apartmentsInRadius:[],
             apartmentClick:false,
-            categorySet:false
+            categorySet:false,
+            data:[]
 
         }
 
@@ -59,12 +60,11 @@ export default {
         getApartment(){
             axios.get("/api/apiHome").then(response => {
             if (response.data.success) {
-                this.apartments= response.data.results
-
-
+                this.apartments= response.data.results2;
                 console.log(response.data.results);
-                this.apartmentsToShow  = response.data.results
-                this.loading=false
+                this.data=response.data.results;
+                this.apartmentsToShow  = response.data.results;
+                this.loading=false;
 
             }
 
@@ -72,7 +72,7 @@ export default {
         },
 
         getBack(){
-            this.apartmentsToShow=this.apartments;
+            this.apartmentsToShow=this.data;
             this.positionSet=false;
             this.categorySet=false;
             this.apartmentClick=false;
