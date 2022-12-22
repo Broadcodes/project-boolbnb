@@ -97,7 +97,7 @@ export default {
         setCategory(input) {
             console.log(input)
 
-            this.$emit('setCategory', input)
+            this.$emit('sentCategory', input)
         },
         getPosition(data){
 
@@ -140,8 +140,8 @@ button:hover {
 .selection{
     margin-top: 66px !important;
     padding-top: 15px;
-    border-bottom: 1px solid lightgray;
     z-index: 200;
+    border-bottom: 1px solid lightgray;
 }
 
 </style>
