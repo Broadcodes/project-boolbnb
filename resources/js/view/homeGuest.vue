@@ -2,7 +2,7 @@
 
     <div>
         <div class="container-fluid">
-                <div v-if="apartmentClick" id="back" @click="getBack">
+                <div v-if="apartmentClick||positionSet||categorySet" id="back" @click="getBack">
                     <button>back</button>
                 </div>
 
@@ -40,12 +40,13 @@ export default {
     data() {
 
         return {
-            apartmentsToShow :[],
+            apartmentsToShow :{},
             loading:true,
             apartments:[],
             positionSet:false,
             apartmentsInRadius:[],
             apartmentClick:false,
+            categorySet:false
 
         }
 
@@ -59,9 +60,12 @@ export default {
             axios.get("/api/apiHome").then(response => {
             if (response.data.success) {
                 this.apartments= response.data.results
+
+
+                console.log(response.data.results);
                 this.apartmentsToShow  = response.data.results
                 this.loading=false
-                console.log(this.apartmentsToShow);
+
             }
 
         });
@@ -70,6 +74,7 @@ export default {
         getBack(){
             this.apartmentsToShow=this.apartments;
             this.positionSet=false;
+            this.categorySet=false;
             this.apartmentClick=false;
             this.$router.go(-1);
 
@@ -89,6 +94,7 @@ export default {
         },
 
         setCategory(category){
+            this.categorySet=true;
 
                 if(!this.positionSet){
                     this.apartmentsToShow=this.apartments

@@ -120,7 +120,7 @@ export default {
     margin-top: 150px;
     position: relative;
     top: -150px;
-    z-index: 2000;
+    z-index: 1030;
     max-width: calc(100vh - 300px);
 }
 
@@ -139,6 +139,7 @@ button:hover {
 .selection{
     margin-top: 66px !important;
     padding-top: 15px;
+    z-index: 200;
     border-bottom: 1px solid lightgray;
 }
 

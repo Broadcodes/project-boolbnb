@@ -27,7 +27,7 @@
 
                 <div class="showDetail">
                     <div id="moreDetail" class="moreDetail container mt-5">
-                        <h4>Prezzo a Notte: <span class="price">€ {{ dataListArr.price }}</span></h4>
+                        <h4>Prezzo a Notte: <span class="price">€ {{ apartment.price }}</span></h4>
                         <hr>
 
                         <div class="container mt-4">
@@ -91,7 +91,7 @@
                             <form id="formMessage" class="w-100" action="api/message" method="POST">
                                 <!-- non toccare l'input con il name="apartment_id" tanto è nascosto, ma di fondamentale importanza -->
                                 <input class="d-none" type="text" name="apartment_id" required id="apartment_id"
-                                    :value="dataListArr.id">
+                                    :value="apartment.id">
                                 <!-- ------------------------------ -->
 
                                 <div class="d-flex flex-column">

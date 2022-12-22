@@ -18,7 +18,7 @@ class Apartment extends Model
     }
 
     public function sponsors(){
-        return $this->belongsToMany('App\Sponsor');
+        return $this->belongsToMany('App\Sponsor')->withPivot('start_date','end_date');
     }
 
     public function messages(){

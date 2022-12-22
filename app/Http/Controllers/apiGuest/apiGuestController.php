@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Error;
 use Illuminate\Http\Request;
 use App\Apartment;
-
+use Illuminate\Support\Carbon;
 
 class apiGuestController extends Controller
 {
@@ -17,14 +17,45 @@ class apiGuestController extends Controller
      */
     public function index()
     {
-        //$lat=$request->lat();
+        $array=array();
+
         $apartments = Apartment::all();
+        foreach($apartments as $apartment){
+            foreach($apartment->sponsors as $sponsoredApartment ){
+                array_push($array, $sponsoredApartment->pivot->apartment_id);
+
+
+            }
+        }
+        $dataToVue=array();
+        $apartmentsToShow = Apartment::all()->whereIn('id', $array);
+        foreach($apartmentsToShow as $apartment){
+            foreach($apartment->sponsors as $apartmentSponsor){
+                if(!($apartmentSponsor->pivot->end_date <= Carbon::now())){
+                    array_push($dataToVue,$apartment);
+
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
 
         try{
 
 
             $data = [
-                'results' => $apartments,
+                'results' => $dataToVue,
+
                 'success' => true
             ];
         }catch(Error $e){
