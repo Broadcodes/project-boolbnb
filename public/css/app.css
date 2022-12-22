@@ -15,6 +15,15 @@ body {
   font-family: sans-serif;
 }
 
+#skin-color {
+  color: black !important;
+}
+
+#skin-color:hover {
+  color: white !important;
+  text-decoration: none;
+}
+
 img {
   width: 100%;
 }

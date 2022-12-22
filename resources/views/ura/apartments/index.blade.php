@@ -70,8 +70,8 @@
                                         @endif
                                     </button>
                                 </a>
-                                <button type="button" class="m-2 btn btn-outline-dark"> <i class="fa-regular fa-star"></i>
-                                    <a class="text-dark" href="{{ route('ura.sponsor', $apartment->id) }}">Sponsorizza</a></button>
+                                <button type="button" class="m-2 btn btn-outline-dark" id="skin-color"> <i class="fa-regular fa-star"></i>
+                                    <a href="{{ route('ura.sponsor', $apartment->id) }}">Sponsorizza</a></button>
                                 <form action="{{ route('ura.apartments.destroy', $apartment->apartment_slug) }}"
                                     method="POST">
                                     @csrf

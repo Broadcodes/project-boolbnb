@@ -1,14 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="py-12">
-        <form id="payment-form" action="{{ route('ura.process', [($id = $apartment->id), ($sponsor_id = $sponsor->id)]) }}">
-            @csrf
-            @method('GET')
-            <div id="dropin-container"></div>
-            <input type="submit">
-            <input type="hidden" id="nonce" name="payment_method_nonce" />
-        </form>
+    <div class="container">
+
+            <form id="payment-form" action="{{ route('ura.process', [($id = $apartment->id), ($sponsor_id = $sponsor->id)]) }}">
+                @csrf
+                @method('GET')
+                <div id="dropin-container"></div>
+                <button class="bg-btn m-2 btn btn-outline-success" type="submit"><i class="fa-solid fa-check"></i> Conferma</button>
+                <button class="bg-btn m-2 btn btn-outline-danger" type="submit"><i class="fa-solid fa-xmark"></i> Annulla</button>
+
+                <input type="hidden" id="nonce" name="payment_method_nonce" />
+            </form>
+
     </div>
 
     <script>
