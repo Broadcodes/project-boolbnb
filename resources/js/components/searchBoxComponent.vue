@@ -70,7 +70,14 @@
   }
   </script>
 
-  <style>
+  <style lang="scss" scoped>
+
+  #searchBox{
+    width: calc(100vh - 200px);
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
 
 
