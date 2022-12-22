@@ -46,6 +46,8 @@ class SponsorController extends Controller
             'paymentMethodNonce' => 'fake-valid-visa-nonce',
         ]);
 
+        $paymentInfo = $result->transaction;
+
         // la funzione calcola il giorno di scadenza dello sponsor acquistato
         function getEndDate($sponsorId) {
             $today = Carbon::now();
@@ -76,7 +78,7 @@ class SponsorController extends Controller
 
         $apartment->save();
 
-        return response()->json($result);
+        return view('ura.sponsors.paymentsummary', compact('paymentInfo', 'apartment', 'sponsor'));
 
     }
 }

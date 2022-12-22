@@ -10,10 +10,9 @@
                     per l'appartamento "{{ $apartment->apartment_title }}"
                 </h4>
 
-                    <a class="btn btn-outline-success mt-3" href="{{ route('ura.token', [($id = $apartment->id), ($sponsor_id = $sponsor->id)]) }}">Conferma e Paga</a>
-
-
-
+                <a class="btn btn-outline-success mt-3"
+                    href="{{ route('ura.token', [($id = $apartment->id), ($sponsor_id = $sponsor->id)]) }}">Conferma e
+                    Paga</a>
             </div>
         </div>
     </div>
