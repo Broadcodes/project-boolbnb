@@ -4,10 +4,6 @@
 
     <div class="container">
 
-
-
-
-
         @if ($apartmentNumber > 0)
             <div class="text-center p-4 border-bottom">
                 <h1 class="display-4">I miei annunci</h1>
@@ -24,7 +20,21 @@
                     {{-- contenitore card --}}
                     <div class="col-12 col-lg-4 col-md-6 my-3">
                         <div class="card">
-                            <img class="card-img-top resize-img" src="{{ asset('storage/' . $apartment->apartment_images) }}"
+
+                            @foreach ($apartmentSponsor as $sponsorApart)
+                                @foreach ($sponsors as $sponsor)
+                                    @if ($apartment->id == $sponsorApart->apartment_id)
+                                        <div class="labelSponsor">
+                                            @if ($sponsorApart->sponsor_id == $sponsor->id)
+                                                Sponsorizzato per {{$sponsor->duration}} giorni
+                                            @endif
+                                        </div>
+                                    @endif
+                                @endforeach
+                            @endforeach
+
+                            <img class="card-img-top resize-img"
+                                src="{{ asset('storage/' . $apartment->apartment_images) }}"
                                 alt="{{ $apartment->apartment_title }}" />
                             <div class="card-body text-center pb-0">
                                 <a href="{{ route('ura.apartments.show', $apartment->apartment_slug) }}">
@@ -70,9 +80,12 @@
                                         @endif
                                     </button>
                                 </a>
-                                <button type="button" class="m-2 btn btn-outline-dark" id="skin-color"> <i
-                                        class="fa-regular fa-star"></i>
-                                    <a href="{{ route('ura.sponsor', $apartment->id) }}">Sponsorizza</a></button>
+                                <a href="{{ route('ura.sponsor', $apartment->id) }}">
+                                    <button type="button" class="m-2 btn btn-outline-dark" id="skin-color">
+                                        <i class="fa-regular fa-star"></i>
+                                        Sponsorizza
+                                    </button>
+                                </a>
                                 <form action="{{ route('ura.apartments.destroy', $apartment->apartment_slug) }}"
                                     method="POST">
                                     @csrf

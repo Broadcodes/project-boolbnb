@@ -11067,6 +11067,13 @@ a.text-dark:focus {
 
 .card {
   max-height: 600px;
+  position: relative;
+}
+
+.card .labelSponsor {
+  position: absolute;
+  background-color: #F2BC17;
+  padding: 5px 15px;
 }
 
 .card-body {
@@ -11287,6 +11294,13 @@ ul li {
 
 .card {
   max-height: 600px;
+  position: relative;
+}
+
+.card .labelSponsor {
+  position: absolute;
+  background-color: #F2BC17;
+  padding: 5px 15px;
 }
 
 .card-body {
