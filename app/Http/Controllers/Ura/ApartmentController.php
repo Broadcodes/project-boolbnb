@@ -252,7 +252,7 @@ class ApartmentController extends Controller
         return [
             'Montagna',
             'Baite',
-            'Campagna',
+            'Campeggio',
             'Viste Mozzafiato',
             'Sulle Piste',
             'Igloo',

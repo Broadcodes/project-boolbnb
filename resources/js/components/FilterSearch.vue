@@ -12,56 +12,56 @@
                 <div class="d-flex align-items-center justify-content-around">
 
                     <div class="flex-column text-center">
-                        <button @click="setCategory('Parchi nazionali')"><span><i
+                        <button :class="(categoryName=='Parchi nazionali') ? 'active' : ''" @click="setCategory('Parchi nazionali')"><span><i
                                     class="fa-solid fa-mountain-sun"></i></span>
                             <p>Montagna</p>
                         </button>
                     </div>
 
                     <div class="flex-column text-center">
-                        <button @click="setCategory('Baite')"><span><i
+                        <button :class="(categoryName=='Baite') ? 'active' : ''" @click="setCategory('Baite')"><span><i
                                     class="fa-solid fa-house-crack"></i></span>
                             <p>Baite</p>
                         </button>
                     </div>
 
                     <div class="flex-column text-center">
-                        <button @click="setCategory('Campagna')"><span><i
+                        <button :class="(categoryName=='Campeggio') ? 'active' : ''" @click="setCategory('Campeggio')"><span><i
                                     class="fa-solid fa-campground"></i></span>
-                            <p>Campagna</p>
+                            <p>Campeggio</p>
                         </button>
                     </div>
 
                     <div class="flex-column text-center">
-                        <button @click="setCategory('Viste mozzafiato')">
+                        <button :class="(categoryName=='Viste mozzafiato') ? 'active' : ''" @click="setCategory('Viste mozzafiato')">
                             <span><i class="fa-solid fa-panorama"></i></span>
                             <p>Viste mozzafiato</p>
                         </button>
                     </div>
 
                     <div class="flex-column text-center">
-                        <button @click="setCategory('Sulle piste')"><span><i
+                        <button :class="(categoryName=='Sulle piste') ? 'active' : ''" @click="setCategory('Sulle piste')"><span><i
                                     class="fa-solid fa-person-skiing"></i></span>
                             <p>Sulle piste</p>
                         </button>
                     </div>
 
                     <div class="flex-column text-center">
-                        <button @click="setCategory('Luoghi remoti')"><span><i
+                        <button :class="(categoryName=='Igloo') ? 'active' : ''" @click="setCategory('Igloo')"><span><i
                                     class="fa-solid fa-igloo"></i></span>
                             <p>Igloo</p>
                         </button>
                     </div>
 
                     <div class="flex-column text-center">
-                        <button @click="setCategory('Città popolari')"><span><i
+                        <button :class="(categoryName=='Città') ? 'active' : ''" @click="setCategory('Città')"><span><i
                                     class="fa-solid fa-city"></i></span>
                             <p>Città</p>
                         </button>
                     </div>
 
                     <div class="flex-column text-center">
-                        <button @click="setCategory('Dimore storiche')"><span><i
+                        <button :class="(categoryName=='Città d\'Arte') ? 'active' : ''" @click="setCategory('Città d\'Arte')"><span><i
                                     class="fa-solid fa-landmark"></i></span>
                             <p>Città d'Arte</p>
                         </button>
@@ -88,16 +88,19 @@ export default {
     name: 'FilterSearch',
     data() {
         return {
-
+            categoryName: ''
 
         }
     },
     methods: {
 
         setCategory(input) {
-            console.log(input)
+
+            this.categoryName=input;
 
             this.$emit('sentCategory', input)
+
+            return this.categoryName;
         },
         getPosition(data){
 
@@ -142,6 +145,12 @@ button:hover {
     padding-top: 15px;
     z-index: 200;
     border-bottom: 1px solid lightgray;
+}
+
+.active {
+    color:#000;
+    font-weight: bold;
+    // border-bottom: 3px solid #000;
 }
 
 </style>

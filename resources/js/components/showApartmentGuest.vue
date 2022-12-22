@@ -32,8 +32,11 @@
 
                         <div class="container mt-4">
                             <div class="row">
+
+
+
                                 <div class="col-4">
-                                    <div>
+                                   <div>
                                         <img v-if="apartment.apartment_images == null" class="img-thumbnail"
                                             :src="getSrcImages('images', 'immagine_non_disponibile.png')"
                                             alt="Nessuna immagine">
@@ -110,8 +113,9 @@
                                     <div>
                                         <input class="btn btn-outline-dark mx-2" type="submit" value="Invia Messaggio">
                                     </div>
+
                                     <div>
-                                        <button @click="getBack" class="btn btn-outline-dark "><i class="fa-solid fa-house"></i> Torna alla home</button>
+                                        <a class="btn btn-outline-dark" href="/"><i class="fa-solid fa-house"></i> Torna alla home</a>
                                     </div>
                                 </div>
                             </form>
@@ -143,6 +147,23 @@ export default {
 
         this.loadPage('/api/apiHome/' + slug);
 
+        let modal = document.getElementById("myModal");
+
+        let img = document.getElementById("myImg");
+        let modalImg = document.getElementById("img01");
+
+        img.addEventListener('click', function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        });
+
+        let span = document.getElementById("close");
+
+        span.addEventListener('click', function () {
+            console.log('okok');
+            modal.style.display = "none";
+});
+
     },
     methods: {
         loadPage(url){
@@ -166,8 +187,6 @@ export default {
         },
         getBack(){
             this.$router.go(-1);
-
-
         }
     }
 }
@@ -183,7 +202,7 @@ export default {
 
     .jumbo {
         width: 100%;
-        height: 100vh;
+        height: calc(100vh - 144.11px);
         position: relative;
 
 

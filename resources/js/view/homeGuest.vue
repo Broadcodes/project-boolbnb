@@ -1,10 +1,7 @@
 <template>
 
     <div>
-        <div class="container-fluid">
-                <div v-if="apartmentClick||positionSet||categorySet" id="back" @click="getBack">
-                    <button>back</button>
-                </div>
+        <div class="container-fluid px-0">
 
                 <div v-if="!loading">
 
@@ -12,13 +9,31 @@
                         <FilterSearch @coordinate="sentCoordinate" @sentCategory="setCategory" />
                     </div>
 
+
+
                     <div v-if="!apartmentClick" >
-                        <apartmentListComponent :apartments="apartmentsToShow" @clickedApartment="showApartment" />
+                        <h3>Appartamenti sponsorizzati</h3>
+                        <div v-if="apartmentsToShow.length > 0">
+                            <apartmentListComponent :apartments="apartmentsToShow" @clickedApartment="showApartment" />
+                        </div>
+
+                        <div v-else>
+                            <h3>Nessuna disponibilità</h3>
+                        </div>
+
+                        <div v-if="apartmentClick||positionSet||categorySet" id="back" @click="getBack">
+                            <button class="btn btn-outline-dark">Mostra tutti</button>
+                        </div>
+
+                        <h3>Appartamenti disponibili</h3>
+                        <apartmentListComponent :apartments="apartments" @clickedApartment="showApartment"/>
+
+
                     </div>
 
-
-
                 </div>
+
+
                 <div v-else>
                     loading
                 </div>
@@ -105,6 +120,7 @@ export default {
                               }
                     )
                     this.apartmentsToShow=arr;
+
                 }
                 else{
 
@@ -137,10 +153,10 @@ export default {
 
 <style lang="scss">
 #back{
-    position: fixed;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
 }
-
-
-
 
 </style>

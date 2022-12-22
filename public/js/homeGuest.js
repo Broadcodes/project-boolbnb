@@ -1913,12 +1913,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'FilterSearch',
   data: function data() {
-    return {};
+    return {
+      categoryName: ''
+    };
   },
   methods: {
     setCategory: function setCategory(input) {
-      console.log(input);
+      this.categoryName = input;
       this.$emit('sentCategory', input);
+      return this.categoryName;
     },
     getPosition: function getPosition(data) {
       this.$emit('coordinate', data); //data:object
@@ -2025,6 +2028,18 @@ __webpack_require__.r(__webpack_exports__);
     var slug = this.$route.params.slug;
     console.log(this.$route);
     this.loadPage('/api/apiHome/' + slug);
+    var modal = document.getElementById("myModal");
+    var img = document.getElementById("myImg");
+    var modalImg = document.getElementById("img01");
+    img.addEventListener('click', function () {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+    });
+    var span = document.getElementById("close");
+    span.addEventListener('click', function () {
+      console.log('okok');
+      modal.style.display = "none";
+    });
   },
   methods: {
     loadPage: function loadPage(url) {
@@ -2175,6 +2190,7 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "flex-column text-center"
   }, [_c("button", {
+    "class": _vm.categoryName == "Parchi nazionali" ? "active" : "",
     on: {
       click: function click($event) {
         return _vm.setCategory("Parchi nazionali");
@@ -2183,6 +2199,7 @@ var render = function render() {
   }, [_vm._m(0), _vm._v(" "), _c("p", [_vm._v("Montagna")])])]), _vm._v(" "), _c("div", {
     staticClass: "flex-column text-center"
   }, [_c("button", {
+    "class": _vm.categoryName == "Baite" ? "active" : "",
     on: {
       click: function click($event) {
         return _vm.setCategory("Baite");
@@ -2191,14 +2208,16 @@ var render = function render() {
   }, [_vm._m(1), _vm._v(" "), _c("p", [_vm._v("Baite")])])]), _vm._v(" "), _c("div", {
     staticClass: "flex-column text-center"
   }, [_c("button", {
+    "class": _vm.categoryName == "Campeggio" ? "active" : "",
     on: {
       click: function click($event) {
-        return _vm.setCategory("Campagna");
+        return _vm.setCategory("Campeggio");
       }
     }
-  }, [_vm._m(2), _vm._v(" "), _c("p", [_vm._v("Campagna")])])]), _vm._v(" "), _c("div", {
+  }, [_vm._m(2), _vm._v(" "), _c("p", [_vm._v("Campeggio")])])]), _vm._v(" "), _c("div", {
     staticClass: "flex-column text-center"
   }, [_c("button", {
+    "class": _vm.categoryName == "Viste mozzafiato" ? "active" : "",
     on: {
       click: function click($event) {
         return _vm.setCategory("Viste mozzafiato");
@@ -2207,6 +2226,7 @@ var render = function render() {
   }, [_vm._m(3), _vm._v(" "), _c("p", [_vm._v("Viste mozzafiato")])])]), _vm._v(" "), _c("div", {
     staticClass: "flex-column text-center"
   }, [_c("button", {
+    "class": _vm.categoryName == "Sulle piste" ? "active" : "",
     on: {
       click: function click($event) {
         return _vm.setCategory("Sulle piste");
@@ -2215,25 +2235,28 @@ var render = function render() {
   }, [_vm._m(4), _vm._v(" "), _c("p", [_vm._v("Sulle piste")])])]), _vm._v(" "), _c("div", {
     staticClass: "flex-column text-center"
   }, [_c("button", {
+    "class": _vm.categoryName == "Igloo" ? "active" : "",
     on: {
       click: function click($event) {
-        return _vm.setCategory("Luoghi remoti");
+        return _vm.setCategory("Igloo");
       }
     }
   }, [_vm._m(5), _vm._v(" "), _c("p", [_vm._v("Igloo")])])]), _vm._v(" "), _c("div", {
     staticClass: "flex-column text-center"
   }, [_c("button", {
+    "class": _vm.categoryName == "Città" ? "active" : "",
     on: {
       click: function click($event) {
-        return _vm.setCategory("Città popolari");
+        return _vm.setCategory("Città");
       }
     }
   }, [_vm._m(6), _vm._v(" "), _c("p", [_vm._v("Città")])])]), _vm._v(" "), _c("div", {
     staticClass: "flex-column text-center"
   }, [_c("button", {
+    "class": _vm.categoryName == "Città d'Arte" ? "active" : "",
     on: {
       click: function click($event) {
-        return _vm.setCategory("Dimore storiche");
+        return _vm.setCategory("Città d'Arte");
       }
     }
   }, [_vm._m(7), _vm._v(" "), _c("p", [_vm._v("Città d'Arte")])])])])]), _vm._v(" "), _c("div")])]);
@@ -2483,16 +2506,7 @@ var render = function render() {
     domProps: {
       value: _vm.apartment.id
     }
-  }), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5), _vm._v(" "), _c("div", {
-    staticClass: "d-flex justify-content-center my-5"
-  }, [_vm._m(6), _vm._v(" "), _c("div", [_c("button", {
-    staticClass: "btn btn-outline-dark",
-    on: {
-      click: _vm.getBack
-    }
-  }, [_c("i", {
-    staticClass: "fa-solid fa-house"
-  }), _vm._v(" Torna alla home")])])])])])])])])])]);
+  }), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5), _vm._v(" "), _vm._m(6)])])])])])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -2583,13 +2597,22 @@ var staticRenderFns = [function () {
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", [_c("input", {
+  return _c("div", {
+    staticClass: "d-flex justify-content-center my-5"
+  }, [_c("div", [_c("input", {
     staticClass: "btn btn-outline-dark mx-2",
     attrs: {
       type: "submit",
       value: "Invia Messaggio"
     }
-  })]);
+  })]), _vm._v(" "), _c("div", [_c("a", {
+    staticClass: "btn btn-outline-dark",
+    attrs: {
+      href: "/"
+    }
+  }, [_c("i", {
+    staticClass: "fa-solid fa-house"
+  }), _vm._v(" Torna alla home")])])]);
 }];
 render._withStripped = true;
 
@@ -2611,24 +2634,33 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", [_c("div", {
-    staticClass: "container-fluid"
-  }, [_vm.apartmentClick || _vm.positionSet || _vm.categorySet ? _c("div", {
-    attrs: {
-      id: "back"
-    },
-    on: {
-      click: _vm.getBack
-    }
-  }, [_c("button", [_vm._v("back")])]) : _vm._e(), _vm._v(" "), !_vm.loading ? _c("div", [_c("div", {
+    staticClass: "container-fluid px-0"
+  }, [!_vm.loading ? _c("div", [_c("div", {
     staticClass: "psfix"
   }, [_c("FilterSearch", {
     on: {
       coordinate: _vm.sentCoordinate,
       sentCategory: _vm.setCategory
     }
-  })], 1), _vm._v(" "), !_vm.apartmentClick ? _c("div", [_c("apartmentListComponent", {
+  })], 1), _vm._v(" "), !_vm.apartmentClick ? _c("div", [_c("h3", [_vm._v("Appartamenti sponsorizzati")]), _vm._v(" "), _vm.apartmentsToShow.length > 0 ? _c("div", [_c("apartmentListComponent", {
     attrs: {
       apartments: _vm.apartmentsToShow
+    },
+    on: {
+      clickedApartment: _vm.showApartment
+    }
+  })], 1) : _c("div", [_c("h3", [_vm._v("Nessuna disponibilità")])]), _vm._v(" "), _vm.apartmentClick || _vm.positionSet || _vm.categorySet ? _c("div", {
+    attrs: {
+      id: "back"
+    },
+    on: {
+      click: _vm.getBack
+    }
+  }, [_c("button", {
+    staticClass: "btn btn-outline-dark"
+  }, [_vm._v("Mostra tutti")])]) : _vm._e(), _vm._v(" "), _c("h3", [_vm._v("Appartamenti disponibili")]), _vm._v(" "), _c("apartmentListComponent", {
+    attrs: {
+      apartments: _vm.apartments
     },
     on: {
       clickedApartment: _vm.showApartment
@@ -7019,7 +7051,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".search_box[data-v-263f772b] {\n  margin-top: 150px;\n  position: relative;\n  top: -150px;\n  max-width: calc(100vh - 200px);\n  z-index: 1040;\n  position: relative;\n}\nbutton[data-v-263f772b] {\n  text-decoration: none;\n  border: none;\n  background-color: rgba(255, 255, 255, 0);\n  color: #727171;\n  transition: 0.3s;\n}\nbutton[data-v-263f772b]:hover {\n  color: black;\n}\n.selection[data-v-263f772b] {\n  margin-top: 66px !important;\n  padding-top: 15px;\n  z-index: 200;\n  border-bottom: 1px solid lightgray;\n}", ""]);
+exports.push([module.i, ".search_box[data-v-263f772b] {\n  margin-top: 150px;\n  position: relative;\n  top: -150px;\n  max-width: calc(100vh - 200px);\n  z-index: 1040;\n  position: relative;\n}\nbutton[data-v-263f772b] {\n  text-decoration: none;\n  border: none;\n  background-color: rgba(255, 255, 255, 0);\n  color: #727171;\n  transition: 0.3s;\n}\nbutton[data-v-263f772b]:hover {\n  color: black;\n}\n.selection[data-v-263f772b] {\n  margin-top: 66px !important;\n  padding-top: 15px;\n  z-index: 200;\n  border-bottom: 1px solid lightgray;\n}\n.active[data-v-263f772b] {\n  color: #000;\n  font-weight: bold;\n}", ""]);
 
 // exports
 
@@ -7076,7 +7108,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".smooth[data-v-fba79ba4] {\n  scroll-behavior: smooth;\n}\n.areaShow .jumbo[data-v-fba79ba4] {\n  width: 100%;\n  height: 100vh;\n  position: relative;\n}\n.areaShow .jumbo .imgJumbo[data-v-fba79ba4] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center right;\n     object-position: center right;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n.areaShow .jumbo .filter[data-v-fba79ba4] {\n  width: 100%;\n  height: 100%;\n  background: rgb(0, 0, 0);\n  background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(26, 26, 26, 0.75) 37%, rgba(56, 56, 56, 0.65) 72%, rgba(255, 255, 255, 0) 100%);\n  position: absolute;\n  top: 0;\n  left: 0;\n  text-align: center;\n  overflow: hidden;\n}\n.areaShow .jumbo .filter .text[data-v-fba79ba4] {\n  width: 50%;\n  height: 100%;\n  display: flex;\n  padding-left: 200px;\n  align-items: center;\n}\n.areaShow .jumbo .filter .textArea[data-v-fba79ba4] {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  padding: 50px;\n  transition: all 0.5s;\n  position: relative;\n  animation: moveToRight-fba79ba4 2s ease;\n}\n.areaShow .jumbo .filter .textArea h1[data-v-fba79ba4],\n.areaShow .jumbo .filter .textArea h3[data-v-fba79ba4],\n.areaShow .jumbo .filter .textArea h4[data-v-fba79ba4],\n.areaShow .jumbo .filter .textArea p[data-v-fba79ba4] {\n  text-align: left;\n  color: #fff;\n}\n.areaShow .jumbo .filter .textArea h2[data-v-fba79ba4] {\n  padding-bottom: 10px;\n  color: white;\n}\n@keyframes moveToRight-fba79ba4 {\nfrom {\n    left: -500px;\n}\nto {\n    left: 0px;\n}\n}\n.areaShow .jumbo .filter .buttonMoreDetail[data-v-fba79ba4] {\n  width: 240px;\n  height: 240px;\n  line-height: 115px;\n  border-radius: 50%;\n  position: absolute;\n  font-size: 1.2rem;\n  color: #fff;\n  bottom: -150px;\n  transform: translateX(-50%);\n  background-color: rgba(0, 0, 0, 0.5);\n  box-shadow: inset 0px 0px 20px #fff;\n  text-decoration: none;\n  animation: moveToTop-fba79ba4 2s ease;\n}\n.areaShow .jumbo .filter .buttonMoreDetail[data-v-fba79ba4]:hover {\n  font-size: 1.3rem;\n}\n@keyframes moveToTop-fba79ba4 {\nfrom {\n    bottom: -250px;\n}\nto {\n    bottom: -150px;\n}\n}\n.areaShow #areaDetail[data-v-fba79ba4] {\n  padding-top: 50px;\n}\n.areaShow #areaDetail .showDetail[data-v-fba79ba4] {\n  width: 100%;\n}\n.areaShow #areaDetail .showDetail .moreDetail[data-v-fba79ba4] {\n  width: 100%;\n  height: 1000px;\n  text-align: center;\n}\n.areaShow #areaDetail .showDetail .moreDetail h4[data-v-fba79ba4] {\n  margin: 35px 0;\n}\n.areaShow #areaDetail .showDetail .moreDetail h4 .price[data-v-fba79ba4] {\n  color: #ff385c;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail[data-v-fba79ba4] {\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement[data-v-fba79ba4] {\n  display: flex;\n  min-width: 150px;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 15px;\n  transition: all 0.5s;\n  cursor: pointer;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement[data-v-fba79ba4]:hover {\n  transform: scale(1.1);\n  box-shadow: 20px 20px 15px rgba(0, 0, 0, 0.25);\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement i[data-v-fba79ba4] {\n  font-size: 1.5rem;\n  margin-bottom: 20px;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement h4[data-v-fba79ba4] {\n  font-size: 1.6rem;\n}\n.areaShow #areaDetail .showDetail .moreDetail .description[data-v-fba79ba4] {\n  text-align: left;\n  height: 225px;\n  overflow-y: auto;\n  border-radius: 10px;\n}\n.areaShow #areaDetail .showDetail .moreDetail .descrizione[data-v-fba79ba4] {\n  border: 1px solid black;\n}\n.areaShow #myImg[data-v-fba79ba4] {\n  cursor: pointer;\n  transition: 0.3s;\n}\n.areaShow #myImg[data-v-fba79ba4]:hover {\n  opacity: 0.7;\n}\n.areaShow .modal[data-v-fba79ba4] {\n  margin-top: 65px;\n  display: none;\n  position: fixed;\n  z-index: 1;\n  padding-top: 100px;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  overflow: auto;\n  background-color: rgb(0, 0, 0);\n  background-color: rgba(0, 0, 0, 0.9);\n}\n.areaShow .modal-content[data-v-fba79ba4] {\n  margin: auto;\n  display: block;\n  width: 80%;\n  max-width: 700px;\n}\n@keyframes zoom-fba79ba4 {\nfrom {\n    transform: scale(0);\n}\nto {\n    transform: scale(1);\n}\n}\n.areaShow #close[data-v-fba79ba4] {\n  position: absolute;\n  top: 15px;\n  right: 35px;\n  color: #f1f1f1;\n  font-size: 40px;\n  font-weight: bold;\n  transition: 0.3s;\n}\n.areaShow #close[data-v-fba79ba4]:hover,\n.areaShow #close[data-v-fba79ba4]:focus {\n  color: #bbb;\n  text-decoration: none;\n  cursor: pointer;\n}\n@media only screen and (max-width: 700px) {\n.areaShow .modal-content[data-v-fba79ba4] {\n    width: 100%;\n}\n}\n.areaShow .btn-custom[data-v-fba79ba4] {\n  margin: 30px 0;\n}", ""]);
+exports.push([module.i, ".smooth[data-v-fba79ba4] {\n  scroll-behavior: smooth;\n}\n.areaShow .jumbo[data-v-fba79ba4] {\n  width: 100%;\n  height: calc(100vh - 144.11px);\n  position: relative;\n}\n.areaShow .jumbo .imgJumbo[data-v-fba79ba4] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center right;\n     object-position: center right;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n.areaShow .jumbo .filter[data-v-fba79ba4] {\n  width: 100%;\n  height: 100%;\n  background: rgb(0, 0, 0);\n  background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(26, 26, 26, 0.75) 37%, rgba(56, 56, 56, 0.65) 72%, rgba(255, 255, 255, 0) 100%);\n  position: absolute;\n  top: 0;\n  left: 0;\n  text-align: center;\n  overflow: hidden;\n}\n.areaShow .jumbo .filter .text[data-v-fba79ba4] {\n  width: 50%;\n  height: 100%;\n  display: flex;\n  padding-left: 200px;\n  align-items: center;\n}\n.areaShow .jumbo .filter .textArea[data-v-fba79ba4] {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  padding: 50px;\n  transition: all 0.5s;\n  position: relative;\n  animation: moveToRight-fba79ba4 2s ease;\n}\n.areaShow .jumbo .filter .textArea h1[data-v-fba79ba4],\n.areaShow .jumbo .filter .textArea h3[data-v-fba79ba4],\n.areaShow .jumbo .filter .textArea h4[data-v-fba79ba4],\n.areaShow .jumbo .filter .textArea p[data-v-fba79ba4] {\n  text-align: left;\n  color: #fff;\n}\n.areaShow .jumbo .filter .textArea h2[data-v-fba79ba4] {\n  padding-bottom: 10px;\n  color: white;\n}\n@keyframes moveToRight-fba79ba4 {\nfrom {\n    left: -500px;\n}\nto {\n    left: 0px;\n}\n}\n.areaShow .jumbo .filter .buttonMoreDetail[data-v-fba79ba4] {\n  width: 240px;\n  height: 240px;\n  line-height: 115px;\n  border-radius: 50%;\n  position: absolute;\n  font-size: 1.2rem;\n  color: #fff;\n  bottom: -150px;\n  transform: translateX(-50%);\n  background-color: rgba(0, 0, 0, 0.5);\n  box-shadow: inset 0px 0px 20px #fff;\n  text-decoration: none;\n  animation: moveToTop-fba79ba4 2s ease;\n}\n.areaShow .jumbo .filter .buttonMoreDetail[data-v-fba79ba4]:hover {\n  font-size: 1.3rem;\n}\n@keyframes moveToTop-fba79ba4 {\nfrom {\n    bottom: -250px;\n}\nto {\n    bottom: -150px;\n}\n}\n.areaShow #areaDetail[data-v-fba79ba4] {\n  padding-top: 50px;\n}\n.areaShow #areaDetail .showDetail[data-v-fba79ba4] {\n  width: 100%;\n}\n.areaShow #areaDetail .showDetail .moreDetail[data-v-fba79ba4] {\n  width: 100%;\n  height: 1000px;\n  text-align: center;\n}\n.areaShow #areaDetail .showDetail .moreDetail h4[data-v-fba79ba4] {\n  margin: 35px 0;\n}\n.areaShow #areaDetail .showDetail .moreDetail h4 .price[data-v-fba79ba4] {\n  color: #ff385c;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail[data-v-fba79ba4] {\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement[data-v-fba79ba4] {\n  display: flex;\n  min-width: 150px;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 15px;\n  transition: all 0.5s;\n  cursor: pointer;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement[data-v-fba79ba4]:hover {\n  transform: scale(1.1);\n  box-shadow: 20px 20px 15px rgba(0, 0, 0, 0.25);\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement i[data-v-fba79ba4] {\n  font-size: 1.5rem;\n  margin-bottom: 20px;\n}\n.areaShow #areaDetail .showDetail .moreDetail .detail .detailElement h4[data-v-fba79ba4] {\n  font-size: 1.6rem;\n}\n.areaShow #areaDetail .showDetail .moreDetail .description[data-v-fba79ba4] {\n  text-align: left;\n  height: 225px;\n  overflow-y: auto;\n  border-radius: 10px;\n}\n.areaShow #areaDetail .showDetail .moreDetail .descrizione[data-v-fba79ba4] {\n  border: 1px solid black;\n}\n.areaShow #myImg[data-v-fba79ba4] {\n  cursor: pointer;\n  transition: 0.3s;\n}\n.areaShow #myImg[data-v-fba79ba4]:hover {\n  opacity: 0.7;\n}\n.areaShow .modal[data-v-fba79ba4] {\n  margin-top: 65px;\n  display: none;\n  position: fixed;\n  z-index: 1;\n  padding-top: 100px;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  overflow: auto;\n  background-color: rgb(0, 0, 0);\n  background-color: rgba(0, 0, 0, 0.9);\n}\n.areaShow .modal-content[data-v-fba79ba4] {\n  margin: auto;\n  display: block;\n  width: 80%;\n  max-width: 700px;\n}\n@keyframes zoom-fba79ba4 {\nfrom {\n    transform: scale(0);\n}\nto {\n    transform: scale(1);\n}\n}\n.areaShow #close[data-v-fba79ba4] {\n  position: absolute;\n  top: 15px;\n  right: 35px;\n  color: #f1f1f1;\n  font-size: 40px;\n  font-weight: bold;\n  transition: 0.3s;\n}\n.areaShow #close[data-v-fba79ba4]:hover,\n.areaShow #close[data-v-fba79ba4]:focus {\n  color: #bbb;\n  text-decoration: none;\n  cursor: pointer;\n}\n@media only screen and (max-width: 700px) {\n.areaShow .modal-content[data-v-fba79ba4] {\n    width: 100%;\n}\n}\n.areaShow .btn-custom[data-v-fba79ba4] {\n  margin: 30px 0;\n}", ""]);
 
 // exports
 
@@ -7095,7 +7127,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#back {\n  position: fixed;\n}", ""]);
+exports.push([module.i, "#back {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n}", ""]);
 
 // exports
 
@@ -54820,8 +54852,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/francescomiceli/project-boolbnb/resources/js/homeGuest.js */"./resources/js/homeGuest.js");
-module.exports = __webpack_require__(/*! /Users/francescomiceli/project-boolbnb/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Utente\Desktop\boolean\boolean\Progetto_finale_BoolBnB\project-boolbnb\resources\js\homeGuest.js */"./resources/js/homeGuest.js");
+module.exports = __webpack_require__(/*! C:\Users\Utente\Desktop\boolean\boolean\Progetto_finale_BoolBnB\project-boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
