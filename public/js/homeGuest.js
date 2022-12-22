@@ -1913,12 +1913,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'FilterSearch',
   data: function data() {
-    return {};
+    return {
+      categoryName: ''
+    };
   },
   methods: {
     setCategory: function setCategory(input) {
-      console.log(input);
+      this.categoryName = input;
       this.$emit('sentCategory', input);
+      return this.categoryName;
     },
     getPosition: function getPosition(data) {
       this.$emit('coordinate', data); //data:object
@@ -2175,6 +2178,7 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "flex-column text-center"
   }, [_c("button", {
+    "class": _vm.categoryName == "Parchi nazionali" ? "active" : "",
     on: {
       click: function click($event) {
         return _vm.setCategory("Parchi nazionali");
@@ -2183,6 +2187,7 @@ var render = function render() {
   }, [_vm._m(0), _vm._v(" "), _c("p", [_vm._v("Montagna")])])]), _vm._v(" "), _c("div", {
     staticClass: "flex-column text-center"
   }, [_c("button", {
+    "class": _vm.categoryName == "Baite" ? "active" : "",
     on: {
       click: function click($event) {
         return _vm.setCategory("Baite");
@@ -2191,14 +2196,16 @@ var render = function render() {
   }, [_vm._m(1), _vm._v(" "), _c("p", [_vm._v("Baite")])])]), _vm._v(" "), _c("div", {
     staticClass: "flex-column text-center"
   }, [_c("button", {
+    "class": _vm.categoryName == "Campeggio" ? "active" : "",
     on: {
       click: function click($event) {
-        return _vm.setCategory("Campagna");
+        return _vm.setCategory("Campeggio");
       }
     }
-  }, [_vm._m(2), _vm._v(" "), _c("p", [_vm._v("Campagna")])])]), _vm._v(" "), _c("div", {
+  }, [_vm._m(2), _vm._v(" "), _c("p", [_vm._v("Campeggio")])])]), _vm._v(" "), _c("div", {
     staticClass: "flex-column text-center"
   }, [_c("button", {
+    "class": _vm.categoryName == "Viste mozzafiato" ? "active" : "",
     on: {
       click: function click($event) {
         return _vm.setCategory("Viste mozzafiato");
@@ -2207,6 +2214,7 @@ var render = function render() {
   }, [_vm._m(3), _vm._v(" "), _c("p", [_vm._v("Viste mozzafiato")])])]), _vm._v(" "), _c("div", {
     staticClass: "flex-column text-center"
   }, [_c("button", {
+    "class": _vm.categoryName == "Sulle piste" ? "active" : "",
     on: {
       click: function click($event) {
         return _vm.setCategory("Sulle piste");
@@ -2215,25 +2223,28 @@ var render = function render() {
   }, [_vm._m(4), _vm._v(" "), _c("p", [_vm._v("Sulle piste")])])]), _vm._v(" "), _c("div", {
     staticClass: "flex-column text-center"
   }, [_c("button", {
+    "class": _vm.categoryName == "Igloo" ? "active" : "",
     on: {
       click: function click($event) {
-        return _vm.setCategory("Luoghi remoti");
+        return _vm.setCategory("Igloo");
       }
     }
   }, [_vm._m(5), _vm._v(" "), _c("p", [_vm._v("Igloo")])])]), _vm._v(" "), _c("div", {
     staticClass: "flex-column text-center"
   }, [_c("button", {
+    "class": _vm.categoryName == "Città" ? "active" : "",
     on: {
       click: function click($event) {
-        return _vm.setCategory("Città popolari");
+        return _vm.setCategory("Città");
       }
     }
   }, [_vm._m(6), _vm._v(" "), _c("p", [_vm._v("Città")])])]), _vm._v(" "), _c("div", {
     staticClass: "flex-column text-center"
   }, [_c("button", {
+    "class": _vm.categoryName == "Città d'Arte" ? "active" : "",
     on: {
       click: function click($event) {
-        return _vm.setCategory("Dimore storiche");
+        return _vm.setCategory("Città d'Arte");
       }
     }
   }, [_vm._m(7), _vm._v(" "), _c("p", [_vm._v("Città d'Arte")])])])])]), _vm._v(" "), _c("div")])]);
@@ -2483,16 +2494,7 @@ var render = function render() {
     domProps: {
       value: _vm.apartment.id
     }
-  }), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5), _vm._v(" "), _c("div", {
-    staticClass: "d-flex justify-content-center my-5"
-  }, [_vm._m(6), _vm._v(" "), _c("div", [_c("button", {
-    staticClass: "btn btn-outline-dark",
-    on: {
-      click: _vm.getBack
-    }
-  }, [_c("i", {
-    staticClass: "fa-solid fa-house"
-  }), _vm._v(" Torna alla home")])])])])])])])])])]);
+  }), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5), _vm._v(" "), _vm._m(6)])])])])])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -2583,13 +2585,22 @@ var staticRenderFns = [function () {
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", [_c("input", {
+  return _c("div", {
+    staticClass: "d-flex justify-content-center my-5"
+  }, [_c("div", [_c("input", {
     staticClass: "btn btn-outline-dark mx-2",
     attrs: {
       type: "submit",
       value: "Invia Messaggio"
     }
-  })]);
+  })]), _vm._v(" "), _c("div", [_c("a", {
+    staticClass: "btn btn-outline-dark",
+    attrs: {
+      href: "/"
+    }
+  }, [_c("i", {
+    staticClass: "fa-solid fa-house"
+  }), _vm._v(" Torna alla home")])])]);
 }];
 render._withStripped = true;
 
@@ -2611,24 +2622,33 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", [_c("div", {
-    staticClass: "container-fluid"
-  }, [_vm.apartmentClick || _vm.positionSet || _vm.categorySet ? _c("div", {
-    attrs: {
-      id: "back"
-    },
-    on: {
-      click: _vm.getBack
-    }
-  }, [_c("button", [_vm._v("back")])]) : _vm._e(), _vm._v(" "), !_vm.loading ? _c("div", [_c("div", {
+    staticClass: "container-fluid px-0"
+  }, [!_vm.loading ? _c("div", [_c("div", {
     staticClass: "psfix"
   }, [_c("FilterSearch", {
     on: {
       coordinate: _vm.sentCoordinate,
       sentCategory: _vm.setCategory
     }
-  })], 1), _vm._v(" "), !_vm.apartmentClick ? _c("div", [_c("apartmentListComponent", {
+  })], 1), _vm._v(" "), !_vm.apartmentClick ? _c("div", [_c("h3", [_vm._v("Appartamenti sponsorizzati")]), _vm._v(" "), _vm.apartmentsToShow.length > 0 ? _c("div", [_c("apartmentListComponent", {
     attrs: {
       apartments: _vm.apartmentsToShow
+    },
+    on: {
+      clickedApartment: _vm.showApartment
+    }
+  })], 1) : _c("div", [_c("h3", [_vm._v("Nessuna disponibilità")])]), _vm._v(" "), _vm.apartmentClick || _vm.positionSet || _vm.categorySet ? _c("div", {
+    attrs: {
+      id: "back"
+    },
+    on: {
+      click: _vm.getBack
+    }
+  }, [_c("button", {
+    staticClass: "btn btn-outline-dark"
+  }, [_vm._v("Mostra tutti")])]) : _vm._e(), _vm._v(" "), _c("h3", [_vm._v("Appartamenti disponibili")]), _vm._v(" "), _c("apartmentListComponent", {
+    attrs: {
+      apartments: _vm.apartments
     },
     on: {
       clickedApartment: _vm.showApartment
@@ -7019,7 +7039,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".search_box[data-v-263f772b] {\n  margin-top: 150px;\n  position: relative;\n  top: -150px;\n  max-width: calc(100vh - 200px);\n  z-index: 1040;\n  position: relative;\n}\nbutton[data-v-263f772b] {\n  text-decoration: none;\n  border: none;\n  background-color: rgba(255, 255, 255, 0);\n  color: #727171;\n  transition: 0.3s;\n}\nbutton[data-v-263f772b]:hover {\n  color: black;\n}\n.selection[data-v-263f772b] {\n  margin-top: 66px !important;\n  padding-top: 15px;\n  z-index: 200;\n  border-bottom: 1px solid lightgray;\n}", ""]);
+exports.push([module.i, ".search_box[data-v-263f772b] {\n  margin-top: 150px;\n  position: relative;\n  top: -150px;\n  max-width: calc(100vh - 200px);\n  z-index: 1040;\n  position: relative;\n}\nbutton[data-v-263f772b] {\n  text-decoration: none;\n  border: none;\n  background-color: rgba(255, 255, 255, 0);\n  color: #727171;\n  transition: 0.3s;\n}\nbutton[data-v-263f772b]:hover {\n  color: black;\n}\n.selection[data-v-263f772b] {\n  margin-top: 66px !important;\n  padding-top: 15px;\n  z-index: 200;\n  border-bottom: 1px solid lightgray;\n}\n.active[data-v-263f772b] {\n  color: #000;\n  font-weight: bold;\n}", ""]);
 
 // exports
 
@@ -7095,7 +7115,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#back {\n  position: fixed;\n}", ""]);
+exports.push([module.i, "#back {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n}", ""]);
 
 // exports
 
@@ -54820,8 +54840,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/francescomiceli/project-boolbnb/resources/js/homeGuest.js */"./resources/js/homeGuest.js");
-module.exports = __webpack_require__(/*! /Users/francescomiceli/project-boolbnb/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Utente\Desktop\boolean\boolean\Progetto_finale_BoolBnB\project-boolbnb\resources\js\homeGuest.js */"./resources/js/homeGuest.js");
+module.exports = __webpack_require__(/*! C:\Users\Utente\Desktop\boolean\boolean\Progetto_finale_BoolBnB\project-boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

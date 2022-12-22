@@ -74,8 +74,7 @@
                                 {{ __('Logout') }}
                             </a>
 
-                            <a class="dropdown-item" href="{{ route('ura.apartments.index') }}">Miei
-                                Appartamenti</a>
+                            <a class="dropdown-item" href="{{ route('ura.apartments.index') }}">I miei annunci</a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf

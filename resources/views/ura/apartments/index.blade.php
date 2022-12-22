@@ -9,13 +9,13 @@
 
 
         @if ($apartmentNumber > 0)
-
-        <div class="text-center p-4 border-bottom">
-            <h1 class="display-4">I tuoi appartamenti</h1>
-            <p class="pt-2">Appartamenti totali: <strong>{{ $apartmentNumber }}</strong></p>
-            <a class="mt-0 btn btn-outline-primary" href="{{ route('ura.apartments.create') }}">Aggiungi un appartamento!</a>
-            <!-- CRUD create -->
-        </div>
+            <div class="text-center p-4 border-bottom">
+                <h1 class="display-4">I miei annunci</h1>
+                <p class="pt-2">Appartamenti totali: <strong>{{ $apartmentNumber }}</strong></p>
+                <a class="mt-0 btn btn-outline-primary" href="{{ route('ura.apartments.create') }}">Aggiungi un
+                    appartamento!</a>
+                <!-- CRUD create -->
+            </div>
 
 
             <!-- se l'utente possiede appartamenti visualizza questa porzione-->
@@ -70,14 +70,16 @@
                                         @endif
                                     </button>
                                 </a>
-                                <button type="button" class="m-2 btn btn-outline-dark" id="skin-color"> <i class="fa-regular fa-star"></i>
+                                <button type="button" class="m-2 btn btn-outline-dark" id="skin-color"> <i
+                                        class="fa-regular fa-star"></i>
                                     <a href="{{ route('ura.sponsor', $apartment->id) }}">Sponsorizza</a></button>
                                 <form action="{{ route('ura.apartments.destroy', $apartment->apartment_slug) }}"
                                     method="POST">
                                     @csrf
                                     @method('DELETE')
 
-                                    <button class="bg-btn m-2 btn btn-outline-dark" type="submit"><i class="fa-solid fa-trash-can"></i> Elimina</button>
+                                    <button class="bg-btn m-2 btn btn-outline-dark" type="submit"><i
+                                            class="fa-solid fa-trash-can"></i> Elimina</button>
 
                                     <!-- CRUD delete -->
                                 </form>

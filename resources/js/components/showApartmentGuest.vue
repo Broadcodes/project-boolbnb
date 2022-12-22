@@ -110,8 +110,9 @@
                                     <div>
                                         <input class="btn btn-outline-dark mx-2" type="submit" value="Invia Messaggio">
                                     </div>
+
                                     <div>
-                                        <button @click="getBack" class="btn btn-outline-dark "><i class="fa-solid fa-house"></i> Torna alla home</button>
+                                        <a class="btn btn-outline-dark" href="/"><i class="fa-solid fa-house"></i> Torna alla home</a>
                                     </div>
                                 </div>
                             </form>
@@ -166,8 +167,6 @@ export default {
         },
         getBack(){
             this.$router.go(-1);
-
-
         }
     }
 }
@@ -183,6 +182,7 @@ export default {
 
     .jumbo {
         width: 100%;
+        // height: calc(100vh - 144.11px);
         height: 100vh;
         position: relative;
 
