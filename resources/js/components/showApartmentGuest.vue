@@ -28,7 +28,7 @@
                 <div class="showDetail">
                     <div id="moreDetail" class="moreDetail container mt-5">
                         <h4>Prezzo a Notte: <span class="price">€ {{ apartment.price }}</span></h4>
-                        <hr>
+
 
                         <div class="container mt-4">
                             <div class="row">
@@ -90,7 +90,7 @@
 
                         <a class="btn btn-outline-dark btn-custom" href="#formMessage"><i class="fa-regular fa-envelope"></i> Contatta per info</a>
 
-                        <div class="d-flex align-items-end">
+                        <div class="d-flex align-items-end mt-4">
                             <form id="formMessage" class="w-100" action="api/message" method="POST">
                                 <!-- non toccare l'input con il name="apartment_id" tanto è nascosto, ma di fondamentale importanza -->
                                 <input class="d-none" type="text" name="apartment_id" required id="apartment_id"
@@ -450,10 +450,6 @@ export default {
             width: 100%;
         }
     }
-
-.btn-custom{
-    margin: 30px 0;
-}
 
 }
 </style>
