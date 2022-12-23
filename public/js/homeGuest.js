@@ -7148,7 +7148,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#back {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n}\n.fa-star {\n  color: rgb(255, 187, 0);\n}", ""]);
+exports.push([module.i, "#back {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n}\n.bg-color {\n  background-color: rgb(234, 234, 234);\n  border-bottom: 1px solid lightgray;\n}\n.fa-star {\n  color: rgb(255, 187, 0);\n}", ""]);
 
 // exports
 

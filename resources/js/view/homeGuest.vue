@@ -165,9 +165,10 @@ export default {
 
 
 
-// .bg-color{
-//     background-color: rgb(251, 255, 147);
-// }
+.bg-color{
+    background-color: rgb(234, 234, 234);
+    border-bottom: 1px solid lightgray;
+}
 
 .fa-star{
     color: rgb(255, 187, 0);
