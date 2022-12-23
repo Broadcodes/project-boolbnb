@@ -26,7 +26,7 @@
                                     @if ($apartment->id == $sponsorApart->apartment_id)
                                         <div class="labelSponsor">
                                             @if ($sponsorApart->sponsor_id == $sponsor->id)
-                                                Sponsorizzato per {{$sponsor->duration}} ore
+                                                Sponsorizzato per {{ $sponsor->duration }} ore
                                             @endif
                                         </div>
                                     @endif
@@ -91,7 +91,8 @@
                                     @csrf
                                     @method('DELETE')
 
-                                    <button class="bg-btn m-2 btn btn-outline-dark" type="submit"><i
+                                    <button class="bg-btn m-2 btn btn-outline-dark" type="submit"
+                                        onclick="return confirm('{{ __('Sei sicuro di voler eiminare la casa?') }}')"><i
                                             class="fa-solid fa-trash-can"></i> Elimina</button>
 
                                     <!-- CRUD delete -->
