@@ -26,7 +26,7 @@
                                     @if ($apartment->id == $sponsorApart->apartment_id)
                                         <div class="labelSponsor">
                                             @if ($sponsorApart->sponsor_id == $sponsor->id)
-                                                Sponsorizzato per {{$sponsor->duration}} giorni
+                                                Sponsorizzato per {{$sponsor->duration}} ore
                                             @endif
                                         </div>
                                     @endif
